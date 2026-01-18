@@ -198,6 +198,124 @@
             color: var(--text-muted);
         }
 
+        /* Private Endpoints Section - NOUVELLE SECTION */
+        .private-endpoints {
+            background: linear-gradient(135deg, rgba(79, 70, 229, 0.03), rgba(99, 102, 241, 0.01));
+            border-top: 1px solid var(--border);
+        }
+
+        .endpoints-intro {
+            max-width: 800px;
+            margin: 0 auto 48px;
+            text-align: center;
+        }
+
+        .endpoints-intro p {
+            color: var(--text-muted);
+            font-size: 18px;
+            line-height: 1.8;
+            margin-bottom: 16px;
+        }
+
+        .endpoints-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 32px;
+            margin-top: 48px;
+        }
+
+        .endpoint-box {
+            background: rgba(10, 14, 39, 0.6);
+            border: 1px solid var(--border);
+            border-radius: 8px;
+            padding: 32px;
+            transition: all 0.3s;
+        }
+
+        .endpoint-box:hover {
+            border-color: rgba(79, 70, 229, 0.5);
+            transform: translateY(-2px);
+        }
+
+        .endpoint-box h3 {
+            font-size: 22px;
+            margin-bottom: 16px;
+            font-weight: 600;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .endpoint-box .badge {
+            display: inline-block;
+            padding: 4px 12px;
+            background: rgba(79, 70, 229, 0.2);
+            color: var(--accent-light);
+            border-radius: 4px;
+            font-size: 12px;
+            font-weight: 500;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        .endpoint-box .badge.public {
+            background: rgba(34, 197, 94, 0.2);
+            color: #4ade80;
+        }
+
+        .endpoint-box .badge.private {
+            background: rgba(251, 146, 60, 0.2);
+            color: #fb923c;
+        }
+
+        .endpoint-box ul {
+            list-style: none;
+            margin-top: 16px;
+        }
+
+        .endpoint-box ul li {
+            color: var(--text-muted);
+            font-size: 15px;
+            line-height: 1.8;
+            padding-left: 24px;
+            position: relative;
+        }
+
+        .endpoint-box ul li:before {
+            content: "✓";
+            position: absolute;
+            left: 0;
+            color: var(--accent-light);
+            font-weight: bold;
+        }
+
+        .guarantee-box {
+            max-width: 700px;
+            margin: 48px auto 0;
+            background: rgba(79, 70, 229, 0.08);
+            border: 1px solid rgba(79, 70, 229, 0.3);
+            border-radius: 8px;
+            padding: 32px;
+            text-align: center;
+        }
+
+        .guarantee-box h4 {
+            font-size: 20px;
+            margin-bottom: 16px;
+            font-weight: 600;
+            color: var(--accent-light);
+        }
+
+        .guarantee-box p {
+            color: var(--text-muted);
+            font-size: 16px;
+            line-height: 1.7;
+        }
+
+        .guarantee-box strong {
+            color: var(--text);
+        }
+
         /* Approach */
         .approach-grid {
             display: grid;
@@ -295,7 +413,8 @@
             }
 
             .security-grid,
-            .approach-grid {
+            .approach-grid,
+            .endpoints-grid {
                 grid-template-columns: 1fr;
             }
 
@@ -320,6 +439,7 @@
             <div class="logo">SCANALIS</div>
             <nav>
                 <a href="#securite">Sécurité</a>
+                <a href="#endpoints">Endpoints</a>
                 <a href="#approche">Approche</a>
                 <a href="#contact">Contact</a>
             </nav>
@@ -401,6 +521,65 @@
                         <strong>Model Theft</strong>
                         <span>Extraction progressive de la logique de vos modèles propriétaires via des requêtes ciblées</span>
                     </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- NOUVELLE SECTION : Endpoints Privés -->
+        <section id="endpoints" class="private-endpoints">
+            <div class="container">
+                <h2>Audit des endpoints publics et privés</h2>
+                <div class="endpoints-intro">
+                    <p>Scanalis analyse votre surface d'exposition complète, en toute transparence et sans compromettre vos systèmes de production.</p>
+                    <p>Notre approche s'adapte selon le type d'endpoints à auditer.</p>
+                </div>
+
+                <div class="endpoints-grid">
+                    <div class="endpoint-box">
+                        <h3>
+                            <span>Endpoints publics</span>
+                            <span class="badge public">Sans accès requis</span>
+                        </h3>
+                        <p style="color: var(--text-muted); margin-bottom: 16px;">
+                            Analyse non intrusive de tout ce qui est accessible publiquement sur Internet.
+                        </p>
+                        <ul>
+                            <li>Scan automatique depuis une URL ou un domaine</li>
+                            <li>Détection des endpoints exposés non documentés</li>
+                            <li>Vérification TLS/SSL et headers de sécurité</li>
+                            <li>Analyse CORS et rate limiting</li>
+                            <li>Détection de failles d'authentification visibles</li>
+                            <li>Audit des risques IA/LLM publics</li>
+                        </ul>
+                    </div>
+
+                    <div class="endpoint-box">
+                        <h3>
+                            <span>Endpoints privés</span>
+                            <span class="badge private">Avec autorisation</span>
+                        </h3>
+                        <p style="color: var(--text-muted); margin-bottom: 16px;">
+                            Audit approfondi de vos APIs internes avec vos propres clés d'accès.
+                        </p>
+                        <ul>
+                            <li>Audit avec vos clés API fournies volontairement</li>
+                            <li>Analyse comme un collaborateur interne</li>
+                            <li>Détection de failles de configuration d'accès</li>
+                            <li>Vérification des permissions et rôles</li>
+                            <li>Test des mécanismes d'authentification</li>
+                            <li>Aucun contournement de sécurité</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="guarantee-box">
+                    <h4>🔒 Notre engagement éthique</h4>
+                    <p>
+                        <strong>Nous ne contournons JAMAIS une authentification.</strong><br>
+                        Pour les endpoints privés, nous auditons uniquement avec les accès que vous nous fournissez volontairement, 
+                        dans le respect total de vos systèmes et de vos données. Scanalis est un outil de détection et de prévention, 
+                        pas un outil d'attaque.
+                    </p>
                 </div>
             </div>
         </section>
