@@ -1,0 +1,587 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ressources & Guides - Scanalis | Sécurité API & IA</title>
+    <meta name="description" content="Guides gratuits, checklists et études de cas pour sécuriser vos APIs, automatisations IA et intégrations no-code. Par les experts Scanalis.">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --dark: #0A0E27;
+            --darker: #050816;
+            --accent: #4F46E5;
+            --accent-light: #6366F1;
+            --text: #F1F5F9;
+            --text-muted: #94A3B8;
+            --border: #1E293B;
+            --success: #10B981;
+            --warning: #F59E0B;
+            --info: #3B82F6;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+            background: var(--dark);
+            color: var(--text);
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        .container {
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 0 24px;
+        }
+
+        /* Header */
+        header {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background: rgba(10, 14, 39, 0.9);
+            backdrop-filter: blur(12px);
+            border-bottom: 1px solid var(--border);
+            z-index: 100;
+            padding: 20px 0;
+        }
+
+        header .container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 22px;
+            font-weight: 600;
+            color: var(--text);
+            letter-spacing: -0.5px;
+            text-decoration: none;
+        }
+
+        nav a {
+            color: var(--text-muted);
+            text-decoration: none;
+            margin-left: 32px;
+            font-size: 15px;
+            transition: color 0.2s;
+        }
+
+        nav a:hover {
+            color: var(--text);
+        }
+
+        nav a.active {
+            color: var(--accent-light);
+        }
+
+        /* Hero */
+        .hero {
+            padding: 160px 0 80px;
+            text-align: center;
+        }
+
+        h1 {
+            font-size: 48px;
+            font-weight: 700;
+            line-height: 1.1;
+            margin-bottom: 20px;
+            letter-spacing: -1.5px;
+        }
+
+        .highlight {
+            color: var(--accent-light);
+        }
+
+        .lead {
+            font-size: 20px;
+            color: var(--text-muted);
+            max-width: 700px;
+            margin: 0 auto 48px;
+        }
+
+        /* Section */
+        section {
+            padding: 60px 0;
+        }
+
+        h2 {
+            font-size: 32px;
+            font-weight: 700;
+            margin-bottom: 16px;
+            letter-spacing: -1px;
+        }
+
+        .section-intro {
+            color: var(--text-muted);
+            font-size: 18px;
+            margin-bottom: 48px;
+            max-width: 700px;
+        }
+
+        /* Resource Grid */
+        .resource-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(340px, 1fr));
+            gap: 24px;
+            margin-bottom: 80px;
+        }
+
+        .resource-card {
+            background: linear-gradient(135deg, rgba(79, 70, 229, 0.05), rgba(99, 102, 241, 0.02));
+            border: 1px solid var(--border);
+            border-radius: 8px;
+            padding: 28px;
+            transition: all 0.3s;
+            display: flex;
+            flex-direction: column;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .resource-card:hover {
+            border-color: rgba(79, 70, 229, 0.5);
+            transform: translateY(-4px);
+        }
+
+        .resource-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 4px;
+            background: linear-gradient(90deg, var(--accent), var(--accent-light));
+            opacity: 0;
+            transition: opacity 0.3s;
+        }
+
+        .resource-card:hover::before {
+            opacity: 1;
+        }
+
+        .card-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            margin-bottom: 16px;
+        }
+
+        .badge {
+            display: inline-block;
+            padding: 4px 12px;
+            border-radius: 4px;
+            font-size: 12px;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        .badge.beginner {
+            background: rgba(16, 185, 129, 0.15);
+            color: var(--success);
+        }
+
+        .badge.intermediate {
+            background: rgba(245, 158, 11, 0.15);
+            color: var(--warning);
+        }
+
+        .badge.advanced {
+            background: rgba(239, 68, 68, 0.15);
+            color: #EF4444;
+        }
+
+        .icon {
+            font-size: 32px;
+            margin-bottom: 16px;
+            display: block;
+        }
+
+        .resource-card h3 {
+            font-size: 20px;
+            margin-bottom: 12px;
+            font-weight: 600;
+            line-height: 1.3;
+        }
+
+        .resource-card p {
+            color: var(--text-muted);
+            font-size: 15px;
+            line-height: 1.6;
+            margin-bottom: 20px;
+            flex-grow: 1;
+        }
+
+        .card-footer {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding-top: 16px;
+            border-top: 1px solid var(--border);
+        }
+
+        .read-time {
+            color: var(--text-muted);
+            font-size: 14px;
+            display: flex;
+            align-items: center;
+            gap: 6px;
+        }
+
+        .cta-link {
+            color: var(--accent-light);
+            text-decoration: none;
+            font-weight: 500;
+            font-size: 15px;
+            transition: all 0.2s;
+            display: flex;
+            align-items: center;
+            gap: 6px;
+        }
+
+        .cta-link:hover {
+            color: var(--accent);
+            transform: translateX(4px);
+        }
+
+        /* CTA Section */
+        .cta-section {
+            background: linear-gradient(135deg, rgba(79, 70, 229, 0.08), rgba(99, 102, 241, 0.03));
+            border: 1px solid rgba(79, 70, 229, 0.3);
+            border-radius: 12px;
+            padding: 60px 40px;
+            text-align: center;
+            margin: 80px 0;
+        }
+
+        .cta-section h2 {
+            margin-bottom: 16px;
+        }
+
+        .cta-section p {
+            color: var(--text-muted);
+            font-size: 18px;
+            margin-bottom: 32px;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .cta-button {
+            display: inline-block;
+            background: var(--accent);
+            color: white;
+            padding: 14px 32px;
+            border-radius: 6px;
+            text-decoration: none;
+            font-weight: 500;
+            transition: all 0.2s;
+        }
+
+        .cta-button:hover {
+            background: var(--accent-light);
+            transform: translateY(-2px);
+        }
+
+        /* Footer */
+        footer {
+            padding: 40px 0;
+            border-top: 1px solid var(--border);
+            text-align: center;
+            color: var(--text-muted);
+            font-size: 14px;
+        }
+
+        /* Coming Soon Overlay */
+        .coming-soon {
+            position: relative;
+        }
+
+        .coming-soon::after {
+            content: 'Bientôt disponible';
+            position: absolute;
+            top: 12px;
+            right: 12px;
+            background: rgba(79, 70, 229, 0.9);
+            color: white;
+            padding: 6px 12px;
+            border-radius: 4px;
+            font-size: 11px;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 36px;
+            }
+
+            h2 {
+                font-size: 28px;
+            }
+
+            .lead {
+                font-size: 18px;
+            }
+
+            .resource-grid {
+                grid-template-columns: 1fr;
+            }
+
+            nav a {
+                margin-left: 20px;
+            }
+
+            .cta-section {
+                padding: 40px 24px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <a href="/" class="logo">SCANALIS</a>
+            <nav>
+                <a href="/">Accueil</a>
+                <a href="/ressources" class="active">Ressources</a>
+                <a href="/#contact">Contact</a>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <section class="hero">
+            <div class="container">
+                <h1>Guides gratuits pour <span class="highlight">sécuriser</span><br>vos APIs & automatisations IA</h1>
+                <p class="lead">Checklists, guides pratiques et études de cas pour protéger vos intégrations, détecter les failles avant qu'elles ne coûtent cher.</p>
+            </div>
+        </section>
+
+        <!-- Guides Pratiques -->
+        <section>
+            <div class="container">
+                <h2>📚 Guides pratiques</h2>
+                <p class="section-intro">Tutoriels étape par étape pour sécuriser vos outils et automatisations</p>
+                
+                <div class="resource-grid">
+                    <div class="resource-card coming-soon">
+                        <div class="card-header">
+                            <span class="icon">🔧</span>
+                            <span class="badge beginner">Débutant</span>
+                        </div>
+                        <h3>Comment sécuriser n8n en 2026</h3>
+                        <p>Les 7 erreurs critiques que 80% des utilisateurs n8n commettent, et comment les corriger en moins d'une heure.</p>
+                        <div class="card-footer">
+                            <span class="read-time">⏱️ 12 min</span>
+                            <a href="/#contact" class="cta-link">Lire le guide →</a>
+                        </div>
+                    </div>
+
+                    <div class="resource-card coming-soon">
+                        <div class="card-header">
+                            <span class="icon">🔗</span>
+                            <span class="badge beginner">Débutant</span>
+                        </div>
+                        <h3>Protéger vos webhooks Zapier/Make</h3>
+                        <p>Vos webhooks sont-ils publics ? Découvrez comment ajouter l'authentification et la validation en 5 étapes.</p>
+                        <div class="card-footer">
+                            <span class="read-time">⏱️ 10 min</span>
+                            <a href="/#contact" class="cta-link">Lire le guide →</a>
+                        </div>
+                    </div>
+
+                    <div class="resource-card coming-soon">
+                        <div class="card-header">
+                            <span class="icon">🛡️</span>
+                            <span class="badge intermediate">Intermédiaire</span>
+                        </div>
+                        <h3>Guide complet : Sécurité API & IA</h3>
+                        <p>De l'authentification au monitoring en temps réel : tout ce qu'une agence IA doit savoir pour protéger ses APIs.</p>
+                        <div class="card-footer">
+                            <span class="read-time">⏱️ 25 min</span>
+                            <a href="/#contact" class="cta-link">Lire le guide →</a>
+                        </div>
+                    </div>
+
+                    <div class="resource-card coming-soon">
+                        <div class="card-header">
+                            <span class="icon">🤖</span>
+                            <span class="badge intermediate">Intermédiaire</span>
+                        </div>
+                        <h3>Prompt Injection : Guide de protection</h3>
+                        <p>Comment détecter et bloquer les attaques par injection de prompts sur vos chatbots GPT-4/Claude.</p>
+                        <div class="card-footer">
+                            <span class="read-time">⏱️ 15 min</span>
+                            <a href="/#contact" class="cta-link">Lire le guide →</a>
+                        </div>
+                    </div>
+
+                    <div class="resource-card coming-soon">
+                        <div class="card-header">
+                            <span class="icon">🌐</span>
+                            <span class="badge intermediate">Intermédiaire</span>
+                        </div>
+                        <h3>CORS : La faille que 80% ignorent</h3>
+                        <p>Configuration CORS mal faite = exfiltration de données. Apprenez à configurer correctement vos headers.</p>
+                        <div class="card-footer">
+                            <span class="read-time">⏱️ 8 min</span>
+                            <a href="/#contact" class="cta-link">Lire le guide →</a>
+                        </div>
+                    </div>
+
+                    <div class="resource-card coming-soon">
+                        <div class="card-header">
+                            <span class="icon">🔍</span>
+                            <span class="badge advanced">Avancé</span>
+                        </div>
+                        <h3>Endpoints oubliés : Comment les détecter</h3>
+                        <p>Cartographie complète de votre surface d'attaque pour identifier les routes exposées que vous aviez oubliées.</p>
+                        <div class="card-footer">
+                            <span class="read-time">⏱️ 18 min</span>
+                            <a href="/#contact" class="cta-link">Lire le guide →</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Checklists -->
+        <section>
+            <div class="container">
+                <h2>✅ Checklists téléchargeables</h2>
+                <p class="section-intro">Vérifications rapides pour auditer votre sécurité</p>
+                
+                <div class="resource-grid">
+                    <div class="resource-card coming-soon">
+                        <div class="card-header">
+                            <span class="icon">📋</span>
+                            <span class="badge beginner">Débutant</span>
+                        </div>
+                        <h3>Checklist : 30 points de contrôle API Security</h3>
+                        <p>La checklist complète pour auditer vos APIs en moins de 30 minutes. PDF téléchargeable et imprimable.</p>
+                        <div class="card-footer">
+                            <span class="read-time">📄 PDF</span>
+                            <a href="/#contact" class="cta-link">Télécharger →</a>
+                        </div>
+                    </div>
+
+                    <div class="resource-card coming-soon">
+                        <div class="card-header">
+                            <span class="icon">⚖️</span>
+                            <span class="badge intermediate">Intermédiaire</span>
+                        </div>
+                        <h3>RGPD & IA : Êtes-vous conforme ?</h3>
+                        <p>Checklist spécifique pour les agences IA : vérifiez votre conformité RGPD en 20 questions essentielles.</p>
+                        <div class="card-footer">
+                            <span class="read-time">📄 PDF</span>
+                            <a href="/#contact" class="cta-link">Télécharger →</a>
+                        </div>
+                    </div>
+
+                    <div class="resource-card coming-soon">
+                        <div class="card-header">
+                            <span class="icon">🔐</span>
+                            <span class="badge intermediate">Intermédiaire</span>
+                        </div>
+                        <h3>Sécurité No-Code : Audit en 15 min</h3>
+                        <p>Zapier, Make, n8n : la checklist rapide pour identifier les risques dans vos automatisations no-code.</p>
+                        <div class="card-footer">
+                            <span class="read-time">📄 PDF</span>
+                            <a href="/#contact" class="cta-link">Télécharger →</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Études de cas -->
+        <section>
+            <div class="container">
+                <h2>📊 Études de cas & analyses</h2>
+                <p class="section-intro">Décryptage d'incidents réels et leçons à en tirer</p>
+                
+                <div class="resource-grid">
+                    <div class="resource-card coming-soon">
+                        <div class="card-header">
+                            <span class="icon">🚨</span>
+                            <span class="badge intermediate">Intermédiaire</span>
+                        </div>
+                        <h3>Incident CAF : 6 semaines sans détection</h3>
+                        <p>Analyse complète du piratage d'associations.gouv.fr : ce qui s'est passé, pourquoi, et comment l'éviter.</p>
+                        <div class="card-footer">
+                            <span class="read-time">⏱️ 12 min</span>
+                            <a href="/#contact" class="cta-link">Lire l'analyse →</a>
+                        </div>
+                    </div>
+
+                    <div class="resource-card coming-soon">
+                        <div class="card-header">
+                            <span class="icon">🔎</span>
+                            <span class="badge advanced">Avancé</span>
+                        </div>
+                        <h3>Cas réel : Agence IA, 10 failles critiques</h3>
+                        <p>Retour d'expérience d'un audit complet : les 10 vulnérabilités découvertes et comment elles ont été corrigées.</p>
+                        <div class="card-footer">
+                            <span class="read-time">⏱️ 20 min</span>
+                            <a href="/#contact" class="cta-link">Lire le cas →</a>
+                        </div>
+                    </div>
+
+                    <div class="resource-card coming-soon">
+                        <div class="card-header">
+                            <span class="icon">💡</span>
+                            <span class="badge intermediate">Intermédiaire</span>
+                        </div>
+                        <h3>Prompt Injection : Cas concret ChatGPT</h3>
+                        <p>Comment un chatbot a divulgué les données d'un concurrent via une simple injection de prompt. Démonstration réelle.</p>
+                        <div class="card-footer">
+                            <span class="read-time">⏱️ 10 min</span>
+                            <a href="/#contact" class="cta-link">Lire le cas →</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- CTA Section -->
+        <section class="cta-section">
+            <div class="container">
+                <h2>Besoin d'un audit personnalisé ?</h2>
+                <p>Ces guides vous donnent les bases. Pour une analyse complète de votre surface d'attaque (publique et privée), parlons-en.</p>
+                <a href="/#contact" class="cta-button">Demander un audit</a>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2025 Scanalis. Sécurité API & IA pour agences. Assurée par Hiscox en 2025</p>
+        </div>
+    </footer>
+
+    <script>
+        // Header background on scroll
+        const header = document.querySelector('header');
+
+        window.addEventListener('scroll', () => {
+            const currentScroll = window.pageYOffset;
+            
+            if (currentScroll > 50) {
+                header.style.background = 'rgba(5, 8, 22, 0.95)';
+            } else {
+                header.style.background = 'rgba(10, 14, 39, 0.9)';
+            }
+        });
+    </script>
+</body>
+</html>
