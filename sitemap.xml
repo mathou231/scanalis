@@ -28,25 +28,27 @@
     <priority>0.8</priority>
   </url>
 
-  <!-- 
-  Guides à venir - Décommentez au fur et à mesure de leur publication
-  
+  <!-- Guide : Webhooks Zapier -->
   <url>
     <loc>https://scanalis.fr/guides/webhooks-zapier</loc>
-    <lastmod>2026-01-XX</lastmod>
+    <lastmod>2026-01-19</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
 
-  <url>
-    <loc>https://scanalis.fr/guides/api-security-complete</loc>
-    <lastmod>2026-01-XX</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-
+  <!-- Guide : Prompt Injection -->
   <url>
     <loc>https://scanalis.fr/guides/prompt-injection</loc>
+    <lastmod>2026-01-19</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <!-- 
+  Guides à venir - Ajoutez ces lignes quand vous créerez les guides correspondants
+  
+  <url>
+    <loc>https://scanalis.fr/guides/api-security-complete</loc>
     <lastmod>2026-01-XX</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
