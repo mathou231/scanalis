@@ -21,6 +21,9 @@
             --text: #F1F5F9;
             --text-muted: #94A3B8;
             --border: #1E293B;
+            --success: #22C55E;
+            --warning: #F59E0B;
+            --danger: #EF4444;
         }
 
         body {
@@ -199,7 +202,159 @@
             color: var(--text-muted);
         }
 
-        /* Private Endpoints Section - NOUVELLE SECTION */
+        /* NOUVELLE SECTION : OWASP */
+        .owasp-section {
+            background: var(--darker);
+            border-top: 1px solid var(--border);
+            border-bottom: 1px solid var(--border);
+        }
+
+        .section-subtitle {
+            text-align: center;
+            color: var(--text-muted);
+            font-size: 18px;
+            max-width: 700px;
+            margin: -32px auto 48px;
+        }
+
+        .owasp-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 24px;
+            margin-top: 48px;
+        }
+
+        .owasp-card {
+            background: rgba(79, 70, 229, 0.05);
+            border: 1px solid var(--border);
+            border-radius: 6px;
+            padding: 24px;
+            transition: all 0.2s;
+        }
+
+        .owasp-card:hover {
+            border-color: rgba(79, 70, 229, 0.5);
+        }
+
+        .owasp-number {
+            display: inline-block;
+            background: var(--accent);
+            color: white;
+            padding: 4px 12px;
+            border-radius: 4px;
+            font-size: 12px;
+            font-weight: 700;
+            margin-bottom: 12px;
+        }
+
+        .owasp-card h4 {
+            font-size: 16px;
+            margin-bottom: 8px;
+            color: var(--text);
+        }
+
+        .owasp-card p {
+            font-size: 14px;
+            color: var(--text-muted);
+        }
+
+        /* NOUVELLE SECTION : Livrables */
+        .deliverables {
+            background: linear-gradient(135deg, rgba(79, 70, 229, 0.03), rgba(99, 102, 241, 0.01));
+        }
+
+        .deliverable-box {
+            background: rgba(10, 14, 39, 0.6);
+            border: 1px solid var(--border);
+            border-radius: 8px;
+            padding: 32px;
+            margin-bottom: 24px;
+        }
+
+        .deliverable-box h3 {
+            font-size: 22px;
+            margin-bottom: 16px;
+            font-weight: 600;
+        }
+
+        .deliverable-box ul {
+            list-style: none;
+            margin-top: 16px;
+        }
+
+        .deliverable-box ul li {
+            color: var(--text-muted);
+            font-size: 15px;
+            padding-left: 24px;
+            position: relative;
+            margin-bottom: 8px;
+        }
+
+        .deliverable-box ul li:before {
+            content: "✓";
+            position: absolute;
+            left: 0;
+            color: var(--success);
+            font-weight: bold;
+        }
+
+        .priority-badge {
+            display: inline-block;
+            padding: 6px 12px;
+            border-radius: 4px;
+            font-size: 13px;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        .priority-high {
+            background: rgba(239, 68, 68, 0.2);
+            color: var(--danger);
+        }
+
+        .priority-medium {
+            background: rgba(245, 158, 11, 0.2);
+            color: var(--warning);
+        }
+
+        .priority-low {
+            background: rgba(34, 197, 94, 0.2);
+            color: var(--success);
+        }
+
+        /* NOUVELLE SECTION : Exclusions */
+        .exclusions {
+            background: var(--darker);
+            border-top: 1px solid var(--border);
+            border-bottom: 1px solid var(--border);
+        }
+
+        .exclusion-list {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .exclusion-item {
+            display: flex;
+            gap: 16px;
+            padding: 20px;
+            background: rgba(239, 68, 68, 0.05);
+            border-left: 3px solid var(--danger);
+            border-radius: 4px;
+            margin-bottom: 16px;
+        }
+
+        .exclusion-item span {
+            font-size: 24px;
+        }
+
+        .exclusion-item p {
+            color: var(--text-muted);
+            font-size: 15px;
+        }
+
+        /* Private Endpoints Section */
         .private-endpoints {
             background: linear-gradient(135deg, rgba(79, 70, 229, 0.03), rgba(99, 102, 241, 0.01));
             border-top: 1px solid var(--border);
@@ -415,7 +570,8 @@
 
             .security-grid,
             .approach-grid,
-            .endpoints-grid {
+            .endpoints-grid,
+            .owasp-grid {
                 grid-template-columns: 1fr;
             }
 
@@ -526,7 +682,161 @@
             </div>
         </section>
 
-        <!-- NOUVELLE SECTION : Endpoints Privés -->
+        <!-- NOUVELLE SECTION : OWASP API Top 10 -->
+        <section class="owasp-section">
+            <div class="container">
+                <h2>Mapping OWASP API Top 10</h2>
+                <p class="section-subtitle">Scanalis mappe automatiquement les vulnérabilités détectées sur le référentiel OWASP, reconnu par les RSSI et DSI</p>
+                
+                <div class="owasp-grid">
+                    <div class="owasp-card">
+                        <span class="owasp-number">A01</span>
+                        <h4>Broken Object Level Authorization</h4>
+                        <p>Accès non autorisé aux objets d'autres utilisateurs</p>
+                    </div>
+                    <div class="owasp-card">
+                        <span class="owasp-number">A02</span>
+                        <h4>Broken Authentication</h4>
+                        <p>Failles dans les mécanismes d'authentification</p>
+                    </div>
+                    <div class="owasp-card">
+                        <span class="owasp-number">A04</span>
+                        <h4>Lack of Rate Limiting</h4>
+                        <p>Absence de limitation des requêtes</p>
+                    </div>
+                    <div class="owasp-card">
+                        <span class="owasp-number">A05</span>
+                        <h4>Security Misconfiguration</h4>
+                        <p>Mauvaises configurations de sécurité</p>
+                    </div>
+                    <div class="owasp-card">
+                        <span class="owasp-number">A07</span>
+                        <h4>Security Headers Weakness</h4>
+                        <p>Headers de sécurité manquants ou mal configurés</p>
+                    </div>
+                    <div class="owasp-card">
+                        <span class="owasp-number">A10</span>
+                        <h4>Insufficient Logging</h4>
+                        <p>Journalisation insuffisante des événements</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- NOUVELLE SECTION : Livrables -->
+        <section class="deliverables">
+            <div class="container">
+                <h2>Livrables Scanalis</h2>
+                <p class="section-subtitle">Rapport d'audit complet, plan de remédiation priorisé et scores de sécurité exploitables</p>
+
+                <div class="deliverable-box">
+                    <h3>📊 Rapport d'Audit Expert</h3>
+                    <p style="color: var(--text-muted); margin-bottom: 16px;">Documentation technique complète et compréhensible</p>
+                    <ul>
+                        <li>Résumé exécutif pour décideurs</li>
+                        <li>Surface analysée complète</li>
+                        <li>Forces de sécurité identifiées</li>
+                        <li>Faiblesses détectées avec preuves techniques</li>
+                        <li>Mapping OWASP / IA / RGPD</li>
+                    </ul>
+                </div>
+
+                <div class="deliverable-box">
+                    <h3>🎯 Plan de Remédiation Priorisé</h3>
+                    <p style="color: var(--text-muted); margin-bottom: 24px;">Actions concrètes classées par niveau de criticité</p>
+                    
+                    <div style="background: rgba(239, 68, 68, 0.05); border-left: 3px solid var(--danger); padding: 16px; margin-bottom: 16px; border-radius: 4px;">
+                        <div style="display: flex; align-items: center; gap: 12px; margin-bottom: 8px;">
+                            <span class="priority-badge priority-high">🔴 Haute Priorité</span>
+                            <span style="color: var(--text-muted); font-size: 14px;">30 jours</span>
+                        </div>
+                        <p style="color: var(--text-muted); font-size: 14px;">Failles exploitables immédiatement - Actions techniques concrètes</p>
+                    </div>
+
+                    <div style="background: rgba(245, 158, 11, 0.05); border-left: 3px solid var(--warning); padding: 16px; margin-bottom: 16px; border-radius: 4px;">
+                        <div style="display: flex; align-items: center; gap: 12px; margin-bottom: 8px;">
+                            <span class="priority-badge priority-medium">🟠 Priorité Moyenne</span>
+                            <span style="color: var(--text-muted); font-size: 14px;">60 jours</span>
+                        </div>
+                        <p style="color: var(--text-muted); font-size: 14px;">Renforcement structurel - Séparation public/privé - Documentation API</p>
+                    </div>
+
+                    <div style="background: rgba(34, 197, 94, 0.05); border-left: 3px solid var(--success); padding: 16px; border-radius: 4px;">
+                        <div style="display: flex; align-items: center; gap: 12px; margin-bottom: 8px;">
+                            <span class="priority-badge priority-low">🟢 Long Terme</span>
+                            <span style="color: var(--text-muted); font-size: 14px;">90 jours</span>
+                        </div>
+                        <p style="color: var(--text-muted); font-size: 14px;">Monitoring continu - Gouvernance IA - Journalisation conforme</p>
+                    </div>
+                </div>
+
+                <div class="deliverable-box">
+                    <h3>📈 Scores de Sécurité Globaux</h3>
+                    <p style="color: var(--text-muted); margin-bottom: 16px;">Métriques lisibles pour décideurs et clients finaux</p>
+                    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 16px; margin-top: 16px;">
+                        <div style="background: rgba(79, 70, 229, 0.05); border: 1px solid var(--border); border-radius: 6px; padding: 20px; text-align: center;">
+                            <div style="font-size: 32px; font-weight: 700; color: var(--accent-light);">/100</div>
+                            <div style="color: var(--text-muted); font-size: 14px; margin-top: 8px;">Score API</div>
+                        </div>
+                        <div style="background: rgba(79, 70, 229, 0.05); border: 1px solid var(--border); border-radius: 6px; padding: 20px; text-align: center;">
+                            <div style="font-size: 32px; font-weight: 700; color: var(--accent-light);">/100</div>
+                            <div style="color: var(--text-muted); font-size: 14px; margin-top: 8px;">Score IA</div>
+                        </div>
+                        <div style="background: rgba(79, 70, 229, 0.05); border: 1px solid var(--border); border-radius: 6px; padding: 20px; text-align: center;">
+                            <div style="font-size: 32px; font-weight: 700; color: var(--accent-light);">/100</div>
+                            <div style="color: var(--text-muted); font-size: 14px; margin-top: 8px;">Score Conformité</div>
+                        </div>
+                        <div style="background: rgba(79, 70, 229, 0.1); border: 1px solid rgba(79, 70, 229, 0.4); border-radius: 6px; padding: 20px; text-align: center;">
+                            <div style="font-size: 32px; font-weight: 700; color: var(--accent-light);">/100</div>
+                            <div style="color: var(--text); font-size: 14px; margin-top: 8px; font-weight: 600;">Score Global</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- NOUVELLE SECTION : Exclusions -->
+        <section class="exclusions">
+            <div class="container">
+                <h2>Ce que Scanalis ne fait PAS</h2>
+                <p class="section-subtitle">Pour une clarté contractuelle totale - Audit de surface et gouvernance, pas un outil offensif</p>
+
+                <div class="exclusion-list">
+                    <div class="exclusion-item">
+                        <span>❌</span>
+                        <p><strong>Aucun pentest intrusif</strong> - Pas d'exploitation active de vulnérabilités</p>
+                    </div>
+                    <div class="exclusion-item">
+                        <span>❌</span>
+                        <p><strong>Aucune exploitation de faille</strong> - Détection uniquement, pas de compromission</p>
+                    </div>
+                    <div class="exclusion-item">
+                        <span>❌</span>
+                        <p><strong>Aucun DoS / fuzzing agressif</strong> - Tests non destructifs sur vos systèmes</p>
+                    </div>
+                    <div class="exclusion-item">
+                        <span>❌</span>
+                        <p><strong>Aucun accès sans autorisation écrite</strong> - Respect total de vos permissions</p>
+                    </div>
+                    <div class="exclusion-item">
+                        <span>❌</span>
+                        <p><strong>Aucun test destructif sur la production</strong> - Aucune perturbation de votre activité</p>
+                    </div>
+                </div>
+
+                <div style="max-width: 800px; margin: 48px auto 0; text-align: center;">
+                    <div style="background: rgba(79, 70, 229, 0.08); border: 1px solid rgba(79, 70, 229, 0.3); border-radius: 8px; padding: 32px;">
+                        <h3 style="font-size: 22px; margin-bottom: 16px; color: var(--accent-light);">Approche Non Intrusive</h3>
+                        <p style="color: var(--text-muted); font-size: 16px; line-height: 1.7;">
+                            Scanalis analyse votre surface d'attaque sans perturber vos opérations. 
+                            Notre méthodologie repose sur l'observation et l'analyse passive, 
+                            garantissant une évaluation complète de votre sécurité sans risque pour votre production.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
         <section id="endpoints" class="private-endpoints">
             <div class="container">
                 <h2>Audit des endpoints publics et privés</h2>
