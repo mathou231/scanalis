@@ -1,1019 +1,432 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Scanalis - Sécurité API & IA pour Agences</title>
-    <meta name="description" content="Protection des intégrations API et automatisations IA pour agences IA et SaaS. Expertise en cybersécurité pour vos clients.">
-    <meta name="google-site-verification" content="niiy-7qkTsOFvC3owFYdsrcZo7QkLMX592pi_-e5xuw" />
-    <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
-        :root {
-            --dark: #0A0E27;
-            --darker: #050816;
-            --accent: #4F46E5;
-            --accent-light: #6366F1;
-            --text: #F1F5F9;
-            --text-muted: #94A3B8;
-            --border: #1E293B;
-            --success: #22C55E;
-            --warning: #F59E0B;
-            --danger: #EF4444;
-        }
-
-        body {
-            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
-            background: var(--dark);
-            color: var(--text);
-            line-height: 1.6;
-            overflow-x: hidden;
-        }
-
-        .container {
-            max-width: 1100px;
-            margin: 0 auto;
-            padding: 0 24px;
-        }
-
-        /* Header */
-        header {
-            position: fixed;
-            top: 0;
-            width: 100%;
-            background: rgba(10, 14, 39, 0.9);
-            backdrop-filter: blur(12px);
-            border-bottom: 1px solid var(--border);
-            z-index: 100;
-            padding: 20px 0;
-        }
-
-        header .container {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
-
-        .logo {
-            font-size: 22px;
-            font-weight: 600;
-            color: var(--text);
-            letter-spacing: -0.5px;
-        }
-
-        nav a {
-            color: var(--text-muted);
-            text-decoration: none;
-            margin-left: 32px;
-            font-size: 15px;
-            transition: color 0.2s;
-        }
-
-        nav a:hover {
-            color: var(--text);
-        }
-
-        /* Hero */
-        .hero {
-            padding: 160px 0 100px;
-            text-align: center;
-        }
-
-        h1 {
-            font-size: 52px;
-            font-weight: 700;
-            line-height: 1.1;
-            margin-bottom: 24px;
-            letter-spacing: -1.5px;
-        }
-
-        .highlight {
-            color: var(--accent-light);
-        }
-
-        .lead {
-            font-size: 20px;
-            color: var(--text-muted);
-            max-width: 600px;
-            margin: 0 auto 48px;
-        }
-
-        .cta {
-            display: inline-block;
-            background: var(--accent);
-            color: white;
-            padding: 14px 32px;
-            border-radius: 6px;
-            text-decoration: none;
-            font-weight: 500;
-            transition: all 0.2s;
-        }
-
-        .cta:hover {
-            background: var(--accent-light);
-            transform: translateY(-1px);
-        }
-
-        /* Section */
-        section {
-            padding: 80px 0;
-        }
-
-        h2 {
-            font-size: 36px;
-            font-weight: 700;
-            margin-bottom: 48px;
-            text-align: center;
-            letter-spacing: -1px;
-        }
-
-        /* Security Focus */
-        .security-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-            gap: 32px;
-            margin-top: 48px;
-        }
-
-        .security-card {
-            background: linear-gradient(135deg, rgba(79, 70, 229, 0.05), rgba(99, 102, 241, 0.02));
-            border: 1px solid var(--border);
-            border-radius: 8px;
-            padding: 32px;
-            transition: all 0.3s;
-        }
-
-        .security-card:hover {
-            border-color: rgba(79, 70, 229, 0.4);
-            transform: translateY(-2px);
-        }
-
-        .security-card h3 {
-            font-size: 20px;
-            margin-bottom: 12px;
-            font-weight: 600;
-        }
-
-        .security-card p {
-            color: var(--text-muted);
-            font-size: 15px;
-            line-height: 1.7;
-        }
-
-        .icon {
-            font-size: 32px;
-            margin-bottom: 16px;
-            display: block;
-        }
-
-        /* Threats */
-        .threats {
-            background: var(--darker);
-            border-top: 1px solid var(--border);
-            border-bottom: 1px solid var(--border);
-        }
-
-        .threat-list {
-            max-width: 800px;
-            margin: 0 auto;
-        }
-
-        .threat-item {
-            display: flex;
-            gap: 20px;
-            padding: 24px 0;
-            border-bottom: 1px solid var(--border);
-        }
-
-        .threat-item:last-child {
-            border-bottom: none;
-        }
-
-        .threat-item strong {
-            color: var(--text);
-            min-width: 200px;
-        }
-
-        .threat-item span {
-            color: var(--text-muted);
-        }
-
-        /* NOUVELLE SECTION : OWASP */
-        .owasp-section {
-            background: var(--darker);
-            border-top: 1px solid var(--border);
-            border-bottom: 1px solid var(--border);
-        }
-
-        .section-subtitle {
-            text-align: center;
-            color: var(--text-muted);
-            font-size: 18px;
-            max-width: 700px;
-            margin: -32px auto 48px;
-        }
-
-        .owasp-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 24px;
-            margin-top: 48px;
-        }
-
-        .owasp-card {
-            background: rgba(79, 70, 229, 0.05);
-            border: 1px solid var(--border);
-            border-radius: 6px;
-            padding: 24px;
-            transition: all 0.2s;
-        }
-
-        .owasp-card:hover {
-            border-color: rgba(79, 70, 229, 0.5);
-        }
-
-        .owasp-number {
-            display: inline-block;
-            background: var(--accent);
-            color: white;
-            padding: 4px 12px;
-            border-radius: 4px;
-            font-size: 12px;
-            font-weight: 700;
-            margin-bottom: 12px;
-        }
-
-        .owasp-card h4 {
-            font-size: 16px;
-            margin-bottom: 8px;
-            color: var(--text);
-        }
-
-        .owasp-card p {
-            font-size: 14px;
-            color: var(--text-muted);
-        }
-
-        /* NOUVELLE SECTION : Livrables */
-        .deliverables {
-            background: linear-gradient(135deg, rgba(79, 70, 229, 0.03), rgba(99, 102, 241, 0.01));
-        }
-
-        .deliverable-box {
-            background: rgba(10, 14, 39, 0.6);
-            border: 1px solid var(--border);
-            border-radius: 8px;
-            padding: 32px;
-            margin-bottom: 24px;
-        }
-
-        .deliverable-box h3 {
-            font-size: 22px;
-            margin-bottom: 16px;
-            font-weight: 600;
-        }
-
-        .deliverable-box ul {
-            list-style: none;
-            margin-top: 16px;
-        }
-
-        .deliverable-box ul li {
-            color: var(--text-muted);
-            font-size: 15px;
-            padding-left: 24px;
-            position: relative;
-            margin-bottom: 8px;
-        }
-
-        .deliverable-box ul li:before {
-            content: "✓";
-            position: absolute;
-            left: 0;
-            color: var(--success);
-            font-weight: bold;
-        }
-
-        .priority-badge {
-            display: inline-block;
-            padding: 6px 12px;
-            border-radius: 4px;
-            font-size: 13px;
-            font-weight: 600;
-            text-transform: uppercase;
-            letter-spacing: 0.5px;
-        }
-
-        .priority-high {
-            background: rgba(239, 68, 68, 0.2);
-            color: var(--danger);
-        }
-
-        .priority-medium {
-            background: rgba(245, 158, 11, 0.2);
-            color: var(--warning);
-        }
-
-        .priority-low {
-            background: rgba(34, 197, 94, 0.2);
-            color: var(--success);
-        }
-
-        /* NOUVELLE SECTION : Exclusions */
-        .exclusions {
-            background: var(--darker);
-            border-top: 1px solid var(--border);
-            border-bottom: 1px solid var(--border);
-        }
-
-        .exclusion-list {
-            max-width: 800px;
-            margin: 0 auto;
-        }
-
-        .exclusion-item {
-            display: flex;
-            gap: 16px;
-            padding: 20px;
-            background: rgba(239, 68, 68, 0.05);
-            border-left: 3px solid var(--danger);
-            border-radius: 4px;
-            margin-bottom: 16px;
-        }
-
-        .exclusion-item span {
-            font-size: 24px;
-        }
-
-        .exclusion-item p {
-            color: var(--text-muted);
-            font-size: 15px;
-        }
-
-        /* Private Endpoints Section */
-        .private-endpoints {
-            background: linear-gradient(135deg, rgba(79, 70, 229, 0.03), rgba(99, 102, 241, 0.01));
-            border-top: 1px solid var(--border);
-        }
-
-        .endpoints-intro {
-            max-width: 800px;
-            margin: 0 auto 48px;
-            text-align: center;
-        }
-
-        .endpoints-intro p {
-            color: var(--text-muted);
-            font-size: 18px;
-            line-height: 1.8;
-            margin-bottom: 16px;
-        }
-
-        .endpoints-grid {
-            display: grid;
-            grid-template-columns: repeat(2, 1fr);
-            gap: 32px;
-            margin-top: 48px;
-        }
-
-        .endpoint-box {
-            background: rgba(10, 14, 39, 0.6);
-            border: 1px solid var(--border);
-            border-radius: 8px;
-            padding: 32px;
-            transition: all 0.3s;
-        }
-
-        .endpoint-box:hover {
-            border-color: rgba(79, 70, 229, 0.5);
-            transform: translateY(-2px);
-        }
-
-        .endpoint-box h3 {
-            font-size: 22px;
-            margin-bottom: 16px;
-            font-weight: 600;
-            display: flex;
-            align-items: center;
-            gap: 12px;
-        }
-
-        .endpoint-box .badge {
-            display: inline-block;
-            padding: 4px 12px;
-            background: rgba(79, 70, 229, 0.2);
-            color: var(--accent-light);
-            border-radius: 4px;
-            font-size: 12px;
-            font-weight: 500;
-            text-transform: uppercase;
-            letter-spacing: 0.5px;
-        }
-
-        .endpoint-box .badge.public {
-            background: rgba(34, 197, 94, 0.2);
-            color: #4ade80;
-        }
-
-        .endpoint-box .badge.private {
-            background: rgba(251, 146, 60, 0.2);
-            color: #fb923c;
-        }
-
-        .endpoint-box ul {
-            list-style: none;
-            margin-top: 16px;
-        }
-
-        .endpoint-box ul li {
-            color: var(--text-muted);
-            font-size: 15px;
-            line-height: 1.8;
-            padding-left: 24px;
-            position: relative;
-        }
-
-        .endpoint-box ul li:before {
-            content: "✓";
-            position: absolute;
-            left: 0;
-            color: var(--accent-light);
-            font-weight: bold;
-        }
-
-        .guarantee-box {
-            max-width: 700px;
-            margin: 48px auto 0;
-            background: rgba(79, 70, 229, 0.08);
-            border: 1px solid rgba(79, 70, 229, 0.3);
-            border-radius: 8px;
-            padding: 32px;
-            text-align: center;
-        }
-
-        .guarantee-box h4 {
-            font-size: 20px;
-            margin-bottom: 16px;
-            font-weight: 600;
-            color: var(--accent-light);
-        }
-
-        .guarantee-box p {
-            color: var(--text-muted);
-            font-size: 16px;
-            line-height: 1.7;
-        }
-
-        .guarantee-box strong {
-            color: var(--text);
-        }
-
-        /* Approach */
-        .approach-grid {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 40px;
-            margin-top: 48px;
-        }
-
-        .approach-step {
-            text-align: center;
-        }
-
-        .step-number {
-            width: 48px;
-            height: 48px;
-            background: var(--accent);
-            color: white;
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-weight: 700;
-            font-size: 20px;
-            margin: 0 auto 20px;
-        }
-
-        .approach-step h3 {
-            font-size: 18px;
-            margin-bottom: 12px;
-            font-weight: 600;
-        }
-
-        .approach-step p {
-            color: var(--text-muted);
-            font-size: 15px;
-        }
-
-        /* Contact */
-        .contact {
-            text-align: center;
-            background: var(--darker);
-        }
-
-        .contact-info {
-            display: flex;
-            gap: 48px;
-            justify-content: center;
-            margin-top: 40px;
-            flex-wrap: wrap;
-        }
-
-        .contact-item {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            gap: 8px;
-        }
-
-        .contact-item .icon {
-            font-size: 24px;
-            margin-bottom: 4px;
-        }
-
-        .contact-item a {
-            color: var(--accent-light);
-            text-decoration: none;
-            font-weight: 500;
-        }
-
-        .contact-item a:hover {
-            text-decoration: underline;
-        }
-
-        /* Footer */
-        footer {
-            padding: 40px 0;
-            border-top: 1px solid var(--border);
-            text-align: center;
-            color: var(--text-muted);
-            font-size: 14px;
-        }
-
-        /* Responsive */
-        @media (max-width: 768px) {
-            h1 {
-                font-size: 36px;
-            }
-
-            h2 {
-                font-size: 28px;
-            }
-
-            .lead {
-                font-size: 18px;
-            }
-
-            .security-grid,
-            .approach-grid,
-            .endpoints-grid,
-            .owasp-grid {
-                grid-template-columns: 1fr;
-            }
-
-            nav a {
-                margin-left: 20px;
-            }
-
-            .threat-item {
-                flex-direction: column;
-                gap: 8px;
-            }
-
-            .threat-item strong {
-                min-width: auto;
-            }
-        }
-    </style>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Scanalis Audit non-intrusif Sécurité API & IA</title>
+  <meta name="description" content="Scanalis réalise un audit non-intrusif de surface d’attaque API & IA : TLS, headers, CORS, rate limiting, auth, OWASP API Top 10, prompt injection, RGPD/AI Act. Livrables dirigeants + plan 30/60/90." />
+
+  <style>
+    :root{
+      --dark:#0A0E27;
+      --darker:#050816;
+      --accent:#4F46E5;
+      --accent-light:#6366F1;
+      --text:#F1F5F9;
+      --text-muted:#94A3B8;
+      --border:#1E293B;
+      --success:#22C55E;
+      --warning:#F59E0B;
+      --danger:#EF4444;
+      --card: rgba(255,255,255,0.02);
+    }
+    *{box-sizing:border-box;margin:0;padding:0}
+    body{
+      font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;
+      background: radial-gradient(1200px 600px at 50% -200px, rgba(99,102,241,0.18), transparent 55%),
+                  radial-gradient(900px 500px at 10% 10%, rgba(79,70,229,0.12), transparent 60%),
+                  var(--dark);
+      color:var(--text);
+      line-height:1.6;
+      overflow-x:hidden;
+    }
+    .container{max-width:1100px;margin:0 auto;padding:0 24px}
+    header{
+      position:fixed;top:0;left:0;width:100%;
+      background: rgba(10,14,39,0.86);
+      backdrop-filter: blur(10px);
+      border-bottom:1px solid var(--border);
+      z-index:100;
+    }
+    header .bar{
+      display:flex;align-items:center;justify-content:space-between;
+      padding:16px 0;
+    }
+    .logo{font-size:18px;font-weight:650;letter-spacing:0.5px}
+    nav a{
+      color:var(--text-muted);text-decoration:none;
+      margin-left:22px;font-size:14px;transition:color .2s;
+    }
+    nav a:hover{color:var(--text)}
+    .btn{
+      display:inline-block;
+      background:var(--accent);
+      color:white;text-decoration:none;
+      padding:12px 18px;border-radius:10px;
+      font-weight:600;font-size:14px;
+      transition:transform .15s, background .2s;
+      border:1px solid rgba(99,102,241,0.25);
+    }
+    .btn:hover{background:var(--accent-light);transform:translateY(-1px)}
+    .btn.ghost{
+      background:transparent;
+      border:1px solid rgba(148,163,184,0.25);
+      color:var(--text);
+    }
+    .hero{
+      padding:120px 0 52px;
+      text-align:left;
+    }
+    .kicker{
+      display:inline-flex;gap:10px;align-items:center;
+      color:var(--text-muted);font-size:13px;
+      border:1px solid rgba(148,163,184,0.18);
+      background: rgba(255,255,255,0.02);
+      padding:8px 12px;border-radius:999px;
+      margin-bottom:18px;
+    }
+    h1{
+      font-size:44px;line-height:1.1;
+      letter-spacing:-1px;
+      max-width:900px;
+      margin-bottom:16px;
+    }
+    .hl{color:var(--accent-light)}
+    .lead{
+      font-size:18px;color:var(--text-muted);
+      max-width:780px;margin-bottom:22px;
+    }
+    .hero-cta{display:flex;gap:12px;flex-wrap:wrap;margin-top:12px}
+    .trust{
+      margin-top:18px;
+      color:var(--text-muted);font-size:13px;
+      display:flex;gap:18px;flex-wrap:wrap;
+    }
+    .trust span{display:inline-flex;gap:8px;align-items:center}
+    section{padding:56px 0;border-top:1px solid rgba(30,41,59,0.55)}
+    h2{
+      font-size:26px;letter-spacing:-0.6px;
+      margin-bottom:14px;
+    }
+    .sub{color:var(--text-muted);max-width:820px}
+    .grid{
+      display:grid;gap:16px;margin-top:18px;
+      grid-template-columns: repeat(3, minmax(0,1fr));
+    }
+    .card{
+      background: linear-gradient(180deg, rgba(255,255,255,0.03), rgba(255,255,255,0.01));
+      border:1px solid rgba(30,41,59,0.9);
+      border-radius:14px;
+      padding:18px;
+    }
+    .card h3{font-size:16px;margin-bottom:6px}
+    .card p, .card li{color:var(--text-muted);font-size:14px}
+    .list{margin-top:10px;padding-left:18px}
+    .pill{
+      display:inline-block;
+      font-size:12px;
+      color:var(--text-muted);
+      border:1px solid rgba(148,163,184,0.18);
+      background: rgba(255,255,255,0.02);
+      padding:6px 10px;border-radius:999px;
+      margin:6px 8px 0 0;
+    }
+    .two{
+      display:grid;gap:16px;margin-top:18px;
+      grid-template-columns: repeat(2, minmax(0,1fr));
+    }
+    .box{
+      background:rgba(10,14,39,0.55);
+      border:1px solid rgba(30,41,59,0.9);
+      border-radius:14px;padding:18px;
+    }
+    .badge{
+      display:inline-flex;align-items:center;
+      font-size:12px;font-weight:700;
+      padding:6px 10px;border-radius:999px;
+      border:1px solid rgba(148,163,184,0.2);
+      color:var(--text);
+      margin-bottom:10px;
+    }
+    .badge.public{border-color: rgba(34,197,94,0.35)}
+    .badge.private{border-color: rgba(245,158,11,0.35)}
+    .deliver{
+      display:grid;gap:16px;margin-top:18px;
+      grid-template-columns: 1.2fr 0.8fr;
+      align-items:start;
+    }
+    .score{
+      display:grid;gap:12px;
+      grid-template-columns: 1fr;
+    }
+    .score .mini{
+      text-align:center;
+      padding:16px;border-radius:14px;
+      border:1px solid rgba(30,41,59,0.9);
+      background: rgba(255,255,255,0.02);
+    }
+    .score .n{font-size:30px;font-weight:800;color:var(--accent-light)}
+    .score .t{font-size:13px;color:var(--text-muted);margin-top:4px}
+    .cta-block{
+      padding:22px;border-radius:16px;
+      border:1px solid rgba(99,102,241,0.28);
+      background: linear-gradient(135deg, rgba(79,70,229,0.12), rgba(99,102,241,0.05));
+      display:flex;justify-content:space-between;align-items:center;gap:16px;
+      flex-wrap:wrap;
+      margin-top:18px;
+    }
+    footer{
+      padding:34px 0;border-top:1px solid rgba(30,41,59,0.55);
+      color:var(--text-muted);font-size:13px;
+    }
+    .small{font-size:13px;color:var(--text-muted)}
+    @media (max-width: 920px){
+      .grid{grid-template-columns: 1fr}
+      .two{grid-template-columns: 1fr}
+      .deliver{grid-template-columns: 1fr}
+      h1{font-size:34px}
+    }
+  </style>
 </head>
+
 <body>
-    <header>
-        <div class="container">
-            <div class="logo">SCANALIS</div>
-            <nav>
-                <a href="#securite">Sécurité</a>
-                <a href="#endpoints">Endpoints</a>
-                <a href="#partenariat">Partenariat</a>
-                <a href="/ressources">Ressources</a>
-                <a href="#contact">Contact</a>
-            </nav>
-        </div>
-    </header>
+  <script>
+  const FORM_URL = "https://tally.so/r/QK5XaY";
+  const CAL_URL  = "https://cal.com/mathilde-de-roumilly-3zskha/30min";
+</script>
 
-    <main>
-        <section class="hero">
-            <div class="container">
-                <h1>Sécurisez les <span class="highlight">automatisations IA</span><br>de vos clients</h1>
-                <p class="lead">Protection experte des API et intégrations IA pour agences SaaS. Votre tranquillité d'esprit, leur confiance renforcée.</p>
-                <a href="#contact" class="cta">Parlons de votre projet</a>
-            </div>
-        </section>
 
-        <section id="securite">
-            <div class="container">
-                <h2>Protection complète de vos intégrations</h2>
-                <div class="security-grid">
-                    <div class="security-card">
-                        <span class="icon">🔐</span>
-                        <h3>Sécurité des API</h3>
-                        <p>Audit approfondi de vos endpoints, authentification renforcée, rate limiting intelligent et monitoring en temps réel des accès.</p>
-                    </div>
-                    <div class="security-card">
-                        <span class="icon">🤖</span>
-                        <h3>Protection des modèles IA</h3>
-                        <p>Validation des entrées/sorties, détection des prompt injections, protection contre le data poisoning et surveillance des comportements anormaux.</p>
-                    </div>
-                    <div class="security-card">
-                        <span class="icon">⚡</span>
-                        <h3>Automatisations sécurisées</h3>
-                        <p>Vérification des workflows, gestion des secrets, isolation des environnements et traçabilité complète des opérations automatisées.</p>
-                    </div>
-                    <div class="security-card">
-                        <span class="icon">🔍</span>
-                        <h3>Audit continu</h3>
-                        <p>Scan automatique des vulnérabilités, tests d'intrusion réguliers, veille sur les nouvelles menaces et rapports de conformité.</p>
-                    </div>
-                    <div class="security-card">
-                        <span class="icon">📊</span>
-                        <h3>Monitoring intelligent</h3>
-                        <p>Détection des anomalies par IA, alertes en temps réel, tableaux de bord personnalisés et analytics de sécurité avancés.</p>
-                    </div>
-                    <div class="security-card">
-                        <span class="icon">🛡️</span>
-                        <h3>Réponse aux incidents</h3>
-                        <p>Plan d'intervention défini, support réactif et accompagnement post-incident pour renforcer votre posture.</p>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <section class="threats">
-            <div class="container">
-                <h2>Les menaces que nous neutralisons</h2>
-                <div class="threat-list">
-                    <div class="threat-item">
-                        <strong>Prompt Injection</strong>
-                        <span>Manipulation des modèles IA via des instructions malveillantes cachées dans les inputs utilisateurs</span>
-                    </div>
-                    <div class="threat-item">
-                        <strong>API Abuse</strong>
-                        <span>Exploitation des endpoints pour exfiltrer des données ou saturer vos ressources</span>
-                    </div>
-                    <div class="threat-item">
-                        <strong>Credential Stuffing</strong>
-                        <span>Tentatives d'accès automatisées avec des identifiants volés sur d'autres services</span>
-                    </div>
-                    <div class="threat-item">
-                        <strong>Data Poisoning</strong>
-                        <span>Injection de données corrompues pour altérer les résultats de vos modèles</span>
-                    </div>
-                    <div class="threat-item">
-                        <strong>Workflow Hijacking</strong>
-                        <span>Détournement de vos automatisations pour des actions non autorisées</span>
-                    </div>
-                    <div class="threat-item">
-                        <strong>Model Theft</strong>
-                        <span>Extraction progressive de la logique de vos modèles propriétaires via des requêtes ciblées</span>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- NOUVELLE SECTION : OWASP API Top 10 -->
-        <section class="owasp-section">
-            <div class="container">
-                <h2>Mapping OWASP API Top 10</h2>
-                <p class="section-subtitle">Scanalis mappe automatiquement les vulnérabilités détectées sur le référentiel OWASP, reconnu par les RSSI et DSI</p>
-                
-                <div class="owasp-grid">
-                    <div class="owasp-card">
-                        <span class="owasp-number">A01</span>
-                        <h4>Broken Object Level Authorization</h4>
-                        <p>Accès non autorisé aux objets d'autres utilisateurs</p>
-                    </div>
-                    <div class="owasp-card">
-                        <span class="owasp-number">A02</span>
-                        <h4>Broken Authentication</h4>
-                        <p>Failles dans les mécanismes d'authentification</p>
-                    </div>
-                    <div class="owasp-card">
-                        <span class="owasp-number">A04</span>
-                        <h4>Lack of Rate Limiting</h4>
-                        <p>Absence de limitation des requêtes</p>
-                    </div>
-                    <div class="owasp-card">
-                        <span class="owasp-number">A05</span>
-                        <h4>Security Misconfiguration</h4>
-                        <p>Mauvaises configurations de sécurité</p>
-                    </div>
-                    <div class="owasp-card">
-                        <span class="owasp-number">A07</span>
-                        <h4>Security Headers Weakness</h4>
-                        <p>Headers de sécurité manquants ou mal configurés</p>
-                    </div>
-                    <div class="owasp-card">
-                        <span class="owasp-number">A10</span>
-                        <h4>Insufficient Logging</h4>
-                        <p>Journalisation insuffisante des événements</p>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- NOUVELLE SECTION : Livrables -->
-        <section class="deliverables">
-            <div class="container">
-                <h2>Livrables Scanalis</h2>
-                <p class="section-subtitle">Rapport d'audit complet, plan de remédiation priorisé et scores de sécurité exploitables</p>
-
-                <div class="deliverable-box">
-                    <h3>📊 Rapport d'Audit Expert</h3>
-                    <p style="color: var(--text-muted); margin-bottom: 16px;">Documentation technique complète et compréhensible</p>
-                    <ul>
-                        <li>Résumé exécutif pour décideurs</li>
-                        <li>Surface analysée complète</li>
-                        <li>Forces de sécurité identifiées</li>
-                        <li>Faiblesses détectées avec preuves techniques</li>
-                        <li>Mapping OWASP / IA / RGPD</li>
-                    </ul>
-                </div>
-
-                <div class="deliverable-box">
-                    <h3>🎯 Plan de Remédiation Priorisé</h3>
-                    <p style="color: var(--text-muted); margin-bottom: 24px;">Actions concrètes classées par niveau de criticité</p>
-                    
-                    <div style="background: rgba(239, 68, 68, 0.05); border-left: 3px solid var(--danger); padding: 16px; margin-bottom: 16px; border-radius: 4px;">
-                        <div style="display: flex; align-items: center; gap: 12px; margin-bottom: 8px;">
-                            <span class="priority-badge priority-high">🔴 Haute Priorité</span>
-                            <span style="color: var(--text-muted); font-size: 14px;">30 jours</span>
-                        </div>
-                        <p style="color: var(--text-muted); font-size: 14px;">Failles exploitables immédiatement - Actions techniques concrètes</p>
-                    </div>
-
-                    <div style="background: rgba(245, 158, 11, 0.05); border-left: 3px solid var(--warning); padding: 16px; margin-bottom: 16px; border-radius: 4px;">
-                        <div style="display: flex; align-items: center; gap: 12px; margin-bottom: 8px;">
-                            <span class="priority-badge priority-medium">🟠 Priorité Moyenne</span>
-                            <span style="color: var(--text-muted); font-size: 14px;">60 jours</span>
-                        </div>
-                        <p style="color: var(--text-muted); font-size: 14px;">Renforcement structurel - Séparation public/privé - Documentation API</p>
-                    </div>
-
-                    <div style="background: rgba(34, 197, 94, 0.05); border-left: 3px solid var(--success); padding: 16px; border-radius: 4px;">
-                        <div style="display: flex; align-items: center; gap: 12px; margin-bottom: 8px;">
-                            <span class="priority-badge priority-low">🟢 Long Terme</span>
-                            <span style="color: var(--text-muted); font-size: 14px;">90 jours</span>
-                        </div>
-                        <p style="color: var(--text-muted); font-size: 14px;">Monitoring continu - Gouvernance IA - Journalisation conforme</p>
-                    </div>
-                </div>
-
-                <div class="deliverable-box">
-                    <h3>📈 Scores de Sécurité Globaux</h3>
-                    <p style="color: var(--text-muted); margin-bottom: 16px;">Métriques lisibles pour décideurs et clients finaux</p>
-                    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 16px; margin-top: 16px;">
-                        <div style="background: rgba(79, 70, 229, 0.05); border: 1px solid var(--border); border-radius: 6px; padding: 20px; text-align: center;">
-                            <div style="font-size: 32px; font-weight: 700; color: var(--accent-light);">/100</div>
-                            <div style="color: var(--text-muted); font-size: 14px; margin-top: 8px;">Score API</div>
-                        </div>
-                        <div style="background: rgba(79, 70, 229, 0.05); border: 1px solid var(--border); border-radius: 6px; padding: 20px; text-align: center;">
-                            <div style="font-size: 32px; font-weight: 700; color: var(--accent-light);">/100</div>
-                            <div style="color: var(--text-muted); font-size: 14px; margin-top: 8px;">Score IA</div>
-                        </div>
-                        <div style="background: rgba(79, 70, 229, 0.05); border: 1px solid var(--border); border-radius: 6px; padding: 20px; text-align: center;">
-                            <div style="font-size: 32px; font-weight: 700; color: var(--accent-light);">/100</div>
-                            <div style="color: var(--text-muted); font-size: 14px; margin-top: 8px;">Score Conformité</div>
-                        </div>
-                        <div style="background: rgba(79, 70, 229, 0.1); border: 1px solid rgba(79, 70, 229, 0.4); border-radius: 6px; padding: 20px; text-align: center;">
-                            <div style="font-size: 32px; font-weight: 700; color: var(--accent-light);">/100</div>
-                            <div style="color: var(--text); font-size: 14px; margin-top: 8px; font-weight: 600;">Score Global</div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- NOUVELLE SECTION : Exclusions -->
-        <section class="exclusions">
-            <div class="container">
-                <h2>Ce que Scanalis ne fait PAS</h2>
-                <p class="section-subtitle">Pour une clarté contractuelle totale - Audit de surface et gouvernance, pas un outil offensif</p>
-
-                <div class="exclusion-list">
-                    <div class="exclusion-item">
-                        <span>❌</span>
-                        <p><strong>Aucun pentest intrusif</strong> - Pas d'exploitation active de vulnérabilités</p>
-                    </div>
-                    <div class="exclusion-item">
-                        <span>❌</span>
-                        <p><strong>Aucune exploitation de faille</strong> - Détection uniquement, pas de compromission</p>
-                    </div>
-                    <div class="exclusion-item">
-                        <span>❌</span>
-                        <p><strong>Aucun DoS / fuzzing agressif</strong> - Tests non destructifs sur vos systèmes</p>
-                    </div>
-                    <div class="exclusion-item">
-                        <span>❌</span>
-                        <p><strong>Aucun accès sans autorisation écrite</strong> - Respect total de vos permissions</p>
-                    </div>
-                    <div class="exclusion-item">
-                        <span>❌</span>
-                        <p><strong>Aucun test destructif sur la production</strong> - Aucune perturbation de votre activité</p>
-                    </div>
-                </div>
-
-                <div style="max-width: 800px; margin: 48px auto 0; text-align: center;">
-                    <div style="background: rgba(79, 70, 229, 0.08); border: 1px solid rgba(79, 70, 229, 0.3); border-radius: 8px; padding: 32px;">
-                        <h3 style="font-size: 22px; margin-bottom: 16px; color: var(--accent-light);">Approche Non Intrusive</h3>
-                        <p style="color: var(--text-muted); font-size: 16px; line-height: 1.7;">
-                            Scanalis analyse votre surface d'attaque sans perturber vos opérations. 
-                            Notre méthodologie repose sur l'observation et l'analyse passive, 
-                            garantissant une évaluation complète de votre sécurité sans risque pour votre production.
-                        </p>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <section id="endpoints" class="private-endpoints">
-            <div class="container">
-                <h2>Audit des endpoints publics et privés</h2>
-                <div class="endpoints-intro">
-                    <p>Scanalis analyse votre surface d'exposition complète, en toute transparence et sans compromettre vos systèmes de production.</p>
-                    <p>Notre approche s'adapte selon le type d'endpoints à auditer.</p>
-                </div>
-
-                <div class="endpoints-grid">
-                    <div class="endpoint-box">
-                        <h3>
-                            <span>Endpoints publics</span>
-                            <span class="badge public">Sans accès requis</span>
-                        </h3>
-                        <p style="color: var(--text-muted); margin-bottom: 16px;">
-                            Analyse non intrusive de tout ce qui est accessible publiquement sur Internet.
-                        </p>
-                        <ul>
-                            <li>Scan automatique depuis une URL ou un domaine</li>
-                            <li>Détection des endpoints exposés non documentés</li>
-                            <li>Vérification TLS/SSL et headers de sécurité</li>
-                            <li>Analyse CORS et rate limiting</li>
-                            <li>Détection de failles d'authentification visibles</li>
-                            <li>Audit des risques IA/LLM publics</li>
-                        </ul>
-                    </div>
-
-                    <div class="endpoint-box">
-                        <h3>
-                            <span>Endpoints privés</span>
-                            <span class="badge private">Avec autorisation</span>
-                        </h3>
-                        <p style="color: var(--text-muted); margin-bottom: 16px;">
-                            Audit approfondi de vos APIs internes avec vos propres clés d'accès.
-                        </p>
-                        <ul>
-                            <li>Audit avec vos clés API fournies volontairement</li>
-                            <li>Analyse comme un collaborateur interne</li>
-                            <li>Détection de failles de configuration d'accès</li>
-                            <li>Vérification des permissions et rôles</li>
-                            <li>Test des mécanismes d'authentification</li>
-                            <li>Aucun contournement de sécurité</li>
-                        </ul>
-                    </div>
-                </div>
-
-                <div class="guarantee-box">
-                    <h4>🔒 Notre engagement éthique</h4>
-                    <p>
-                        <strong>Nous ne contournons JAMAIS une authentification.</strong><br>
-                        Pour les endpoints privés, nous auditons uniquement avec les accès que vous nous fournissez volontairement, 
-                        dans le respect total de vos systèmes et de vos données. Scanalis est un outil de détection et de prévention, 
-                        pas un outil d'attaque.
-                    </p>
-                </div>
-            </div>
-        </section>
-
-        <section id="approche">
-            <div class="container">
-                <h2>Notre approche</h2>
-                <div class="approach-grid">
-                    <div class="approach-step">
-                        <div class="step-number">1</div>
-                        <h3>Audit initial</h3>
-                        <p>Analyse complète de votre architecture, identification des points faibles et cartographie des flux sensibles</p>
-                    </div>
-                    <div class="approach-step">
-                        <div class="step-number">2</div>
-                        <h3>Déploiement</h3>
-                        <p>Intégration progressive des protections, configuration sur-mesure et formation de vos équipes</p>
-                    </div>
-                    <div class="approach-step">
-                        <div class="step-number">3</div>
-                        <h3>Surveillance</h3>
-                        <p>Monitoring 24/7, amélioration continue et veille permanente sur les nouvelles menaces</p>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-       <section id="partenariat" class="partenariat">
+  <header>
     <div class="container">
-        <h2>Programme Partenaires</h2>
-        <p class="section-subtitle">Développez votre offre cyber avec Scanalis : audit API & IA non intrusif, livrables dirigeants, modèles flexibles</p>
-
-        <div class="security-grid" style="grid-template-columns: repeat(2, 1fr);">
-            <div class="security-card">
-                <span class="icon">🤝</span>
-                <h3>Complément d'offre</h3>
-                <p>Enrichissez vos missions GRC/conformité avec un audit technique API & IA. Livrables co-brandés, process simple, différenciation immédiate.</p>
-            </div>
-            <div class="security-card">
-                <span class="icon">🏷️</span>
-                <h3>Marque blanche</h3>
-                <p>Déployez Scanalis sous votre identité. Templates personnalisés, industrialisation complète, vous gardez la relation client.</p>
-            </div>
-            <div class="security-card">
-                <span class="icon">💼</span>
-                <h3>Lead partagé</h3>
-                <p>Coopération commerciale : nous qualifions les besoins complexes et vous orientons les projets d'infrastructure ou de remédiation avancée.</p>
-            </div>
-            <div class="security-card">
-                <span class="icon">📊</span>
-                <h3>Livrables dirigeants</h3>
-                <p>Rapports techniques compréhensibles par les décideurs : scores, priorisation 30/60/90 jours, mapping OWASP, export JSON exploitable.</p>
-            </div>
-        </div>
-
-        <div style="max-width: 800px; margin: 48px auto 0; text-align: center;">
-            <div style="background: rgba(79, 70, 229, 0.08); border: 1px solid rgba(79, 70, 229, 0.3); border-radius: 8px; padding: 32px;">
-                <h3 style="font-size: 22px; margin-bottom: 16px; color: var(--accent-light);">Pour qui ?</h3>
-                <p style="color: var(--text-muted); font-size: 16px; line-height: 1.7; margin-bottom: 24px;">
-                    Cabinets cyber, ESN, consultants GRC/ISO, DPO/RGPD, courtiers assurance, agences tech, intégrateurs.
-                </p>
-                <a href="mailto:contact@scanalis.fr" class="cta">Devenir partenaire</a>
-            </div>
-        </div>
+      <div class="bar">
+        <div class="logo">SCANALIS</div>
+        <nav>
+          <a href="#securite">Sécurité</a>
+          <a href="#endpoints">Endpoints</a>
+          <a href="#partenariat">Partenariat</a>
+          <a href="/ressources">Ressources</a>
+          <a href="#demande">Demande</a>
+        </nav>
+      </div>
     </div>
-</section>
-        
-        <section id="contact" class="contact">
-            <div class="container">
-                <h2>Discutons de vos enjeux de sécurité</h2>
-                <p class="lead">Chaque projet est unique. Parlons de votre architecture et de vos besoins spécifiques.</p>
-                <div class="contact-info">
-                    <div class="contact-item">
-                        <span class="icon">📧</span>
-                        <a href="mailto:contact@scanalis.fr">contact@scanalis.fr</a>
-                    </div>
-                    <div class="contact-item">
-                        <span class="icon">💼</span>
-                        <a href="https://linkedin.com/in/mathilde-de-roumilly" target="_blank">LinkedIn</a>
-                    </div>
-                </div>
-            </div>
-        </section>
-    </main>
+  </header>
 
-    <footer>
-        <div class="container">
-            <p>&copy; 2025 Scanalis. Sécurité API & IA pour agences. Assurée par Hiscox</p>
+  <main>
+    <!-- HERO -->
+    <section class="hero">
+      <div class="container">
+        <div class="kicker">Audit non-intrusif • API & IA • Livrables dirigeants</div>
+        <h1>
+          Réduisez le risque cyber lié à vos <span class="hl">APIs</span> et à l’<span class="hl">IA</span>,
+          sans perturber la production.
+        </h1>
+        <p class="lead">
+          Scanalis analyse la surface d’attaque (API, IA/LLM, automations) et produit un rapport actionnable :
+          preuves, mapping OWASP API Top 10, scores /100, plan 30/60/90 jours + option “corrections (snippets) & rescan avant/après avec courbe d'évolution entre les deux scans”.
+        </p>
+
+        <div class="hero-cta">
+          <a class="btn" href="#" onclick="location.href=FORM_URL; return false;">Demander un audit</a>
+          <a class="btn ghost" href="#" onclick="location.href=CAL_URL; return false;">Voir en 30 minutes</a>
         </div>
-    </footer>
 
-    <script>
-        // Smooth scroll
-        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-            anchor.addEventListener('click', function (e) {
-                e.preventDefault();
-                const target = document.querySelector(this.getAttribute('href'));
-                if (target) {
-                    const offsetTop = target.offsetTop - 80;
-                    window.scrollTo({
-                        top: offsetTop,
-                        behavior: 'smooth'
-                    });
-                }
-            });
-        });
+        <div class="trust">
+          <span>• Non intrusif (pas d’exploitation, pas de DoS)</span>
+          <span>• Restitution lisible CEO/CTO</span>
+          <span>• Process simple (API + autorisation si endpoints privés)</span>
+        </div>
+      </div>
+    </section>
 
-        // Header background on scroll
-        let lastScroll = 0;
-        const header = document.querySelector('header');
+    <!-- SECURITE -->
+    <section id="securite">
+      <div class="container">
+        <h2>Ce que Scanalis vérifie</h2>
+        <p class="sub">Une couverture centrée sur les risques réels et les demandes récurrentes des DSI/RSSI et des clients grands comptes.</p>
 
-        window.addEventListener('scroll', () => {
-            const currentScroll = window.pageYOffset;
-            
-            if (currentScroll > 50) {
-                header.style.background = 'rgba(5, 8, 22, 0.95)';
-            } else {
-                header.style.background = 'rgba(10, 14, 39, 0.9)';
-            }
-            
-            lastScroll = currentScroll;
-        });
-    </script>
+        <div class="grid">
+          <div class="card">
+            <h3>API Security (surface d’attaque)</h3>
+            <p>TLS/transport, headers, CORS, rate limiting, auth public/privé, signaux privacy/logging.</p>
+            <ul class="list">
+              <li>Redirections HTTP→HTTPS, TLS obsolète</li>
+              <li>HSTS/CSP/XFO/XCTO/Referrer-Policy</li>
+              <li>CORS wildcard/credentials</li>
+              <li>Anti-abus / 429 / scraping</li>
+            </ul>
+          </div>
+
+          <div class="card">
+            <h3>OWASP API Top 10 (mapping)</h3>
+            <p>Standardisation immédiate pour parler le langage RSSI/DSI.</p>
+            <div>
+              <span class="pill">A01</span><span class="pill">A02</span><span class="pill">A04</span>
+              <span class="pill">A05</span><span class="pill">A07</span><span class="pill">A10</span>
+            </div>
+          </div>
+
+          <div class="card">
+            <h3>IA / LLM</h3>
+            <p>Tests passifs et gouvernance : réduire les risques “data leakage” et exposition réglementaire.</p>
+            <ul class="list">
+              <li>Prompt injection (non destructif)</li>
+              <li>Échos dangereux / exfiltration</li>
+              <li>Gouvernance AI Act (niveau de risque)</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ENDPOINTS -->
+    <section id="endpoints">
+      <div class="container">
+        <h2>Endpoints publics & privés</h2>
+        <p class="sub">Scanalis ne “contourne” pas l’authentification. Si vos endpoints sont privés, l’audit se fait uniquement avec les accès que vous fournissez.</p>
+
+        <div class="two">
+          <div class="box">
+            <div class="badge public">Public  sans accès requis</div>
+            <p class="small">Analyse de ce qui est accessible publiquement (exposition Internet).</p>
+            <ul class="list">
+              <li>Contrôles TLS/headers/CORS/rate limit</li>
+              <li>Signaux d’auth exposure visibles</li>
+              <li>Risques IA/LLM si interface publique</li>
+            </ul>
+          </div>
+
+          <div class="box">
+            <div class="badge private">Privé  avec autorisation</div>
+            <p class="small">Audit des endpoints internes via Bearer/API Key/header custom fournis.</p>
+            <ul class="list">
+              <li>Vérification séparation public/privé</li>
+              <li>Transitions 401 → 200 (cohérence)</li>
+              <li>Contrôles de configuration et exposition</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="cta-block">
+          <div>
+            <div style="font-weight:750;">Besoin d’un scan rapide ?</div>
+            <div class="small">Tu envoies l’API + 1–3 endpoints, Scanalis retourne un rapport + plan 30/60/90.</div>
+          </div>
+          <a class="btn" href="#" onclick="location.href=FORM_URL; return false;">Ouvrir la demande</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- LIVRABLES + OPTION -->
+    <section id="livrables">
+      <div class="container">
+        <h2>Livrables (CEO/CTO friendly)</h2>
+        <p class="sub">Un audit utile sert à décider : ce qui est exposé, ce qui est prouvable, quoi corriger en premier.</p>
+
+        <div class="deliver">
+          <div class="card">
+            <h3>Rapport + plan de remédiation 30/60/90</h3>
+            <ul class="list">
+              <li>Résumé exécutif</li>
+              <li>Faiblesses + preuves techniques</li>
+              <li>Mapping OWASP / IA / RGPD</li>
+              <li>Actions concrètes priorisées</li>
+            </ul>
+
+            <div style="height:12px"></div>
+
+            <h3>Option Premium : corrections (snippets) + rescan</h3>
+            <p class="small">
+              Pour chaque finding prioritaire, Scanalis propose des pistes de correction (snippets + recommandations),
+              puis réalise un rescan pour produire un comparatif avant/après (scores et points corrigés).
+            </p>
+          </div>
+
+          <div class="score">
+            <div class="mini">
+              <div class="n">/100</div>
+              <div class="t">Score API</div>
+            </div>
+            <div class="mini">
+              <div class="n">/100</div>
+              <div class="t">Score IA</div>
+            </div>
+            <div class="mini">
+              <div class="n">/100</div>
+              <div class="t">Score conformité</div>
+            </div>
+            <div class="mini" style="border-color: rgba(99,102,241,0.35)">
+              <div class="n">/100</div>
+              <div class="t">Score global</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- PARTENARIAT -->
+    <section id="partenariat">
+      <div class="container">
+        <h2>Partenariats (agences, ESN, cabinets cyber)</h2>
+        <p class="sub">Scanalis s’intègre comme brique “audit API & IA non-intrusif” pour vos clients. Process léger, livrables propres, conversion facilitée.</p>
+
+        <div class="two">
+          <div class="card">
+            <h3>Complément d’offre</h3>
+            <p>Ajoutez un audit technique API/IA à vos missions GRC, dev, data ou IA  sans pentest intrusif.</p>
+          </div>
+          <div class="card">
+            <h3>Marque blanche / co-brand</h3>
+            <p>Vous gardez la relation client. Livrables adaptés à votre identité (selon accord).</p>
+          </div>
+        </div>
+
+        <div class="cta-block">
+          <div>
+            <div style="font-weight:750;">Devenir partenaire</div>
+            <div class="small">On commence par 1 client pilote (audit flash) puis on industrialise si ça convertit.</div>
+          </div>
+          <a class="btn" href="#" onclick="location.href=FORM_URL + '#partenariat'; return false;">Demande partenariat</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- DEMANDE -->
+    <section id="demande">
+      <div class="container">
+        <h2>Demander un audit</h2>
+        <p class="sub">Un seul lien, un formulaire qualifié. Réponse sous 24h ouvrées.</p>
+        <div class="cta-block">
+          <div>
+            <div style="font-weight:750;">Formulaire lead qualifié</div>
+            <div class="small">API + endpoints + contexte + IA/automations. Tu reçois une réponse claire (périmètre / délai / next step).</div>
+          </div>
+          <a class="btn" href="#" onclick="location.href=FORM_URL; return false;">Ouvrir le formulaire</a>
+        </div>
+        <div style="margin-top:12px" class="small">
+          Ou email direct : <a style="color:var(--accent-light);text-decoration:none" href="mailto:contact@scanalis.fr">contact@scanalis.fr</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container">
+      <div>© Scanalis  Audit non-intrusif Sécurité API & IA</div>
+      <div class="small" style="margin-top:6px">Pas d’exploitation de faille • Pas de tests destructifs • Pas de DoS</div>
+    </div>
+  </footer>
+
+  <script>
+    // Smooth scroll (sections internes)
+    document.querySelectorAll('a[href^="#"]').forEach(a=>{
+      a.addEventListener('click', (e)=>{
+        const id = a.getAttribute('href');
+        const target = document.querySelector(id);
+        if(!target) return;
+        e.preventDefault();
+        const y = target.getBoundingClientRect().top + window.scrollY - 76;
+        window.scrollTo({top:y, behavior:'smooth'});
+      });
+    });
+
+    // Header background on scroll
+    const header = document.querySelector('header');
+    window.addEventListener('scroll', () => {
+      header.style.background = (window.scrollY > 40)
+        ? 'rgba(5,8,22,0.92)'
+        : 'rgba(10,14,39,0.86)';
+    });
+  </script>
 </body>
 </html>
+
