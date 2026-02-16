@@ -53,105 +53,148 @@
 
       const analyzeHeaders = (headers) => {
         const vulnerabilities = [];
+        
         if (!headers['strict-transport-security']) {
           vulnerabilities.push({
-            id: 'hsts', severity: 'high', name: "HSTS Manquant",
-            desc: "Connexion HTTP non sécurisée.", impact: "Man-in-the-Middle"
+            id: 'hsts',
+            severity: 'high',
+            name: "HSTS Manquant",
+            header: "Strict-Transport-Security",
+            desc: "Connexion HTTP→HTTPS non forcée. Données interceptables.",
+            impact: "Man-in-the-Middle",
+            fix: "Strict-Transport-Security: max-age=31536000; includeSubDomains"
           });
         }
+        
         if (!headers['content-security-policy']) {
           vulnerabilities.push({
-            id: 'csp', severity: 'high', name: "CSP Non-Définie",
-            desc: "Injection XSS possible.", impact: "Vol de données"
+            id: 'csp',
+            severity: 'high',
+            name: "CSP Non-Définie",
+            header: "Content-Security-Policy",
+            desc: "Injection de scripts malveillants (XSS) possible.",
+            impact: "Vol de données",
+            fix: "Content-Security-Policy: default-src 'self'"
           });
         }
+        
         if (!headers['x-frame-options']) {
           vulnerabilities.push({
-            id: 'xfo', severity: 'medium', name: "X-Frame-Options Absent",
-            desc: "Clickjacking possible.", impact: "Détournement"
+            id: 'xfo',
+            severity: 'medium',
+            name: "X-Frame-Options Absent",
+            header: "X-Frame-Options",
+            desc: "Site intégrable dans une iframe malveillante.",
+            impact: "Clickjacking",
+            fix: "X-Frame-Options: DENY"
           });
         }
+        
         if (!headers['x-content-type-options']) {
           vulnerabilities.push({
-            id: 'xcto', severity: 'medium', name: "X-Content-Type-Options Absent",
-            desc: "MIME sniffing activé.", impact: "Exécution malware"
+            id: 'xcto',
+            severity: 'medium',
+            name: "X-Content-Type-Options Absent",
+            header: "X-Content-Type-Options",
+            desc: "MIME sniffing permet l'exécution de fichiers malveillants.",
+            impact: "Malware",
+            fix: "X-Content-Type-Options: nosniff"
           });
         }
+
+        if (!headers['referrer-policy']) {
+          vulnerabilities.push({
+            id: 'referrer',
+            severity: 'low',
+            name: "Referrer-Policy Non-Définie",
+            header: "Referrer-Policy",
+            desc: "URLs avec tokens peuvent fuiter vers des sites tiers.",
+            impact: "Fuite d'infos",
+            fix: "Referrer-Policy: strict-origin-when-cross-origin"
+          });
+        }
+
+        if (!headers['permissions-policy'] && !headers['feature-policy']) {
+          vulnerabilities.push({
+            id: 'permissions',
+            severity: 'low',
+            name: "Permissions-Policy Absente",
+            header: "Permissions-Policy",
+            desc: "Accès non restreint aux APIs navigateur (caméra, micro).",
+            impact: "Vie privée",
+            fix: "Permissions-Policy: camera=(), microphone=()"
+          });
+        }
+        
         return vulnerabilities;
       };
 
-     const startScan = async (e) => {
-  e.preventDefault();
-  setError('');
-  setFindings([]);
-  setShowResult(false);
-  
-  const cleanUrl = validateAndCleanUrl(url);
-  if (!cleanUrl) {
-    setError("URL invalide. Format : https://exemple.com");
-    return;
-  }
-  
-  setIsScanning(true);
-  setProgress(0);
-  setScannedUrl(cleanUrl);
-  
-  const progressInterval = setInterval(() => {
-    setProgress((prev) => (prev >= 90 ? 90 : prev + 10));
-  }, 150);
-
-  // Liste de proxies à tester dans l'ordre
-  const proxies = [
-    `https://api.codetabs.com/v1/proxy?quest=${encodeURIComponent(cleanUrl)}`,
-    `https://api.allorigins.win/raw?url=${encodeURIComponent(cleanUrl)}`,
-    `https://corsproxy.io/?${encodeURIComponent(cleanUrl)}`
-  ];
-
-  let success = false;
-  let lastError = null;
-
-  for (const proxyUrl of proxies) {
-    try {
-      const response = await fetch(proxyUrl, { 
-        method: 'GET',
-        mode: 'cors',
-        headers: {
-          'Accept': 'text/html,application/xhtml+xml'
+      const startScan = async (e) => {
+        e.preventDefault();
+        setError('');
+        setFindings([]);
+        setShowResult(false);
+        
+        const cleanUrl = validateAndCleanUrl(url);
+        if (!cleanUrl) {
+          setError("URL invalide. Format : https://exemple.com");
+          return;
         }
-      });
-
-      if (response.ok) {
-        clearInterval(progressInterval);
-        setProgress(100);
-
-        const headers = {};
-        response.headers.forEach((value, key) => {
-          headers[key.toLowerCase()] = value;
-        });
-
-        const vulnerabilities = analyzeHeaders(headers);
-        setFindings(vulnerabilities);
         
-        setTimeout(() => {
+        setIsScanning(true);
+        setProgress(0);
+        setScannedUrl(cleanUrl);
+        
+        const progressInterval = setInterval(() => {
+          setProgress((prev) => (prev >= 90 ? 90 : prev + 10));
+        }, 150);
+
+        const proxies = [
+          `https://api.codetabs.com/v1/proxy?quest=${encodeURIComponent(cleanUrl)}`,
+          `https://api.allorigins.win/raw?url=${encodeURIComponent(cleanUrl)}`,
+          `https://corsproxy.io/?${encodeURIComponent(cleanUrl)}`
+        ];
+
+        let success = false;
+
+        for (const proxyUrl of proxies) {
+          try {
+            const response = await fetch(proxyUrl, { 
+              method: 'GET',
+              mode: 'cors'
+            });
+
+            if (response.ok) {
+              clearInterval(progressInterval);
+              setProgress(100);
+
+              const headers = {};
+              response.headers.forEach((value, key) => {
+                headers[key.toLowerCase()] = value;
+              });
+
+              const vulnerabilities = analyzeHeaders(headers);
+              setFindings(vulnerabilities);
+              
+              setTimeout(() => {
+                setIsScanning(false);
+                setShowResult(true);
+              }, 300);
+              
+              success = true;
+              break;
+            }
+          } catch (err) {
+            continue;
+          }
+        }
+
+        if (!success) {
+          clearInterval(progressInterval);
           setIsScanning(false);
-          setShowResult(true);
-        }, 300);
-        
-        success = true;
-        break;
-      }
-    } catch (err) {
-      lastError = err;
-      continue; // Essaye le prochain proxy
-    }
-  }
-
-  if (!success) {
-    clearInterval(progressInterval);
-    setIsScanning(false);
-    setError("Impossible d'analyser cette URL. Le site bloque probablement les scans externes. Essayez avec votre propre site.");
-  }
-};
+          setError("Impossible d'analyser cette URL. Le site bloque probablement les scans externes.");
+        }
+      };
 
       const getGrade = (count) => {
         if (count === 0) return { letter: 'A+', color: 'text-emerald-600', bg: 'bg-emerald-50', border: 'border-emerald-300', label: 'Excellent', emoji: '🎉' };
@@ -159,6 +202,12 @@
         if (count === 2) return { letter: 'B', color: 'text-blue-500', bg: 'bg-blue-50', border: 'border-blue-200', label: 'Correct', emoji: '👍' };
         if (count <= 5) return { letter: 'C', color: 'text-orange-500', bg: 'bg-orange-50', border: 'border-orange-200', label: 'Vulnérable', emoji: '⚠️' };
         return { letter: 'D', color: 'text-red-600', bg: 'bg-red-50', border: 'border-red-300', label: 'Critique', emoji: '🚨' };
+      };
+
+      const getSeverityColor = (severity) => {
+        if (severity === 'high') return 'bg-red-100 text-red-700 border-red-300';
+        if (severity === 'medium') return 'bg-orange-100 text-orange-700 border-orange-300';
+        return 'bg-yellow-100 text-yellow-700 border-yellow-300';
       };
 
       const grade = getGrade(findings.length);
@@ -205,7 +254,7 @@
                 <button 
                   disabled={isScanning || !url}
                   type="submit"
-                  className="bg-gradient-to-r from-blue-600 to-blue-700 text-white px-10 py-4 rounded-xl font-bold disabled:opacity-50"
+                  className="bg-gradient-to-r from-blue-600 to-blue-700 text-white px-10 py-4 rounded-xl font-bold disabled:opacity-50 shadow-lg"
                 >
                   {isScanning ? 'Analyse...' : 'Scanner'}
                 </button>
@@ -220,7 +269,8 @@
               )}
 
               {error && (
-                <div className="mt-3 p-4 bg-red-50 border border-red-200 rounded-xl">
+                <div className="mt-3 p-4 bg-red-50 border border-red-200 rounded-xl flex items-start gap-2">
+                  <Icon name="x-circle" className="text-red-500 shrink-0" size={20} />
                   <p className="text-sm text-red-600">{error}</p>
                 </div>
               )}
@@ -228,39 +278,197 @@
 
             {showResult && (
               <div className="space-y-6 animate-in">
+                
+                {/* Score Card */}
                 <div className={`rounded-3xl border-4 ${grade.border} ${grade.bg} p-8 shadow-2xl text-center`}>
                   <div className={`text-9xl font-black ${grade.color} mb-4`}>{grade.letter}</div>
                   <h2 className="text-3xl font-black text-slate-900 mb-2">{grade.label}</h2>
-                  <p className="text-slate-700 font-medium text-lg">
-                    {findings.length === 0 ? "Aucune vulnérabilité !" : `${findings.length} faille(s) détectée(s)`}
+                  <p className="text-slate-700 font-medium text-lg mb-4">
+                    {findings.length === 0 ? "Aucune vulnérabilité détectée !" : `${findings.length} faille(s) détectée(s) sur ${scannedUrl}`}
                   </p>
+                  
+                  {findings.length > 0 && (
+                    <div className="bg-white/60 backdrop-blur p-4 rounded-xl text-sm text-slate-700 mt-4">
+                      <p className="font-bold mb-2">
+                        {findings.length >= 5 && "🚨 Risque Critique"}
+                        {findings.length >= 3 && findings.length < 5 && "⚠️ Risque Élevé"}
+                        {findings.length === 2 && "👍 Risque Modéré"}
+                        {findings.length === 1 && "✅ Risque Faible"}
+                      </p>
+                      <p className="leading-relaxed">
+                        {findings.length >= 5 && "Configuration critique. Audit approfondi URGENT."}
+                        {findings.length >= 3 && findings.length < 5 && "Vulnérabilités multiples. Conformité fragile face à un audit."}
+                        {findings.length === 2 && "Bon niveau mais améliorations recommandées."}
+                        {findings.length === 1 && "Presque parfait ! Une correction et vous êtes A+."}
+                      </p>
+                    </div>
+                  )}
                 </div>
 
+                {/* Comparateur */}
+                {findings.length > 0 && (
+                  <div className="bg-blue-50 border-2 border-blue-200 rounded-2xl p-6">
+                    <h3 className="font-bold text-lg mb-4 text-slate-900 flex items-center gap-2">
+                      <Icon name="bar-chart-3" size={20} className="text-blue-600" />
+                      📊 Où vous situez-vous ?
+                    </h3>
+                    <div className="space-y-2 text-sm">
+                      <div className="flex justify-between items-center py-2 px-3 rounded-lg hover:bg-blue-100/50">
+                        <span className="text-slate-700">Sites ultra-sécurisés (Stripe, GitHub)</span>
+                        <span className="font-bold text-emerald-600">A+</span>
+                      </div>
+                      <div className="flex justify-between items-center py-2 px-3 rounded-lg hover:bg-blue-100/50">
+                        <span className="text-slate-700">Startups tech bien configurées</span>
+                        <span className="font-bold text-emerald-500">A</span>
+                      </div>
+                      <div className="flex justify-between items-center py-2 px-3 rounded-lg hover:bg-blue-100/50">
+                        <span className="text-slate-700">Entreprises avec sécurité standard</span>
+                        <span className="font-bold text-blue-500">B</span>
+                      </div>
+                      <div className="flex justify-between items-center py-3 px-4 bg-orange-100 rounded-lg border-2 border-orange-400">
+                        <span className="text-slate-900 font-bold flex items-center gap-2">
+                          <Icon name="arrow-right" size={16} />
+                          Vous êtes ici
+                        </span>
+                        <span className="font-black text-orange-600 text-xl">{grade.letter}</span>
+                      </div>
+                      <div className="flex justify-between items-center py-2 px-3 rounded-lg hover:bg-blue-100/50">
+                        <span className="text-slate-700">Sites legacy non maintenus</span>
+                        <span className="font-bold text-red-600">D</span>
+                      </div>
+                    </div>
+                    <p className="text-xs text-slate-500 mt-4 text-center italic">
+                      💡 60% des sites sont en C. Passez en A/A+ pour vous démarquer lors des audits clients.
+                    </p>
+                  </div>
+                )}
+
+                {/* Liste des Failles */}
+                {findings.length > 0 && (
+                  <div className="bg-white rounded-2xl border-2 border-slate-200 overflow-hidden shadow-lg">
+                    <div className="p-5 border-b-2 border-slate-100 bg-gradient-to-r from-slate-50 to-white">
+                      <h3 className="font-black text-lg flex items-center gap-2">
+                        <Icon name="alert-triangle" className="text-orange-500" size={22} />
+                        Failles Détectées
+                      </h3>
+                    </div>
+                    <div className="divide-y-2 divide-slate-50">
+                      {findings.map((finding, idx) => (
+                        <div key={finding.id} className="p-5 hover:bg-slate-50">
+                          <div className="flex items-start gap-4 mb-3">
+                            <div className={`shrink-0 w-8 h-8 rounded-full flex items-center justify-center font-black text-sm ${getSeverityColor(finding.severity)}`}>
+                              {idx + 1}
+                            </div>
+                            <div className="flex-1">
+                              <div className="flex items-center gap-3 mb-2">
+                                <h4 className="font-bold text-base">{finding.name}</h4>
+                                <span className={`text-[10px] font-black px-2 py-1 rounded-full uppercase ${getSeverityColor(finding.severity)} border`}>
+                                  {finding.severity === 'high' ? 'Critique' : finding.severity === 'medium' ? 'Moyen' : 'Faible'}
+                                </span>
+                              </div>
+                              <p className="text-sm text-slate-600 mb-3">{finding.desc}</p>
+                              
+                              <div className="bg-emerald-50 border-l-4 border-emerald-400 p-3 rounded-r-lg">
+                                <p className="text-xs font-bold text-emerald-900 mb-1">✅ Correction</p>
+                                <code className="text-xs text-emerald-800 font-mono block bg-white/50 p-2 rounded">
+                                  {finding.fix}
+                                </code>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      ))}
+                    </div>
+                  </div>
+                )}
+
+                {/* CTA Final */}
                 {findings.length > 0 ? (
-                  <div className="bg-slate-900 rounded-3xl p-8 text-white text-center">
-                    <h3 className="text-2xl font-bold mb-4">Obtenez votre plan de remédiation</h3>
-                    <a 
-                      href="https://cal.com/mathilde-de-roumilly-3zskha/30min"
-                      target="_blank"
-                      className="inline-flex items-center gap-2 bg-blue-600 px-8 py-4 rounded-xl font-bold"
-                    >
-                      Réserver (30min)
-                    </a>
+                  <div className="bg-gradient-to-br from-slate-900 via-slate-800 to-slate-900 rounded-3xl p-8 text-white shadow-2xl">
+                    <div className="text-center max-w-2xl mx-auto">
+                      <div className="inline-block px-3 py-1 bg-orange-500/20 border border-orange-400/30 rounded-full text-xs font-bold text-orange-300 uppercase mb-4">
+                        🎯 Passez à l'action
+                      </div>
+                      <h3 className="text-3xl font-black mb-4">
+                        Ne laissez pas ces {findings.length} faille{findings.length > 1 ? 's' : ''} ruiner votre closing
+                      </h3>
+                      <p className="text-slate-300 text-base mb-6 leading-relaxed">
+                        Ce scan gratuit ne couvre que les headers HTTP de surface. 
+                        Pour une analyse complète (APIs, OWASP Top 10, conformité RGPD/AI Act), passez à l'audit Scanalis.
+                      </p>
+                      <div className="flex flex-col sm:flex-row gap-3 justify-center mb-6">
+                        <div className="flex items-center gap-2 text-sm text-slate-400">
+                          <Icon name="check-circle-2" size={16} className="text-emerald-400" />
+                          Livraison 48h
+                        </div>
+                        <div className="flex items-center gap-2 text-sm text-slate-400">
+                          <Icon name="check-circle-2" size={16} className="text-emerald-400" />
+                          Snippets correction
+                        </div>
+                        <div className="flex items-center gap-2 text-sm text-slate-400">
+                          <Icon name="check-circle-2" size={16} className="text-emerald-400" />
+                          Plan 30/60/90j
+                        </div>
+                      </div>
+                      <div className="flex flex-col sm:flex-row gap-3 justify-center">
+                        <a 
+                          href="https://cal.com/mathilde-de-roumilly-3zskha/30min"
+                          target="_blank"
+                          className="inline-flex items-center justify-center gap-2 bg-gradient-to-r from-blue-600 to-blue-700 px-8 py-4 rounded-xl font-black text-white hover:from-blue-500 hover:to-blue-600 transition-all shadow-xl"
+                        >
+                          <Icon name="calendar" size={20} />
+                          Réserver un Audit (30min gratuit)
+                        </a>
+                        <a 
+                          href="/#demande"
+                          className="inline-flex items-center justify-center gap-2 bg-slate-700 hover:bg-slate-600 px-8 py-4 rounded-xl font-bold text-white border border-slate-600"
+                        >
+                          <Icon name="info" size={18} />
+                          Voir Tarifs
+                        </a>
+                      </div>
+                    </div>
                   </div>
                 ) : (
-                  <div className="bg-emerald-600 rounded-3xl p-8 text-white text-center">
-                    <h3 className="text-2xl font-bold mb-4">Headers parfaits ! 🎉</h3>
-                    <a href="/#demande" className="inline-flex bg-white text-emerald-700 px-8 py-4 rounded-xl font-bold">
-                      Audit Complet
+                  <div className="bg-gradient-to-br from-emerald-600 to-emerald-700 rounded-3xl p-8 text-white shadow-2xl text-center">
+                    <div className="flex items-center justify-center gap-2 mb-4">
+                      <Icon name="check-circle-2" size={32} className="text-emerald-200" />
+                      <h3 className="text-3xl font-black">Headers parfaits ! 🎉</h3>
+                    </div>
+                    <p className="text-emerald-100 text-lg mb-6 max-w-2xl mx-auto">
+                      Vos headers de sécurité sont exemplaires. Mais qu'en est-il de vos APIs, endpoints privés, conformité RGPD/AI Act ?
+                    </p>
+                    <a 
+                      href="/#demande"
+                      className="inline-flex items-center gap-2 bg-white text-emerald-700 px-8 py-4 rounded-xl font-black hover:bg-emerald-50"
+                    >
+                      <Icon name="shield" size={20} />
+                      Audit Complet Scanalis
                     </a>
                   </div>
                 )}
+
+                {/* Rescan */}
+                <div className="text-center">
+                  <button 
+                    onClick={() => {
+                      setShowResult(false);
+                      setFindings([]);
+                      setUrl('');
+                    }}
+                    className="text-blue-600 hover:text-blue-700 font-bold flex items-center gap-2 mx-auto"
+                  >
+                    <Icon name="refresh-ccw" size={18} />
+                    Analyser une autre URL
+                  </button>
+                </div>
+
               </div>
             )}
           </main>
 
           <footer className="mt-24 text-center text-slate-400 text-xs">
-            Scanalis © 2026
+            Scanalis © 2026 • Sécurité & Conformité
           </footer>
         </div>
       );
