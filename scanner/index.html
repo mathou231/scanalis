@@ -2,684 +2,242 @@
 <html lang="fr">
 <head>
   <meta charset="UTF-8" />
-  <title>Scanner Gratuit Scanalis</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Scanner Gratuit Headers HTTP - Scanalis</title>
+  <meta name="description" content="Analysez vos headers de sécurité HTTP en 30 secondes. Gratuit et instantané." />
+  <script src="https://cdn.tailwindcss.com"></script>
   <script crossorigin src="https://unpkg.com/react@18/umd/react.production.min.js"></script>
   <script crossorigin src="https://unpkg.com/react-dom@18/umd/react-dom.production.min.js"></script>
-  <script src="https://cdn.tailwindcss.com"></script>
+  <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+  <script src="https://unpkg.com/lucide@latest"></script>
+  <style>
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+    .animate-in { animation: fadeIn 0.7s ease-out; }
+  </style>
 </head>
 <body>
   <div id="root"></div>
   <script type="text/babel">
-import React, { useState } from 'react';
-import { 
-  ShieldCheck, ShieldAlert, Search, RefreshCcw, CheckCircle2, 
-  XCircle, AlertTriangle, Calendar, Lock, FileWarning, Zap, ChevronRight,
-  Info, Shield, ExternalLink, ArrowRight, AlertCircle
-} from 'lucide-react';
-
-const ScanalisScanner = () => {
-  const [url, setUrl] = useState('');
-  const [isScanning, setIsScanning] = useState(false);
-  const [showResult, setShowResult] = useState(false);
-  const [progress, setProgress] = useState(0);
-  const [findings, setFindings] = useState([]);
-  const [error, setError] = useState('');
-  const [scannedUrl, setScannedUrl] = useState('');
-
-  // Validation et nettoyage de l'URL
-  const validateAndCleanUrl = (input) => {
-    let cleanUrl = input.trim();
+    const { useState } = React;
     
-    // Retire les espaces, caractères invalides
-    if (!/^https?:\/\/.+\..+/.test(cleanUrl)) {
-      // Si pas de protocole, ajoute https://
-      if (!cleanUrl.startsWith('http')) {
-        cleanUrl = 'https://' + cleanUrl;
-      }
-    }
-    
-    // Validation finale
-    try {
-      const urlObj = new URL(cleanUrl);
-      // Refuse les URLs manifestement invalides
-      if (urlObj.hostname.length < 3 || !urlObj.hostname.includes('.')) {
-        return null;
-      }
-      return cleanUrl;
-    } catch (e) {
-      return null;
-    }
-  };
-
-  const analyzeHeaders = (headers) => {
-    const vulnerabilities = [];
-
-    // 1. HSTS (Strict-Transport-Security)
-    if (!headers['strict-transport-security']) {
-      vulnerabilities.push({
-        id: 'hsts-missing',
-        severity: 'high',
-        name: "HSTS Manquant",
-        header: "Strict-Transport-Security",
-        desc: "Connexion HTTP → HTTPS non forcée. Données interceptables en clair.",
-        impact: "Man-in-the-Middle",
-        consequence: "Interception des données utilisateurs (tokens, sessions, mots de passe) via downgrade HTTP.",
-        fix: "Strict-Transport-Security: max-age=31536000; includeSubDomains; preload",
-        cveRef: "CWE-319"
-      });
-    }
-
-    // 2. CSP (Content-Security-Policy)
-    if (!headers['content-security-policy']) {
-      vulnerabilities.push({
-        id: 'csp-missing',
-        severity: 'high',
-        name: "CSP Non-Définie",
-        header: "Content-Security-Policy",
-        desc: "Injection de scripts malveillants (XSS) possible sans restrictions.",
-        impact: "Vol de données",
-        consequence: "Un attaquant peut injecter du JavaScript pour voler les cookies de session, rediriger vers du phishing, ou exfiltrer des données sensibles.",
-        fix: "Content-Security-Policy: default-src 'self'; script-src 'self' 'unsafe-inline'",
-        cveRef: "CWE-79"
-      });
-    }
-
-    // 3. X-Frame-Options
-    if (!headers['x-frame-options']) {
-      vulnerabilities.push({
-        id: 'xfo-missing',
-        severity: 'medium',
-        name: "X-Frame-Options Absent",
-        header: "X-Frame-Options",
-        desc: "Votre site peut être embarqué dans une iframe malveillante.",
-        impact: "Clickjacking",
-        consequence: "Un attaquant peut superposer votre interface dans une iframe invisible et tromper l'utilisateur pour qu'il clique sur des actions non désirées (transfert d'argent, changement de mot de passe).",
-        fix: "X-Frame-Options: DENY ou SAMEORIGIN",
-        cveRef: "CWE-1021"
-      });
-    }
-
-    // 4. X-Content-Type-Options
-    if (!headers['x-content-type-options']) {
-      vulnerabilities.push({
-        id: 'xcto-missing',
-        severity: 'medium',
-        name: "X-Content-Type-Options Absent",
-        header: "X-Content-Type-Options",
-        desc: "Le navigateur peut interpréter un fichier comme exécutable alors qu'il ne devrait pas.",
-        impact: "Exécution malware",
-        consequence: "MIME sniffing permet à un attaquant d'uploader un fichier déguisé (.txt contenant du JS) qui sera exécuté par le navigateur.",
-        fix: "X-Content-Type-Options: nosniff",
-        cveRef: "CWE-430"
-      });
-    }
-
-    // 5. Referrer-Policy
-    if (!headers['referrer-policy']) {
-      vulnerabilities.push({
-        id: 'referrer-missing',
-        severity: 'low',
-        name: "Referrer-Policy Non-Définie",
-        header: "Referrer-Policy",
-        desc: "URLs complètes (avec tokens/IDs) peuvent fuiter vers des sites tiers.",
-        impact: "Fuite d'informations",
-        consequence: "Les paramètres d'URL sensibles (tokens de réinitialisation, IDs utilisateurs) sont envoyés dans le header Referer vers des sites externes, exposant des données privées.",
-        fix: "Referrer-Policy: strict-origin-when-cross-origin",
-        cveRef: "CWE-200"
-      });
-    }
-
-    // 6. Permissions-Policy (anciennement Feature-Policy)
-    if (!headers['permissions-policy'] && !headers['feature-policy']) {
-      vulnerabilities.push({
-        id: 'permissions-missing',
-        severity: 'low',
-        name: "Permissions-Policy Absente",
-        header: "Permissions-Policy",
-        desc: "Accès non restreint aux APIs navigateur (caméra, micro, géolocalisation).",
-        impact: "Vie privée",
-        consequence: "Des scripts tiers ou malveillants peuvent accéder à la webcam, micro ou position GPS de l'utilisateur sans restriction explicite.",
-        fix: "Permissions-Policy: camera=(), microphone=(), geolocation=()",
-        cveRef: "CWE-265"
-      });
-    }
-
-    // 7. X-XSS-Protection (legacy mais encore utile)
-    const xssProtection = headers['x-xss-protection'];
-    if (!xssProtection || xssProtection === '0') {
-      vulnerabilities.push({
-        id: 'xss-protection-disabled',
-        severity: 'medium',
-        name: "X-XSS-Protection Désactivé",
-        header: "X-XSS-Protection",
-        desc: "Protection XSS du navigateur désactivée (anciens navigateurs vulnérables).",
-        impact: "XSS facilité",
-        consequence: "Sur les anciens navigateurs (IE, Chrome <78), les attaques XSS reflétées ne sont pas bloquées automatiquement.",
-        fix: "X-XSS-Protection: 1; mode=block",
-        cveRef: "CWE-79"
-      });
-    }
-
-    // 8. Server header révèle trop d'infos
-    if (headers['server'] && !headers['server'].toLowerCase().includes('hidden')) {
-      const serverValue = headers['server'].toLowerCase();
-      if (serverValue.includes('apache') || serverValue.includes('nginx') || serverValue.includes('iis')) {
-        vulnerabilities.push({
-          id: 'server-disclosure',
-          severity: 'low',
-          name: "Banner Server Exposé",
-          header: "Server",
-          desc: `Le header Server révèle "${headers['server']}", facilitant la reconnaissance.`,
-          impact: "Information disclosure",
-          consequence: "Un attaquant peut identifier votre stack technique (Apache 2.4.41, nginx 1.18.0) et exploiter des CVE connues pour cette version spécifique.",
-          fix: "Server: [masqué] ou suppression complète du header",
-          cveRef: "CWE-200"
-        });
-      }
-    }
-
-    return vulnerabilities;
-  };
-
-  const startScan = async (e) => {
-    e.preventDefault();
-    setError('');
-    setFindings([]);
-    setShowResult(false);
-    
-    const cleanUrl = validateAndCleanUrl(url);
-    
-    if (!cleanUrl) {
-      setError("URL invalide. Format attendu : https://exemple.com");
-      return;
-    }
-    
-    setIsScanning(true);
-    setProgress(0);
-    setScannedUrl(cleanUrl);
-    
-    // Animation de progression
-    const progressInterval = setInterval(() => {
-      setProgress((prev) => {
-        if (prev >= 90) return 90;
-        return prev + 10;
-      });
-    }, 150);
-
-    try {
-      // Appel à un proxy CORS ou backend
-      // Pour la démo, on utilise un service public (allorigins.win)
-      const proxyUrl = `https://api.allorigins.win/raw?url=${encodeURIComponent(cleanUrl)}`;
-      
-      const response = await fetch(proxyUrl, {
-        method: 'HEAD',
-        mode: 'cors'
-      });
-
-      clearInterval(progressInterval);
-      setProgress(100);
-
-      // Conversion des headers en objet lowercase
-      const headers = {};
-      response.headers.forEach((value, key) => {
-        headers[key.toLowerCase()] = value;
-      });
-
-      // Analyse des vulnérabilités
-      const vulnerabilities = analyzeHeaders(headers);
-      setFindings(vulnerabilities);
-      
-      setTimeout(() => {
-        setIsScanning(false);
-        setShowResult(true);
-      }, 300);
-
-    } catch (err) {
-      clearInterval(progressInterval);
-      setIsScanning(false);
-      setError("Impossible d'analyser cette URL. Vérifiez qu'elle est accessible publiquement et réessayez.");
-      console.error('Scan error:', err);
-    }
-  };
-
-  const getGrade = (count) => {
-    if (count === 0) return { 
-      letter: 'A+', 
-      color: 'text-emerald-600', 
-      bg: 'bg-emerald-50', 
-      border: 'border-emerald-300', 
-      label: 'Excellent',
-      emoji: '🎉'
+    const Icon = ({ name, ...props }) => {
+      React.useEffect(() => { lucide.createIcons(); });
+      return React.createElement('i', { 'data-lucide': name, ...props });
     };
-    if (count === 1) return { 
-      letter: 'A', 
-      color: 'text-emerald-500', 
-      bg: 'bg-emerald-50', 
-      border: 'border-emerald-200', 
-      label: 'Très Bon',
-      emoji: '✅'
-    };
-    if (count === 2) return { 
-      letter: 'B', 
-      color: 'text-blue-500', 
-      bg: 'bg-blue-50', 
-      border: 'border-blue-200', 
-      label: 'Correct',
-      emoji: '👍'
-    };
-    if (count <= 5) return { 
-      letter: 'C', 
-      color: 'text-orange-500', 
-      bg: 'bg-orange-50', 
-      border: 'border-orange-200', 
-      label: 'Vulnérable',
-      emoji: '⚠️'
-    };
-    return { 
-      letter: 'D', 
-      color: 'text-red-600', 
-      bg: 'bg-red-50', 
-      border: 'border-red-300', 
-      label: 'Critique',
-      emoji: '🚨'
-    };
-  };
 
-  const grade = getGrade(findings.length);
+    const ScanalisScanner = () => {
+      const [url, setUrl] = useState('');
+      const [isScanning, setIsScanning] = useState(false);
+      const [showResult, setShowResult] = useState(false);
+      const [progress, setProgress] = useState(0);
+      const [findings, setFindings] = useState([]);
+      const [error, setError] = useState('');
+      const [scannedUrl, setScannedUrl] = useState('');
 
-  const getSeverityColor = (severity) => {
-    switch(severity) {
-      case 'high': return 'bg-red-100 text-red-700 border-red-200';
-      case 'medium': return 'bg-orange-100 text-orange-700 border-orange-200';
-      case 'low': return 'bg-yellow-100 text-yellow-700 border-yellow-200';
-      default: return 'bg-slate-100 text-slate-700';
-    }
-  };
+      const validateAndCleanUrl = (input) => {
+        let cleanUrl = input.trim();
+        if (!/^https?:\/\/.+\..+/.test(cleanUrl)) {
+          if (!cleanUrl.startsWith('http')) cleanUrl = 'https://' + cleanUrl;
+        }
+        try {
+          const urlObj = new URL(cleanUrl);
+          if (urlObj.hostname.length < 3 || !urlObj.hostname.includes('.')) return null;
+          return cleanUrl;
+        } catch (e) {
+          return null;
+        }
+      };
 
-  return (
-    <div className="min-h-screen bg-gradient-to-br from-slate-50 via-blue-50 to-slate-50 font-sans text-slate-900 pb-20">
-      {/* Navbar */}
-      <nav className="p-6 max-w-6xl mx-auto flex justify-between items-center">
-        <div className="flex items-center gap-2">
-          <div className="bg-gradient-to-br from-blue-600 to-blue-700 p-2 rounded-xl shadow-lg">
-            <ShieldCheck className="text-white" size={24} />
-          </div>
-          <span className="text-xl font-black tracking-tight">SCANALIS</span>
-          <span className="text-xs font-bold text-blue-600 bg-blue-50 px-2 py-0.5 rounded-full">FREE</span>
-        </div>
-        <a href="/" className="text-sm text-slate-600 hover:text-slate-900 font-medium">
-          Audit Complet →
-        </a>
-      </nav>
+      const analyzeHeaders = (headers) => {
+        const vulnerabilities = [];
+        if (!headers['strict-transport-security']) {
+          vulnerabilities.push({
+            id: 'hsts', severity: 'high', name: "HSTS Manquant",
+            desc: "Connexion HTTP non sécurisée.", impact: "Man-in-the-Middle"
+          });
+        }
+        if (!headers['content-security-policy']) {
+          vulnerabilities.push({
+            id: 'csp', severity: 'high', name: "CSP Non-Définie",
+            desc: "Injection XSS possible.", impact: "Vol de données"
+          });
+        }
+        if (!headers['x-frame-options']) {
+          vulnerabilities.push({
+            id: 'xfo', severity: 'medium', name: "X-Frame-Options Absent",
+            desc: "Clickjacking possible.", impact: "Détournement"
+          });
+        }
+        if (!headers['x-content-type-options']) {
+          vulnerabilities.push({
+            id: 'xcto', severity: 'medium', name: "X-Content-Type-Options Absent",
+            desc: "MIME sniffing activé.", impact: "Exécution malware"
+          });
+        }
+        return vulnerabilities;
+      };
 
-      <main className="max-w-4xl mx-auto px-4 mt-8">
-        {/* Hero */}
-        <div className="text-center mb-12">
-          <div className="inline-block mb-4 px-4 py-1.5 bg-blue-100 text-blue-700 rounded-full text-sm font-bold">
-            🎯 Audit Gratuit • 30 Secondes
-          </div>
-          <h1 className="text-4xl md:text-5xl font-black text-slate-900 mb-4 leading-tight">
-            Vos Headers de Sécurité<br/>
-            <span className="text-blue-600">Sont-ils Conformes ?</span>
-          </h1>
-          <p className="text-lg text-slate-600 font-medium max-w-2xl mx-auto">
-            Entrez votre URL. On analyse vos headers HTTP en temps réel et on vous dit exactement où vous êtes exposé.
-          </p>
-        </div>
+      const startScan = async (e) => {
+        e.preventDefault();
+        setError('');
+        setFindings([]);
+        setShowResult(false);
+        
+        const cleanUrl = validateAndCleanUrl(url);
+        if (!cleanUrl) {
+          setError("URL invalide. Format : https://exemple.com");
+          return;
+        }
+        
+        setIsScanning(true);
+        setProgress(0);
+        setScannedUrl(cleanUrl);
+        
+        const progressInterval = setInterval(() => {
+          setProgress((prev) => (prev >= 90 ? 90 : prev + 10));
+        }, 150);
 
-        {/* Input Area */}
-        <div className="bg-white p-3 rounded-2xl shadow-2xl border-2 border-slate-200 mb-10">
-          <form onSubmit={startScan} className="flex flex-col md:flex-row gap-3">
-            <div className="flex-1 relative">
-              <Search className="absolute left-4 top-1/2 -translate-y-1/2 text-slate-400" size={20} />
-              <input 
-                type="text" 
-                value={url}
-                onChange={(e) => setUrl(e.target.value)}
-                placeholder="https://votre-site.com" 
-                className="w-full pl-12 pr-5 py-4 rounded-xl border-2 border-slate-100 bg-slate-50 focus:bg-white focus:border-blue-500 outline-none font-medium transition-all text-base"
-              />
-            </div>
-            <button 
-              disabled={isScanning || !url}
-              type="submit"
-              className="bg-gradient-to-r from-blue-600 to-blue-700 hover:from-blue-700 hover:to-blue-800 text-white px-10 py-4 rounded-xl font-bold flex items-center justify-center gap-2 transition-all disabled:opacity-50 disabled:cursor-not-allowed shadow-lg shadow-blue-600/30"
-            >
-              {isScanning ? (
-                <>
-                  <RefreshCcw className="animate-spin" size={20} />
-                  Analyse...
-                </>
-              ) : (
-                <>
-                  <Zap size={20} />
-                  Scanner
-                </>
-              )}
-            </button>
-          </form>
+        try {
+          const proxyUrl = `https://api.allorigins.win/raw?url=${encodeURIComponent(cleanUrl)}`;
+          const response = await fetch(proxyUrl, { method: 'HEAD', mode: 'cors' });
+          clearInterval(progressInterval);
+          setProgress(100);
+
+          const headers = {};
+          response.headers.forEach((value, key) => {
+            headers[key.toLowerCase()] = value;
+          });
+
+          const vulnerabilities = analyzeHeaders(headers);
+          setFindings(vulnerabilities);
           
-          {isScanning && (
-            <div className="mt-3">
-              <div className="w-full bg-slate-100 h-2 rounded-full overflow-hidden">
-                <div 
-                  className="bg-gradient-to-r from-blue-500 to-blue-600 h-full transition-all duration-300 ease-out" 
-                  style={{ width: `${progress}%` }}
-                ></div>
+          setTimeout(() => {
+            setIsScanning(false);
+            setShowResult(true);
+          }, 300);
+        } catch (err) {
+          clearInterval(progressInterval);
+          setIsScanning(false);
+          setError("Impossible d'analyser cette URL. Vérifiez qu'elle est accessible.");
+        }
+      };
+
+      const getGrade = (count) => {
+        if (count === 0) return { letter: 'A+', color: 'text-emerald-600', bg: 'bg-emerald-50', border: 'border-emerald-300', label: 'Excellent', emoji: '🎉' };
+        if (count === 1) return { letter: 'A', color: 'text-emerald-500', bg: 'bg-emerald-50', border: 'border-emerald-200', label: 'Très Bon', emoji: '✅' };
+        if (count === 2) return { letter: 'B', color: 'text-blue-500', bg: 'bg-blue-50', border: 'border-blue-200', label: 'Correct', emoji: '👍' };
+        if (count <= 5) return { letter: 'C', color: 'text-orange-500', bg: 'bg-orange-50', border: 'border-orange-200', label: 'Vulnérable', emoji: '⚠️' };
+        return { letter: 'D', color: 'text-red-600', bg: 'bg-red-50', border: 'border-red-300', label: 'Critique', emoji: '🚨' };
+      };
+
+      const grade = getGrade(findings.length);
+
+      return (
+        <div className="min-h-screen bg-gradient-to-br from-slate-50 via-blue-50 to-slate-50 font-sans text-slate-900 pb-20">
+          <nav className="p-6 max-w-6xl mx-auto flex justify-between items-center">
+            <div className="flex items-center gap-2">
+              <div className="bg-gradient-to-br from-blue-600 to-blue-700 p-2 rounded-xl shadow-lg">
+                <Icon name="shield-check" className="text-white" size={24} />
               </div>
-              <p className="text-xs text-slate-500 mt-2 text-center font-medium">
-                Analyse des headers HTTP en cours...
+              <span className="text-xl font-black">SCANALIS</span>
+              <span className="text-xs font-bold text-blue-600 bg-blue-50 px-2 py-0.5 rounded-full">FREE</span>
+            </div>
+            <a href="/" className="text-sm text-slate-600 hover:text-slate-900 font-medium">Audit Complet →</a>
+          </nav>
+
+          <main className="max-w-4xl mx-auto px-4 mt-8">
+            <div className="text-center mb-12">
+              <div className="inline-block mb-4 px-4 py-1.5 bg-blue-100 text-blue-700 rounded-full text-sm font-bold">
+                🎯 Audit Gratuit • 30 Secondes
+              </div>
+              <h1 className="text-4xl md:text-5xl font-black text-slate-900 mb-4 leading-tight">
+                Vos Headers de Sécurité<br/>
+                <span className="text-blue-600">Sont-ils Conformes ?</span>
+              </h1>
+              <p className="text-lg text-slate-600 font-medium max-w-2xl mx-auto">
+                Entrez votre URL. On analyse vos headers HTTP en temps réel.
               </p>
             </div>
-          )}
 
-          {error && (
-            <div className="mt-3 p-4 bg-red-50 border border-red-200 rounded-xl flex items-start gap-3">
-              <XCircle className="text-red-500 shrink-0 mt-0.5" size={20} />
-              <div>
-                <p className="text-sm font-bold text-red-700">Erreur</p>
-                <p className="text-sm text-red-600">{error}</p>
-              </div>
-            </div>
-          )}
-        </div>
+            <div className="bg-white p-3 rounded-2xl shadow-2xl border-2 border-slate-200 mb-10">
+              <form onSubmit={startScan} className="flex flex-col md:flex-row gap-3">
+                <div className="flex-1 relative">
+                  <Icon name="search" className="absolute left-4 top-1/2 -translate-y-1/2 text-slate-400" size={20} />
+                  <input 
+                    type="text" 
+                    value={url}
+                    onChange={(e) => setUrl(e.target.value)}
+                    placeholder="https://votre-site.com" 
+                    className="w-full pl-12 pr-5 py-4 rounded-xl border-2 border-slate-100 bg-slate-50 focus:bg-white focus:border-blue-500 outline-none font-medium"
+                  />
+                </div>
+                <button 
+                  disabled={isScanning || !url}
+                  type="submit"
+                  className="bg-gradient-to-r from-blue-600 to-blue-700 text-white px-10 py-4 rounded-xl font-bold disabled:opacity-50"
+                >
+                  {isScanning ? 'Analyse...' : 'Scanner'}
+                </button>
+              </form>
+              
+              {isScanning && (
+                <div className="mt-3">
+                  <div className="w-full bg-slate-100 h-2 rounded-full overflow-hidden">
+                    <div className="bg-gradient-to-r from-blue-500 to-blue-600 h-full transition-all" style={{ width: `${progress}%` }}></div>
+                  </div>
+                </div>
+              )}
 
-        {/* Results */}
-        {showResult && (
-          <div className="space-y-6 animate-in fade-in slide-in-from-bottom-4 duration-700">
-            
-            {/* Score Banner */}
-            <div className={`rounded-3xl border-4 ${grade.border} ${grade.bg} p-8 shadow-2xl`}>
-              <div className="flex flex-col md:flex-row items-center gap-8">
-                <div className="relative">
-                  <div className={`text-[120px] font-black ${grade.color} leading-none`}>
-                    {grade.letter}
-                  </div>
-                  <div className="absolute -top-4 -right-4 text-5xl">{grade.emoji}</div>
+              {error && (
+                <div className="mt-3 p-4 bg-red-50 border border-red-200 rounded-xl">
+                  <p className="text-sm text-red-600">{error}</p>
                 </div>
-                <div className="flex-1 space-y-4">
-                  <div>
-                    <h2 className="text-3xl font-black text-slate-900 mb-2">
-                      Score de sécurité : {grade.label}
-                    </h2>
-                    <p className="text-slate-700 font-medium text-lg">
-                      {findings.length === 0 ? (
-                        <>Bravo ! Aucune vulnérabilité détectée. Vos headers sont <span className="font-bold text-emerald-600">parfaitement configurés</span>.</>
-                      ) : (
-                        <>Nous avons détecté <span className="font-bold text-slate-900">{findings.length} faille{findings.length > 1 ? 's' : ''} de sécurité</span> sur <span className="font-mono text-sm">{scannedUrl}</span></>
-                      )}
-                    </p>
-                  </div>
-                  
-                  {/* Conséquences par score */}
-                  {findings.length > 0 && (
-                    <div className="bg-white/70 backdrop-blur-sm p-5 rounded-xl border-2 border-white/50 space-y-3">
-                      <div className="flex items-start gap-3">
-                        <AlertTriangle className={`shrink-0 mt-0.5 ${findings.length >= 5 ? 'text-red-500' : findings.length >= 3 ? 'text-orange-500' : 'text-blue-500'}`} size={22} />
-                        <div className="space-y-2">
-                          <p className="font-bold text-slate-900 text-base">
-                            {findings.length >= 5 && "🚨 Risque Critique : Exposition Maximale"}
-                            {findings.length >= 3 && findings.length < 5 && "⚠️ Risque Élevé : Vulnérabilités Multiples"}
-                            {findings.length === 2 && "👍 Risque Modéré : Améliorations Recommandées"}
-                            {findings.length === 1 && "✅ Risque Faible : Quasi-Conforme"}
-                          </p>
-                          <p className="text-sm text-slate-700 leading-relaxed">
-                            {findings.length >= 5 && "Votre infrastructure est une passoire. Risque de sanction RGPD/AI Act jusqu'à 7% du CA. Un audit approfondi est URGENT."}
-                            {findings.length >= 3 && findings.length < 5 && "Plusieurs vecteurs d'attaque exploitables. Votre conformité est fragile face à un audit sérieux ou une due diligence."}
-                            {findings.length === 2 && "Configuration correcte mais incomplète. Quelques ajustements pour atteindre l'excellence et rassurer vos clients/investisseurs."}
-                            {findings.length === 1 && "Presque parfait ! Une seule correction et vous êtes A+. La finition qui fait la différence lors d'un closing."}
-                          </p>
-                        </div>
-                      </div>
-                    </div>
-                  )}
-                </div>
-              </div>
+              )}
             </div>
 
-            {/* Vulnerabilities List */}
-            {findings.length > 0 && (
-              <div className="bg-white rounded-3xl border-2 border-slate-200 overflow-hidden shadow-xl">
-                <div className="p-6 border-b-2 border-slate-100 flex justify-between items-center bg-gradient-to-r from-slate-50 to-white">
-                  <h3 className="font-black text-lg flex items-center gap-2">
-                    <FileWarning size={22} className="text-red-500" /> 
-                    Failles Détectées
-                  </h3>
-                  <span className="text-xs font-bold text-slate-400 uppercase tracking-widest">
-                    Analyse Headers HTTP
-                  </span>
+            {showResult && (
+              <div className="space-y-6 animate-in">
+                <div className={`rounded-3xl border-4 ${grade.border} ${grade.bg} p-8 shadow-2xl text-center`}>
+                  <div className={`text-9xl font-black ${grade.color} mb-4`}>{grade.letter}</div>
+                  <h2 className="text-3xl font-black text-slate-900 mb-2">{grade.label}</h2>
+                  <p className="text-slate-700 font-medium text-lg">
+                    {findings.length === 0 ? "Aucune vulnérabilité !" : `${findings.length} faille(s) détectée(s)`}
+                  </p>
                 </div>
-                <div className="divide-y-2 divide-slate-50">
-                  {findings.map((finding, idx) => (
-                    <div key={finding.id} className="p-6 hover:bg-slate-50 transition-colors">
-                      <div className="flex items-start justify-between gap-4 mb-3">
-                        <div className="flex items-start gap-4 flex-1">
-                          <div className={`shrink-0 w-8 h-8 rounded-full flex items-center justify-center font-black text-sm ${
-                            finding.severity === 'high' ? 'bg-red-100 text-red-600' :
-                            finding.severity === 'medium' ? 'bg-orange-100 text-orange-600' :
-                            'bg-yellow-100 text-yellow-600'
-                          }`}>
-                            {idx + 1}
-                          </div>
-                          <div className="flex-1">
-                            <div className="flex items-center gap-3 mb-2">
-                              <h4 className="font-bold text-base text-slate-900">{finding.name}</h4>
-                              <span className={`text-[10px] font-black px-2.5 py-1 rounded-full uppercase tracking-wider border ${getSeverityColor(finding.severity)}`}>
-                                {finding.severity === 'high' ? 'Critique' : finding.severity === 'medium' ? 'Moyen' : 'Faible'}
-                              </span>
-                            </div>
-                            <p className="text-sm text-slate-600 mb-3 leading-relaxed">{finding.desc}</p>
-                            
-                            {/* Consequences détaillées */}
-                            <div className="bg-red-50 border-l-4 border-red-400 p-3 rounded-r-lg mb-3">
-                              <p className="text-xs font-bold text-red-900 mb-1">💥 Impact Business</p>
-                              <p className="text-xs text-red-700 leading-relaxed">{finding.consequence}</p>
-                            </div>
 
-                            {/* Solution */}
-                            <div className="bg-emerald-50 border-l-4 border-emerald-400 p-3 rounded-r-lg">
-                              <p className="text-xs font-bold text-emerald-900 mb-1">✅ Correction</p>
-                              <code className="text-xs text-emerald-800 font-mono block bg-white/50 p-2 rounded mt-1">
-                                {finding.fix}
-                              </code>
-                            </div>
-                          </div>
-                        </div>
-                      </div>
-                      
-                      {/* Footer metadata */}
-                      <div className="flex items-center gap-4 mt-4 pt-3 border-t border-slate-100">
-                        <span className="text-[10px] text-slate-400 uppercase tracking-wider font-bold">
-                          Header: <span className="text-slate-600">{finding.header}</span>
-                        </span>
-                        <span className="text-[10px] text-slate-400 uppercase tracking-wider font-bold">
-                          Ref: <span className="text-slate-600">{finding.cveRef}</span>
-                        </span>
-                      </div>
-                    </div>
-                  ))}
-                </div>
-              </div>
-            )}
-
-            {/* Score A+ - Upgrade CTA */}
-            {findings.length === 0 && (
-              <div className="bg-gradient-to-br from-emerald-600 to-emerald-700 rounded-3xl p-8 text-white shadow-2xl">
-                <div className="flex flex-col md:flex-row justify-between items-center gap-6">
-                  <div className="space-y-3 flex-1">
-                    <div className="flex items-center gap-2">
-                      <CheckCircle2 size={28} className="text-emerald-200" />
-                      <h4 className="text-2xl font-black">Headers parfaits ! 🎉</h4>
-                    </div>
-                    <p className="text-emerald-100 text-base leading-relaxed">
-                      Vos headers de sécurité sont <span className="font-bold">exemplaires</span>. 
-                      Mais qu'en est-il de vos <span className="font-bold">APIs, endpoints privés, conformité RGPD/AI Act</span> et <span className="font-bold">Shadow APIs</span> ?
-                    </p>
-                    <p className="text-emerald-200 text-sm">
-                      👉 Passez à l'audit complet pour une analyse exhaustive (OWASP API Top 10, conformité réglementaire, plan 30/60/90 jours).
-                    </p>
-                  </div>
-                  <a 
-                    href="/#demande" 
-                    className="w-full md:w-auto bg-white text-emerald-700 px-8 py-4 rounded-xl font-black flex items-center justify-center gap-2 transition-all hover:bg-emerald-50 group shadow-xl"
-                  >
-                    <Shield size={20} />
-                    Audit Complet Scanalis
-                    <ArrowRight size={18} className="group-hover:translate-x-1 transition-transform" />
-                  </a>
-                </div>
-              </div>
-            )}
-
-            {/* CTA Final pour scores B/C/D */}
-            {findings.length > 0 && (
-              <div className="bg-gradient-to-br from-slate-900 via-slate-800 to-slate-900 rounded-3xl p-8 text-white shadow-2xl border border-slate-700">
-                <div className="flex flex-col lg:flex-row justify-between items-center gap-8">
-                  <div className="space-y-4 flex-1">
-                    <div className="inline-block px-3 py-1 bg-blue-500/20 border border-blue-400/30 rounded-full text-xs font-bold text-blue-300 uppercase tracking-wider">
-                      🎯 Passez à l'action
-                    </div>
-                    <h4 className="text-3xl font-black leading-tight">
-                      Ne laissez pas ces {findings.length} faille{findings.length > 1 ? 's' : ''} <br className="hidden md:block"/>
-                      ruiner votre closing
-                    </h4>
-                    <p className="text-slate-300 text-base leading-relaxed">
-                      Ce scan gratuit ne couvre que les <span className="font-bold text-white">headers HTTP de surface</span>. 
-                      Pour une analyse complète (APIs privées, OWASP Top 10, conformité RGPG/AI Act, Shadow APIs, plan de remédiation), 
-                      passez à l'audit Scanalis.
-                    </p>
-                    <div className="flex flex-col sm:flex-row gap-3 pt-2">
-                      <div className="flex items-center gap-2 text-sm text-slate-400">
-                        <CheckCircle2 size={16} className="text-emerald-400" />
-                        Livraison 48h
-                      </div>
-                      <div className="flex items-center gap-2 text-sm text-slate-400">
-                        <CheckCircle2 size={16} className="text-emerald-400" />
-                        Plan 30/60/90 jours
-                      </div>
-                      <div className="flex items-center gap-2 text-sm text-slate-400">
-                        <CheckCircle2 size={16} className="text-emerald-400" />
-                        Snippets de correction
-                      </div>
-                    </div>
-                  </div>
-                  
-                  <div className="flex flex-col gap-3 w-full lg:w-auto">
+                {findings.length > 0 ? (
+                  <div className="bg-slate-900 rounded-3xl p-8 text-white text-center">
+                    <h3 className="text-2xl font-bold mb-4">Obtenez votre plan de remédiation</h3>
                     <a 
-                      href="https://cal.com/mathilde-de-roumilly-3zskha/30min" 
+                      href="https://cal.com/mathilde-de-roumilly-3zskha/30min"
                       target="_blank"
-                      rel="noopener noreferrer"
-                      className="w-full lg:w-auto bg-gradient-to-r from-blue-600 to-blue-700 hover:from-blue-500 hover:to-blue-600 text-white px-8 py-4 rounded-xl font-black flex items-center justify-center gap-2 transition-all group shadow-xl shadow-blue-900/30 border border-blue-500/30"
+                      className="inline-flex items-center gap-2 bg-blue-600 px-8 py-4 rounded-xl font-bold"
                     >
-                      <Calendar size={20} />
-                      Réserver un Audit (30min)
-                      <ChevronRight size={18} className="group-hover:translate-x-1 transition-transform" />
-                    </a>
-                    <a 
-                      href="/#demande" 
-                      className="w-full lg:w-auto bg-slate-800 hover:bg-slate-700 text-white px-8 py-3 rounded-xl font-bold flex items-center justify-center gap-2 transition-all border border-slate-600"
-                    >
-                      <Info size={18} />
-                      Voir Tarifs Audit Complet
+                      Réserver (30min)
                     </a>
                   </div>
-                </div>
+                ) : (
+                  <div className="bg-emerald-600 rounded-3xl p-8 text-white text-center">
+                    <h3 className="text-2xl font-bold mb-4">Headers parfaits ! 🎉</h3>
+                    <a href="/#demande" className="inline-flex bg-white text-emerald-700 px-8 py-4 rounded-xl font-bold">
+                      Audit Complet
+                    </a>
+                  </div>
+                )}
               </div>
             )}
+          </main>
 
-            {/* Trust Badges */}
-            <div className="bg-slate-100 rounded-2xl p-6 border border-slate-200">
-              <div className="flex flex-wrap justify-center items-center gap-8 text-sm text-slate-600">
-                <div className="flex items-center gap-2">
-                  <Shield size={18} className="text-blue-600" />
-                  <span className="font-medium">Non intrusif</span>
-                </div>
-                <div className="flex items-center gap-2">
-                  <Lock size={18} className="text-blue-600" />
-                  <span className="font-medium">Données sécurisées</span>
-                </div>
-                <div className="flex items-center gap-2">
-                  <CheckCircle2 size={18} className="text-blue-600" />
-                  <span className="font-medium">RGPD compliant</span>
-                </div>
-                <div className="flex items-center gap-2">
-                  <Zap size={18} className="text-blue-600" />
-                  <span className="font-medium">Résultats instantanés</span>
-                </div>
-              </div>
-            </div>
-
-            {/* Rescan Button */}
-            <div className="text-center">
-              <button 
-                onClick={() => {
-                  setShowResult(false);
-                  setFindings([]);
-                  setUrl('');
-                }}
-                className="text-blue-600 hover:text-blue-700 font-bold flex items-center gap-2 mx-auto transition-colors"
-              >
-                <RefreshCcw size={18} />
-                Analyser une autre URL
-              </button>
-            </div>
-          </div>
-        )}
-
-        {/* Features si pas encore scanné */}
-        {!showResult && !isScanning && (
-          <div className="mt-16 grid md:grid-cols-3 gap-6">
-            <div className="bg-white p-6 rounded-2xl border-2 border-slate-100 shadow-sm hover:shadow-md transition-shadow">
-              <div className="w-12 h-12 bg-blue-100 rounded-xl flex items-center justify-center mb-4">
-                <Zap className="text-blue-600" size={24} />
-              </div>
-              <h3 className="font-bold text-lg mb-2">Instantané</h3>
-              <p className="text-sm text-slate-600">
-                Résultats en 30 secondes. Pas d'inscription, pas de carte bancaire.
-              </p>
-            </div>
-
-            <div className="bg-white p-6 rounded-2xl border-2 border-slate-100 shadow-sm hover:shadow-md transition-shadow">
-              <div className="w-12 h-12 bg-emerald-100 rounded-xl flex items-center justify-center mb-4">
-                <ShieldCheck className="text-emerald-600" size={24} />
-              </div>
-              <h3 className="font-bold text-lg mb-2">Headers HTTP</h3>
-              <p className="text-sm text-slate-600">
-                HSTS, CSP, X-Frame-Options, CORS, et 8 autres contrôles critiques.
-              </p>
-            </div>
-
-            <div className="bg-white p-6 rounded-2xl border-2 border-slate-100 shadow-sm hover:shadow-md transition-shadow">
-              <div className="w-12 h-12 bg-orange-100 rounded-xl flex items-center justify-center mb-4">
-                <AlertCircle className="text-orange-600" size={24} />
-              </div>
-              <h3 className="font-bold text-lg mb-2">Plan d'Action</h3>
-              <p className="text-sm text-slate-600">
-                Snippets de correction prêts à copier pour chaque vulnérabilité.
-              </p>
-            </div>
-          </div>
-        )}
-      </main>
-
-      <footer className="mt-24 pt-12 pb-8 border-t-2 border-slate-200">
-        <div className="max-w-4xl mx-auto px-4 text-center space-y-3">
-          <div className="flex items-center justify-center gap-2 text-slate-400">
-            <Shield size={16} />
-            <span className="text-xs uppercase tracking-widest font-bold">
-              Scanalis © 2026 • Sécurité & Conformité Européenne
-            </span>
-          </div>
-          <p className="text-xs text-slate-500">
-            Scan non-intrusif • Aucune exploitation de faille • Aucune donnée stockée
-          </p>
+          <footer className="mt-24 text-center text-slate-400 text-xs">
+            Scanalis © 2026
+          </footer>
         </div>
-      </footer>
-    </div>
-  );
-};
+      );
+    };
 
-export default ScanalisScanner;
     const root = ReactDOM.createRoot(document.getElementById('root'));
     root.render(<ScanalisScanner />);
   </script>
