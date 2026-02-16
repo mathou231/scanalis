@@ -80,50 +80,78 @@
         return vulnerabilities;
       };
 
-      const startScan = async (e) => {
-        e.preventDefault();
-        setError('');
-        setFindings([]);
-        setShowResult(false);
-        
-        const cleanUrl = validateAndCleanUrl(url);
-        if (!cleanUrl) {
-          setError("URL invalide. Format : https://exemple.com");
-          return;
+     const startScan = async (e) => {
+  e.preventDefault();
+  setError('');
+  setFindings([]);
+  setShowResult(false);
+  
+  const cleanUrl = validateAndCleanUrl(url);
+  if (!cleanUrl) {
+    setError("URL invalide. Format : https://exemple.com");
+    return;
+  }
+  
+  setIsScanning(true);
+  setProgress(0);
+  setScannedUrl(cleanUrl);
+  
+  const progressInterval = setInterval(() => {
+    setProgress((prev) => (prev >= 90 ? 90 : prev + 10));
+  }, 150);
+
+  // Liste de proxies à tester dans l'ordre
+  const proxies = [
+    `https://api.codetabs.com/v1/proxy?quest=${encodeURIComponent(cleanUrl)}`,
+    `https://api.allorigins.win/raw?url=${encodeURIComponent(cleanUrl)}`,
+    `https://corsproxy.io/?${encodeURIComponent(cleanUrl)}`
+  ];
+
+  let success = false;
+  let lastError = null;
+
+  for (const proxyUrl of proxies) {
+    try {
+      const response = await fetch(proxyUrl, { 
+        method: 'GET',
+        mode: 'cors',
+        headers: {
+          'Accept': 'text/html,application/xhtml+xml'
         }
+      });
+
+      if (response.ok) {
+        clearInterval(progressInterval);
+        setProgress(100);
+
+        const headers = {};
+        response.headers.forEach((value, key) => {
+          headers[key.toLowerCase()] = value;
+        });
+
+        const vulnerabilities = analyzeHeaders(headers);
+        setFindings(vulnerabilities);
         
-        setIsScanning(true);
-        setProgress(0);
-        setScannedUrl(cleanUrl);
-        
-        const progressInterval = setInterval(() => {
-          setProgress((prev) => (prev >= 90 ? 90 : prev + 10));
-        }, 150);
-
-        try {
-          const proxyUrl = `https://api.allorigins.win/raw?url=${encodeURIComponent(cleanUrl)}`;
-          const response = await fetch(proxyUrl, { method: 'HEAD', mode: 'cors' });
-          clearInterval(progressInterval);
-          setProgress(100);
-
-          const headers = {};
-          response.headers.forEach((value, key) => {
-            headers[key.toLowerCase()] = value;
-          });
-
-          const vulnerabilities = analyzeHeaders(headers);
-          setFindings(vulnerabilities);
-          
-          setTimeout(() => {
-            setIsScanning(false);
-            setShowResult(true);
-          }, 300);
-        } catch (err) {
-          clearInterval(progressInterval);
+        setTimeout(() => {
           setIsScanning(false);
-          setError("Impossible d'analyser cette URL. Vérifiez qu'elle est accessible.");
-        }
-      };
+          setShowResult(true);
+        }, 300);
+        
+        success = true;
+        break;
+      }
+    } catch (err) {
+      lastError = err;
+      continue; // Essaye le prochain proxy
+    }
+  }
+
+  if (!success) {
+    clearInterval(progressInterval);
+    setIsScanning(false);
+    setError("Impossible d'analyser cette URL. Le site bloque probablement les scans externes. Essayez avec votre propre site.");
+  }
+};
 
       const getGrade = (count) => {
         if (count === 0) return { letter: 'A+', color: 'text-emerald-600', bg: 'bg-emerald-50', border: 'border-emerald-300', label: 'Excellent', emoji: '🎉' };
