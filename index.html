@@ -3,9 +3,9 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>SCANALIS | Preuve Forensique d'Amnésie IA — Audit RAM Non-Intrusif | DORA · AI Act · NIS2</title>
-<meta name="description" content="SCANALIS produit la preuve cryptographique opposable que votre IA oublie les données après traitement. Protocole Canary breveté : verdict binaire AMNESIA_CONFIRMED ou AMNESIA_FAILED. Scellé SHA-256 + RSA-PSS. Opposable devant la CNIL et tout tribunal.">
-<meta name="keywords" content="audit RAM IA, preuve forensique amnésie, protocole canary, DORA conformité technique, AI Act Art 10 démonstration, NIS2 audit LLM, RGPD purge mémoire, tiers de confiance IA, forensique mémoire volatile, RSSI DPO audit IA, sécurité LLM RAM">
+<title>SCANALIS — Cybersécurité & Souveraineté | Audit Forensique RAM · Preuve d'Amnésie IA | DORA · AI Act · NIS2</title>
+<meta name="description" content="SCANALIS produit la preuve cryptographique opposable que votre IA oublie les données après traitement. Protocole Canary : verdict binaire AMNESIA_CONFIRMED ou AMNESIA_FAILED. Scellé SHA-256 + RSA-PSS. Opposable devant la CNIL et tout tribunal. Zéro accès SSH. Zéro agent.">
+<meta name="keywords" content="audit RAM IA, preuve forensique amnésie, protocole canary, DORA conformité technique, AI Act Art 10 démonstration, NIS2 audit LLM, RGPD purge mémoire, tiers de confiance IA, forensique mémoire volatile, RSSI DPO audit IA, sécurité LLM RAM, cybersécurité souveraine, amnésie native IA">
 <meta name="google-site-verification" content="niiy-7qkTsOFvC3owFYdsrcZo7QkLMX592pi_-e5xuw" />
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -97,6 +97,14 @@ nav {
   letter-spacing: 0.15em;
   color: var(--white);
   text-transform: uppercase;
+}
+.nav-logo-sub {
+  font-family: var(--font-mono);
+  font-size: 0.6rem;
+  letter-spacing: 0.14em;
+  color: var(--cyan);
+  text-transform: uppercase;
+  margin-top: 2px;
 }
 .nav-links {
   display: flex;
@@ -401,10 +409,7 @@ section { padding: 100px 60px; }
   gap: 8px;
   border-bottom: 1px solid rgba(0,229,255,0.1);
 }
-.terminal-dot {
-  width: 8px; height: 8px;
-  border-radius: 50%;
-}
+.terminal-dot { width: 8px; height: 8px; border-radius: 50%; }
 .terminal-dot.r { background: #FF5F56; }
 .terminal-dot.y { background: #FFBD2E; }
 .terminal-dot.g { background: #27C93F; }
@@ -415,11 +420,7 @@ section { padding: 100px 60px; }
   margin-left: 8px;
   text-transform: uppercase;
 }
-.terminal-body {
-  padding: 20px;
-  max-height: 420px;
-  overflow: hidden;
-}
+.terminal-body { padding: 20px; max-height: 420px; overflow: hidden; }
 .t-line {
   opacity: 0;
   animation: typeLine 0.3s forwards;
@@ -435,11 +436,7 @@ section { padding: 100px 60px; }
 .t-white { color: var(--white); }
 .t-bold { font-weight: 500; }
 
-.canary-phases {
-  display: flex;
-  flex-direction: column;
-  gap: 28px;
-}
+.canary-phases { display: flex; flex-direction: column; gap: 28px; }
 .canary-phase {
   display: flex;
   gap: 20px;
@@ -465,22 +462,10 @@ section { padding: 100px 60px; }
   width: 32px;
 }
 .canary-phase:hover .phase-letter { opacity: 1; }
-.phase-name {
-  font-family: var(--font-display);
-  font-size: 0.95rem;
-  font-weight: 700;
-  color: var(--white);
-  margin-bottom: 6px;
-}
-.phase-desc {
-  font-size: 0.82rem;
-  color: var(--grey);
-  line-height: 1.55;
-}
+.phase-name { font-family: var(--font-display); font-size: 0.95rem; font-weight: 700; color: var(--white); margin-bottom: 6px; }
+.phase-desc { font-size: 0.82rem; color: var(--grey); line-height: 1.55; }
 
-#proof-compare {
-  background: var(--navy2);
-}
+#proof-compare { background: var(--navy2); }
 .proof-grid {
   display: grid;
   grid-template-columns: 1fr auto 1fr;
@@ -488,19 +473,9 @@ section { padding: 100px 60px; }
   margin-top: 48px;
   align-items: stretch;
 }
-.proof-col {
-  padding: 40px 36px;
-  border: 1px solid rgba(255,255,255,0.06);
-  border-radius: 4px;
-}
-.proof-col.weak {
-  background: rgba(255,59,92,0.03);
-  border-color: rgba(255,59,92,0.15);
-}
-.proof-col.strong {
-  background: rgba(0,229,255,0.03);
-  border-color: rgba(0,229,255,0.2);
-}
+.proof-col { padding: 40px 36px; border: 1px solid rgba(255,255,255,0.06); border-radius: 4px; }
+.proof-col.weak { background: rgba(255,59,92,0.03); border-color: rgba(255,59,92,0.15); }
+.proof-col.strong { background: rgba(0,229,255,0.03); border-color: rgba(0,229,255,0.2); }
 .proof-vs {
   display: flex;
   align-items: center;
@@ -512,28 +487,11 @@ section { padding: 100px 60px; }
   color: var(--grey);
   opacity: 0.3;
 }
-.proof-col-title {
-  font-family: var(--font-display);
-  font-size: 1.1rem;
-  font-weight: 700;
-  margin-bottom: 24px;
-}
+.proof-col-title { font-family: var(--font-display); font-size: 1.1rem; font-weight: 700; margin-bottom: 24px; }
 .proof-col.weak .proof-col-title { color: var(--red-risk); }
 .proof-col.strong .proof-col-title { color: var(--cyan); }
-.proof-list {
-  list-style: none;
-  display: flex;
-  flex-direction: column;
-  gap: 16px;
-}
-.proof-list li {
-  display: flex;
-  align-items: flex-start;
-  gap: 10px;
-  font-size: 0.85rem;
-  line-height: 1.5;
-  color: var(--grey);
-}
+.proof-list { list-style: none; display: flex; flex-direction: column; gap: 16px; }
+.proof-list li { display: flex; align-items: flex-start; gap: 10px; font-size: 0.85rem; line-height: 1.5; color: var(--grey); }
 .proof-list li .ico { flex-shrink: 0; font-size: 0.9rem; }
 .proof-col.weak .ico { color: var(--red-risk); }
 .proof-col.strong .ico { color: var(--cyan); }
@@ -549,23 +507,9 @@ section { padding: 100px 60px; }
   gap: 40px;
   margin-top: 60px;
 }
-.funding-text h3 {
-  font-family: var(--font-display);
-  font-size: 1.15rem;
-  font-weight: 700;
-  color: var(--white);
-  margin-bottom: 6px;
-}
-.funding-text p {
-  font-size: 0.88rem;
-  color: var(--grey);
-  line-height: 1.5;
-}
-.funding-badges {
-  display: flex;
-  gap: 12px;
-  flex-shrink: 0;
-}
+.funding-text h3 { font-family: var(--font-display); font-size: 1.15rem; font-weight: 700; color: var(--white); margin-bottom: 6px; }
+.funding-text p { font-size: 0.88rem; color: var(--grey); line-height: 1.5; }
+.funding-badges { display: flex; gap: 12px; flex-shrink: 0; }
 .funding-badge {
   padding: 8px 16px;
   border: 1px solid rgba(0,229,255,0.25);
@@ -604,18 +548,8 @@ section { padding: 100px 60px; }
 }
 
 #problem { background: var(--navy); }
-.problem-grid {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 80px;
-  align-items: center;
-  margin-top: 60px;
-}
-.problem-items {
-  display: flex;
-  flex-direction: column;
-  gap: 32px;
-}
+.problem-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 80px; align-items: center; margin-top: 60px; }
+.problem-items { display: flex; flex-direction: column; gap: 32px; }
 .problem-item {
   display: flex;
   gap: 20px;
@@ -627,36 +561,15 @@ section { padding: 100px 60px; }
   transition: all 0.3s;
   cursor: default;
 }
-.problem-item:hover {
-  border-left-color: var(--red-risk);
-  background: rgba(255,59,92,0.08);
-  transform: translateX(6px);
-}
+.problem-item:hover { border-left-color: var(--red-risk); background: rgba(255,59,92,0.08); transform: translateX(6px); }
 .problem-icon { font-size: 1.6rem; flex-shrink: 0; margin-top: 2px; }
-.problem-item h3 {
-  font-family: var(--font-display);
-  font-size: 1rem;
-  font-weight: 700;
-  margin-bottom: 8px;
-  color: var(--white);
-}
+.problem-item h3 { font-family: var(--font-display); font-size: 1rem; font-weight: 700; margin-bottom: 8px; color: var(--white); }
 .problem-item p { font-size: 0.88rem; line-height: 1.6; color: var(--grey); }
 .cost-visual { display: flex; flex-direction: column; gap: 20px; }
 .cost-bar-item { display: flex; flex-direction: column; gap: 8px; }
 .cost-bar-label { display: flex; justify-content: space-between; align-items: center; }
-.cost-bar-label span:first-child {
-  font-family: var(--font-mono);
-  font-size: 0.78rem;
-  letter-spacing: 0.06em;
-  color: var(--grey);
-  text-transform: uppercase;
-}
-.cost-bar-label span:last-child {
-  font-family: var(--font-display);
-  font-weight: 700;
-  font-size: 1rem;
-  color: var(--red-risk);
-}
+.cost-bar-label span:first-child { font-family: var(--font-mono); font-size: 0.78rem; letter-spacing: 0.06em; color: var(--grey); text-transform: uppercase; }
+.cost-bar-label span:last-child { font-family: var(--font-display); font-weight: 700; font-size: 1rem; color: var(--red-risk); }
 .cost-bar-track { height: 8px; background: rgba(255,255,255,0.05); border-radius: 4px; overflow: hidden; }
 .cost-bar-fill {
   height: 100%;
@@ -667,40 +580,13 @@ section { padding: 100px 60px; }
   transition: transform 1.2s cubic-bezier(0.16, 1, 0.3, 1);
 }
 .cost-bar-fill.animated { transform: scaleX(1); }
-.cost-total {
-  margin-top: 20px;
-  padding: 24px;
-  background: rgba(0,229,255,0.05);
-  border: 1px solid rgba(0,229,255,0.2);
-  border-radius: 4px;
-  text-align: center;
-}
-.cost-total-label {
-  font-family: var(--font-mono);
-  font-size: 0.75rem;
-  letter-spacing: 0.12em;
-  text-transform: uppercase;
-  color: var(--grey);
-  margin-bottom: 8px;
-}
-.cost-total-value {
-  font-family: var(--font-display);
-  font-size: 3rem;
-  font-weight: 800;
-  color: var(--cyan);
-}
+.cost-total { margin-top: 20px; padding: 24px; background: rgba(0,229,255,0.05); border: 1px solid rgba(0,229,255,0.2); border-radius: 4px; text-align: center; }
+.cost-total-label { font-family: var(--font-mono); font-size: 0.75rem; letter-spacing: 0.12em; text-transform: uppercase; color: var(--grey); margin-bottom: 8px; }
+.cost-total-value { font-family: var(--font-display); font-size: 3rem; font-weight: 800; color: var(--cyan); }
 .cost-total-sub { font-size: 0.82rem; color: var(--grey); margin-top: 4px; }
 
-#methodology {
-  background: var(--navy2);
-  border-top: 1px solid rgba(0,229,255,0.06);
-}
-.pillars-grid {
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  gap: 24px;
-  margin-top: 60px;
-}
+#methodology { background: var(--navy2); border-top: 1px solid rgba(0,229,255,0.06); }
+.pillars-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 24px; margin-top: 60px; }
 .pillar-card {
   padding: 36px 28px;
   background: rgba(255,255,255,0.02);
@@ -721,59 +607,17 @@ section { padding: 100px 60px; }
   transform-origin: left;
   transition: transform 0.35s;
 }
-.pillar-card:hover {
-  border-color: rgba(0,229,255,0.3);
-  background: rgba(0,229,255,0.04);
-  transform: translateY(-4px);
-}
+.pillar-card:hover { border-color: rgba(0,229,255,0.3); background: rgba(0,229,255,0.04); transform: translateY(-4px); }
 .pillar-card:hover::before { transform: scaleX(1); }
-.pillar-number {
-  font-family: var(--font-mono);
-  font-size: 0.7rem;
-  letter-spacing: 0.15em;
-  color: var(--cyan);
-  text-transform: uppercase;
-  margin-bottom: 20px;
-  opacity: 0.7;
-}
-.pillar-icon-wrap {
-  width: 52px; height: 52px;
-  border-radius: 12px;
-  background: rgba(0,229,255,0.08);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  margin-bottom: 20px;
-  font-size: 1.4rem;
-}
-.pillar-name {
-  font-family: var(--font-display);
-  font-size: 1.15rem;
-  font-weight: 700;
-  margin-bottom: 12px;
-  color: var(--white);
-}
+.pillar-number { font-family: var(--font-mono); font-size: 0.7rem; letter-spacing: 0.15em; color: var(--cyan); text-transform: uppercase; margin-bottom: 20px; opacity: 0.7; }
+.pillar-icon-wrap { width: 52px; height: 52px; border-radius: 12px; background: rgba(0,229,255,0.08); display: flex; align-items: center; justify-content: center; margin-bottom: 20px; font-size: 1.4rem; }
+.pillar-name { font-family: var(--font-display); font-size: 1.15rem; font-weight: 700; margin-bottom: 12px; color: var(--white); }
 .pillar-desc { font-size: 0.85rem; line-height: 1.65; color: var(--grey); }
 .pillar-tags { display: flex; flex-wrap: wrap; gap: 6px; margin-top: 20px; }
-.pillar-tag {
-  font-family: var(--font-mono);
-  font-size: 0.65rem;
-  letter-spacing: 0.08em;
-  padding: 3px 8px;
-  background: rgba(0,229,255,0.07);
-  border: 1px solid rgba(0,229,255,0.15);
-  border-radius: 2px;
-  color: var(--cyan);
-  text-transform: uppercase;
-}
+.pillar-tag { font-family: var(--font-mono); font-size: 0.65rem; letter-spacing: 0.08em; padding: 3px 8px; background: rgba(0,229,255,0.07); border: 1px solid rgba(0,229,255,0.15); border-radius: 2px; color: var(--cyan); text-transform: uppercase; }
 
 #offerings { background: var(--navy); }
-.offerings-grid {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 24px;
-  margin-top: 60px;
-}
+.offerings-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; margin-top: 60px; }
 .offer-card {
   padding: 40px 36px;
   background: rgba(255,255,255,0.02);
@@ -784,160 +628,44 @@ section { padding: 100px 60px; }
   position: relative;
   transition: all 0.35s;
 }
-.offer-card.featured {
-  background: linear-gradient(135deg, rgba(0,229,255,0.07), rgba(0,229,255,0.02));
-  border-color: rgba(0,229,255,0.35);
-}
-.offer-badge {
-  position: absolute;
-  top: -12px; left: 36px;
-  background: var(--cyan);
-  color: var(--navy);
-  font-family: var(--font-display);
-  font-size: 0.68rem;
-  font-weight: 700;
-  letter-spacing: 0.1em;
-  text-transform: uppercase;
-  padding: 4px 12px;
-  border-radius: 100px;
-}
+.offer-card.featured { background: linear-gradient(135deg, rgba(0,229,255,0.07), rgba(0,229,255,0.02)); border-color: rgba(0,229,255,0.35); }
+.offer-badge { position: absolute; top: -12px; left: 36px; background: var(--cyan); color: var(--navy); font-family: var(--font-display); font-size: 0.68rem; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; padding: 4px 12px; border-radius: 100px; }
 .offer-card:hover { transform: translateY(-6px); border-color: rgba(0,229,255,0.4); }
-.offer-tier {
-  font-family: var(--font-mono);
-  font-size: 0.72rem;
-  letter-spacing: 0.15em;
-  text-transform: uppercase;
-  color: var(--grey);
-  margin-bottom: 12px;
-}
-.offer-name {
-  font-family: var(--font-display);
-  font-size: 1.5rem;
-  font-weight: 800;
-  margin-bottom: 6px;
-  color: var(--white);
-}
-.offer-price {
-  font-family: var(--font-display);
-  font-size: 2.2rem;
-  font-weight: 800;
-  color: var(--cyan);
-  margin-bottom: 8px;
-}
+.offer-tier { font-family: var(--font-mono); font-size: 0.72rem; letter-spacing: 0.15em; text-transform: uppercase; color: var(--grey); margin-bottom: 12px; }
+.offer-name { font-family: var(--font-display); font-size: 1.5rem; font-weight: 800; margin-bottom: 6px; color: var(--white); }
+.offer-price { font-family: var(--font-display); font-size: 2.2rem; font-weight: 800; color: var(--cyan); margin-bottom: 8px; }
 .offer-price-sub { font-size: 0.82rem; color: var(--grey); margin-bottom: 32px; }
-.offer-features {
-  list-style: none;
-  display: flex;
-  flex-direction: column;
-  gap: 12px;
-  flex: 1;
-  margin-bottom: 36px;
-}
-.offer-features li {
-  display: flex;
-  align-items: flex-start;
-  gap: 10px;
-  font-size: 0.88rem;
-  line-height: 1.5;
-  color: var(--grey);
-}
+.offer-features { list-style: none; display: flex; flex-direction: column; gap: 12px; flex: 1; margin-bottom: 36px; }
+.offer-features li { display: flex; align-items: flex-start; gap: 10px; font-size: 0.88rem; line-height: 1.5; color: var(--grey); }
 .offer-features li.included { color: var(--white); }
 .offer-features li.included::before { content: '✓'; color: var(--cyan); font-weight: 700; flex-shrink: 0; }
 .offer-features li.excluded { opacity: 0.4; }
 .offer-features li.excluded::before { content: '—'; color: var(--grey); flex-shrink: 0; }
-.offer-cta {
-  display: block;
-  text-align: center;
-  font-family: var(--font-display);
-  font-size: 0.9rem;
-  font-weight: 700;
-  letter-spacing: 0.06em;
-  text-transform: uppercase;
-  padding: 16px;
-  text-decoration: none;
-  border-radius: 2px;
-  transition: all 0.25s;
-}
+.offer-cta { display: block; text-align: center; font-family: var(--font-display); font-size: 0.9rem; font-weight: 700; letter-spacing: 0.06em; text-transform: uppercase; padding: 16px; text-decoration: none; border-radius: 2px; transition: all 0.25s; }
 .offer-cta.primary { background: var(--cyan); color: var(--navy); }
 .offer-cta.primary:hover { box-shadow: 0 8px 30px rgba(0,229,255,0.4); transform: translateY(-1px); }
 .offer-cta.outline { border: 1px solid rgba(0,229,255,0.3); color: var(--cyan); }
 .offer-cta.outline:hover { background: rgba(0,229,255,0.07); }
 
 #comparison { background: var(--navy2); }
-.compare-table {
-  margin-top: 60px;
-  width: 100%;
-  border-collapse: collapse;
-  border-radius: 4px;
-  overflow: hidden;
-}
-.compare-table th {
-  padding: 20px 24px;
-  text-align: center;
-  font-family: var(--font-display);
-  font-size: 0.9rem;
-  font-weight: 700;
-  text-transform: uppercase;
-  letter-spacing: 0.06em;
-  background: rgba(0,229,255,0.05);
-  border-bottom: 2px solid rgba(0,229,255,0.15);
-}
+.compare-table { margin-top: 60px; width: 100%; border-collapse: collapse; border-radius: 4px; overflow: hidden; }
+.compare-table th { padding: 20px 24px; text-align: center; font-family: var(--font-display); font-size: 0.9rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.06em; background: rgba(0,229,255,0.05); border-bottom: 2px solid rgba(0,229,255,0.15); }
 .compare-table th:first-child { text-align: left; color: var(--grey); }
 .compare-table th.scanalis-col { color: var(--cyan); background: rgba(0,229,255,0.1); }
-.compare-table td {
-  padding: 18px 24px;
-  text-align: center;
-  font-size: 0.88rem;
-  border-bottom: 1px solid rgba(255,255,255,0.04);
-  color: var(--grey);
-}
-.compare-table td:first-child {
-  text-align: left;
-  font-family: var(--font-mono);
-  font-size: 0.8rem;
-  letter-spacing: 0.04em;
-  color: var(--white);
-}
-.compare-table td.scanalis-col {
-  background: rgba(0,229,255,0.04);
-  color: var(--cyan);
-  font-weight: 500;
-}
+.compare-table td { padding: 18px 24px; text-align: center; font-size: 0.88rem; border-bottom: 1px solid rgba(255,255,255,0.04); color: var(--grey); }
+.compare-table td:first-child { text-align: left; font-family: var(--font-mono); font-size: 0.8rem; letter-spacing: 0.04em; color: var(--white); }
+.compare-table td.scanalis-col { background: rgba(0,229,255,0.04); color: var(--cyan); font-weight: 500; }
 .compare-table tr:hover td { background: rgba(255,255,255,0.02); }
 .compare-table tr:hover td.scanalis-col { background: rgba(0,229,255,0.07); }
 .check-yes { color: var(--cyan); font-size: 1.1rem; }
 .check-no { color: var(--red-risk); opacity: 0.5; }
 .check-partial { color: var(--gold); }
 
-#roi {
-  background: var(--navy);
-  position: relative;
-  overflow: hidden;
-}
-.roi-bg {
-  position: absolute;
-  inset: 0;
-  background: radial-gradient(ellipse 60% 80% at 80% 50%, rgba(0,229,255,0.04) 0%, transparent 70%);
-}
-.roi-layout {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 80px;
-  align-items: center;
-  position: relative;
-  z-index: 2;
-}
+#roi { background: var(--navy); position: relative; overflow: hidden; }
+.roi-bg { position: absolute; inset: 0; background: radial-gradient(ellipse 60% 80% at 80% 50%, rgba(0,229,255,0.04) 0%, transparent 70%); }
+.roi-layout { display: grid; grid-template-columns: 1fr 1fr; gap: 80px; align-items: center; position: relative; z-index: 2; }
 .roi-metric { margin-top: 40px; display: flex; flex-direction: column; gap: 20px; }
-.roi-item {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 20px 24px;
-  background: rgba(255,255,255,0.02);
-  border: 1px solid rgba(255,255,255,0.06);
-  border-radius: 4px;
-  transition: border-color 0.2s;
-}
+.roi-item { display: flex; justify-content: space-between; align-items: center; padding: 20px 24px; background: rgba(255,255,255,0.02); border: 1px solid rgba(255,255,255,0.06); border-radius: 4px; transition: border-color 0.2s; }
 .roi-item:hover { border-color: rgba(0,229,255,0.2); }
 .roi-item-label { font-size: 0.88rem; color: var(--grey); }
 .roi-item-value { font-family: var(--font-display); font-size: 1.3rem; font-weight: 700; color: var(--red-risk); }
@@ -945,64 +673,57 @@ section { padding: 100px 60px; }
 .roi-visual { display: flex; flex-direction: column; align-items: center; gap: 32px; }
 .roi-circle { position: relative; width: 320px; height: 320px; }
 .roi-circle svg { transform: rotate(-90deg); }
-.roi-circle-center {
-  position: absolute;
-  inset: 0;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  text-align: center;
-}
+.roi-circle-center { position: absolute; inset: 0; display: flex; flex-direction: column; align-items: center; justify-content: center; text-align: center; }
 .roi-circle-value { font-family: var(--font-display); font-size: 3rem; font-weight: 800; color: var(--cyan); line-height: 1; }
 .roi-circle-label { font-family: var(--font-mono); font-size: 0.7rem; letter-spacing: 0.12em; text-transform: uppercase; color: var(--grey); margin-top: 6px; }
 
-#trust {
-  background: var(--navy2);
-  border-top: 1px solid rgba(0,229,255,0.06);
-}
+#trust { background: var(--navy2); border-top: 1px solid rgba(0,229,255,0.06); }
 .trust-logos { display: flex; align-items: center; gap: 60px; margin-top: 48px; flex-wrap: wrap; }
-.trust-logo {
-  font-family: var(--font-display);
-  font-size: 0.9rem;
-  font-weight: 700;
-  letter-spacing: 0.15em;
-  text-transform: uppercase;
-  color: rgba(255,255,255,0.2);
-  border: 1px solid rgba(255,255,255,0.08);
-  padding: 10px 24px;
-  border-radius: 2px;
-  transition: all 0.2s;
-}
+.trust-logo { font-family: var(--font-display); font-size: 0.9rem; font-weight: 700; letter-spacing: 0.15em; text-transform: uppercase; color: rgba(255,255,255,0.2); border: 1px solid rgba(255,255,255,0.08); padding: 10px 24px; border-radius: 2px; transition: all 0.2s; }
 .trust-logo:hover { color: rgba(255,255,255,0.5); border-color: rgba(255,255,255,0.2); }
 .compliance-badges { display: flex; gap: 16px; flex-wrap: wrap; margin-top: 60px; padding-top: 60px; border-top: 1px solid rgba(255,255,255,0.06); }
-.badge {
-  display: flex;
-  align-items: center;
-  gap: 10px;
-  padding: 14px 20px;
-  background: rgba(0,229,255,0.04);
-  border: 1px solid rgba(0,229,255,0.15);
-  border-radius: 4px;
-  transition: all 0.2s;
-}
+.badge { display: flex; align-items: center; gap: 10px; padding: 14px 20px; background: rgba(0,229,255,0.04); border: 1px solid rgba(0,229,255,0.15); border-radius: 4px; transition: all 0.2s; }
 .badge:hover { background: rgba(0,229,255,0.08); border-color: rgba(0,229,255,0.3); }
 .badge-icon { font-size: 1.1rem; }
 .badge-label { font-family: var(--font-mono); font-size: 0.75rem; letter-spacing: 0.08em; color: var(--white); text-transform: uppercase; }
 .badge-sub { font-size: 0.72rem; color: var(--grey); margin-top: 2px; }
 
-#process { background: var(--navy); }
-.process-timeline {
-  margin-top: 60px;
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 1px;
-  background: rgba(0,229,255,0.08);
-  border: 1px solid rgba(0,229,255,0.08);
-  border-radius: 4px;
-  overflow: hidden;
+/* FAQ SECTION */
+#faq { background: var(--navy); border-top: 1px solid rgba(0,229,255,0.06); }
+.faq-grid { display: flex; flex-direction: column; gap: 24px; margin-top: 48px; max-width: 860px; }
+.faq-item {
+  padding: 32px 36px;
+  background: rgba(255,255,255,0.02);
+  border: 1px solid rgba(0,229,255,0.1);
+  border-left: 3px solid var(--cyan);
+  border-radius: 0 4px 4px 0;
+  transition: all 0.3s;
+  cursor: default;
 }
-.process-step { padding: 40px 36px; background: var(--navy); position: relative; transition: background 0.3s; }
+.faq-item:hover { background: rgba(0,229,255,0.04); border-color: rgba(0,229,255,0.3); border-left-color: var(--cyan); transform: translateX(4px); }
+.faq-q { font-family: var(--font-display); font-size: 1.05rem; font-weight: 700; color: var(--white); margin-bottom: 14px; display: flex; gap: 14px; align-items: flex-start; }
+.faq-q-num { font-family: var(--font-mono); font-size: 0.72rem; color: var(--cyan); letter-spacing: 0.12em; flex-shrink: 0; padding-top: 4px; }
+.faq-a { font-size: 0.88rem; line-height: 1.7; color: var(--grey); padding-left: 34px; }
+.faq-a strong { color: var(--cyan); font-weight: 500; }
+.faq-verdict {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  margin-top: 12px;
+  margin-left: 34px;
+  padding: 6px 14px;
+  border-radius: 2px;
+  font-family: var(--font-mono);
+  font-size: 0.7rem;
+  letter-spacing: 0.1em;
+  background: rgba(0,229,255,0.06);
+  border: 1px solid rgba(0,229,255,0.2);
+  color: var(--cyan);
+}
+
+#process { background: var(--navy2); }
+.process-timeline { margin-top: 60px; display: grid; grid-template-columns: repeat(3, 1fr); gap: 1px; background: rgba(0,229,255,0.08); border: 1px solid rgba(0,229,255,0.08); border-radius: 4px; overflow: hidden; }
+.process-step { padding: 40px 36px; background: var(--navy2); position: relative; transition: background 0.3s; }
 .process-step:hover { background: rgba(0,229,255,0.03); }
 .process-step-num { font-family: var(--font-display); font-size: 4rem; font-weight: 800; color: rgba(0,229,255,0.07); line-height: 1; margin-bottom: 20px; transition: color 0.3s; }
 .process-step:hover .process-step-num { color: rgba(0,229,255,0.15); }
@@ -1011,51 +732,18 @@ section { padding: 100px 60px; }
 .process-step-desc { font-size: 0.85rem; line-height: 1.65; color: var(--grey); }
 .process-step-deliverable { margin-top: 20px; padding: 12px 16px; background: rgba(0,229,255,0.05); border-left: 2px solid var(--cyan); font-family: var(--font-mono); font-size: 0.75rem; color: var(--cyan); letter-spacing: 0.04em; }
 
-#final-cta {
-  padding: 120px 60px;
-  background: linear-gradient(135deg, var(--navy2), var(--navy));
-  border-top: 1px solid rgba(0,229,255,0.12);
-  text-align: center;
-  position: relative;
-  overflow: hidden;
-}
-.cta-orb {
-  position: absolute;
-  width: 800px; height: 800px;
-  border-radius: 50%;
-  background: radial-gradient(circle, rgba(0,229,255,0.06) 0%, transparent 70%);
-  top: 50%; left: 50%;
-  transform: translate(-50%, -50%);
-  pointer-events: none;
-}
+#final-cta { padding: 120px 60px; background: linear-gradient(135deg, var(--navy2), var(--navy)); border-top: 1px solid rgba(0,229,255,0.12); text-align: center; position: relative; overflow: hidden; }
+.cta-orb { position: absolute; width: 800px; height: 800px; border-radius: 50%; background: radial-gradient(circle, rgba(0,229,255,0.06) 0%, transparent 70%); top: 50%; left: 50%; transform: translate(-50%, -50%); pointer-events: none; }
 #final-cta .section-label { justify-content: center; }
 .cta-headline { font-family: var(--font-display); font-size: clamp(2.5rem, 5vw, 4.5rem); font-weight: 800; line-height: 1.1; letter-spacing: -0.02em; max-width: 800px; margin: 20px auto 32px; }
 .cta-headline .accent { color: var(--cyan); }
 .cta-sub { font-size: 1.05rem; color: var(--grey); max-width: 500px; margin: 0 auto 48px; line-height: 1.7; }
 .cta-actions { display: flex; gap: 20px; justify-content: center; align-items: center; flex-wrap: wrap; }
 .cta-guarantee-row { display: flex; justify-content: center; gap: 40px; margin-top: 48px; flex-wrap: wrap; }
-.cta-guarantee-item {
-  display: flex;
-  align-items: center;
-  gap: 10px;
-  font-family: var(--font-mono);
-  font-size: 0.75rem;
-  letter-spacing: 0.06em;
-  color: var(--grey);
-  text-transform: uppercase;
-}
+.cta-guarantee-item { display: flex; align-items: center; gap: 10px; font-family: var(--font-mono); font-size: 0.75rem; letter-spacing: 0.06em; color: var(--grey); text-transform: uppercase; }
 .cta-guarantee-item::before { content: '✓'; color: var(--cyan); font-size: 0.9rem; }
 
-footer {
-  background: var(--navy2);
-  padding: 60px;
-  border-top: 1px solid rgba(0,229,255,0.08);
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  flex-wrap: wrap;
-  gap: 30px;
-}
+footer { background: var(--navy2); padding: 60px; border-top: 1px solid rgba(0,229,255,0.08); display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 30px; }
 .footer-brand { display: flex; align-items: center; gap: 12px; }
 .footer-brand img { height: 40px; width: auto; }
 .footer-brand-text { font-family: var(--font-display); font-size: 1rem; font-weight: 800; letter-spacing: 0.15em; text-transform: uppercase; }
@@ -1067,31 +755,12 @@ footer {
 .footer-email { font-family: var(--font-mono); font-size: 0.82rem; color: var(--cyan); text-decoration: none; letter-spacing: 0.04em; }
 .footer-copy { font-size: 0.75rem; color: rgba(255,255,255,0.2); margin-top: 6px; }
 
-@keyframes fadeUp {
-  from { opacity: 0; transform: translateY(24px); }
-  to   { opacity: 1; transform: translateY(0); }
-}
-@keyframes ticker {
-  from { transform: translateX(0); }
-  to   { transform: translateX(-50%); }
-}
-@keyframes pulse-red {
-  0%, 100% { opacity: 1; box-shadow: 0 0 0 0 rgba(255,59,92,0.4); }
-  50%       { opacity: 0.7; box-shadow: 0 0 0 6px rgba(255,59,92,0); }
-}
-@keyframes pulse-green {
-  0%, 100% { opacity: 1; box-shadow: 0 0 0 0 rgba(0,230,118,0.4); }
-  50%       { opacity: 0.6; box-shadow: 0 0 0 6px rgba(0,230,118,0); }
-}
-@keyframes typeLine {
-  from { opacity: 0; transform: translateX(-4px); }
-  to   { opacity: 1; transform: translateX(0); }
-}
-.reveal {
-  opacity: 0;
-  transform: translateY(30px);
-  transition: opacity 0.7s ease, transform 0.7s ease;
-}
+@keyframes fadeUp { from { opacity: 0; transform: translateY(24px); } to { opacity: 1; transform: translateY(0); } }
+@keyframes ticker { from { transform: translateX(0); } to { transform: translateX(-50%); } }
+@keyframes pulse-red { 0%, 100% { opacity: 1; box-shadow: 0 0 0 0 rgba(255,59,92,0.4); } 50% { opacity: 0.7; box-shadow: 0 0 0 6px rgba(255,59,92,0); } }
+@keyframes pulse-green { 0%, 100% { opacity: 1; box-shadow: 0 0 0 0 rgba(0,230,118,0.4); } 50% { opacity: 0.6; box-shadow: 0 0 0 6px rgba(0,230,118,0); } }
+@keyframes typeLine { from { opacity: 0; transform: translateX(-4px); } to { opacity: 1; transform: translateX(0); } }
+.reveal { opacity: 0; transform: translateY(30px); transition: opacity 0.7s ease, transform 0.7s ease; }
 .reveal.visible { opacity: 1; transform: translateY(0); }
 
 @media (max-width: 1100px) {
@@ -1141,13 +810,16 @@ footer {
       <path d="M70 48 Q85 48 88 55" stroke="#00E5FF" stroke-width="5" stroke-linecap="round" fill="none"/>
       <path d="M70 58 Q82 57 84 50" stroke="#00E5FF" stroke-width="5" stroke-linecap="round" fill="none"/>
     </svg>
-    <span class="nav-logo-text">Scanalis</span>
+    <div>
+      <div class="nav-logo-text">Scanalis</div>
+      <div class="nav-logo-sub">Cybersécurité &amp; Souveraineté</div>
+    </div>
   </a>
   <ul class="nav-links">
     <li><a href="#canary-proof">Protocole</a></li>
     <li><a href="#methodology">Méthode</a></li>
     <li><a href="#offerings">Programmes</a></li>
-    <li><a href="#comparison">Comparatif</a></li>
+    <li><a href="#faq">FAQ</a></li>
     <li><a href="#process">Processus</a></li>
   </ul>
   <a href="https://cal.com/mathilde-de-roumilly-3zskha/30min" target="_blank" class="nav-cta">Cadrage Technique →</a>
@@ -1159,22 +831,26 @@ footer {
   <div class="hero-orb hero-orb-1"></div>
   <div class="hero-orb hero-orb-2"></div>
 
-  <div class="hero-eyebrow">Tiers de confiance technique — Forensique RAM pour systèmes IA</div>
+  <div class="hero-eyebrow">Audit forensique RAM  Tiers de confiance technique indépendant</div>
 
   <h1 class="hero-headline">
-    Votre IA déclare<br>
-    qu'elle oublie.<br>
-    <span class="danger">Prouvez-le.</span>
+    La confiance<br>
+    ne se décrète pas.<br>
+    <span class="accent">Elle se mesure bit par bit.</span>
   </h1>
 
   <p class="hero-sub">
-    DORA, AI Act, NIS2, RGPD : la conformité déclarative ne suffit plus. Les autorités de contrôle exigent désormais une <strong>démonstration technique opposable</strong> , pas un schéma d'architecture, pas un rapport interne signé par votre CTO. Une preuve cryptographique, produite par un tiers indépendant, vérifiable devant la CNIL ou un juge.
+    DORA, AI Act, NIS2, RGPD : les autorités de contrôle n'acceptent plus les déclarations de conformité. Elles exigent une <strong>démonstration technique opposable</strong>  produite par un tiers indépendant, vérifiable devant la CNIL ou un juge. Scanalis est ce tiers. Le verdict est binaire : <strong>AMNESIA_CONFIRMED</strong> ou <strong>AMNESIA_FAILED</strong>. Pas de zone grise.
   </p>
 
   <div class="hero-actions">
     <a href="https://cal.com/mathilde-de-roumilly-3zskha/30min" target="_blank" class="btn-primary">
       <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
       Demander un cadrage technique
+    </a>
+    <a href="#canary-proof" class="btn-secondary">
+      Voir le Protocole Canary
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
     </a>
   </div>
 
@@ -1185,15 +861,15 @@ footer {
     </div>
     <div class="stat-item">
       <div class="stat-value">SHA-256</div>
-      <div class="stat-label">Sceau cryptographique + RSA-PSS</div>
+      <div class="stat-label">Sceau + RSA-PSS + RFC3161</div>
     </div>
     <div class="stat-item">
       <div class="stat-value">Binaire</div>
-      <div class="stat-label">CONFIRMED ou FAILED  pas de zone grise</div>
+      <div class="stat-label">CONFIRMED ou FAILED  zéro zone grise</div>
     </div>
     <div class="stat-item">
       <div class="stat-value">32 pages</div>
-      <div class="stat-label">Rapport opposable, horodaté, signé</div>
+      <div class="stat-label">Rapport opposable horodaté signé</div>
     </div>
   </div>
 </section>
@@ -1214,11 +890,11 @@ footer {
   </div>
 </div>
 
-<!-- SECTION PROTOCOLE CANARY -->
+<!-- PROTOCOLE CANARY -->
 <section id="canary-proof">
-  <div class="section-label">Protocole Canary  Preuve forensique</div>
+  <div class="section-label">Protocole Canary  Méthode forensique propriétaire</div>
   <h2 class="section-title reveal">Nous ne sécurisons pas votre IA.<br>Nous <span style="color:var(--cyan)">prouvons forensiquement</span> ce qu'elle retient.</h2>
-  <p class="section-desc reveal" style="transition-delay:0.1s">Le Protocole Canary injecte 8 données-leurres cryptographiquement traçables dans votre système, déclenche la purge, puis scanne la mémoire vive octet par octet. Le verdict est binaire, objectif, et ne dépend d'aucune déclaration de votre éditeur. Aucun accès SSH. Aucun agent installé. Lecture seule sur dump mémoire chiffré fourni par vos équipes.</p>
+  <p class="section-desc reveal" style="transition-delay:0.1s">Le Protocole Canary injecte 8 données-leurres cryptographiquement traçables, déclenche la purge, puis scanne la mémoire vive octet par octet. <strong style="color:var(--white)">Zéro accès SSH. Zéro agent installé. Zéro accès à votre code source.</strong> Lecture seule sur un dump mémoire chiffré réalisé par vos propres équipes. Votre infrastructure reste souveraine à chaque instant.</p>
 
   <div class="canary-layout">
     <div class="terminal reveal" style="transition-delay:0.2s">
@@ -1236,28 +912,28 @@ footer {
         <div class="phase-letter">A</div>
         <div>
           <div class="phase-name">Capture de la ligne de base</div>
-          <div class="phase-desc">Empreinte mémoire du processus cible avant toute interaction. PID, taille résidente, fingerprint heap SHA-256. Point de référence forensique immuable.</div>
+          <div class="phase-desc">Empreinte mémoire du processus cible avant toute interaction. PID, taille résidente, fingerprint heap SHA-256. Point de référence forensique immuable établi par vos équipes.</div>
         </div>
       </div>
       <div class="canary-phase">
         <div class="phase-letter">B</div>
         <div>
           <div class="phase-name">Injection des 8 jetons-canaris</div>
-          <div class="phase-desc">Huit catégories de données sensibles introduites via l'interface standard : DCP (email, téléphone, numéro SS), IBAN, clé API, vecteur d'injection de prompt, secret industriel, donnée médicale. Chaque jeton est cryptographiquement distinct et traçable.</div>
+          <div class="phase-desc">Huit catégories de données sensibles introduites via l'interface standard : DCP (email, téléphone, numéro SS), IBAN, clé API, vecteur d'injection de prompt, secret industriel, donnée médicale. Chaque jeton est cryptographiquement distinct et traçable byte par byte.</div>
         </div>
       </div>
       <div class="canary-phase">
         <div class="phase-letter">C</div>
         <div>
           <div class="phase-name">Déclenchement purge + capture post-mortem</div>
-          <div class="phase-desc">Terminaison de session selon le protocole de votre éditeur. Attente paramétrable. Nouvelle empreinte mémoire complète. Zéro intervention sur votre infrastructure de production.</div>
+          <div class="phase-desc">Terminaison de session selon le protocole de votre éditeur. Attente paramétrable. Nouvelle empreinte mémoire complète. <strong style="color:var(--white)">delete() ne signifie pas écraser</strong>  c'est précisément ce que cette phase documente.</div>
         </div>
       </div>
       <div class="canary-phase">
         <div class="phase-letter">D</div>
         <div>
           <div class="phase-name">Vérification forensique octet par octet</div>
-          <div class="phase-desc">Scan exhaustif : offset mémoire, HEX_DUMP 16 octets, traduction ASCII filtrée. Pour chaque jeton : présence ou absence, adresse exacte, contexte environnant. Verdict binaire : AMNESIA_CONFIRMED ou AMNESIA_FAILED. Zéro interprétation. Zéro zone grise.</div>
+          <div class="phase-desc">Scan exhaustif : offset mémoire, HEX_DUMP 16 octets, traduction ASCII filtrée. Pour chaque jeton : présence ou absence, adresse exacte, contexte environnant. Verdict binaire : <strong style="color:var(--green-confirm)">AMNESIA_CONFIRMED</strong> ou <strong style="color:var(--red-risk)">AMNESIA_FAILED</strong>. Zéro interprétation. Zéro zone grise.</div>
         </div>
       </div>
     </div>
@@ -1265,8 +941,8 @@ footer {
 
   <div class="funding-banner reveal" style="transition-delay:0.4s">
     <div class="funding-text">
-      <h3>Ce rapport est opposable devant la CNIL, l'ANSSI et tout tribunal.</h3>
-      <p>Scellé SHA-256, signé RSA-PSS 2048 bits, horodaté RFC3161. Vérifiable offline par tout tiers disposant de la clé publique embarquée. Il ne peut pas être altéré a posteriori. C'est ce que "le hash ne ment pas" signifie concrètement.</p>
+      <h3>Ce rapport est un certificat d'étanchéité. Le hash ne ment pas.</h3>
+      <p>Scellé SHA-256, signé RSA-PSS 2048 bits, horodaté RFC3161. Vérifiable offline par tout tiers disposant de la clé publique embarquée. Il ne peut pas être altéré a posteriori. Opposable devant la CNIL, l'ABE, l'ANSSI et tout tribunal européen.</p>
     </div>
     <div class="funding-badges">
       <div class="funding-badge">DORA Art. 25</div>
@@ -1277,7 +953,7 @@ footer {
   </div>
 </section>
 
-<!-- SECTION COMPARAISON PREUVE -->
+<!-- COMPARAISON PREUVE -->
 <section id="proof-compare">
   <div class="section-label">Preuve opposable vs déclaratif</div>
   <h2 class="section-title reveal">Ce que votre DPO signe aujourd'hui<br>vs ce que <span style="color:var(--cyan)">l'autorité de contrôle exige.</span></h2>
@@ -1288,10 +964,10 @@ footer {
       <ul class="proof-list">
         <li><span class="ico">✗</span> Déclaratif auto-produit : "notre système purge les données"</li>
         <li><span class="ico">✗</span> Aucune preuve binaire de l'absence de résidu physique</li>
-        <li><span class="ico">✗</span> Pas de tiers indépendant — valeur probatoire nulle</li>
-        <li><span class="ico">✗</span> PDF modifiable a posteriori, non scellé</li>
+        <li><span class="ico">✗</span> Pas de tiers indépendant  valeur probatoire nulle</li>
+        <li><span class="ico">✗</span> PDF non scellé, modifiable a posteriori</li>
         <li><span class="ico">✗</span> Inopposable devant la CNIL ou un juge</li>
-        <li><span class="ico">✗</span> Ne couvre pas la mémoire volatile post-purge</li>
+        <li><span class="ico">✗</span> Ne couvre pas les buffers kernel ni le swap</li>
       </ul>
     </div>
 
@@ -1301,9 +977,9 @@ footer {
       <div class="proof-col-title">Rapport Scanalis</div>
       <ul class="proof-list">
         <li><span class="ico">✓</span> 8 jetons-canaris injectés + scan mémoire octet par octet</li>
-        <li><span class="ico">✓</span> Adresses mémoire, HEX_DUMP, ASCII filtré — trace complète</li>
-        <li><span class="ico">✓</span> Tiers de confiance technique indépendant</li>
-        <li><span class="ico">✓</span> Sceau SHA-256 + signature RSA-PSS 2048 bits + RFC3161</li>
+        <li><span class="ico">✓</span> Adresses mémoire, HEX_DUMP, ASCII filtré  trace complète</li>
+        <li><span class="ico">✓</span> Tiers de confiance technique indépendant  RC Pro Hiscox</li>
+        <li><span class="ico">✓</span> Sceau SHA-256 + RSA-PSS 2048 bits + RFC3161</li>
         <li><span class="ico">✓</span> Opposable devant la CNIL, l'ABE, tout tribunal européen</li>
         <li><span class="ico">✓</span> IPE quantifié (Indice de Probabilité d'Exposition)</li>
       </ul>
@@ -1311,11 +987,11 @@ footer {
   </div>
 </section>
 
-<!-- SECTION POURQUOI L'AUDIT RAM -->
+<!-- POURQUOI L'AUDIT RAM -->
 <section id="problem">
   <div class="section-label">La réalité physique des octets</div>
-  <h2 class="section-title reveal">La purge que votre éditeur déclare<br>et la RAM qui, elle, <em style="color:var(--red-risk)">ne ment pas.</em></h2>
-  <p class="section-desc reveal" style="transition-delay:0.1s">Quand un système d'IA "purge" une session, il supprime un pointeur. Pas les octets. Les données persistent physiquement en mémoire vive jusqu'à 90 minutes après fermeture de session sur un serveur standard. Votre éditeur ne peut pas le prouver. Votre DPO ne peut pas le vérifier. Votre assureur ne le couvre pas.</p>
+  <h2 class="section-title reveal">Le mensonge du pointeur :<br>delete() ne signifie pas <em style="color:var(--red-risk)">écraser.</em></h2>
+  <p class="section-desc reveal" style="transition-delay:0.1s">Quand un système d'IA "purge" une session, il supprime un pointeur. Pas les octets. Les données, numéros de sécurité sociale, secrets médicaux, données bancaires, persistent physiquement en mémoire vive jusqu'à 90 minutes après fermeture de session sur un serveur standard. Les zones d'ombre les plus critiques : les buffers kernel et le swap, invisibles aux outils de monitoring applicatif.</p>
 
   <div class="problem-grid">
     <div class="problem-items reveal" style="transition-delay:0.2s">
@@ -1329,22 +1005,22 @@ footer {
       <div class="problem-item">
         <div class="problem-icon">🔓</div>
         <div>
-          <h3>Votre déclaration n'est pas une preuve</h3>
-          <p>Un rapport interne certifiant que "le système purge les données" est auto-produit, non signé cryptographiquement, modifiable a posteriori. DORA Art. 25 et AI Act Art. 10 exigent une démonstration technique par un tiers indépendant — pas une déclaration.</p>
+          <h3>Le TLS protège le voyage, pas la destination</h3>
+          <p>Le chiffrement TLS sécurise le transit réseau. Une fois dans le LLM, les données sont en clair en RAM  non chiffrées, accessibles à tout processus disposant des droits suffisants. La surface d'attaque est là, dans les buffers kernel et le heap, pas dans le canal de communication.</p>
         </div>
       </div>
       <div class="problem-item">
         <div class="problem-icon">🌍</div>
         <div>
           <h3>L'impuissance face à votre fournisseur</h3>
-          <p>Votre LLM est hébergé chez un tiers. Vous n'avez pas accès à sa RAM. Vous ne pouvez pas vérifier ce qu'il retient après traitement. Vous signez pourtant un DPA RGPD Art. 28 qui engage votre responsabilité personnelle en tant que responsable de traitement.</p>
+          <p>Votre LLM est hébergé chez un tiers. Vous n'avez pas accès à sa RAM. Vous ne pouvez pas vérifier ce qu'il retient. Vous signez pourtant un DPA RGPD Art. 28 qui engage votre responsabilité. Ce déséquilibre est votre exposition réelle  et la vôtre personnellement.</p>
         </div>
       </div>
       <div class="problem-item">
         <div class="problem-icon">⚖️</div>
         <div>
           <h3>La jurisprudence arrive</h3>
-          <p>AI Act pleine application : août 2026. DORA en vigueur depuis janvier 2025. NIS2 transposée. Les textes existent. Les premiers incidents documentés RAM/LLM seront les cas d'école que les autorités citeront. Être le premier à avoir la preuve — ou le premier à ne pas l'avoir.</p>
+          <p>AI Act pleine application : août 2026. DORA en vigueur depuis janvier 2025. NIS2 transposée. Les premiers incidents documentés RAM/LLM seront les cas d'école que les autorités citeront. La conformité "papier" ne vous protègera pas. La certification binaire, si.</p>
         </div>
       </div>
     </div>
@@ -1355,28 +1031,28 @@ footer {
           <span>Amende AI Act  système high-risk</span>
           <span>30M€ / 6% CA</span>
         </div>
-        <div class="cost-bar-track"><div class="cost-bar-fill" data-width="1" style="width:100%"></div></div>
+        <div class="cost-bar-track"><div class="cost-bar-fill" style="width:100%"></div></div>
       </div>
       <div class="cost-bar-item">
         <div class="cost-bar-label">
           <span>Amende RGPD  violation Art. 5</span>
           <span>20M€ / 4% CA</span>
         </div>
-        <div class="cost-bar-track"><div class="cost-bar-fill" data-width="0.67" style="width:67%"></div></div>
+        <div class="cost-bar-track"><div class="cost-bar-fill" style="width:67%"></div></div>
       </div>
       <div class="cost-bar-item">
         <div class="cost-bar-label">
-          <span>Notification CNIL — incident RAM</span>
-          <span>72h légales</span>
+          <span>Coût incident RAM  notification + remédiation</span>
+          <span>~500K€</span>
         </div>
-        <div class="cost-bar-track"><div class="cost-bar-fill" data-width="0.2" style="width:20%"></div></div>
+        <div class="cost-bar-track"><div class="cost-bar-fill" style="width:20%"></div></div>
       </div>
       <div class="cost-bar-item">
         <div class="cost-bar-label">
           <span>Suspension activité  DORA non-conformité</span>
           <span>Décision ABE</span>
         </div>
-        <div class="cost-bar-track"><div class="cost-bar-fill" data-width="0.12" style="width:12%"></div></div>
+        <div class="cost-bar-track"><div class="cost-bar-fill" style="width:12%"></div></div>
       </div>
 
       <div class="cost-total">
@@ -1392,14 +1068,14 @@ footer {
 <section id="methodology">
   <div class="section-label">Méthodologie propriétaire</div>
   <h2 class="section-title reveal">4 piliers.<br>1 preuve opposable.</h2>
-  <p class="section-desc reveal" style="transition-delay:0.1s">Chaque pilier produit une preuve vérifiable. Pas un avis. Pas une recommandation. Une preuve binaire, horodatée, scellée, produite par un tiers de confiance technique qui engage sa responsabilité civile professionnelle sur chaque rapport.</p>
+  <p class="section-desc reveal" style="transition-delay:0.1s">Nous ne rendons pas d'avis consultatif. Nous délivrons un certificat d'étanchéité. Chaque pilier produit une preuve vérifiable, horodatée, scellée, produite par un tiers de confiance qui engage sa responsabilité civile professionnelle sur chaque rapport.</p>
 
   <div class="pillars-grid">
     <div class="pillar-card reveal" style="transition-delay:0.1s">
       <div class="pillar-number">01 / Exposure</div>
       <div class="pillar-icon-wrap">🔍</div>
       <div class="pillar-name">Cartographie d'Exposition</div>
-      <div class="pillar-desc">Shadow APIs, flux sortants non autorisés, DLI v2. Votre surface d'exposition réelle, cartographiée et quantifiée en euros de risque potentiel.</div>
+      <div class="pillar-desc">Shadow APIs, flux sortants non autorisés, DLI v2. Votre surface d'exposition réelle  cartographiée, quantifiée en euros, documentée. Pas un rapport de recommandations. Un état des lieux binaire.</div>
       <div class="pillar-tags">
         <span class="pillar-tag">Shadow APIs</span>
         <span class="pillar-tag">DLI v2</span>
@@ -1410,18 +1086,18 @@ footer {
       <div class="pillar-number">02 / Amnesia</div>
       <div class="pillar-icon-wrap">🧠</div>
       <div class="pillar-name">Protocole Canary</div>
-      <div class="pillar-desc">Injection de 8 jetons-canaris traçables. Purge. Scan forensique octet par octet. Verdict binaire : AMNESIA_CONFIRMED ou AMNESIA_FAILED. Zéro zone grise. Zéro interprétation.</div>
+      <div class="pillar-desc">Injection de 8 jetons-canaris traçables. Purge. Scan forensique byte par byte. Buffers kernel, swap, heap, rien n'échappe au scan. Verdict binaire : AMNESIA_CONFIRMED ou AMNESIA_FAILED. Zéro interprétation.</div>
       <div class="pillar-tags">
         <span class="pillar-tag">RAM Forensics</span>
-        <span class="pillar-tag">8 Canaries</span>
-        <span class="pillar-tag">0 Octet</span>
+        <span class="pillar-tag">Kernel Buffers</span>
+        <span class="pillar-tag">Swap Analysis</span>
       </div>
     </div>
     <div class="pillar-card reveal" style="transition-delay:0.3s">
       <div class="pillar-number">03 / Finance</div>
       <div class="pillar-icon-wrap">📊</div>
       <div class="pillar-name">Monte Carlo + IPE</div>
-      <div class="pillar-desc">Simulation stochastique de l'impact financier d'une fuite RAM. IPE (Indice de Probabilité d'Exposition) calibré selon la Norme de Prudence Scanalis v1.0.</div>
+      <div class="pillar-desc">Simulation stochastique de l'impact financier d'une fuite RAM. IPE (Indice de Probabilité d'Exposition) calibré selon la Norme de Prudence Scanalis v1.0. Votre risque résiduel en euros, pas en niveaux de couleur.</div>
       <div class="pillar-tags">
         <span class="pillar-tag">Monte Carlo</span>
         <span class="pillar-tag">IPE Score</span>
@@ -1432,7 +1108,7 @@ footer {
       <div class="pillar-number">04 / Seal</div>
       <div class="pillar-icon-wrap">🛡️</div>
       <div class="pillar-name">Sceau Cryptographique</div>
-      <div class="pillar-desc">Rapport de 32 pages. Hash SHA-256. Signature RSA-PSS 2048 bits. Horodatage RFC3161. Clé publique embarquée pour vérification offline par tout tiers, à tout moment.</div>
+      <div class="pillar-desc">Rapport 32 pages. Hash SHA-256. Signature RSA-PSS 2048 bits. Horodatage RFC3161. Clé publique embarquée pour vérification offline par tout tiers, à tout moment, sans dépendance à Scanalis.</div>
       <div class="pillar-tags">
         <span class="pillar-tag">SHA-256</span>
         <span class="pillar-tag">RSA-PSS</span>
@@ -1446,7 +1122,7 @@ footer {
 <section id="offerings">
   <div class="section-label">Programmes d'audit</div>
   <h2 class="section-title reveal">Choisissez votre<br>niveau de preuve</h2>
-  <p class="section-desc reveal" style="transition-delay:0.1s; margin-bottom:0;">Chaque tier produit un rapport scellé. Plus le tier est élevé, plus la profondeur forensique est grande  et plus la preuve est opposable dans des contextes réglementaires exigeants.</p>
+  <p class="section-desc reveal" style="transition-delay:0.1s; margin-bottom:0;">Chaque tier produit un rapport scellé. Plus le tier est élevé, plus la profondeur forensique est grande et plus la preuve est opposable dans des contextes réglementaires exigeants. 3 créneaux disponibles par mois. Chaque rapport porte ma signature RSA. C'est moi qui scanne. C'est moi qui signe.</p>
 
   <div class="offerings-grid">
     <div class="offer-card reveal" style="transition-delay:0.1s">
@@ -1476,11 +1152,11 @@ footer {
       <ul class="offer-features">
         <li class="included">Tout le Tier 1</li>
         <li class="included">Protocole Canary (8 jetons-canaris)</li>
+        <li class="included">Analyse buffers kernel + swap</li>
         <li class="included">Monte Carlo + IPE quantifié</li>
         <li class="included">Scan de souveraineté réseau</li>
         <li class="included">Scripts de correction prêts à déployer</li>
         <li class="included">Rescan post-remédiation inclus</li>
-        <li class="excluded">Certification amnésie native</li>
         <li class="excluded">Monitoring trimestriel</li>
       </ul>
       <div class="verdict-badge confirmed">AMNESIA_CONFIRMED inclus</div>
@@ -1491,7 +1167,7 @@ footer {
       <div class="offer-tier">Tier 3</div>
       <div class="offer-name">Résilience Exécutive</div>
       <div class="offer-price">60K€</div>
-      <div class="offer-price-sub">Certification souveraine complète  environnements critiques</div>
+      <div class="offer-price-sub">Certification souveraine  environnements critiques</div>
       <ul class="offer-features">
         <li class="included">Tout le Tier 2</li>
         <li class="included">Certification amnésie native signée RSA-PSS</li>
@@ -1499,8 +1175,8 @@ footer {
         <li class="included">Conformité Gaia-X Trust Framework documentée</li>
         <li class="included">Monitoring trimestriel continu</li>
         <li class="included">Accompagnement COMEX et Direction Juridique</li>
-        <li class="included">Rescans automatiques post-mise à jour système</li>
-        <li class="included">Accès prioritaire — 3 créneaux mensuels réservés</li>
+        <li class="included">Rescans post-mise à jour système</li>
+        <li class="included">Accès prioritaire  créneaux mensuels réservés</li>
       </ul>
       <div class="verdict-badge confirmed">Preuve opposable  juridictions critiques</div>
       <a href="https://cal.com/mathilde-de-roumilly-3zskha/30min" target="_blank" class="offer-cta outline" style="margin-top:20px;">Nous contacter →</a>
@@ -1512,7 +1188,7 @@ footer {
 <section id="comparison">
   <div class="section-label">Positionnement marché</div>
   <h2 class="section-title reveal">SCANALIS vs. l'écosystème existant</h2>
-  <p class="section-desc reveal" style="transition-delay:0.1s">Pas un SaaS qui génère des alertes. Pas un pentesteur qui cherche des portes d'entrée. Un tiers de confiance technique qui produit une preuve sur ce qui reste à l'intérieur après purge.</p>
+  <p class="section-desc reveal" style="transition-delay:0.1s">PwC vérifie le dire. Scanalis vérifie le faire. Les DLP bloquent l'entrée. Scanalis vérifie ce qui reste en sortie. Les pentesteurs cherchent les portes d'entrée. Scanalis documente ce qui persiste à l'intérieur.</p>
 
   <table class="compare-table reveal" style="transition-delay:0.2s">
     <thead>
@@ -1531,21 +1207,27 @@ footer {
         <td><span class="check-no">✗ Hors périmètre</span></td>
       </tr>
       <tr>
+        <td>Analyse buffers kernel + swap</td>
+        <td><span class="check-no">✗ Non couvert</span></td>
+        <td class="scanalis-col"><span class="check-yes">✓</span> Scan exhaustif toutes zones</td>
+        <td><span class="check-no">✗ Non couvert</span></td>
+      </tr>
+      <tr>
+        <td>Verdict binaire  zéro zone grise</td>
+        <td><span class="check-no">✗ Score / niveau</span></td>
+        <td class="scanalis-col"><span class="check-yes">✓</span> CONFIRMED ou FAILED</td>
+        <td><span class="check-partial">Recommandations</span></td>
+      </tr>
+      <tr>
         <td>Sceau cryptographique opposable</td>
         <td><span class="check-no">✗ Non signé</span></td>
         <td class="scanalis-col"><span class="check-yes">✓</span> SHA-256 + RSA-PSS + RFC3161</td>
         <td><span class="check-no">✗ PDF non scellé</span></td>
       </tr>
       <tr>
-        <td>Verdict binaire zéro zone grise</td>
-        <td><span class="check-no">✗ Score / niveau</span></td>
-        <td class="scanalis-col"><span class="check-yes">✓</span> CONFIRMED ou FAILED</td>
-        <td><span class="check-partial">Recommandations</span></td>
-      </tr>
-      <tr>
         <td>Impact production</td>
         <td><span class="check-partial">Agent requis</span></td>
-        <td class="scanalis-col"><span class="check-yes">✓</span> Zéro lecture seule sur dump</td>
+        <td class="scanalis-col"><span class="check-yes">✓</span> Zéro  lecture seule sur dump</td>
         <td><span class="check-no">Intrusif  accès systèmes</span></td>
       </tr>
       <tr>
@@ -1555,15 +1237,9 @@ footer {
         <td><span class="check-partial">Variable selon cabinet</span></td>
       </tr>
       <tr>
-        <td>Couverture DORA / AI Act / NIS2</td>
-        <td><span class="check-partial">Partielle</span></td>
-        <td class="scanalis-col"><span class="check-yes">✓</span> Art. 25 DORA · Art. 10 AI Act · Art. 21 NIS2</td>
-        <td><span class="check-no">✗ Non documentée</span></td>
-      </tr>
-      <tr>
         <td>Destruction certifiée données client</td>
         <td><span class="check-no">✗ Non garanti</span></td>
-        <td class="scanalis-col"><span class="check-yes">✓</span> shred -vfz -n 3  attestation 20j</td>
+        <td class="scanalis-col"><span class="check-yes">✓</span> shred -vfz -n 3 · Attestation 20j</td>
         <td><span class="check-partial">Variable</span></td>
       </tr>
     </tbody>
@@ -1577,7 +1253,7 @@ footer {
     <div class="roi-content">
       <div class="section-label">Analyse de risque</div>
       <h2 class="section-title reveal">Ce n'est pas un coût.<br>C'est la preuve qui vous<br><span style="color:var(--cyan)">protège de la sanction.</span></h2>
-      <p class="section-desc reveal" style="transition-delay:0.1s">Un rapport à 35K€ face à une amende AI Act à 30M€ ou 6% du chiffre d'affaires mondial. La conformité déclarative ne vous protège plus. La démonstration technique, si.</p>
+      <p class="section-desc reveal" style="transition-delay:0.1s">Un rapport à 35K€ face à une amende AI Act à 30M€ ou 6% du chiffre d'affaires mondial. La conformité déclarative ne vous protège plus. La démonstration technique, si et elle est opposable le jour où vous en avez besoin.</p>
 
       <div class="roi-metric reveal" style="transition-delay:0.2s">
         <div class="roi-item">
@@ -1623,7 +1299,7 @@ footer {
 <section id="trust">
   <div class="section-label">Garanties contractuelles & opérationnelles</div>
   <h2 class="section-title reveal">Aucun accès à vos systèmes.<br>Aucun agent installé.<br><span style="color:var(--cyan)">Aucune dépendance.</span></h2>
-  <p class="section-desc reveal" style="transition-delay:0.1s">L'audit Scanalis est conçu pour les environnements où la confidentialité est non négociable. Défense, santé, finance, opérateurs d'importance vitale : le protocole a été durci en conséquence.</p>
+  <p class="section-desc reveal" style="transition-delay:0.1s">L'audit Scanalis est conçu pour les environnements où la confidentialité est non négociable : défense, santé, finance, opérateurs d'importance vitale. Le protocole a été durci en conséquence. Chaque engagement est contractualisé, pas déclaré.</p>
 
   <div class="trust-logos reveal" style="transition-delay:0.1s">
     <div class="trust-logo">AI Act</div>
@@ -1638,8 +1314,22 @@ footer {
     <div class="badge">
       <span class="badge-icon">🔒</span>
       <div>
-        <div class="badge-label">Zéro Intrusion</div>
-        <div class="badge-sub">Pas d'SSH · Pas d'agent · Lecture seule sur dump chiffré</div>
+        <div class="badge-label">Verdict Binaire</div>
+        <div class="badge-sub">AMNESIA CONFIRMED ou FAILED  zéro avis consultatif</div>
+      </div>
+    </div>
+    <div class="badge">
+      <span class="badge-icon">🛸</span>
+      <div>
+        <div class="badge-label">Audit Non-Intrusif</div>
+        <div class="badge-sub">Zéro SSH · Zéro agent · Dump chiffré en lecture seule</div>
+      </div>
+    </div>
+    <div class="badge">
+      <span class="badge-icon">⚖️</span>
+      <div>
+        <div class="badge-label">Conformité Forensique</div>
+        <div class="badge-sub">Obligation de moyens → preuve technique opposable</div>
       </div>
     </div>
     <div class="badge">
@@ -1663,12 +1353,47 @@ footer {
         <div class="badge-sub">Contrat · DPA Art. 28 · NDA · AAT · Destruction</div>
       </div>
     </div>
-    <div class="badge">
-      <span class="badge-icon">🌐</span>
-      <div>
-        <div class="badge-label">Souveraineté totale</div>
-        <div class="badge-sub">Zéro cloud tiers · Zéro dépendance Cloud Act</div>
+  </div>
+</section>
+
+<!-- FAQ -->
+<section id="faq">
+  <div class="section-label">Questions techniques fréquentes</div>
+  <h2 class="section-title reveal">Ce que votre RSSI<br>doit savoir <span style="color:var(--cyan)">avant de signer.</span></h2>
+  <p class="section-desc reveal" style="transition-delay:0.1s">Trois questions que posent systématiquement les équipes techniques lors du cadrage. Réponses directes sans marketing.</p>
+
+  <div class="faq-grid reveal" style="transition-delay:0.2s">
+    <div class="faq-item">
+      <div class="faq-q">
+        <span class="faq-q-num">Q.01</span>
+        Le chiffrement TLS protège-t-il mes données pendant que l'IA les traite ?
       </div>
+      <div class="faq-a">
+        Non. Le TLS protège le transit réseau entre votre client et le serveur. Une fois arrivée dans le LLM, la donnée est déchiffrée pour être traitée, elle est en clair en RAM, accessible à tout processus disposant des droits suffisants sur le système hôte. <strong>Scanalis audite précisément cette couche</strong> : la destination, pas le voyage. Le canal est sécurisé. La mémoire ne l'est pas.
+      </div>
+      <div class="faq-verdict">→ TLS ≠ protection RAM · Scanalis audite la destination</div>
+    </div>
+
+    <div class="faq-item">
+      <div class="faq-q">
+        <span class="faq-q-num">Q.02</span>
+        Si je ferme ma session utilisateur, mes données disparaissent-elles de la RAM ?
+      </div>
+      <div class="faq-a">
+        Non. Fermer une session supprime un pointeur logiciel, pas les octets physiques. Les données persistent sur la barrette de RAM jusqu'à ce qu'une autre donnée vienne occuper exactement le même espace. Sur un serveur sous charge modérée, cette persistance peut durer de 15 à 90 minutes. <strong>C'est précisément ce que le Protocole Canary documente</strong> : l'écart entre la purge déclarée et la réalité physique des octets.
+      </div>
+      <div class="faq-verdict">→ delete() ≠ écraser · Les octets survivent à la session</div>
+    </div>
+
+    <div class="faq-item">
+      <div class="faq-q">
+        <span class="faq-q-num">Q.03</span>
+        Comment savoir si mon prestataire IA est réellement amnésique après traitement ?
+      </div>
+      <div class="faq-a">
+        En exigeant un rapport d'audit Scanalis, pas en lisant sa politique de confidentialité. Une promesse contractuelle n'est pas une preuve binaire. Un schéma d'architecture n'est pas une preuve binaire. Seul un scan forensique de la mémoire vive, réalisé après purge par un tiers indépendant, produit une preuve vérifiable. <strong>Le verdict est soit AMNESIA_CONFIRMED, soit AMNESIA_FAILED.</strong> Il n'existe pas de troisième option.
+      </div>
+      <div class="faq-verdict">→ Promesse contractuelle ≠ preuve binaire · CONFIRMED ou FAILED</div>
     </div>
   </div>
 </section>
@@ -1676,29 +1401,29 @@ footer {
 <!-- PROCESS -->
 <section id="process">
   <div class="section-label">Notre processus</div>
-  <h2 class="section-title reveal">30 minutes pour savoir<br>si votre IA est <span style="color:var(--cyan)">forensiquement auditée.</span></h2>
-  <p class="section-desc reveal" style="transition-delay:0.1s">Un cadrage technique gratuit. Une intervention externe qui ne touche pas votre production. Un rapport opposable en 15 jours.</p>
+  <h2 class="section-title reveal">30 minutes pour établir<br>si votre IA est <span style="color:var(--cyan)">forensiquement auditable.</span></h2>
+  <p class="section-desc reveal" style="transition-delay:0.1s">Un cadrage technique gratuit. Une intervention externe qui ne touche pas votre production. Un rapport scellé en 15 jours. Chaque mission engage notre signature RSA personnelle.</p>
 
   <div class="process-timeline reveal" style="transition-delay:0.2s">
     <div class="process-step">
       <div class="process-step-num">01</div>
       <div class="process-step-phase">Cadrage gratuit  30 min</div>
       <div class="process-step-title">Qualification & périmètre</div>
-      <div class="process-step-desc">Identification de vos flux critiques, stack IA/API, et contexte réglementaire (DORA, AI Act, NIS2, RGPD). Scanalis travaille avec un nombre limité de clients par trimestre. Chaque mission engage notre signature RSA personnelle.</div>
+      <div class="process-step-desc">Identification de vos flux critiques, stack IA/API, et contexte réglementaire (DORA, AI Act, NIS2, RGPD). Scanalis travaille avec un nombre limité de clients par trimestre. Chaque mission engage notre signature RSA personnelle, pas un rapport automatisé.</div>
       <div class="process-step-deliverable">→ Go/No-Go + périmètre forensique documenté</div>
     </div>
     <div class="process-step">
       <div class="process-step-num">02</div>
       <div class="process-step-phase">Audit  T+5 à T+12 jours</div>
       <div class="process-step-title">Protocole Canary + Scan forensique</div>
-      <div class="process-step-desc">Vos équipes réalisent le dump mémoire (gcore / procdump) dans votre environnement. Nous recevons le dump chiffré. Injection canaris, scan octet par octet, vérification souveraineté, simulation Monte Carlo. Zéro accès SSH. Zéro agent. Zéro impact production.</div>
-      <div class="process-step-deliverable">→ Preuves binaires + adresses mémoire + IPE</div>
+      <div class="process-step-desc">Vos équipes réalisent le dump mémoire (gcore / procdump) dans votre environnement. Nous recevons le dump chiffré. Injection canaris, scan octet par octet, heap, buffers kernel, swap, vérification souveraineté, Monte Carlo. Zéro accès SSH. Zéro agent. Zéro impact production.</div>
+      <div class="process-step-deliverable">→ Preuves binaires + adresses mémoire + IPE quantifié</div>
     </div>
     <div class="process-step">
       <div class="process-step-num">03</div>
       <div class="process-step-phase">Livraison  T+15 jours</div>
       <div class="process-step-title">Rapport scellé + soutenance</div>
-      <div class="process-step-desc">32 pages. Sceau SHA-256 + RSA-PSS + RFC3161. Soutenance devant votre RSSI, DPO ou Direction Juridique. Scripts de correction prêts à déployer. Destruction certifiée des données sous 20 jours. Attestation signée.</div>
+      <div class="process-step-desc">32 pages. Sceau SHA-256 + RSA-PSS + RFC3161. Soutenance devant votre RSSI, DPO ou Direction Juridique. Scripts de correction prêts à déployer. Destruction certifiée des données sous 20 jours. Attestation signée transmise.</div>
       <div class="process-step-deliverable">→ Preuve opposable · Rapport certifié · Attestation destruction</div>
     </div>
   </div>
@@ -1732,7 +1457,7 @@ footer {
 
   <div class="cta-guarantee-row reveal" style="transition-delay:0.35s">
     <span class="cta-guarantee-item">Protocole Canary  8 jetons</span>
-    <span class="cta-guarantee-item">Zéro accès SSH · Zéro agent</span>
+    <span class="cta-guarantee-item">Zéro SSH · Zéro agent</span>
     <span class="cta-guarantee-item">SHA-256 + RSA-PSS + RFC3161</span>
     <span class="cta-guarantee-item">Rapport 32 pages</span>
     <span class="cta-guarantee-item">Destruction certifiée 20 jours</span>
@@ -1756,7 +1481,7 @@ footer {
       </svg>
       <div>
         <div class="footer-brand-text">Scanalis</div>
-        <div class="footer-tagline">Le hash ne ment pas.</div>
+        <div class="footer-tagline">Le hash ne ment pas.  Cybersécurité &amp; Souveraineté</div>
       </div>
     </div>
   </div>
@@ -1764,11 +1489,12 @@ footer {
     <li><a href="#canary-proof">Protocole</a></li>
     <li><a href="#methodology">Méthode</a></li>
     <li><a href="#offerings">Programmes</a></li>
+    <li><a href="#faq">FAQ</a></li>
     <li><a href="https://www.linkedin.com/in/mathilde-de-roumilly" target="_blank">LinkedIn</a></li>
   </ul>
   <div class="footer-contact">
     <a href="mailto:contact@scanalis.fr" class="footer-email">contact@scanalis.fr</a>
-    <div class="footer-copy">© 2026 Scanalis. Tous droits réservés.  RC Pro Cyber Hiscox</div>
+    <div class="footer-copy">© 2026 Scanalis  RC Pro Cyber Hiscox  Vannes, Bretagne</div>
   </div>
 </footer>
 
@@ -1790,7 +1516,7 @@ function animRing() {
   requestAnimationFrame(animRing);
 }
 animRing();
-document.querySelectorAll('a, button, .pillar-card, .offer-card, .canary-phase').forEach(el => {
+document.querySelectorAll('a, button, .pillar-card, .offer-card, .canary-phase, .faq-item').forEach(el => {
   el.addEventListener('mouseenter', () => {
     cursor.style.transform = 'scale(2.5)';
     cursorRing.style.transform = 'scale(1.5)';
@@ -1810,7 +1536,7 @@ const termLines = [
   { cls: 't-dim',     text: '' },
   { cls: 't-cmd',     text: '▸ Phase A — Capture baseline mémoire' },
   { cls: 't-white',   text: '  PID 18442 | RSS 524,288 KB | Heap SHA-256: a7f3e2...' },
-  { cls: 't-ok',      text: '  ✓ Baseline capturée' },
+  { cls: 't-ok',      text: '  ✓ Baseline capturée — dump chiffré reçu' },
   { cls: 't-dim',     text: '' },
   { cls: 't-cmd',     text: '▸ Phase B — Injection de 8 jetons-canaris' },
   { cls: 't-white',   text: '  [0] PII_EMAIL    test@scanalis-audit.local' },
@@ -1821,14 +1547,14 @@ const termLines = [
   { cls: 't-white',   text: '  [5] PROMPT_INJ   ignore_previous_instructions' },
   { cls: 't-white',   text: '  [6] TRADE_SECRET formula_v3_confidential' },
   { cls: 't-white',   text: '  [7] MEDICAL      patient_diagnosis_stade3' },
-  { cls: 't-ok',      text: '  ✓ 8/8 canaris injectés via API' },
+  { cls: 't-ok',      text: '  ✓ 8/8 canaris injectés via API standard' },
   { cls: 't-dim',     text: '' },
   { cls: 't-cmd',     text: '▸ Phase C — Terminaison session + purge' },
   { cls: 't-warn',    text: '  ⏳ Attente 5s post-purge...' },
   { cls: 't-white',   text: '  PID 18442 | RSS 262,144 KB | Heap SHA-256: d91b04...' },
   { cls: 't-ok',      text: '  ✓ Snapshot post-purge capturé' },
   { cls: 't-dim',     text: '' },
-  { cls: 't-cmd',     text: '▸ Phase D — Scan forensique mémoire' },
+  { cls: 't-cmd',     text: '▸ Phase D — Scan forensique : heap + kernel + swap' },
   { cls: 't-white',   text: '  CANARY_000 | 0x7fff5fbf0000 | 00 00 00 00 | VOLATILE' },
   { cls: 't-white',   text: '  CANARY_001 | 0x7fff5fbf1000 | 00 00 00 00 | VOLATILE' },
   { cls: 't-white',   text: '  CANARY_002 | 0x7fff5fbf2000 | 00 00 00 00 | VOLATILE' },
@@ -1838,13 +1564,12 @@ const termLines = [
   { cls: 't-white',   text: '  CANARY_006 | 0x7fff5fbf6000 | 00 00 00 00 | VOLATILE' },
   { cls: 't-white',   text: '  CANARY_007 | 0x7fff5fbf7000 | 00 00 00 00 | VOLATILE' },
   { cls: 't-dim',     text: '' },
-  { cls: 't-white',   text: '  Résidus détectés : 0/8' },
-  { cls: 't-white',   text: '  Taux de purge : 100.0%' },
+  { cls: 't-white',   text: '  Résidus détectés : 0/8 · Taux de purge : 100.0%' },
   { cls: 't-white',   text: '  IPE : 0/100 — Négligeable' },
   { cls: 't-dim',     text: '' },
   { cls: 't-ok t-bold', text: '  ██ VERDICT : AMNESIA_CONFIRMED ██' },
   { cls: 't-ok',      text: '  ✓ Sceau SHA-256 + RSA-PSS + RFC3161 généré' },
-  { cls: 't-ok',      text: '  ✓ Rapport 32 pages — opposable CNIL / tribunal' },
+  { cls: 't-ok',      text: '  ✓ Rapport 32p — opposable CNIL / tribunal' },
 ];
 
 function animateTerminal() {
@@ -1853,10 +1578,7 @@ function animateTerminal() {
   body.innerHTML = '';
   let i = 0;
   function addLine() {
-    if (i >= termLines.length) {
-      setTimeout(animateTerminal, 4000);
-      return;
-    }
+    if (i >= termLines.length) { setTimeout(animateTerminal, 4000); return; }
     const line = termLines[i];
     const div = document.createElement('div');
     div.className = `t-line ${line.cls}`;
@@ -1872,12 +1594,7 @@ function animateTerminal() {
 }
 
 const termObserver = new IntersectionObserver((entries) => {
-  entries.forEach(entry => {
-    if (entry.isIntersecting) {
-      animateTerminal();
-      termObserver.disconnect();
-    }
-  });
+  entries.forEach(entry => { if (entry.isIntersecting) { animateTerminal(); termObserver.disconnect(); } });
 }, { threshold: 0.3 });
 const termSection = document.getElementById('canary-proof');
 if (termSection) termObserver.observe(termSection);
@@ -1885,9 +1602,7 @@ if (termSection) termObserver.observe(termSection);
 // SCROLL REVEAL
 const reveals = document.querySelectorAll('.reveal');
 const observer = new IntersectionObserver((entries) => {
-  entries.forEach(entry => {
-    if (entry.isIntersecting) entry.target.classList.add('visible');
-  });
+  entries.forEach(entry => { if (entry.isIntersecting) entry.target.classList.add('visible'); });
 }, { threshold: 0.12 });
 reveals.forEach(el => observer.observe(el));
 
