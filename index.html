@@ -3,21 +3,15 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>SCANALIS  Preuve d'Amnésie IA | Audit Forensique RAM & API | Financement BPI/PIIEC</title>
-<!-- CHANGEMENT: Meta description orientée "preuve" et "financement" au lieu de "audit" générique -->
-<meta name="description" content="SCANALIS prouve que votre IA oublie. Protocole Canary breveté : 0 octet résiduel en RAM. Rapport scellé SHA-256 + RSA-PSS. Preuve opposable pour dossiers BPI, PIIEC et AI Act.">
-<meta name="keywords" content="amnésie native IA, preuve RAM, protocole canary, audit API sécurité, AI Act conformité, BPI PIIEC financement, souveraineté numérique, pentest IA, shadow API, DORA conformité, sécurité LLM, Gaia-X">
+<title>SCANALIS | Preuve Forensique d'Amnésie IA — Audit RAM Non-Intrusif | DORA · AI Act · NIS2</title>
+<meta name="description" content="SCANALIS produit la preuve cryptographique opposable que votre IA oublie les données après traitement. Protocole Canary breveté : verdict binaire AMNESIA_CONFIRMED ou AMNESIA_FAILED. Scellé SHA-256 + RSA-PSS. Opposable devant la CNIL et tout tribunal.">
+<meta name="keywords" content="audit RAM IA, preuve forensique amnésie, protocole canary, DORA conformité technique, AI Act Art 10 démonstration, NIS2 audit LLM, RGPD purge mémoire, tiers de confiance IA, forensique mémoire volatile, RSSI DPO audit IA, sécurité LLM RAM">
 <meta name="google-site-verification" content="niiy-7qkTsOFvC3owFYdsrcZo7QkLMX592pi_-e5xuw" />
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=DM+Mono:wght@300;400;500&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
 
 <style>
-/* ═══════════════════════════════════════════════════════════
-   CONSERVATION INTÉGRALE DU CSS EXISTANT
-   + AJOUTS CIBLÉS POUR LES NOUVELLES SECTIONS
-   ═══════════════════════════════════════════════════════════ */
-
 :root {
   --navy: #040D1A;
   --navy2: #071425;
@@ -47,7 +41,6 @@ body {
   cursor: none;
 }
 
-/* CUSTOM CURSOR */
 .cursor {
   position: fixed;
   width: 10px; height: 10px;
@@ -68,7 +61,6 @@ body {
   transition: transform 0.18s ease, opacity 0.3s;
 }
 
-/* NOISE OVERLAY */
 body::before {
   content: '';
   position: fixed;
@@ -79,7 +71,6 @@ body::before {
   opacity: 0.5;
 }
 
-/* NAV */
 nav {
   position: fixed;
   top: 0; left: 0; right: 0;
@@ -161,7 +152,6 @@ nav {
 .nav-cta:hover { color: var(--navy); }
 .nav-cta:hover::before { transform: scaleX(1); }
 
-/* HERO */
 #hero {
   min-height: 100vh;
   display: flex;
@@ -313,7 +303,6 @@ nav {
   color: var(--grey);
 }
 
-/* URGENCY BANNER */
 .urgency-banner {
   background: linear-gradient(90deg, rgba(255,59,92,0.1), rgba(255,59,92,0.05), rgba(255,59,92,0.1));
   border-top: 1px solid rgba(255,59,92,0.3);
@@ -346,7 +335,6 @@ nav {
   animation: pulse-red 1.5s infinite;
 }
 
-/* SECTIONS COMMON */
 section { padding: 100px 60px; }
 .section-label {
   font-family: var(--font-mono);
@@ -380,9 +368,6 @@ section { padding: 100px 60px; }
   max-width: 600px;
 }
 
-/* ═══════════════════════════════════════════════════════════
-   AJOUT : SECTION PROTOCOLE CANARY (TERMINAL)
-   ═══════════════════════════════════════════════════════════ */
 #canary-proof {
   background: var(--navy);
   border-top: 1px solid rgba(0,229,255,0.08);
@@ -398,7 +383,6 @@ section { padding: 100px 60px; }
   margin-top: 48px;
 }
 
-/* Terminal forensique anime */
 .terminal {
   background: #0C0C0C;
   border: 1px solid rgba(0,229,255,0.2);
@@ -451,7 +435,6 @@ section { padding: 100px 60px; }
 .t-white { color: var(--white); }
 .t-bold { font-weight: 500; }
 
-/* Phase indicators */
 .canary-phases {
   display: flex;
   flex-direction: column;
@@ -495,9 +478,6 @@ section { padding: 100px 60px; }
   line-height: 1.55;
 }
 
-/* ═══════════════════════════════════════════════════════════
-   AJOUT : SECTION COMPARAISON PREUVE
-   ═══════════════════════════════════════════════════════════ */
 #proof-compare {
   background: var(--navy2);
 }
@@ -558,9 +538,6 @@ section { padding: 100px 60px; }
 .proof-col.weak .ico { color: var(--red-risk); }
 .proof-col.strong .ico { color: var(--cyan); }
 
-/* ═══════════════════════════════════════════════════════════
-   AJOUT : BANDEAU BPI/PIIEC
-   ═══════════════════════════════════════════════════════════ */
 .funding-banner {
   background: linear-gradient(135deg, rgba(0,229,255,0.06), rgba(0,229,255,0.02));
   border: 1px solid rgba(0,229,255,0.15);
@@ -601,7 +578,6 @@ section { padding: 100px 60px; }
   background: rgba(0,229,255,0.05);
 }
 
-/* VERDICT BADGE (pour les offres) */
 .verdict-badge {
   display: inline-flex;
   align-items: center;
@@ -627,11 +603,6 @@ section { padding: 100px 60px; }
   animation: pulse-green 1.5s infinite;
 }
 
-/* ═══════════════════════════════════════════════════════════
-   CSS EXISTANT CONSERVE INTÉGRALEMENT CI-DESSOUS
-   ═══════════════════════════════════════════════════════════ */
-
-/* PROBLEM SECTION */
 #problem { background: var(--navy); }
 .problem-grid {
   display: grid;
@@ -720,7 +691,6 @@ section { padding: 100px 60px; }
 }
 .cost-total-sub { font-size: 0.82rem; color: var(--grey); margin-top: 4px; }
 
-/* METHODOLOGY */
 #methodology {
   background: var(--navy2);
   border-top: 1px solid rgba(0,229,255,0.06);
@@ -797,7 +767,6 @@ section { padding: 100px 60px; }
   text-transform: uppercase;
 }
 
-/* OFFERINGS */
 #offerings { background: var(--navy); }
 .offerings-grid {
   display: grid;
@@ -894,7 +863,6 @@ section { padding: 100px 60px; }
 .offer-cta.outline { border: 1px solid rgba(0,229,255,0.3); color: var(--cyan); }
 .offer-cta.outline:hover { background: rgba(0,229,255,0.07); }
 
-/* COMPARISON */
 #comparison { background: var(--navy2); }
 .compare-table {
   margin-top: 60px;
@@ -941,7 +909,6 @@ section { padding: 100px 60px; }
 .check-no { color: var(--red-risk); opacity: 0.5; }
 .check-partial { color: var(--gold); }
 
-/* ROI */
 #roi {
   background: var(--navy);
   position: relative;
@@ -990,7 +957,6 @@ section { padding: 100px 60px; }
 .roi-circle-value { font-family: var(--font-display); font-size: 3rem; font-weight: 800; color: var(--cyan); line-height: 1; }
 .roi-circle-label { font-family: var(--font-mono); font-size: 0.7rem; letter-spacing: 0.12em; text-transform: uppercase; color: var(--grey); margin-top: 6px; }
 
-/* TRUST */
 #trust {
   background: var(--navy2);
   border-top: 1px solid rgba(0,229,255,0.06);
@@ -1025,7 +991,6 @@ section { padding: 100px 60px; }
 .badge-label { font-family: var(--font-mono); font-size: 0.75rem; letter-spacing: 0.08em; color: var(--white); text-transform: uppercase; }
 .badge-sub { font-size: 0.72rem; color: var(--grey); margin-top: 2px; }
 
-/* PROCESS */
 #process { background: var(--navy); }
 .process-timeline {
   margin-top: 60px;
@@ -1046,7 +1011,6 @@ section { padding: 100px 60px; }
 .process-step-desc { font-size: 0.85rem; line-height: 1.65; color: var(--grey); }
 .process-step-deliverable { margin-top: 20px; padding: 12px 16px; background: rgba(0,229,255,0.05); border-left: 2px solid var(--cyan); font-family: var(--font-mono); font-size: 0.75rem; color: var(--cyan); letter-spacing: 0.04em; }
 
-/* CTA */
 #final-cta {
   padding: 120px 60px;
   background: linear-gradient(135deg, var(--navy2), var(--navy));
@@ -1082,7 +1046,6 @@ section { padding: 100px 60px; }
 }
 .cta-guarantee-item::before { content: '✓'; color: var(--cyan); font-size: 0.9rem; }
 
-/* FOOTER */
 footer {
   background: var(--navy2);
   padding: 60px;
@@ -1104,7 +1067,6 @@ footer {
 .footer-email { font-family: var(--font-mono); font-size: 0.82rem; color: var(--cyan); text-decoration: none; letter-spacing: 0.04em; }
 .footer-copy { font-size: 0.75rem; color: rgba(255,255,255,0.2); margin-top: 6px; }
 
-/* ANIMATIONS */
 @keyframes fadeUp {
   from { opacity: 0; transform: translateY(24px); }
   to   { opacity: 1; transform: translateY(0); }
@@ -1132,7 +1094,6 @@ footer {
 }
 .reveal.visible { opacity: 1; transform: translateY(0); }
 
-/* RESPONSIVE */
 @media (max-width: 1100px) {
   nav { padding: 20px 30px; }
   section, #hero { padding: 80px 30px; }
@@ -1166,7 +1127,7 @@ footer {
 <div class="cursor" id="cursor"></div>
 <div class="cursor-ring" id="cursorRing"></div>
 
-<!-- NAV — CHANGEMENT: ajout lien "Preuve" + texte CTA modifie -->
+<!-- NAV -->
 <nav>
   <a href="#" class="nav-logo">
     <svg width="52" height="52" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -1183,94 +1144,83 @@ footer {
     <span class="nav-logo-text">Scanalis</span>
   </a>
   <ul class="nav-links">
-    <li><a href="#canary-proof">Preuve</a></li>
-    <li><a href="#methodology">Methode</a></li>
+    <li><a href="#canary-proof">Protocole</a></li>
+    <li><a href="#methodology">Méthode</a></li>
     <li><a href="#offerings">Programmes</a></li>
     <li><a href="#comparison">Comparatif</a></li>
     <li><a href="#process">Processus</a></li>
   </ul>
-  <a href="https://cal.com/mathilde-de-roumilly-3zskha/30min" target="_blank" class="nav-cta">Diagnostic Gratuit →</a>
+  <a href="https://cal.com/mathilde-de-roumilly-3zskha/30min" target="_blank" class="nav-cta">Cadrage Technique →</a>
 </nav>
 
-<!-- ═══════════════════════════════════════════════════════════
-     HERO — CHANGEMENT MAJEUR : "faille" → "preuve"
-     Le dirigeant comprend en 5s qu'il a un probleme de PREUVE, pas de securite
-     ═══════════════════════════════════════════════════════════ -->
+<!-- HERO -->
 <section id="hero">
   <div class="hero-bg-grid"></div>
   <div class="hero-orb hero-orb-1"></div>
   <div class="hero-orb hero-orb-2"></div>
 
-  <!-- CHANGEMENT: eyebrow oriente financement -->
-  <div class="hero-eyebrow">Infrastructure de preuve pour IA souveraine</div>
+  <div class="hero-eyebrow">Tiers de confiance technique — Forensique RAM pour systèmes IA</div>
 
-  <!-- CHANGEMENT: headline oriente "preuve" au lieu de "faille" -->
   <h1 class="hero-headline">
-    Sans preuve,<br>
-    votre IA n'est<br>
-    <span class="danger">pas finançable.</span>
+    Votre IA déclare<br>
+    qu'elle oublie.<br>
+    <span class="danger">Prouvez-le.</span>
   </h1>
 
-  <!-- CHANGEMENT: sous-titre oriente BPI/PIIEC -->
   <p class="hero-sub">
-    BPI, PIIEC, AI Act : ils exigent tous la même chose. <strong>Une preuve mathématique que votre IA oublie les données après traitement.</strong> Pas un schéma. Pas un discours. Une preuve binaire, scellée, opposable.
+    DORA, AI Act, NIS2, RGPD : la conformité déclarative ne suffit plus. Les autorités de contrôle exigent désormais une <strong>démonstration technique opposable</strong> , pas un schéma d'architecture, pas un rapport interne signé par votre CTO. Une preuve cryptographique, produite par un tiers indépendant, vérifiable devant la CNIL ou un juge.
   </p>
 
   <div class="hero-actions">
     <a href="https://cal.com/mathilde-de-roumilly-3zskha/30min" target="_blank" class="btn-primary">
       <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
-      Tester mon éligibilité
+      Demander un cadrage technique
     </a>
   </div>
 
-  <!-- CHANGEMENT: stats orientees preuve + financement -->
   <div class="hero-stats">
     <div class="stat-item">
       <div class="stat-value">0 octet</div>
-      <div class="stat-label">Résidu garanti post-purge</div>
+      <div class="stat-label">Résidu admissible post-purge</div>
     </div>
     <div class="stat-item">
       <div class="stat-value">SHA-256</div>
-      <div class="stat-label">Rapport scellé + RSA-PSS</div>
+      <div class="stat-label">Sceau cryptographique + RSA-PSS</div>
     </div>
     <div class="stat-item">
-      <div class="stat-value">88/100</div>
-      <div class="stat-label">Score recevabilité BPI/PIIEC</div>
+      <div class="stat-value">Binaire</div>
+      <div class="stat-label">CONFIRMED ou FAILED  pas de zone grise</div>
     </div>
     <div class="stat-item">
       <div class="stat-value">32 pages</div>
-      <div class="stat-label">Rapport opposable complet</div>
+      <div class="stat-label">Rapport opposable, horodaté, signé</div>
     </div>
   </div>
 </section>
 
-<!-- URGENCY TICKER — CHANGEMENT: messages orientes preuve -->
+<!-- URGENCY TICKER -->
 <div class="urgency-banner">
   <div class="urgency-ticker" id="ticker">
-    <div class="urgency-item"><span class="urgency-dot"></span>PIIEC 2026 : preuve d'amnésie native exigée pour tout dossier IA souveraine</div>
-    <div class="urgency-item"><span class="urgency-dot"></span>90% des dossiers BPI DeepTech rejetés pour absence de preuve technique indépendante</div>
-    <div class="urgency-item"><span class="urgency-dot"></span>AI Act Art. 10 : gestion des données persistantes obligatoire pour systèmes High-Risk</div>
-    <div class="urgency-item"><span class="urgency-dot"></span>Gaia-X Trust Framework §6.1 : zéro dépendance Cloud Act requise</div>
-    <div class="urgency-item"><span class="urgency-dot"></span>DORA : preuve de résilience opérationnelle en vigueur, secteur financier</div>
-    <div class="urgency-item"><span class="urgency-dot"></span>PIIEC 2026 : preuve d'amnésie native exigée pour tout dossier IA souveraine</div>
-    <div class="urgency-item"><span class="urgency-dot"></span>90% des dossiers BPI DeepTech rejetés pour absence de preuve technique indépendante</div>
-    <div class="urgency-item"><span class="urgency-dot"></span>AI Act Art. 10 : gestion des données persistantes obligatoire pour systèmes High-Risk</div>
-    <div class="urgency-item"><span class="urgency-dot"></span>Gaia-X Trust Framework §6.1 : zéro dépendance Cloud Act requise</div>
-    <div class="urgency-item"><span class="urgency-dot"></span>DORA : preuve de résilience opérationnelle en vigueur, secteur financier</div>
+    <div class="urgency-item"><span class="urgency-dot"></span>DORA Art. 25 : démonstration technique exigée  la déclaration de conformité ne suffit plus</div>
+    <div class="urgency-item"><span class="urgency-dot"></span>AI Act Art. 10 : gestion des résidus mémoire obligatoire pour systèmes à haut risque  pleine application août 2026</div>
+    <div class="urgency-item"><span class="urgency-dot"></span>NIS2 Art. 21 : mesures techniques vérifiables exigées pour les opérateurs d'importance vitale</div>
+    <div class="urgency-item"><span class="urgency-dot"></span>RGPD Art. 5(2) : accountability  la charge de la preuve appartient au responsable de traitement</div>
+    <div class="urgency-item"><span class="urgency-dot"></span>ANSSI recommandation n°23 : audit sécurité IA indépendant avant déploiement en environnement sensible</div>
+    <div class="urgency-item"><span class="urgency-dot"></span>DORA Art. 25 : démonstration technique exigée  la déclaration de conformité ne suffit plus</div>
+    <div class="urgency-item"><span class="urgency-dot"></span>AI Act Art. 10 : gestion des résidus mémoire obligatoire pour systèmes à haut risque  pleine application août 2026</div>
+    <div class="urgency-item"><span class="urgency-dot"></span>NIS2 Art. 21 : mesures techniques vérifiables exigées pour les opérateurs d'importance vitale</div>
+    <div class="urgency-item"><span class="urgency-dot"></span>RGPD Art. 5(2) : accountability  la charge de la preuve appartient au responsable de traitement</div>
+    <div class="urgency-item"><span class="urgency-dot"></span>ANSSI recommandation n°23 : audit sécurité IA indépendant avant déploiement en environnement sensible</div>
   </div>
 </div>
 
-<!-- ═══════════════════════════════════════════════════════════
-     NOUVELLE SECTION : PROTOCOLE CANARY + TERMINAL
-     C'est le coeur du repositionnement : la PREUVE
-     ═══════════════════════════════════════════════════════════ -->
+<!-- SECTION PROTOCOLE CANARY -->
 <section id="canary-proof">
-  <div class="section-label">Protocole canary  Preuve forensique</div>
-  <h2 class="section-title reveal">Nous ne sécurisons pas votre IA.<br>Nous <span style="color:var(--cyan)">prouvons qu'elle oublie.</span></h2>
-  <p class="section-desc reveal" style="transition-delay:0.1s">Le Protocole Canary injecte 8 données-leurres (DCP, IBAN, clés API, secrets industriels) dans votre système, déclenche la purge, puis scanne la mémoire vive octet par octet. Verdict binaire. Zéro interprétation.</p>
+  <div class="section-label">Protocole Canary  Preuve forensique</div>
+  <h2 class="section-title reveal">Nous ne sécurisons pas votre IA.<br>Nous <span style="color:var(--cyan)">prouvons forensiquement</span> ce qu'elle retient.</h2>
+  <p class="section-desc reveal" style="transition-delay:0.1s">Le Protocole Canary injecte 8 données-leurres cryptographiquement traçables dans votre système, déclenche la purge, puis scanne la mémoire vive octet par octet. Le verdict est binaire, objectif, et ne dépend d'aucune déclaration de votre éditeur. Aucun accès SSH. Aucun agent installé. Lecture seule sur dump mémoire chiffré fourni par vos équipes.</p>
 
   <div class="canary-layout">
-    <!-- Terminal anime -->
     <div class="terminal reveal" style="transition-delay:0.2s">
       <div class="terminal-bar">
         <div class="terminal-dot r"></div>
@@ -1278,77 +1228,70 @@ footer {
         <div class="terminal-dot g"></div>
         <span class="terminal-title">scanalis-canary-protocol v3.1</span>
       </div>
-      <div class="terminal-body" id="terminalBody">
-        <!-- Le contenu sera anime par JS -->
-      </div>
+      <div class="terminal-body" id="terminalBody"></div>
     </div>
 
-    <!-- 4 phases -->
     <div class="canary-phases reveal" style="transition-delay:0.3s">
       <div class="canary-phase">
         <div class="phase-letter">A</div>
         <div>
           <div class="phase-name">Capture de la ligne de base</div>
-          <div class="phase-desc">Empreinte mémoire avant session. PID, taille résidente, fingerprint heap SHA-256.</div>
+          <div class="phase-desc">Empreinte mémoire du processus cible avant toute interaction. PID, taille résidente, fingerprint heap SHA-256. Point de référence forensique immuable.</div>
         </div>
       </div>
       <div class="canary-phase">
         <div class="phase-letter">B</div>
         <div>
           <div class="phase-name">Injection des 8 jetons-canaris</div>
-          <div class="phase-desc">Email, téléphone, SSN, IBAN, clé API, prompt injection, secret industriel, données médicales.</div>
+          <div class="phase-desc">Huit catégories de données sensibles introduites via l'interface standard : DCP (email, téléphone, numéro SS), IBAN, clé API, vecteur d'injection de prompt, secret industriel, donnée médicale. Chaque jeton est cryptographiquement distinct et traçable.</div>
         </div>
       </div>
       <div class="canary-phase">
         <div class="phase-letter">C</div>
         <div>
-          <div class="phase-name">Purge + capture post-mortem</div>
-          <div class="phase-desc">Terminaison de session. Attente paramétrable. Nouvelle empreinte mémoire.</div>
+          <div class="phase-name">Déclenchement purge + capture post-mortem</div>
+          <div class="phase-desc">Terminaison de session selon le protocole de votre éditeur. Attente paramétrable. Nouvelle empreinte mémoire complète. Zéro intervention sur votre infrastructure de production.</div>
         </div>
       </div>
       <div class="canary-phase">
         <div class="phase-letter">D</div>
         <div>
-          <div class="phase-name">Vérification forensique</div>
-          <div class="phase-desc">Scan octet par octet : offset mémoire, HEX_DUMP 16 octets, traduction ASCII. Verdict : AMNESIA_CONFIRMED ou AMNESIA_FAILED.</div>
+          <div class="phase-name">Vérification forensique octet par octet</div>
+          <div class="phase-desc">Scan exhaustif : offset mémoire, HEX_DUMP 16 octets, traduction ASCII filtrée. Pour chaque jeton : présence ou absence, adresse exacte, contexte environnant. Verdict binaire : AMNESIA_CONFIRMED ou AMNESIA_FAILED. Zéro interprétation. Zéro zone grise.</div>
         </div>
       </div>
     </div>
   </div>
 
-  <!-- Bandeau financement -->
   <div class="funding-banner reveal" style="transition-delay:0.4s">
     <div class="funding-text">
-      <h3>Ce rapport est votre sésame financier.</h3>
-      <p>Le rapport scellé Scanalis (SHA-256 + RSA-PSS) constitue la preuve technique indépendante exigée par les instructeurs BPI, les comités PIIEC, et les auditeurs AI Act Article 10.</p>
+      <h3>Ce rapport est opposable devant la CNIL, l'ANSSI et tout tribunal.</h3>
+      <p>Scellé SHA-256, signé RSA-PSS 2048 bits, horodaté RFC3161. Vérifiable offline par tout tiers disposant de la clé publique embarquée. Il ne peut pas être altéré a posteriori. C'est ce que "le hash ne ment pas" signifie concrètement.</p>
     </div>
     <div class="funding-badges">
-      <div class="funding-badge">BPI DeepTech</div>
-      <div class="funding-badge">PIIEC IA</div>
+      <div class="funding-badge">DORA Art. 25</div>
       <div class="funding-badge">AI Act Art. 10</div>
-      <div class="funding-badge">Gaia-X §4.2</div>
+      <div class="funding-badge">NIS2 Art. 21</div>
+      <div class="funding-badge">RGPD Art. 5(2)</div>
     </div>
   </div>
 </section>
 
-<!-- ═══════════════════════════════════════════════════════════
-     NOUVELLE SECTION : COMPARAISON PREUVE
-     Logs internes vs Scanalis — l'instructeur comprend immédiatement
-     ═══════════════════════════════════════════════════════════ -->
+<!-- SECTION COMPARAISON PREUVE -->
 <section id="proof-compare">
   <div class="section-label">Preuve opposable vs déclaratif</div>
-  <h2 class="section-title reveal">Ce que vous présentez aujourd'hui<br>vs ce que <span style="color:var(--cyan)">l'instructeur exige.</span></h2>
+  <h2 class="section-title reveal">Ce que votre DPO signe aujourd'hui<br>vs ce que <span style="color:var(--cyan)">l'autorité de contrôle exige.</span></h2>
 
   <div class="proof-grid reveal" style="transition-delay:0.15s">
     <div class="proof-col weak">
-      <div class="proof-col-title">Vos logs internes</div>
+      <div class="proof-col-title">Vos déclarations internes</div>
       <ul class="proof-list">
-        <li><span class="ico">✗</span> Déclaratif : "notre système purge les données"</li>
-        <li><span class="ico">✗</span> Aucune preuve binaire de l'absence de résidu</li>
-        <li><span class="ico">✗</span> Pas de tiers indépendant</li>
-        <li><span class="ico">✗</span> Hash modifiable a posteriori</li>
-        <li><span class="ico">✗</span> Aucune valeur pour un comité de financement</li>
-        <li><span class="ico">✗</span> Rejeté par les instructeurs PIIEC</li>
+        <li><span class="ico">✗</span> Déclaratif auto-produit : "notre système purge les données"</li>
+        <li><span class="ico">✗</span> Aucune preuve binaire de l'absence de résidu physique</li>
+        <li><span class="ico">✗</span> Pas de tiers indépendant — valeur probatoire nulle</li>
+        <li><span class="ico">✗</span> PDF modifiable a posteriori, non scellé</li>
+        <li><span class="ico">✗</span> Inopposable devant la CNIL ou un juge</li>
+        <li><span class="ico">✗</span> Ne couvre pas la mémoire volatile post-purge</li>
       </ul>
     </div>
 
@@ -1357,53 +1300,51 @@ footer {
     <div class="proof-col strong">
       <div class="proof-col-title">Rapport Scanalis</div>
       <ul class="proof-list">
-        <li><span class="ico">✓</span> 8 jetons-canaris injectés + scan mémoire post-purge</li>
-        <li><span class="ico">✓</span> Adresses mémoire, HEX_DUMP, ASCII filtré</li>
+        <li><span class="ico">✓</span> 8 jetons-canaris injectés + scan mémoire octet par octet</li>
+        <li><span class="ico">✓</span> Adresses mémoire, HEX_DUMP, ASCII filtré — trace complète</li>
         <li><span class="ico">✓</span> Tiers de confiance technique indépendant</li>
-        <li><span class="ico">✓</span> Sceau SHA-256 + signature RSA-PSS 2048 bits</li>
+        <li><span class="ico">✓</span> Sceau SHA-256 + signature RSA-PSS 2048 bits + RFC3161</li>
+        <li><span class="ico">✓</span> Opposable devant la CNIL, l'ABE, tout tribunal européen</li>
         <li><span class="ico">✓</span> IPE quantifié (Indice de Probabilité d'Exposition)</li>
-        <li><span class="ico">✓</span> Conformité Gaia-X Trust Framework documentée</li>
       </ul>
     </div>
   </div>
 </section>
 
-<!-- PROBLEM SECTION — CHANGEMENT: pivot "preuve" au lieu de "sécurité" -->
+<!-- SECTION POURQUOI L'AUDIT RAM -->
 <section id="problem">
-  <div class="section-label">Le trou de preuve</div>
-  <!-- CHANGEMENT: headline oriente preuve -->
-  <h2 class="section-title reveal">90% des dossiers IA<br>échouent au même <em style="color:var(--red-risk)">endroit.</em></h2>
-  <p class="section-desc reveal" style="transition-delay:0.1s">Pas un problème de technologie. Un problème de preuve. L'instructeur ouvre votre dossier, cherche la certification indépendante, ne la trouve pas. Dossier classé.</p>
+  <div class="section-label">La réalité physique des octets</div>
+  <h2 class="section-title reveal">La purge que votre éditeur déclare<br>et la RAM qui, elle, <em style="color:var(--red-risk)">ne ment pas.</em></h2>
+  <p class="section-desc reveal" style="transition-delay:0.1s">Quand un système d'IA "purge" une session, il supprime un pointeur. Pas les octets. Les données persistent physiquement en mémoire vive jusqu'à 90 minutes après fermeture de session sur un serveur standard. Votre éditeur ne peut pas le prouver. Votre DPO ne peut pas le vérifier. Votre assureur ne le couvre pas.</p>
 
   <div class="problem-grid">
     <div class="problem-items reveal" style="transition-delay:0.2s">
-      <!-- CHANGEMENT: problemes orientes "preuve manquante" -->
       <div class="problem-item">
         <div class="problem-icon">📄</div>
         <div>
-          <h3>Pas de preuve d'amnésie RAM</h3>
-          <p>Votre IA traite des données sensibles. Après la session, que reste-t-il en mémoire ? Vous ne savez pas. L'instructeur non plus. Dossier rejeté.</p>
+          <h3>La purge logique n'est pas une purge physique</h3>
+          <p>Fermer une session API, vider un contexte LLM, supprimer un enregistrement en base : aucune de ces opérations ne garantit l'effacement des octets en mémoire volatile. Ce sont deux couches distinctes. La loi couvre la première. Les attaquants ciblent la seconde.</p>
         </div>
       </div>
       <div class="problem-item">
         <div class="problem-icon">🔓</div>
         <div>
-          <h3>Pas de certificat d'intégrité</h3>
-          <p>Vos résultats d'audit internes ne sont pas signés cryptographiquement. N'importe qui peut modifier un PDF. L'instructeur le sait.</p>
+          <h3>Votre déclaration n'est pas une preuve</h3>
+          <p>Un rapport interne certifiant que "le système purge les données" est auto-produit, non signé cryptographiquement, modifiable a posteriori. DORA Art. 25 et AI Act Art. 10 exigent une démonstration technique par un tiers indépendant — pas une déclaration.</p>
         </div>
       </div>
       <div class="problem-item">
         <div class="problem-icon">🌍</div>
         <div>
-          <h3>Pas de preuve de souveraineté</h3>
-          <p>Votre système est "souverain" ? Prouvez-le. Pas avec un schéma d'architecture. Avec un scan réseau qui montre zéro appel vers une juridiction US.</p>
+          <h3>L'impuissance face à votre fournisseur</h3>
+          <p>Votre LLM est hébergé chez un tiers. Vous n'avez pas accès à sa RAM. Vous ne pouvez pas vérifier ce qu'il retient après traitement. Vous signez pourtant un DPA RGPD Art. 28 qui engage votre responsabilité personnelle en tant que responsable de traitement.</p>
         </div>
       </div>
       <div class="problem-item">
         <div class="problem-icon">⚖️</div>
         <div>
-          <h3>Pas de tiers indépendant</h3>
-          <p>Vous vous auto-certifiez. Le comité BPI, le PIIEC, l'AI Act exigent un tiers de confiance technique. Pas votre CTO. Pas votre DPO. Un auditeur externe.</p>
+          <h3>La jurisprudence arrive</h3>
+          <p>AI Act pleine application : août 2026. DORA en vigueur depuis janvier 2025. NIS2 transposée. Les textes existent. Les premiers incidents documentés RAM/LLM seront les cas d'école que les autorités citeront. Être le premier à avoir la preuve — ou le premier à ne pas l'avoir.</p>
         </div>
       </div>
     </div>
@@ -1411,54 +1352,54 @@ footer {
     <div class="cost-visual reveal" style="transition-delay:0.3s">
       <div class="cost-bar-item">
         <div class="cost-bar-label">
-          <span>Financement PIIEC perdu</span>
-          <span>2–5M€</span>
+          <span>Amende AI Act  système high-risk</span>
+          <span>30M€ / 6% CA</span>
         </div>
         <div class="cost-bar-track"><div class="cost-bar-fill" data-width="1" style="width:100%"></div></div>
       </div>
       <div class="cost-bar-item">
         <div class="cost-bar-label">
-          <span>Subvention BPI DeepTech rejetée</span>
-          <span>~500K€</span>
+          <span>Amende RGPD  violation Art. 5</span>
+          <span>20M€ / 4% CA</span>
+        </div>
+        <div class="cost-bar-track"><div class="cost-bar-fill" data-width="0.67" style="width:67%"></div></div>
+      </div>
+      <div class="cost-bar-item">
+        <div class="cost-bar-label">
+          <span>Notification CNIL — incident RAM</span>
+          <span>72h légales</span>
         </div>
         <div class="cost-bar-track"><div class="cost-bar-fill" data-width="0.2" style="width:20%"></div></div>
       </div>
       <div class="cost-bar-item">
         <div class="cost-bar-label">
-          <span>Amende AI Act (systeme high-risk)</span>
-          <span>~380K€</span>
+          <span>Suspension activité  DORA non-conformité</span>
+          <span>Décision ABE</span>
         </div>
-        <div class="cost-bar-track"><div class="cost-bar-fill" data-width="0.15" style="width:15%"></div></div>
-      </div>
-      <div class="cost-bar-item">
-        <div class="cost-bar-label">
-          <span>Retard marché (6 mois)</span>
-          <span>~200K€</span>
-        </div>
-        <div class="cost-bar-track"><div class="cost-bar-fill" data-width="0.08" style="width:8%"></div></div>
+        <div class="cost-bar-track"><div class="cost-bar-fill" data-width="0.12" style="width:12%"></div></div>
       </div>
 
       <div class="cost-total">
-        <div class="cost-total-label">Rapport Scanalis à partir de</div>
+        <div class="cost-total-label">Audit Scanalis à partir de</div>
         <div class="cost-total-value">18K€</div>
-        <div class="cost-total-sub">vs. 3M€+ de financement débloqué</div>
+        <div class="cost-total-sub">La preuve technique opposable. Avant que l'autorité la réclame.</div>
       </div>
     </div>
   </div>
 </section>
 
-<!-- METHODOLOGY — Conservation intégrale, ajustements mineurs de texte -->
+<!-- METHODOLOGY -->
 <section id="methodology">
   <div class="section-label">Méthodologie propriétaire</div>
   <h2 class="section-title reveal">4 piliers.<br>1 preuve opposable.</h2>
-  <p class="section-desc reveal" style="transition-delay:0.1s">Chaque pilier produit une preuve vérifiable. Pas un avis. Pas une recommandation. Une preuve binaire, horodatée, scellée.</p>
+  <p class="section-desc reveal" style="transition-delay:0.1s">Chaque pilier produit une preuve vérifiable. Pas un avis. Pas une recommandation. Une preuve binaire, horodatée, scellée, produite par un tiers de confiance technique qui engage sa responsabilité civile professionnelle sur chaque rapport.</p>
 
   <div class="pillars-grid">
     <div class="pillar-card reveal" style="transition-delay:0.1s">
       <div class="pillar-number">01 / Exposure</div>
       <div class="pillar-icon-wrap">🔍</div>
-      <div class="pillar-name">Exposure Intelligence</div>
-      <div class="pillar-desc">Shadow APIs, flux sortants non-autorisés, DLI v2. Votre surface d'exposition réelle, cartographiée et quantifiée en euros.</div>
+      <div class="pillar-name">Cartographie d'Exposition</div>
+      <div class="pillar-desc">Shadow APIs, flux sortants non autorisés, DLI v2. Votre surface d'exposition réelle, cartographiée et quantifiée en euros de risque potentiel.</div>
       <div class="pillar-tags">
         <span class="pillar-tag">Shadow APIs</span>
         <span class="pillar-tag">DLI v2</span>
@@ -1468,9 +1409,8 @@ footer {
     <div class="pillar-card reveal" style="transition-delay:0.2s">
       <div class="pillar-number">02 / Amnesia</div>
       <div class="pillar-icon-wrap">🧠</div>
-      <!-- CHANGEMENT: renomme "Simulation" → "Amnesia" -->
       <div class="pillar-name">Protocole Canary</div>
-      <div class="pillar-desc">Injection de 8 jetons-canaris. Purge. Scan forensique octet par octet. Verdict binaire : AMNESIA_CONFIRMED ou AMNESIA_FAILED.</div>
+      <div class="pillar-desc">Injection de 8 jetons-canaris traçables. Purge. Scan forensique octet par octet. Verdict binaire : AMNESIA_CONFIRMED ou AMNESIA_FAILED. Zéro zone grise. Zéro interprétation.</div>
       <div class="pillar-tags">
         <span class="pillar-tag">RAM Forensics</span>
         <span class="pillar-tag">8 Canaries</span>
@@ -1481,7 +1421,7 @@ footer {
       <div class="pillar-number">03 / Finance</div>
       <div class="pillar-icon-wrap">📊</div>
       <div class="pillar-name">Monte Carlo + IPE</div>
-      <div class="pillar-desc">Simulation stochastique de l'impact financier. IPE (Indice de Probabilité d'Exposition) calibré selon la Norme de Prudence Scanalis v1.0.</div>
+      <div class="pillar-desc">Simulation stochastique de l'impact financier d'une fuite RAM. IPE (Indice de Probabilité d'Exposition) calibré selon la Norme de Prudence Scanalis v1.0.</div>
       <div class="pillar-tags">
         <span class="pillar-tag">Monte Carlo</span>
         <span class="pillar-tag">IPE Score</span>
@@ -1491,23 +1431,22 @@ footer {
     <div class="pillar-card reveal" style="transition-delay:0.4s">
       <div class="pillar-number">04 / Seal</div>
       <div class="pillar-icon-wrap">🛡️</div>
-      <!-- CHANGEMENT: renomme "Board-Ready" → "Sceau" -->
       <div class="pillar-name">Sceau Cryptographique</div>
-      <div class="pillar-desc">Rapport de 32 pages. Hash SHA-256. Signature RSA-PSS 2048 bits. Clé publique embarquée pour vérification offline par tout tiers.</div>
+      <div class="pillar-desc">Rapport de 32 pages. Hash SHA-256. Signature RSA-PSS 2048 bits. Horodatage RFC3161. Clé publique embarquée pour vérification offline par tout tiers, à tout moment.</div>
       <div class="pillar-tags">
         <span class="pillar-tag">SHA-256</span>
         <span class="pillar-tag">RSA-PSS</span>
-        <span class="pillar-tag">Gaia-X</span>
+        <span class="pillar-tag">RFC3161</span>
       </div>
     </div>
   </div>
 </section>
 
-<!-- OFFERINGS — CHANGEMENT: ajout verdict AMNESIA + contexte financement -->
+<!-- OFFERINGS -->
 <section id="offerings">
-  <div class="section-label">Programmes de certification</div>
+  <div class="section-label">Programmes d'audit</div>
   <h2 class="section-title reveal">Choisissez votre<br>niveau de preuve</h2>
-  <p class="section-desc reveal" style="transition-delay:0.1s; margin-bottom:0;">Chaque tier produit un rapport scellé. Plus le tier est élevé, plus la preuve est profonde.</p>
+  <p class="section-desc reveal" style="transition-delay:0.1s; margin-bottom:0;">Chaque tier produit un rapport scellé. Plus le tier est élevé, plus la profondeur forensique est grande  et plus la preuve est opposable dans des contextes réglementaires exigeants.</p>
 
   <div class="offerings-grid">
     <div class="offer-card reveal" style="transition-delay:0.1s">
@@ -1517,10 +1456,10 @@ footer {
       <div class="offer-price-sub">Cartographie de votre surface d'attaque réelle</div>
       <ul class="offer-features">
         <li class="included">Discovery Shadow API complet</li>
-        <li class="included">Scan API & IA Exposure</li>
+        <li class="included">Scan API & Exposition IA</li>
         <li class="included">Rapport de remédiation technique</li>
-        <li class="included">Résumé exécutif direction</li>
-        <li class="included">Checklist conformité AI Act</li>
+        <li class="included">Résumé exécutif Direction / COMEX</li>
+        <li class="included">Checklist conformité DORA / AI Act / NIS2</li>
         <li class="excluded">Protocole Canary (amnésie RAM)</li>
         <li class="excluded">Monte Carlo + IPE</li>
         <li class="excluded">Sceau SHA-256 + RSA-PSS</li>
@@ -1529,11 +1468,11 @@ footer {
     </div>
 
     <div class="offer-card featured reveal" style="transition-delay:0.2s">
-      <div class="offer-badge">Dossier PIIEC</div>
+      <div class="offer-badge">Recommandé RSSI / DPO</div>
       <div class="offer-tier">Tier 2</div>
       <div class="offer-name">Audit de Risque Stratégique</div>
       <div class="offer-price">35K€</div>
-      <div class="offer-price-sub">Preuve complète pour comité de financement</div>
+      <div class="offer-price-sub">Preuve complète  opposable devant toute autorité</div>
       <ul class="offer-features">
         <li class="included">Tout le Tier 1</li>
         <li class="included">Protocole Canary (8 jetons-canaris)</li>
@@ -1544,7 +1483,6 @@ footer {
         <li class="excluded">Certification amnésie native</li>
         <li class="excluded">Monitoring trimestriel</li>
       </ul>
-      <!-- AJOUT: verdict badge -->
       <div class="verdict-badge confirmed">AMNESIA_CONFIRMED inclus</div>
       <a href="https://cal.com/mathilde-de-roumilly-3zskha/30min" target="_blank" class="offer-cta primary" style="margin-top:20px;">Cadrage Gratuit →</a>
     </div>
@@ -1553,115 +1491,113 @@ footer {
       <div class="offer-tier">Tier 3</div>
       <div class="offer-name">Résilience Exécutive</div>
       <div class="offer-price">60K€</div>
-      <div class="offer-price-sub">Certification souveraine complète</div>
+      <div class="offer-price-sub">Certification souveraine complète  environnements critiques</div>
       <ul class="offer-features">
         <li class="included">Tout le Tier 2</li>
-        <li class="included">Certification amnésie native signée</li>
-        <li class="included">Sceau SHA-256 + RSA-PSS</li>
-        <li class="included">Conformité Gaia-X documentée</li>
+        <li class="included">Certification amnésie native signée RSA-PSS</li>
+        <li class="included">Sceau SHA-256 + horodatage RFC3161</li>
+        <li class="included">Conformité Gaia-X Trust Framework documentée</li>
         <li class="included">Monitoring trimestriel continu</li>
-        <li class="included">Accompagnement dossier BPI/PIIEC</li>
-        <li class="included">Rescans automatiques</li>
-        <li class="included">Priorisation Board + support direct</li>
+        <li class="included">Accompagnement COMEX et Direction Juridique</li>
+        <li class="included">Rescans automatiques post-mise à jour système</li>
+        <li class="included">Accès prioritaire — 3 créneaux mensuels réservés</li>
       </ul>
-      <div class="verdict-badge confirmed">Preuve opposable BPI/PIIEC</div>
+      <div class="verdict-badge confirmed">Preuve opposable  juridictions critiques</div>
       <a href="https://cal.com/mathilde-de-roumilly-3zskha/30min" target="_blank" class="offer-cta outline" style="margin-top:20px;">Nous contacter →</a>
     </div>
   </div>
 </section>
 
-<!-- COMPARISON — CHANGEMENT: ajout ligne "preuve amnésie" -->
+<!-- COMPARISON -->
 <section id="comparison">
   <div class="section-label">Positionnement marché</div>
-  <h2 class="section-title reveal">SCANALIS vs. l'écosystème 2026</h2>
-  <p class="section-desc reveal" style="transition-delay:0.1s">Pas un SaaS qui génère du bruit. Un tiers de confiance qui produit une preuve.</p>
+  <h2 class="section-title reveal">SCANALIS vs. l'écosystème existant</h2>
+  <p class="section-desc reveal" style="transition-delay:0.1s">Pas un SaaS qui génère des alertes. Pas un pentesteur qui cherche des portes d'entrée. Un tiers de confiance technique qui produit une preuve sur ce qui reste à l'intérieur après purge.</p>
 
   <table class="compare-table reveal" style="transition-delay:0.2s">
     <thead>
       <tr>
         <th>Dimension</th>
-        <th>SaaS Auto</th>
+        <th>SaaS Sécurité IA</th>
         <th class="scanalis-col">✦ SCANALIS</th>
-        <th>Pentest Manuel</th>
+        <th>Pentest / Audit Classique</th>
       </tr>
     </thead>
     <tbody>
-      <!-- AJOUT: ligne preuve amnesie -->
       <tr>
-        <td>Preuve d'amnésie RAM</td>
+        <td>Preuve d'amnésie RAM post-purge</td>
         <td><span class="check-no">✗ Inexistant</span></td>
-        <td class="scanalis-col"><span class="check-yes">✓</span> Protocole Canary 8 jetons</td>
+        <td class="scanalis-col"><span class="check-yes">✓</span> Protocole Canary  8 jetons</td>
         <td><span class="check-no">✗ Hors périmètre</span></td>
       </tr>
       <tr>
-        <td>Sceau cryptographique</td>
-        <td><span class="check-no">✗ Hash simple</span></td>
-        <td class="scanalis-col"><span class="check-yes">✓</span> SHA-256 + RSA-PSS</td>
-        <td><span class="check-no">✗ PDF non signé</span></td>
+        <td>Sceau cryptographique opposable</td>
+        <td><span class="check-no">✗ Non signé</span></td>
+        <td class="scanalis-col"><span class="check-yes">✓</span> SHA-256 + RSA-PSS + RFC3161</td>
+        <td><span class="check-no">✗ PDF non scellé</span></td>
       </tr>
       <tr>
-        <td>Recevabilité BPI/PIIEC</td>
-        <td><span class="check-no">✗ Non reconnu</span></td>
-        <td class="scanalis-col"><span class="check-yes">✓</span> Score 88/100</td>
-        <td><span class="check-partial">Variable</span></td>
+        <td>Verdict binaire zéro zone grise</td>
+        <td><span class="check-no">✗ Score / niveau</span></td>
+        <td class="scanalis-col"><span class="check-yes">✓</span> CONFIRMED ou FAILED</td>
+        <td><span class="check-partial">Recommandations</span></td>
       </tr>
       <tr>
         <td>Impact production</td>
-        <td><span class="check-partial">Agent (risqué)</span></td>
-        <td class="scanalis-col"><span class="check-yes">✓</span> Zéro Impact</td>
-        <td><span class="check-no">Intrusif</span></td>
+        <td><span class="check-partial">Agent requis</span></td>
+        <td class="scanalis-col"><span class="check-yes">✓</span> Zéro lecture seule sur dump</td>
+        <td><span class="check-no">Intrusif  accès systèmes</span></td>
       </tr>
       <tr>
-        <td>Conformité Gaia-X</td>
-        <td><span class="check-no">✗ Non couvert</span></td>
-        <td class="scanalis-col"><span class="check-yes">✓</span> §4.2, §5.1, §4.3, §6.1</td>
-        <td><span class="check-no">✗ Non couvert</span></td>
+        <td>Opposabilité CNIL / tribunal</td>
+        <td><span class="check-no">✗ Aucune valeur</span></td>
+        <td class="scanalis-col"><span class="check-yes">✓</span> Tiers indépendant + sceau</td>
+        <td><span class="check-partial">Variable selon cabinet</span></td>
       </tr>
       <tr>
-        <td>Livrable remédiation</td>
-        <td>Dashboard</td>
-        <td class="scanalis-col"><span class="check-yes">✓</span> Plan 30/60/90j + Scripts</td>
-        <td>Rapport PDF statique</td>
+        <td>Couverture DORA / AI Act / NIS2</td>
+        <td><span class="check-partial">Partielle</span></td>
+        <td class="scanalis-col"><span class="check-yes">✓</span> Art. 25 DORA · Art. 10 AI Act · Art. 21 NIS2</td>
+        <td><span class="check-no">✗ Non documentée</span></td>
       </tr>
       <tr>
-        <td>Tarification</td>
-        <td>&gt;25K€/an (SaaS)</td>
-        <td class="scanalis-col"><span class="check-yes">✓</span> Forfait 18K–60K€</td>
-        <td>&gt;50K€/mission</td>
+        <td>Destruction certifiée données client</td>
+        <td><span class="check-no">✗ Non garanti</span></td>
+        <td class="scanalis-col"><span class="check-yes">✓</span> shred -vfz -n 3  attestation 20j</td>
+        <td><span class="check-partial">Variable</span></td>
       </tr>
     </tbody>
   </table>
 </section>
 
-<!-- ROI — Conservation avec ajustements mineurs -->
+<!-- ROI -->
 <section id="roi">
   <div class="roi-bg"></div>
   <div class="roi-layout">
     <div class="roi-content">
-      <div class="section-label">Analyse ROI</div>
-      <!-- CHANGEMENT: headline orient financement -->
-      <h2 class="section-title reveal">Ce n'est pas un coût.<br>C'est le ticket d'entrée<br>de votre <span style="color:var(--cyan)">financement.</span></h2>
-      <p class="section-desc reveal" style="transition-delay:0.1s">Un rapport à 35K€ qui débloque un financement PIIEC de 2 à 5M€. Le calcul est fait.</p>
+      <div class="section-label">Analyse de risque</div>
+      <h2 class="section-title reveal">Ce n'est pas un coût.<br>C'est la preuve qui vous<br><span style="color:var(--cyan)">protège de la sanction.</span></h2>
+      <p class="section-desc reveal" style="transition-delay:0.1s">Un rapport à 35K€ face à une amende AI Act à 30M€ ou 6% du chiffre d'affaires mondial. La conformité déclarative ne vous protège plus. La démonstration technique, si.</p>
 
       <div class="roi-metric reveal" style="transition-delay:0.2s">
         <div class="roi-item">
-          <span class="roi-item-label">Financement PIIEC débloqué</span>
-          <span class="roi-item-value positive">2–5M€</span>
+          <span class="roi-item-label">Amende AI Act  système high-risk non conforme</span>
+          <span class="roi-item-value">30M€ / 6% CA</span>
         </div>
         <div class="roi-item">
-          <span class="roi-item-label">Subvention BPI DeepTech</span>
-          <span class="roi-item-value positive">~500K€</span>
+          <span class="roi-item-label">Amende RGPD  violation Art. 5 persistance données</span>
+          <span class="roi-item-value">20M€ / 4% CA</span>
         </div>
         <div class="roi-item">
-          <span class="roi-item-label">Amende AI Act évitée</span>
-          <span class="roi-item-value">~380K€</span>
+          <span class="roi-item-label">Coût moyen incident RAM  notification + remédiation</span>
+          <span class="roi-item-value">~500K€</span>
         </div>
         <div class="roi-item">
-          <span class="roi-item-label">Économie ingénieurs (15–20j)</span>
+          <span class="roi-item-label">Économie équipes internes (15–20j ingénieurs)</span>
           <span class="roi-item-value positive">~80K€</span>
         </div>
         <div class="roi-item">
-          <span class="roi-item-label">Investissement Tier 2</span>
+          <span class="roi-item-label">Investissement Tier 2  preuve complète</span>
           <span class="roi-item-value positive">35K€</span>
         </div>
       </div>
@@ -1675,118 +1611,118 @@ footer {
             stroke-dasharray="879.6" stroke-dashoffset="87.96" stroke-linecap="round"/>
         </svg>
         <div class="roi-circle-center">
-          <!-- CHANGEMENT: ROI en multiplicateur de financement -->
-          <div class="roi-circle-value">143x</div>
-          <div class="roi-circle-label">ROI financement<br>PIIEC / audit</div>
+          <div class="roi-circle-value">857x</div>
+          <div class="roi-circle-label">Protection maximale<br>amende / audit</div>
         </div>
       </div>
     </div>
   </div>
 </section>
 
-<!-- TRUST — Conservation avec ajout Gaia-X -->
+<!-- TRUST / RÉASSURANCE -->
 <section id="trust">
-  <div class="section-label">Conformité & reconnaissance</div>
-  <h2 class="section-title reveal">Référentiels couverts</h2>
+  <div class="section-label">Garanties contractuelles & opérationnelles</div>
+  <h2 class="section-title reveal">Aucun accès à vos systèmes.<br>Aucun agent installé.<br><span style="color:var(--cyan)">Aucune dépendance.</span></h2>
+  <p class="section-desc reveal" style="transition-delay:0.1s">L'audit Scanalis est conçu pour les environnements où la confidentialité est non négociable. Défense, santé, finance, opérateurs d'importance vitale : le protocole a été durci en conséquence.</p>
 
   <div class="trust-logos reveal" style="transition-delay:0.1s">
     <div class="trust-logo">AI Act</div>
     <div class="trust-logo">RGPD</div>
     <div class="trust-logo">DORA</div>
-    <div class="trust-logo">Gaia-X</div>
-    <div class="trust-logo">OWASP API Top 10</div>
     <div class="trust-logo">NIS2</div>
+    <div class="trust-logo">OWASP API Top 10</div>
+    <div class="trust-logo">Gaia-X</div>
   </div>
 
   <div class="compliance-badges reveal" style="transition-delay:0.2s">
     <div class="badge">
-      <span class="badge-icon">🧠</span>
+      <span class="badge-icon">🔒</span>
       <div>
-        <div class="badge-label">Amnésie Native</div>
-        <div class="badge-sub">Protocole Canary — 0 octet résiduel</div>
+        <div class="badge-label">Zéro Intrusion</div>
+        <div class="badge-sub">Pas d'SSH · Pas d'agent · Lecture seule sur dump chiffré</div>
       </div>
     </div>
     <div class="badge">
-      <span class="badge-icon">🔐</span>
+      <span class="badge-icon">🗑️</span>
       <div>
-        <div class="badge-label">Sceau RSA-PSS</div>
-        <div class="badge-sub">Non-répudiation cryptographique</div>
-      </div>
-    </div>
-    <div class="badge">
-      <span class="badge-icon">🌐</span>
-      <div>
-        <div class="badge-label">Gaia-X §4.2–§6.1</div>
-        <div class="badge-sub">Souveraineté numérique vérifiée</div>
-      </div>
-    </div>
-    <div class="badge">
-      <span class="badge-icon">📊</span>
-      <div>
-        <div class="badge-label">IPE Calibré</div>
-        <div class="badge-sub">Norme de Prudence Scanalis v1.0</div>
+        <div class="badge-label">Destruction certifiée</div>
+        <div class="badge-sub">shred -vfz -n 3 · Attestation signée sous 20 jours</div>
       </div>
     </div>
     <div class="badge">
       <span class="badge-icon">🛡️</span>
       <div>
-        <div class="badge-label">Zero Impact</div>
-        <div class="badge-sub">Approche non-intrusive</div>
+        <div class="badge-label">RC Pro Cyber Hiscox</div>
+        <div class="badge-sub">Assurance active · Attestation sur demande</div>
+      </div>
+    </div>
+    <div class="badge">
+      <span class="badge-icon">📋</span>
+      <div>
+        <div class="badge-label">5 documents contractuels</div>
+        <div class="badge-sub">Contrat · DPA Art. 28 · NDA · AAT · Destruction</div>
+      </div>
+    </div>
+    <div class="badge">
+      <span class="badge-icon">🌐</span>
+      <div>
+        <div class="badge-label">Souveraineté totale</div>
+        <div class="badge-sub">Zéro cloud tiers · Zéro dépendance Cloud Act</div>
       </div>
     </div>
   </div>
 </section>
 
-<!-- PROCESS — Conservation avec texte ajusté -->
+<!-- PROCESS -->
 <section id="process">
   <div class="section-label">Notre processus</div>
-  <h2 class="section-title reveal">30 minutes pour savoir<br>si votre IA est <span style="color:var(--cyan)">prouvable.</span></h2>
-  <p class="section-desc reveal" style="transition-delay:0.1s">Un cadrage gratuit. Une intervention externe qui ne touche pas votre production. Un rapport opposable en 15 jours.</p>
+  <h2 class="section-title reveal">30 minutes pour savoir<br>si votre IA est <span style="color:var(--cyan)">forensiquement auditée.</span></h2>
+  <p class="section-desc reveal" style="transition-delay:0.1s">Un cadrage technique gratuit. Une intervention externe qui ne touche pas votre production. Un rapport opposable en 15 jours.</p>
 
   <div class="process-timeline reveal" style="transition-delay:0.2s">
     <div class="process-step">
       <div class="process-step-num">01</div>
-      <div class="process-step-phase">Cadrage gratuit 30 min</div>
-      <div class="process-step-title">Éligibilité + périmètre</div>
-      <div class="process-step-desc">Identification de vos flux critiques, stack IA/API, et objectif de financement (BPI, PIIEC, levée). Scanalis ne travaille qu'avec un nombre limité de partenaires par trimestre.</div>
-      <div class="process-step-deliverable">→ Go/No-Go + roadmap personnalisée</div>
+      <div class="process-step-phase">Cadrage gratuit  30 min</div>
+      <div class="process-step-title">Qualification & périmètre</div>
+      <div class="process-step-desc">Identification de vos flux critiques, stack IA/API, et contexte réglementaire (DORA, AI Act, NIS2, RGPD). Scanalis travaille avec un nombre limité de clients par trimestre. Chaque mission engage notre signature RSA personnelle.</div>
+      <div class="process-step-deliverable">→ Go/No-Go + périmètre forensique documenté</div>
     </div>
     <div class="process-step">
       <div class="process-step-num">02</div>
-      <div class="process-step-phase">Audit T+5 à T+12 jours</div>
-      <div class="process-step-title">Protocole Canary + Scan</div>
-      <div class="process-step-desc">Injection canaris, scan mémoire, vérification souveraineté, simulation Monte Carlo. Zéro impact production. Zéro accès systèmes internes.</div>
-      <div class="process-step-deliverable">→ Cartographie + preuves binaires</div>
+      <div class="process-step-phase">Audit  T+5 à T+12 jours</div>
+      <div class="process-step-title">Protocole Canary + Scan forensique</div>
+      <div class="process-step-desc">Vos équipes réalisent le dump mémoire (gcore / procdump) dans votre environnement. Nous recevons le dump chiffré. Injection canaris, scan octet par octet, vérification souveraineté, simulation Monte Carlo. Zéro accès SSH. Zéro agent. Zéro impact production.</div>
+      <div class="process-step-deliverable">→ Preuves binaires + adresses mémoire + IPE</div>
     </div>
     <div class="process-step">
       <div class="process-step-num">03</div>
-      <div class="process-step-phase">Livraison T+15 jours</div>
-      <div class="process-step-title">Rapport scellé + Soutenance</div>
-      <div class="process-step-desc">32 pages. Sceau SHA-256 + RSA-PSS. Soutenance devant votre comité ou équipe PIIEC. Scripts de correction prêts à déployer.</div>
-      <div class="process-step-deliverable">→ Preuve opposable pour instructeur BPI</div>
+      <div class="process-step-phase">Livraison  T+15 jours</div>
+      <div class="process-step-title">Rapport scellé + soutenance</div>
+      <div class="process-step-desc">32 pages. Sceau SHA-256 + RSA-PSS + RFC3161. Soutenance devant votre RSSI, DPO ou Direction Juridique. Scripts de correction prêts à déployer. Destruction certifiée des données sous 20 jours. Attestation signée.</div>
+      <div class="process-step-deliverable">→ Preuve opposable · Rapport certifié · Attestation destruction</div>
     </div>
   </div>
 </section>
 
-<!-- FINAL CTA — CHANGEMENT: oriente decision/preuve -->
+<!-- FINAL CTA -->
 <section id="final-cta">
   <div class="cta-orb"></div>
   <div class="section-label">Décision</div>
 
   <h2 class="cta-headline reveal">
-    Votre dossier sera lu<br>
-    dans <span class="accent">90 jours.</span><br>
-    Avec ou sans preuve.
+    L'autorité de contrôle<br>
+    n'attend pas votre<br>
+    <span class="accent">déclaration de conformité.</span>
   </h2>
 
   <p class="cta-sub reveal" style="transition-delay:0.15s">
-    30 minutes de cadrage. Gratuit. Pour savoir si votre architecture IA peut produire la preuve d'amnésie exigée par BPI, PIIEC et l'AI Act.
+    30 minutes de cadrage technique. Gratuit. Pour établir si votre architecture IA peut produire la démonstration technique exigée par DORA, l'AI Act et NIS2  avant qu'on vous la réclame.
   </p>
 
   <div class="cta-actions reveal" style="transition-delay:0.25s">
     <a href="https://cal.com/mathilde-de-roumilly-3zskha/30min" target="_blank" class="btn-primary" style="font-size:1.05rem; padding:20px 48px;">
       <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
-      Tester mon éligibilité
+      Demander un cadrage technique
     </a>
     <a href="mailto:contact@scanalis.fr" class="btn-secondary" style="font-size:0.9rem;">
       contact@scanalis.fr
@@ -1795,11 +1731,11 @@ footer {
   </div>
 
   <div class="cta-guarantee-row reveal" style="transition-delay:0.35s">
-    <span class="cta-guarantee-item">Protocole Canary 8 jetons</span>
-    <span class="cta-guarantee-item">Zéro impact production</span>
-    <span class="cta-guarantee-item">SHA-256 + RSA-PSS</span>
+    <span class="cta-guarantee-item">Protocole Canary  8 jetons</span>
+    <span class="cta-guarantee-item">Zéro accès SSH · Zéro agent</span>
+    <span class="cta-guarantee-item">SHA-256 + RSA-PSS + RFC3161</span>
     <span class="cta-guarantee-item">Rapport 32 pages</span>
-    <span class="cta-guarantee-item">Confidentiel & NDA</span>
+    <span class="cta-guarantee-item">Destruction certifiée 20 jours</span>
   </div>
 </section>
 
@@ -1820,27 +1756,24 @@ footer {
       </svg>
       <div>
         <div class="footer-brand-text">Scanalis</div>
-        <!-- CHANGEMENT: tagline orientée preuve -->
-        <div class="footer-tagline">La preuve que votre IA oublie.</div>
+        <div class="footer-tagline">Le hash ne ment pas.</div>
       </div>
     </div>
   </div>
   <ul class="footer-links">
-    <li><a href="#canary-proof">Preuve</a></li>
+    <li><a href="#canary-proof">Protocole</a></li>
     <li><a href="#methodology">Méthode</a></li>
     <li><a href="#offerings">Programmes</a></li>
     <li><a href="https://www.linkedin.com/in/mathilde-de-roumilly" target="_blank">LinkedIn</a></li>
   </ul>
   <div class="footer-contact">
     <a href="mailto:contact@scanalis.fr" class="footer-email">contact@scanalis.fr</a>
-    <div class="footer-copy">© 2026 Scanalis. Tous droits réservés.</div>
+    <div class="footer-copy">© 2026 Scanalis. Tous droits réservés.  RC Pro Cyber Hiscox</div>
   </div>
 </footer>
 
 <script>
-// ═══════════════════════════════════════════════════════════
-// CUSTOM CURSOR (conservé intégralement)
-// ═══════════════════════════════════════════════════════════
+// CUSTOM CURSOR
 const cursor = document.getElementById('cursor');
 const cursorRing = document.getElementById('cursorRing');
 let mx = 0, my = 0, rx = 0, ry = 0;
@@ -1870,10 +1803,7 @@ document.querySelectorAll('a, button, .pillar-card, .offer-card, .canary-phase')
   });
 });
 
-// ═══════════════════════════════════════════════════════════
-// AJOUT : ANIMATION TERMINAL CANARY PROTOCOL
-// Simule l'execution du protocole en temps reel
-// ═══════════════════════════════════════════════════════════
+// ANIMATION TERMINAL
 const termLines = [
   { cls: 't-comment', text: '# Scanalis Canary Protocol v3.1' },
   { cls: 't-comment', text: '# Cible : api.client.local/v1/chat' },
@@ -1913,8 +1843,8 @@ const termLines = [
   { cls: 't-white',   text: '  IPE : 0/100 — Négligeable' },
   { cls: 't-dim',     text: '' },
   { cls: 't-ok t-bold', text: '  ██ VERDICT : AMNESIA_CONFIRMED ██' },
-  { cls: 't-ok',      text: '  ✓ Sceau SHA-256 + RSA-PSS généré' },
-  { cls: 't-ok',      text: '  ✓ Rapport 32 pages prêt' },
+  { cls: 't-ok',      text: '  ✓ Sceau SHA-256 + RSA-PSS + RFC3161 généré' },
+  { cls: 't-ok',      text: '  ✓ Rapport 32 pages — opposable CNIL / tribunal' },
 ];
 
 function animateTerminal() {
@@ -1924,7 +1854,6 @@ function animateTerminal() {
   let i = 0;
   function addLine() {
     if (i >= termLines.length) {
-      // Reboucle apres 4s de pause
       setTimeout(animateTerminal, 4000);
       return;
     }
@@ -1934,17 +1863,14 @@ function animateTerminal() {
     div.textContent = line.text || '\u00A0';
     div.style.animationDelay = '0s';
     body.appendChild(div);
-    // Auto-scroll
     body.scrollTop = body.scrollHeight;
     i++;
-    // Delai variable : rapide pour les donnees, pause pour les phases
     const delay = line.cls.includes('t-cmd') ? 600 : line.cls.includes('t-ok') ? 400 : line.cls.includes('t-bold') ? 800 : 120;
     setTimeout(addLine, delay);
   }
   addLine();
 }
 
-// Lancer l'animation quand la section est visible
 const termObserver = new IntersectionObserver((entries) => {
   entries.forEach(entry => {
     if (entry.isIntersecting) {
@@ -1956,11 +1882,7 @@ const termObserver = new IntersectionObserver((entries) => {
 const termSection = document.getElementById('canary-proof');
 if (termSection) termObserver.observe(termSection);
 
-// ═══════════════════════════════════════════════════════════
-// SCRIPTS EXISTANTS (conservés)
-// ═══════════════════════════════════════════════════════════
-
-// Scroll reveal
+// SCROLL REVEAL
 const reveals = document.querySelectorAll('.reveal');
 const observer = new IntersectionObserver((entries) => {
   entries.forEach(entry => {
@@ -1969,7 +1891,7 @@ const observer = new IntersectionObserver((entries) => {
 }, { threshold: 0.12 });
 reveals.forEach(el => observer.observe(el));
 
-// Cost bars animation
+// COST BARS
 const barObserver = new IntersectionObserver((entries) => {
   entries.forEach(entry => {
     if (entry.isIntersecting) {
@@ -1981,7 +1903,7 @@ const barObserver = new IntersectionObserver((entries) => {
 }, { threshold: 0.3 });
 document.querySelectorAll('.cost-visual').forEach(el => barObserver.observe(el));
 
-// Nav scroll
+// NAV SCROLL
 window.addEventListener('scroll', () => {
   const nav = document.querySelector('nav');
   nav.style.background = window.scrollY > 60 ? 'rgba(4,13,26,0.97)' : 'linear-gradient(to bottom, rgba(4,13,26,0.95), transparent)';
