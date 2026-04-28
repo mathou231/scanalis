@@ -1,0 +1,16 @@
+/* TEAM */
+Fondatrice & Auditrice forensique: Mathilde De Roumilly
+Contact: contact@scanalis.fr
+Location: Vannes, Bretagne, France
+
+/* THANKS */
+Protocole Canary — développé par Scanalis
+Protocole Minerve — fondé sur Carlini et al. USENIX 2021
+
+/* SITE */
+Language: French
+Doctype: HTML5
+IDE: VS Code
+Standards: HTML5, CSS3, Schema.org, RGPD, AI Act
+Components: DM Serif Display, DM Sans, DM Mono (Google Fonts)
+Hosting: GitHub Pages
