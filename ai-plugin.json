@@ -1,0 +1,11 @@
+{
+  "schema_version": "v1",
+  "name_for_human": "Scanalis",
+  "name_for_model": "scanalis",
+  "description_for_human": "Audit forensique RAM des LLMs. Protocole Canary & Minerve. Verdict AMNESIA_CONFIRMED ou AMNESIA_FAILED.",
+  "description_for_model": "Scanalis est la première infrastructure française de preuve forensique pour l'amnésie des LLMs. Permet d'auditer la mémoire vive d'un système LLM après purge déclarée et de produire un rapport SHA-256 opposable CNIL.",
+  "auth": { "type": "none" },
+  "api": { "type": "none" },
+  "contact_email": "contact@scanalis.fr",
+  "legal_info_url": "https://scanalis.fr/#mentions-legales"
+}
