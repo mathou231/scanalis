@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Scanalis  Audit forensique RAM des LLMs | France</title>
+<title>Scanalis — Audit forensique RAM des LLMs | France</title>
 <meta name="description" content="Scanalis produit la preuve cryptographique que votre LLM a physiquement effacé les données personnelles après traitement. Protocole Canary & Minerve. Rapport SHA-256 opposable CNIL. RGPD Art.5(2) · AI Act Art.12 · DORA Art.25.">
 <meta name="keywords" content="forensique RAM LLM, preuve amnésie IA, audit mémoire vive LLM, Protocole Canary, AMNESIA_CONFIRMED, AMNESIA_FAILED, purge RAM LLM, AI Act Art 12, RGPD accountability, forensique IA France, audit LLM CNIL, MINERVE_EXPOSED, mémoire volatile IA">
 <meta name="author" content="Mathilde De Roumilly — Scanalis">
@@ -11,7 +11,7 @@
 <link rel="canonical" href="https://scanalis.fr/">
 
 <!-- Open Graph -->
-<meta property="og:title" content="Scanalis  Preuve forensique de l'amnésie des LLMs">
+<meta property="og:title" content="Scanalis — Preuve forensique de l'amnésie des LLMs">
 <meta property="og:description" content="Votre LLM dit qu'il a oublié vos données. Scanalis le prouve forensiquement. Rapport SHA-256 opposable CNIL. Protocole Canary & Minerve.">
 <meta property="og:url" content="https://scanalis.fr/">
 <meta property="og:type" content="website">
@@ -19,7 +19,7 @@
 
 <!-- Twitter Card -->
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="Scanalis  Preuve forensique RAM des LLMs">
+<meta name="twitter:title" content="Scanalis — Preuve forensique RAM des LLMs">
 <meta name="twitter:description" content="AMNESIA_CONFIRMED ou AMNESIA_FAILED. Verdict binaire. Rapport scellé SHA-256. Opposable CNIL.">
 
 <!-- Schema.org Organization -->
@@ -46,7 +46,7 @@
   },
   "sameAs": [
     "https://www.linkedin.com/in/mathilde-de-roumilly/",
-    "https://www.youtube.com/@mathildederoumilly"
+    "https://www.youtube.com/@scanalis"
   ],
   "knowsAbout": [
     "Forensique mémoire vive LLM",
@@ -463,6 +463,7 @@ footer{padding:44px 0;border-top:1px solid var(--border)}
   .tbl-head,.tbl-row,.tbl-scanalis{grid-template-columns:1fr}
   .nav-links{display:none}
   .hero{padding:110px 0 72px}
+  div[style*="grid-template-columns:repeat(2,1fr)"]{grid-template-columns:1fr !important}
 }
 
 /* ANIMATIONS */
@@ -485,6 +486,8 @@ h1{animation:fadeUp .5s .1s ease both}
       <li><a href="#contexte">Contexte</a></li>
       <li><a href="#protocoles">Protocoles</a></li>
       <li><a href="#offres">Offres</a></li>
+      <li><a href="#securite">Sécurité</a></li>
+      <li><a href="#references">Références</a></li>
       <li><a href="#faq">FAQ</a></li>
       <li><a href="mailto:contact@scanalis.fr" class="nav-cta">Contact</a></li>
     </ul>
@@ -576,12 +579,12 @@ h1{animation:fadeUp .5s .1s ease both}
       <div class="proto-c">
         <span class="proto-name">Protocole Minerve</span>
         <h3>Le modèle a-t-il mémorisé des données lors de son entraînement ?</h3>
-        <p>Extraction forensique des données mémorisées dans les poids du LLM. 35+ sondes sur 7 catégories, fondé sur Carlini et al. USENIX 2021 (arXiv:2012.07805). Via API uniquement.</p>
+        <p>Avant d'importer un modèle en zone sensible, savoir ce qu'il porte. 35+ sondes sur 7 catégories de DCP. Fondé sur Carlini et al. USENIX 2021 (arXiv:2012.07805). <strong>Pas pour réentraîner : pour décider, documenter et négocier.</strong></p>
         <ul class="phases">
-          <li class="phase"><span class="ph-l">M001</span>Complétion directe : induction par contexte partiel</li>
-          <li class="phase"><span class="ph-l">M002</span>Mémorisation verbatim : reproduction exacte détectée</li>
-          <li class="phase"><span class="ph-l">M003</span>Inversion fine-tuning : données de spécialisation</li>
-          <li class="phase"><span class="ph-l">M004–7</span>Divergence · Prompt injection · Réidentification · Analogie</li>
+          <li class="phase"><span class="ph-l">1</span>Décision d'import : GO / NO-GO documenté avant entrée en zone isolée</li>
+          <li class="phase"><span class="ph-l">2</span>Risque résiduel documenté : accountability Art.5(2) RGPD sans réentraînement</li>
+          <li class="phase"><span class="ph-l">3</span>Argument contractuel éditeur : preuve pour négociation ou changement de fournisseur</li>
+          <li class="phase"><span class="ph-l">35+</span>Sondes forensiques sur 7 catégories : identité, santé, financier, professionnel, technique, comportemental, RH</li>
         </ul>
         <div class="vr">
           <span class="vp vp-fail">MINERVE_EXPOSED</span>
@@ -599,7 +602,7 @@ h1{animation:fadeUp .5s .1s ease both}
     <h2>Une mission en 5 étapes</h2>
     <p class="intro">De la contractualisation à la remise du rapport scellé, tout est documenté, traçable, et certifié.</p>
     <div class="steps">
-      <div class="step"><div class="step-n">01</div><div class="step-c"><div class="step-t">Contractualisation : kit juridique complet</div><div class="step-d">1 document signé avant tout échange : contrat de prestation, DPA RGPD Art. 28, autorisation d'accès technique (bouclier pénal Art. 323-1), NDA bilatéral 5 ans, procédure de destruction certifiée.</div><span class="step-tag">Kit juridique 1 document</span></div></div>
+      <div class="step"><div class="step-n">01</div><div class="step-c"><div class="step-t">Contractualisation : kit juridique complet</div><div class="step-d">5 documents signés avant tout échange : contrat de prestation, DPA RGPD Art. 28, autorisation d'accès technique (bouclier pénal Art. 323-1), NDA bilatéral 5 ans, procédure de destruction certifiée.</div><span class="step-tag">Kit juridique 5 documents</span></div></div>
       <div class="step"><div class="step-n">02</div><div class="step-c"><div class="step-t">Réception du dump mémoire fourni par le client</div><div class="step-d">Le client génère le dump via gcore ou procdump sur son infrastructure. Scanalis n'accède jamais directement au système. Non intrusif par conception, zéro surface d'exposition supplémentaire.</div><span class="step-tag">gcore / procdump généré par le client</span></div></div>
       <div class="step"><div class="step-n">03</div><div class="step-c"><div class="step-t">Injection des canaris et déclenchement de la purge</div><div class="step-d">8 jetons cryptographiques injectés via l'API standard du LLM. Déclenchement de la purge déclarée. Capture du dump post-purge. Aucune connexion à l'infrastructure client.</div><span class="step-tag">API standard · Zéro SSH · Zéro agent</span></div></div>
       <div class="step"><div class="step-n">04</div><div class="step-c"><div class="step-t">Scan forensique : 4 zones mémoire</div><div class="step-d">Analyse octet par octet du heap applicatif, du page cache Linux, de la zone swap et des buffers kernel. Calcul de l'IPE (Indice de Probabilité d'Exposition). Extraction Minerve sur 35+ sondes si Tier 3.</div><span class="step-tag">Heap · Page cache · Swap · Buffers kernel</span></div></div>
@@ -612,109 +615,228 @@ h1{animation:fadeUp .5s .1s ease both}
 <section class="off-sec" id="offres">
   <div class="wrap">
     <span class="slabel">Offres</span>
-    <h2 id="offres-title">Trois niveaux de preuve</h2>
-    <p class="intro">Le niveau dépend de ce que vous avez besoin de prouver et à qui. Chaque offre indique exactement ce dont Scanalis a besoin de votre côté.</p>
-    <div class="off-g">
+    <h2 id="offres-title">4 offres. 1 moteur. 0 label sans preuve.</h2>
+    <p class="intro">Les gens ne paient pas pour avoir plus d'informations. Ils paient pour avoir moins de confusion. Chaque offre produit une réponse binaire vérifiable.</p>
+    <div class="off-g" style="grid-template-columns:repeat(2,1fr)">
 
-      <!-- TIER 1 -->
+      <!-- OFFRE 1 -->
       <div class="off-c">
-        <span class="off-tier">Tier 1</span>
-        <span class="off-pages">Rapport 6 pages</span>
-        <h3>Diagnostic d'Exposition</h3>
-        <span class="tagline">EXPOSITION PROBABLE / NON CARACTÉRISÉE</span>
-        <p class="desc">Cartographie de votre surface d'exposition RAM sur la base de votre architecture déclarée. Sans scan actif pour évaluer le risque avant d'engager un audit complet.</p>
+        <span class="off-tier">Offre 01 · Protocole Canary</span>
+        <span class="off-pages">Rapport 13 pages</span>
+        <h3>Canary Diagnostic</h3>
+        <span class="tagline">AMNESIA_CONFIRMED / AMNESIA_FAILED</span>
+        <p class="desc">La première question. La réponse en binaire. Protocole Canary complet sur votre système LLM. La pièce manquante dans 90% des dossiers BPI rejetés.</p>
+        <div style="font-family:var(--mono);font-size:22px;font-weight:600;color:var(--accent);margin:18px 0 20px">2 500 €</div>
 
         <div class="off-section-title">Livrables</div>
         <ul class="feats">
-          <li class="feat"><span class="fck">✓</span>Cartographie des 4 zones RAM exposées</li>
-          <li class="feat"><span class="fck">✓</span>Implications RGPD · AI Act documentées</li>
-          <li class="feat"><span class="fck">✓</span>Actions prioritaires avec délais</li>
-          <li class="feat"><span class="fck">✓</span>Attestation de destruction certifiée</li>
+          <li class="feat"><span class="fck">✓</span>Protocole Canary complet: 8 canaris, 4 zones RAM</li>
+          <li class="feat"><span class="fck">✓</span>Évaluation architecturale GPU de base</li>
+          <li class="feat"><span class="fck">✓</span>Rapport 13 pages : scellé SHA-256</li>
+          <li class="feat"><span class="fck">✓</span>Opposable CNIL · RGPD Art.5(2) · Art.32</li>
+          <li class="feat"><span class="fck">✓</span>Non intrusif : dump généré par le client</li>
         </ul>
 
         <div class="off-section-title">Ce que vous fournissez</div>
         <ul class="data-list">
-          <li class="data-item"><span class="data-arrow">→</span>Questionnaire technique (architecture LLM, zones de traitement, politique de purge déclarée)</li>
-          <li class="data-item"><span class="data-arrow">→</span>Description du système (éditeur, modèle, hébergeur, couche OS)</li>
-          <li class="data-item"><span class="data-arrow">→</span>Catégories de données personnelles traitées</li>
-          <li class="data-item"><span class="data-arrow">→</span>DPA en vigueur avec votre éditeur LLM</li>
+          <li class="data-item"><span class="data-arrow">→</span>Dump mémoire post-purge (gcore / procdump)</li>
+          <li class="data-item"><span class="data-arrow">→</span>Endpoint API + token temporaire</li>
+          <li class="data-item"><span class="data-arrow">→</span>Contact technique désigné</li>
         </ul>
 
         <div class="off-spacer"></div>
-        <a href="mailto:contact@scanalis.fr?subject=Diagnostic Tier 1 — Demande d'audit" class="obtn obtn-light" style="margin-top:28px">contact@scanalis.fr →</a>
+        <a href="mailto:contact@scanalis.fr?subject=Canary Diagnostic — Demande" class="obtn obtn-light" style="margin-top:28px">contact@scanalis.fr →</a>
       </div>
 
-      <!-- TIER 2 -->
+      <!-- OFFRE 2 -->
       <div class="off-c off-c--feat">
-        <div class="feat-badge">Le plus demandé</div>
-        <span class="off-tier">Tier 2</span>
-        <span class="off-pages">Rapport 8 pages</span>
-        <h3>Audit Forensique</h3>
+        <div class="feat-badge">Recommandé : AI Act août 2026</div>
+        <span class="off-tier">Offre 02 · Canary + GPU + RFC3161 + Evidence Chain</span>
+        <span class="off-pages">Rapport 25 pages</span>
+        <h3>Canary Audit</h3>
         <span class="tagline" style="color:var(--accent)">AMNESIA_CONFIRMED / AMNESIA_FAILED</span>
-        <p class="desc">Scan RAM actif post-purge. Verdict binaire avec hex dumps et adresses mémoire exactes. La preuve opposable que votre LLM oublie ou non physiquement.</p>
+        <p class="desc">La preuve complète. Opposable aux régulateurs. Canary + modules v3.4 : évaluation GPU architecturale, chaîne de preuve RFC 3227, horodatage RFC3161, WipeCertificate Verifier.</p>
+        <div style="font-family:var(--mono);font-size:22px;font-weight:600;color:var(--accent);margin:18px 0 20px">6 000€</div>
 
         <div class="off-section-title">Livrables</div>
         <ul class="feats">
-          <li class="feat"><span class="fck">✓</span>Protocole Canary complet : 8 canaris injectés</li>
-          <li class="feat"><span class="fck">✓</span>Scan forensique 4 zones RAM</li>
-          <li class="feat"><span class="fck">✓</span>Hex dumps + adresses mémoire exactes</li>
-          <li class="feat"><span class="fck">✓</span>IPE (Indice de Probabilité d'Exposition)</li>
-          <li class="feat"><span class="fck">✓</span>Rapport scellé SHA-256</li>
-          <li class="feat"><span class="fck">✓</span>Opposable CNIL · RGPD Art.5(2) · AI Act Art.12</li>
+          <li class="feat"><span class="fck">✓</span>Protocole Canary complet</li>
+          <li class="feat"><span class="fck">✓</span>Évaluation GPU/VRAM : risques cotés + préconisations ANSSI</li>
+          <li class="feat"><span class="fck">✓</span>Chaîne de preuve forensique RFC 3227 : 10 étapes</li>
+          <li class="feat"><span class="fck">✓</span>Horodatage RFC3161 : TSA tierce indépendante</li>
+          <li class="feat"><span class="fck">✓</span>WipeCertificate Verifier : double preuve côté application</li>
+          <li class="feat"><span class="fck">✓</span>Rapport 25 pages · SHA-256 + RSA-PSS 2048 bits</li>
+          <li class="feat"><span class="fck">✓</span>Gap analysis RGPD · AI Act · NIS2 · DORA selon secteur</li>
         </ul>
 
         <div class="off-section-title">Ce que vous fournissez</div>
         <ul class="data-list">
-          <li class="data-item"><span class="data-arrow" style="color:#4B5563">→</span>Dump mémoire post-purge (gcore ou procdump généré par vos équipes)</li>
-          <li class="data-item"><span class="data-arrow" style="color:#4B5563">→</span>Endpoint API du LLM + token d'accès temporaire</li>
-          <li class="data-item"><span class="data-arrow" style="color:#4B5563">→</span>Contact technique désigné pour la session</li>
-          <li class="data-item"><span class="data-arrow" style="color:#4B5563">→</span>Message de purge renvoyé par votre système</li>
+          <li class="data-item"><span class="data-arrow" style="color:#4B5563">→</span>Dump mémoire post-purge (gcore / procdump)</li>
+          <li class="data-item"><span class="data-arrow" style="color:#4B5563">→</span>Endpoint API + token temporaire + informations GPU</li>
+          <li class="data-item"><span class="data-arrow" style="color:#4B5563">→</span>WipeCertificates JSONL si disponibles (optionnel)</li>
           <li class="data-item"><span class="data-arrow" style="color:#4B5563">→</span>Catégories DCP traitées (pour cibler les canaris)</li>
         </ul>
 
         <div class="off-spacer"></div>
-        <a href="mailto:contact@scanalis.fr?subject=Audit Forensique Tier 2 — Demande" class="obtn obtn-acc" style="margin-top:28px">Demander l'audit →</a>
+        <a href="mailto:contact@scanalis.fr?subject=Canary Audit — Demande" class="obtn obtn-acc" style="margin-top:28px">Demander l'audit →</a>
       </div>
 
-      <!-- TIER 3 -->
+      <!-- OFFRE 3 -->
       <div class="off-c">
-        <span class="off-tier">Tier 3</span>
-        <span class="off-pages">Rapport 10 pages</span>
-        <h3>Certification de Résilience</h3>
-        <span class="tagline">CANARY + MINERVE · RSA-PSS · RFC3161</span>
-        <p class="desc">Preuve complète RAM post-purge et mémorisation dans les poids. Scellé RSA-PSS, horodaté RFC3161. Pièce justificative pour dossiers BPI, PIIEC, due diligence investisseurs.</p>
+        <span class="off-tier">Offre 03 · Protocole Minerve seul</span>
+        <span class="off-pages">Rapport 15 pages</span>
+        <h3>Minerve Import</h3>
+        <span class="tagline">MINERVE_NOT_DETECTED / MINERVE_EXPOSED</span>
+        <p class="desc">Avant d'importer un modèle en zone sensible, savoir ce qu'il porte. <strong>Pas pour réentraîner : pour décider, documenter et négocier.</strong> GO ou NO-GO documenté.</p>
+        <div style="font-family:var(--mono);font-size:22px;font-weight:600;color:var(--accent);margin:18px 0 20px">3 500 €</div>
 
         <div class="off-section-title">Livrables</div>
         <ul class="feats">
-          <li class="feat"><span class="fck">✓</span>Protocole Canary + Protocole Minerve</li>
-          <li class="feat"><span class="fck">✓</span>35+ sondes Minerve : 7 catégories</li>
-          <li class="feat"><span class="fck">✓</span>Signature RSA-PSS 2048 bits</li>
-          <li class="feat"><span class="fck">✓</span>Horodatage RFC3161 : vérifiable offline</li>
-          <li class="feat"><span class="fck">✓</span>Opposable CNIL · DORA · AI Act · NIS2</li>
-          <li class="feat"><span class="fck">✓</span>Pièce justificative BPI / PIIEC</li>
+          <li class="feat"><span class="fck">✓</span>Protocole Minerve : 35 sondes forensiques</li>
+          <li class="feat"><span class="fck">✓</span>7 catégories DCP analysées (identité, santé, financier…)</li>
+          <li class="feat"><span class="fck">✓</span>Verdict GO / NO-GO documenté pour l'import</li>
+          <li class="feat"><span class="fck">✓</span>Rapport 15 pages · SHA-256</li>
+          <li class="feat"><span class="fck">✓</span>Argument contractuel éditeur si MINERVE_EXPOSED</li>
         </ul>
 
         <div class="off-section-title">Ce que vous fournissez</div>
         <ul class="data-list">
-          <li class="data-item"><span class="data-arrow">→</span>Tout ce du Tier 2 +</li>
-          <li class="data-item"><span class="data-arrow">→</span>Fiche technique du modèle (model card, dataset d'entraînement déclaré)</li>
-          <li class="data-item"><span class="data-arrow">→</span>Historique de fine-tuning si applicable (datasets utilisés, dates)</li>
-          <li class="data-item"><span class="data-arrow">→</span>Accès API en session étendue pour les 35+ sondes Minerve</li>
-          <li class="data-item"><span class="data-arrow">→</span>Dossier de conformité existant (BPI, PIIEC, ou due diligence cible)</li>
+          <li class="data-item"><span class="data-arrow">→</span>Endpoint API du modèle à auditer</li>
+          <li class="data-item"><span class="data-arrow">→</span>Nom et version du modèle (model card si disponible)</li>
+          <li class="data-item"><span class="data-arrow">→</span>Environnement cible de l'import (défense / santé / finance)</li>
         </ul>
 
         <div class="off-spacer"></div>
-        <a href="mailto:contact@scanalis.fr?subject=Certification Tier 3 — Demande" class="obtn obtn-light" style="margin-top:28px">contact@scanalis.fr →</a>
+        <a href="mailto:contact@scanalis.fr?subject=Minerve Import — Demande" class="obtn obtn-light" style="margin-top:28px">contact@scanalis.fr →</a>
+      </div>
+
+      <!-- OFFRE 4 -->
+      <div class="off-c">
+        <span class="off-tier">Offre 04 · Canary + Minerve + 4 phases</span>
+        <span class="off-pages">Rapport 32 pages + Certification</span>
+        <h3>Amnesia Complet</h3>
+        <span class="tagline">AMNESIA_CONFIRMED · RSA-PSS · RFC3161</span>
+        <p class="desc">De l'angle mort à la certification. On ne lâche pas tant que ce n'est pas AMNESIA_CONFIRMED. 4 phases : Diagnostic → Remédiation → Documentation → Certification de clôture.</p>
+        <div style="font-family:var(--mono);font-size:22px;font-weight:600;color:var(--accent);margin:18px 0 20px">25 000€</div>
+
+        <div class="off-section-title">Livrables phase par phase</div>
+        <ul class="feats">
+          <li class="feat"><span class="fck">✓</span><strong>Phase 1</strong> : Canary + Minerve + GPU + Gap réglementaire complet</li>
+          <li class="feat"><span class="fck">✓</span><strong>Phase 2</strong> : Spécifications techniques de remédiation par stack</li>
+          <li class="feat"><span class="fck">✓</span><strong>Phase 3</strong> : Dossier réglementaire opposable CNIL + formation équipes</li>
+          <li class="feat"><span class="fck">✓</span><strong>Phase 4</strong> : Contre-audit + Certification AMNESIA (valable 6 mois)</li>
+          <li class="feat"><span class="fck">✓</span>Sceau RSA-PSS 2048 bits + RFC3161 + Evidence Chain RFC 3227</li>
+          <li class="feat"><span class="fck">✓</span>Renouvellement annuel : 40% du prix initial</li>
+        </ul>
+
+        <div class="off-spacer"></div>
+        <a href="mailto:contact@scanalis.fr?subject=Amnesia Complet — Demande" class="obtn obtn-light" style="margin-top:28px">contact@scanalis.fr →</a>
       </div>
 
     </div>
 
     <div class="rule35">
       <div class="rule35-icon">📏</div>
-      <div><div class="rule35-t">La règle des 35 000 €</div><div class="rule35-d">Si les données que votre LLM traite en RAM représentent plus de 35 000 € de dommages en cas d'extraction, Scanalis est rentable. Un dossier médical, un IBAN, un contrat, un secret industriel. Combien ça vaut si ça sort ?</div></div>
+      <div><div class="rule35-t">La règle des 6 500 €</div><div class="rule35-d">Si les données que votre LLM traite en RAM représentent plus de 6 500 € de dommages en cas d'extraction : Scanalis est rentable. Un dossier médical, un IBAN, un contrat, un secret industriel. Combien ça vaut si ça sort ? Une amende CNIL sur données de santé commence à 800 000 €.</div></div>
     </div>
   </div>
 </section>
+
+<!-- SÉCURITÉ DU MOTEUR -->
+<section id="securite" style="background:var(--paper2)">
+  <div class="wrap">
+    <span class="slabel">Sécurité du moteur</span>
+    <h2>Scanalis audite les autres. Son moteur est soumis aux mêmes exigences.</h2>
+    <p class="intro">Red team réalisé. 18 vulnérabilités identifiées et corrigées. 65 checks de validation passés. AIPD réalisée. Le code qui vérifie l'amnésie des autres prouve sa propre rigueur.</p>
+    <div class="reg-g" style="margin-top:52px">
+      <div class="reg-i">
+        <div class="reg-n">Non intrusif par architecture</div>
+        <div class="reg-a">Garantie contractuelle · Document 3</div>
+        <div class="reg-d">Zéro agent. Zéro SSH. Zéro accès code source. Le client génère son propre dump (gcore / procdump). Scanalis analyse sur machine déconnectée. C'est structurel, pas une promesse.</div>
+      </div>
+      <div class="reg-i">
+        <div class="reg-n">Red team interne · 18 corrections</div>
+        <div class="reg-a">Moteur v3.4 · 65/65 checks</div>
+        <div class="reg-d">Audit offensif complet avant mise en production. SSRF, path traversal, RSA passphrase obligatoire, token via variable d'environnement, blocage du mode démo en production. Résultat : 65 checks passés.</div>
+      </div>
+      <div class="reg-i">
+        <div class="reg-n">SHA-256 + RSA-PSS 2048 bits</div>
+        <div class="reg-a">Signature nominale · Clé chiffrée au repos</div>
+        <div class="reg-d">Chaque rapport est scellé et signé de son nom par Mathilde De Roumilly. La clé privée RSA est chiffrée (passphrase obligatoire). Le hash SHA-256 est vérifiable offline par tout tiers avec openssl en une commande.</div>
+      </div>
+      <div class="reg-i">
+        <div class="reg-n">RFC3161 · TSA tierce</div>
+        <div class="reg-a">Horodatage indépendant · Vérifiable offline</div>
+        <div class="reg-d">Un tiers indépendant certifie que le rapport existait dans cet état exact à cette date. Impossible à antidater. Vérifiable : <code style="font-family:var(--mono);font-size:12px;background:var(--paper);padding:1px 5px">openssl ts -verify</code>. Plus robuste qu'un simple SHA-256.</div>
+      </div>
+      <div class="reg-i">
+        <div class="reg-n">Evidence Chain · RFC 3227</div>
+        <div class="reg-a">Chaîne de preuve · Chain of custody</div>
+        <div class="reg-d">Chaque étape (dump reçu → hash vérifié → canaris injectés → scan exécuté → verdict produit → sceau généré) est horodatée et cryptographiquement liée à la précédente. Modifier une étape invalide toute la chaîne.</div>
+      </div>
+      <div class="reg-i">
+        <div class="reg-n">AIPD réalisée · RGPD Art.35</div>
+        <div class="reg-a">DPA Art.28 · 5 documents juridiques</div>
+        <div class="reg-d">Analyse d'Impact sur la Protection des Données réalisée sur Scanalis lui-même. Destruction des dumps sous 15 jours (shred -vfz -n 3 · DoD 5220.22-M). RC Pro Cyber Hiscox. 5 documents contractuels indissociables.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- TÉMOIGNAGES -->
+<section id="references">
+  <div class="wrap">
+    <span class="slabel">Références terrain</span>
+    <h2>Ce que disent ceux qui ont creusé.</h2>
+    <p class="intro">Ni éditeurs payés. Ni partenaires contractuels. Des experts indépendants qui ont posé les vraies questions et reçu des réponses honnêtes.</p>
+    <div class="mkt-g" style="margin-top:52px">
+
+      <div class="mkt-c">
+        <span class="mkt-icon">🔬</span>
+        <h3>Expert cybersécurité · Réseau MedTech</h3>
+        <p style="font-style:italic;color:var(--ink2);margin-bottom:12px">« Le choix de documenter les limites dans le rapport plutôt que de les effacer du périmètre commercial, c'est exactement ce qui différencie un outil forensique d'un outil de conformité marketing. »</p>
+        <p class="mkt-hl">→ Chief AI Security Architect · Mai 2026</p>
+      </div>
+
+      <div class="mkt-c">
+        <span class="mkt-icon">⚕️</span>
+        <h3>DPO · Secteur santé numérique</h3>
+        <p style="font-style:italic;color:var(--ink2);margin-bottom:12px">« Avez-vous fait une AIPD ? Un audit technique de la solution ? C'est exactement ce que nos prospects vont demander. Le fait que vous ayez les réponses change tout. »</p>
+        <p class="mkt-hl">→ Responsable conformité RGPD · Mai 2026</p>
+      </div>
+
+      <div class="mkt-c mkt-c--dark">
+        <span class="mkt-icon">🛡️</span>
+        <h3>CEO Deeptech sécurité IA</h3>
+        <p style="font-style:italic;color:#94A3B8;margin-bottom:12px">« L'entreprise protège les modèles contre l'extraction. Scanalis vérifie ce que le modèle retient après traitement. Ce sont deux surfaces orthogonales, la complémentarité est évidente. »</p>
+        <p style="color:var(--accent);font-size:13px">→ Partenariat en cours · Mai 2026</p>
+      </div>
+
+      <div class="mkt-c">
+        <span class="mkt-icon">💬</span>
+        <h3>Expert cybersécurité senior · LinkedIn</h3>
+        <p style="font-style:italic;color:var(--ink2);margin-bottom:12px">« Sur RFC3161 : la TSA qualifiée eIDAS résistera mieux à une contestation judiciaire. Curieux de voir ce que donne la v3.3 en conditions réelles. »</p>
+        <p class="mkt-hl">→ Commentaire public · Objection intégrée en v3.4</p>
+      </div>
+
+      <div class="mkt-c">
+        <span class="mkt-icon">🏛️</span>
+        <h3>Head of Sales · Agence tech · Réseau cyber</h3>
+        <p style="font-style:italic;color:var(--ink2);margin-bottom:12px">« La purge RAM dans les LLMs souverains, c'est une exigence réelle pour certains acteurs Défense, pour être sûrs à 100% que des données ne vont pas se retrouver mélangées dans une session suivante. »</p>
+        <p class="mkt-hl">→ Linkedin · 2026</p>
+      </div>
+
+      <div class="mkt-c mkt-c--dark">
+        <span class="mkt-icon">🌐</span>
+        <h3>Institutionnel cybersécurité · Bretagne</h3>
+        <p style="font-style:italic;color:#94A3B8;margin-bottom:12px">« Dans notre réseau, personne ne couvre aujourd'hui la couche forensique post-purge des LLMs. Ce n'est pas un concurrent de ce qui existe, c'est le chaînon manquant. »</p>
+        <p style="color:var(--accent);font-size:13px">→ RDV stratégique · Mai 2026</p>
+      </div>
+
+    </div>
+  </div>
+</section>
+
 
 <!-- RÉGULATION -->
 <section id="regulation">
@@ -724,8 +846,8 @@ h1{animation:fadeUp .5s .1s ease both}
     <p class="intro">Pas des recommandations. Des articles de loi. Des obligations. Des deadlines.</p>
     <div class="reg-g">
       <div class="reg-i"><div class="reg-n">RGPD</div><div class="reg-a">Art. 5(1)(e) + Art. 5(2) + Art. 32</div><div class="reg-d">Limitation de la conservation + accountability + mesures de sécurité adaptées à l'état de l'art</div></div>
-      <div class="reg-i"><div class="reg-n">AI Act</div><div class="reg-a">Art. 10 + Art. 12 : Août 2026</div><div class="reg-d">Gouvernance des données + journalisation d'exécution réelle, pleine application imminente</div></div>
-      <div class="reg-i"><div class="reg-n">DORA</div><div class="reg-a">Art. 25 + Art. 28</div><div class="reg-d">Résilience ICT des prestataires tiers, LLMs concernés depuis 2024</div></div>
+      <div class="reg-i"><div class="reg-n">AI Act</div><div class="reg-a">Art. 10 + Art. 12 : Août 2026</div><div class="reg-d">Gouvernance des données + journalisation d'exécution réelle: pleine application imminente</div></div>
+      <div class="reg-i"><div class="reg-n">DORA</div><div class="reg-a">Art. 25 + Art. 28</div><div class="reg-d">Résilience ICT des prestataires tiers: LLMs concernés depuis 2024</div></div>
       <div class="reg-i"><div class="reg-n">NIS2</div><div class="reg-a">Art. 21</div><div class="reg-d">Mesures de sécurité appropriées à l'état de l'art 2026</div></div>
       <div class="reg-i"><div class="reg-n">HDS 2024</div><div class="reg-a">Hébergement données de santé</div><div class="reg-d">HDS certifie l'hébergeur. Pas l'amnésie du LLM. Scanalis comble ce vide réglementaire.</div></div>
       <div class="reg-i"><div class="reg-n">ANSSI</div><div class="reg-a">35 recommandations IA 2024</div><div class="reg-d">Rec. n°23 : audit de sécurité IA avant déploiement et après mise à jour majeure</div></div>
@@ -785,7 +907,7 @@ h1{animation:fadeUp .5s .1s ease both}
           <span class="qa-q">Notre LLM est hébergé en France. On est souverains ?</span>
           <span class="qa-tog">+</span>
         </button>
-        <div class="qa-ans"><p>L'hébergement souverain couvre le lieu de stockage physique pas ce que le logiciel fait avec les données une fois à l'intérieur. Si votre modèle est d'origine américaine (GPT-4, Claude, Llama...), <strong>le Cloud Act s'applique indépendamment de la localisation du serveur</strong>. Et quel que soit le modèle, la persistance mémoire post-purge est indépendante de la géographie : c'est de la physique, pas du droit.</p></div>
+        <div class="qa-ans"><p>L'hébergement souverain couvre le lieu de stockage physique, pas ce que le logiciel fait avec les données une fois à l'intérieur. Si votre modèle est d'origine américaine (GPT-4, Claude, Llama...), <strong>le Cloud Act s'applique indépendamment de la localisation du serveur</strong>. Et quel que soit le modèle, la persistance mémoire post-purge est indépendante de la géographie : c'est de la physique, pas du droit.</p></div>
       </div>
 
       <div class="qa-item">
@@ -809,7 +931,7 @@ h1{animation:fadeUp .5s .1s ease both}
           <span class="qa-q">Pourquoi personne n'avait fait ça avant ?</span>
           <span class="qa-tog">+</span>
         </button>
-        <div class="qa-ans"><p>Trois raisons. Les LLMs en production sont récents : 2022-2023. La réglementation qui crée l'obligation vient d'entrer en vigueur : AI Act 2024, pleine application août 2026. Et les compétences forensiques RAM combinées à la maîtrise opérationnelle des LLMs au même endroit sont rarissimes. <strong>Ce n'est pas un oubli. C'est une fenêtre qui vient de s'ouvrir.</strong></p></div>
+        <div class="qa-ans"><p>Trois raisons. Les LLMs en production sont récents, 2022-2023. La réglementation qui crée l'obligation vient d'entrer en vigueur, AI Act 2024, pleine application août 2026. Et les compétences forensiques RAM combinées à la maîtrise opérationnelle des LLMs au même endroit sont rarissimes. <strong>Ce n'est pas un oubli. C'est une fenêtre qui vient de s'ouvrir.</strong></p></div>
       </div>
 
     </div>
@@ -823,16 +945,16 @@ h1{animation:fadeUp .5s .1s ease both}
     <p class="intro">Décrivez votre système en quelques lignes. Scanalis évalue votre exposition et vous oriente vers le bon niveau d'audit. Sans engagement.</p>
     <div class="cta-btns">
       <a href="mailto:contact@scanalis.fr?subject=Demande d'audit Scanalis" class="btn btn-dark" style="font-size:16px;padding:16px 32px">Écrire à contact@scanalis.fr →</a>
-      <a href="https://www.linkedin.com/in/mathilde-de-roumilly/" target="_blank" rel="noopener" class="btn-outline">LinkedIn : Mathilde De Roumilly</a>
+      <a href="https://www.linkedin.com/in/mathilde-de-roumilly/" target="_blank" rel="noopener" class="btn-outline">LinkedIn  Mathilde De Roumilly</a>
     </div>
 
     <!-- Présence en ligne -->
     <div class="social-strip">
       <div class="social-card">
         <span class="social-icon">▶</span>
-        <div class="social-title">YouTube RAM EXPOSED</div>
+        <div class="social-title">YouTube  RAM EXPOSED</div>
         <div class="social-desc">Démos forensiques RAM en direct. Scan de mémoire vive LLM, analyse d'incidents réels, décryptage réglementaire.</div>
-        <a href="https://www.youtube.com/@mathildederoumillys" target="_blank" rel="noopener" class="social-link">@scanalis →</a>
+        <a href="https://www.youtube.com/@mathildederoumilly" target="_blank" rel="noopener" class="social-link">@scanalis →</a>
       </div>
       <div class="social-card">
         <span class="social-icon">in</span>
