@@ -3,8 +3,8 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Scanalis  LLM RAM Forensic Audit | France</title>
-<meta name="description" content="Scanalis produit la preuve cryptographique que votre LLM a physiquement effacé les données personnelles après traitement. Protocole Canary & Minerve. Rapport SHA-256 opposable CNIL. RGPD Art.5(2) · AI Act Art.12 · DORA Art.25.">
+<title>Scanalis LLM RAM Forensic Audit | France</title>
+<meta name="description" content="Scanalis produces cryptographic proof that your LLM has physically erased the personal data after processing. Canary & Minerve protocol. SHA-256 report enforceable by the CNIL. GDPR Art.5(2) · AI Act Art.12 · DORA Art.25.">
 <meta name="keywords" content="LLM RAM forensics, AI amnesia proof, LLM memory audit, Canary Protocol, AMNESIA_CONFIRMED, AMNESIA_FAILED, LLM RAM purge, AI Act Art 12, GDPR accountability, AI forensics France, LLM audit GDPR, MINERVE_EXPOSED, volatile memory AI">
 <meta name="author" content="Mathilde De Roumilly — Scanalis">
 <meta name="robots" content="index, follow">
@@ -12,7 +12,7 @@
 
 <!-- Open Graph -->
 <meta property="og:title" content="Scanalis — Forensic Proof of LLM Amnesia">
-<meta property="og:description" content="Votre LLM dit qu'il a oublié vos données. Scanalis le prouve forensiquement. Rapport SHA-256 opposable CNIL. Protocole Canary & Minerve.">
+<meta property="og:description" content="Your LLM says it forgot your data. Scanalis is proving this forensically. SHA-256 report, enforceable by the CNIL. Canary & Minerve protocol.">
 <meta property="og:url" content="https://scanalis.fr/">
 <meta property="og:type" content="website">
 <meta property="og:locale" content="en_GB">
@@ -28,14 +28,14 @@
   "@context": "https://schema.org",
   "@type": "Organization",
   "name": "Scanalis",
-  "description": "Première infrastructure française de preuve forensique pour l'amnésie des systèmes d'intelligence artificielle. Protocole Canary et Protocole Minerve.",
+  "description": "France's first forensic proof infrastructure for AI system amnesia. Canary Protocol and Minerve Protocol.",
   "url": "https://scanalis.fr",
   "email": "contact@scanalis.fr",
   "foundingDate": "2025",
   "founder": {
     "@type": "Person",
     "name": "Mathilde De Roumilly",
-    "jobTitle": "Fondatrice",
+    "jobTitle": "Founder",,
     "sameAs": "https://www.linkedin.com/in/mathilde-de-roumilly/"
   },
   "address": {
@@ -49,13 +49,13 @@
     "https://www.youtube.com/@mathildederoumilly"
   ],
   "knowsAbout": [
-    "Forensique mémoire vive LLM",
-    "Audit RAM intelligence artificielle",
-    "RGPD accountability",
-    "AI Act conformité",
-    "Purge données personnelles LLM",
-    "Protocole Canary",
-    "Protocole Minerve"
+    "LLM RAM forensics",
+    "AI memory audit",
+    "GDPR accountability",
+    "AI Act compliance",
+    "LLM personal data purge",
+    "Canary Protocol",
+    "Minerve Protocol"
   ]
 }
 </script>
@@ -68,62 +68,37 @@
   "mainEntity": [
     {
       "@type": "Question",
-      "name": "Comment prouver qu'un LLM a oublié mes données personnelles ?",
+      "name": "How do I prove that an LLM physically erased my personal data from RAM?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Le Protocole Canary de Scanalis injecte 8 jetons cryptographiques dans un LLM via son API standard, déclenche la purge déclarée par le système, puis scanne la mémoire vive octet par octet sur 4 zones (heap applicatif, page cache Linux, zone swap, buffers kernel). Le verdict est binaire : AMNESIA_CONFIRMED si la purge est physiquement effective, AMNESIA_FAILED si des résidus de données personnelles sont détectés avec leur adresse mémoire exacte."
+        "text": "Scanalis Canary Protocol injects 8 cryptographic tokens into the LLM via its standard API, triggers the declared purge, then scans RAM byte by byte across 4 zones (application heap, Linux page cache, swap zone, kernel buffers). The verdict is binary: AMNESIA_CONFIRMED if the purge is physically effective, AMNESIA_FAILED if personal data residues are detected with their exact memory address."
       }
     },
     {
       "@type": "Question",
-      "name": "Qu'est-ce que la forensique RAM d'un LLM ?",
+      "name": "Is the Scanalis audit intrusive?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "La forensique RAM d'un LLM consiste à analyser la mémoire vive d'un système d'intelligence artificielle après la purge déclarée pour détecter des résidus de données personnelles. Quand un LLM traite une donnée, elle est déchiffrée et placée en clair dans la RAM pendant le traitement. Même après fermeture de session, des résidus peuvent persister dans le heap applicatif, le page cache Linux, la zone swap ou les buffers kernel. Scanalis est la première infrastructure française certifiée pour cet audit forensique."
+        "text": "No. Scanalis is non-intrusive by design. Zero agent installed on your servers. Zero SSH access. Zero access to source code or model weights. The memory dump is generated by your teams (gcore or procdump) and transmitted securely. Scanalis interacts only via your LLM's standard API."
       }
     },
     {
       "@type": "Question",
-      "name": "Que couvre l'AI Act Art. 12 pour les LLMs ?",
+      "name": "What is the difference between an LLM DLP and Scanalis?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "L'AI Act Art. 12 impose la journalisation automatique des événements pour les systèmes IA à haut risque. Cette journalisation doit couvrir l'exécution réelle des processus de purge — pas uniquement la politique déclarée. Un rapport de conformité ne suffit pas : il faut une preuve d'exécution réelle, opposable. C'est précisément ce que produit Scanalis avec le Protocole Canary."
+        "text": "A DLP blocks what enters the LLM before processing. Scanalis verifies what remains in RAM after processing. Two complementary layers. A system can have the best DLP on the market and still have personal data residues in RAM post-purge."
       }
     },
     {
       "@type": "Question",
-      "name": "Quelle est la différence entre un DLP pour LLM et Scanalis ?",
+      "name": "What is the Minerve Protocol?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Un DLP bloque ce qui entre dans le LLM avant traitement. Scanalis vérifie ce qui reste en RAM après traitement. Ce sont deux couches complémentaires. Un système peut avoir le meilleur DLP du marché et avoir des résidus de données personnelles en mémoire vive post-purge. L'une empêche l'entrée, l'autre prouve la sortie."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "Notre système est certifié HDS et ISO 27001. Sommes-nous couverts ?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Non. HDS certifie l'hébergeur des données de santé. ISO 27001 certifie la gouvernance de la sécurité de l'information. Aucune de ces certifications ne spécifie l'audit forensique de la mémoire volatile des LLMs post-session — ce concept n'existait pas quand elles ont été rédigées. Scanalis comble précisément cet angle mort réglementaire."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "Qu'est-ce que le Protocole Minerve ?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Le Protocole Minerve est la méthode d'extraction forensique développée par Scanalis pour détecter si un LLM a mémorisé des données personnelles lors de son entraînement ou de son fine-tuning. Il exécute 35+ sondes sur 7 catégories via l'API standard du modèle, fondé sur les travaux académiques de Carlini et al. (USENIX Security 2021, arXiv:2012.07805). Le verdict est binaire : MINERVE_EXPOSED ou MINERVE_NOT_DETECTED."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "L'audit Scanalis est-il intrusif ?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Non. Scanalis est non intrusif par conception. Zéro agent installé sur vos serveurs. Zéro accès SSH. Zéro accès au code source ou aux poids du modèle. Le dump mémoire est généré par vos équipes (gcore ou procdump) et transmis de façon sécurisée. Scanalis interagit uniquement via l'interface API standard de votre LLM."
+        "text": "The Minerve Protocol is Scanalis's forensic extraction method to detect whether an LLM memorised personal data during training or fine-tuning. It runs 35+ probes across 7 categories via the model's standard API, based on Carlini et al. (USENIX Security 2021, arXiv:2012.07805). Binary verdict: MINERVE_EXPOSED or MINERVE_NOT_DETECTED."
       }
     }
   ]
-}
 </script>
 
 <!-- Schema.org Service -->
@@ -131,13 +106,13 @@
 {
   "@context": "https://schema.org",
   "@type": "Service",
-  "name": "Audit forensique RAM LLM — Protocole Canary",
+  "name": "LLM RAM Forensic Audit — Canary Protocol",
+"description": "Forensic scan of LLM RAM post-purge. Binary verdict AMNESIA_CONFIRMED / AMNESIA_FAILED. SHA-256 sealed report, RSA-PSS 2048-bit signed, RFC3161 timestamped. Enforceable by regulators and European courts.",
+"serviceType": "AI Forensics",,
   "provider": {
     "@type": "Organization",
     "name": "Scanalis"
   },
-  "description": "Scan forensique de la mémoire vive d'un LLM post-purge. Verdict binaire AMNESIA_CONFIRMED / AMNESIA_FAILED. Rapport scellé SHA-256, signé RSA-PSS 2048 bits, horodaté RFC3161. Opposable CNIL et tribunal européen.",
-  "serviceType": "Forensique IA",
   "areaServed": "FR",
   "hasOfferCatalog": {
     "@type": "OfferCatalog",
@@ -145,22 +120,25 @@
     "itemListElement": [
       {
         "@type": "Offer",
-        "name": "Diagnostic d'Exposition",
-        "description": "Cartographie des zones RAM exposées sur questionnaire et architecture déclarée. 6 pages. Sans scan actif."
+        "name": "Canary Diagnostic",
+        "description": "Full Canary Protocol. Post-purge RAM scan. Binary verdict. Hex dumps. 13-page SHA-256 sealed report. 2,500 EUR."
       },
       {
         "@type": "Offer",
-        "name": "Audit Forensique",
-        "description": "Protocole Canary complet. Scan RAM post-purge. Verdict binaire. Hex dumps. Rapport 8 pages scellé SHA-256."
+        "name": "Canary Audit",
+        "description": "Canary + GPU eval + RFC3161 + Evidence Chain. 25-page report. SHA-256 + RSA-PSS. 6,000-8,000 EUR."
       },
       {
         "@type": "Offer",
-        "name": "Certification de Résilience",
-        "description": "Protocole Canary + Protocole Minerve. Rapport 10 pages. Signé RSA-PSS. Horodaté RFC3161. Opposable CNIL."
+        "name": "Minerve Import",
+        "description": "Minerve Protocol only. 35+ forensic probes. 7 PII categories. GO/NO-GO verdict. 15-page report. 3,500 EUR."
+      },
+      {
+        "@type": "Offer",
+        "name": "Amnesia Complete",
+        "description": "Canary + Minerve + 4 phases + Closure Certification. RSA-PSS signed. RFC3161 timestamped. 25,000-80,000 EUR."
       }
     ]
-  }
-}
 </script>
 
 <!-- Favicon -->
@@ -679,7 +657,7 @@ h1{animation:fadeUp .5s .1s ease both}
         </ul>
 
         <div class="off-spacer"></div>
-        <a href="mailto:contact@scanalis.fr?subject=Canary Audit — Demande" class="obtn obtn-acc" style="margin-top:28px">Demander l'audit →</a>
+        <a href="mailto:contact@scanalis.fr?subject=Canary Audit — Demande" class="obtn obtn-acc" style="margin-top:28px">Request an audit →</a>
       </div>
 
       <!-- OFFRE 3 -->
