@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Scanalis — Audit forensique RAM des LLMs | France</title>
+<title>Scanalis  Audit forensique RAM des LLMs | France</title>
 <meta name="description" content="Scanalis produit la preuve cryptographique que votre LLM a physiquement effacé les données personnelles après traitement. Protocole Canary & Minerve. Rapport SHA-256 opposable CNIL. RGPD Art.5(2) · AI Act Art.12 · DORA Art.25.">
 <meta name="keywords" content="forensique RAM LLM, preuve amnésie IA, audit mémoire vive LLM, Protocole Canary, AMNESIA_CONFIRMED, AMNESIA_FAILED, purge RAM LLM, AI Act Art 12, RGPD accountability, forensique IA France, audit LLM CNIL, MINERVE_EXPOSED, mémoire volatile IA">
 <meta name="author" content="Mathilde De Roumilly — Scanalis">
@@ -19,7 +19,7 @@
 
 <!-- Twitter Card -->
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="Scanalis — Preuve forensique RAM des LLMs">
+<meta name="twitter:title" content="Scanalis  Preuve forensique RAM des LLMs">
 <meta name="twitter:description" content="AMNESIA_CONFIRMED ou AMNESIA_FAILED. Verdict binaire. Rapport scellé SHA-256. Opposable CNIL.">
 
 <!-- Schema.org Organization -->
@@ -46,7 +46,7 @@
   },
   "sameAs": [
     "https://www.linkedin.com/in/mathilde-de-roumilly/",
-    "https://www.youtube.com/@scanalis"
+    "https://www.youtube.com/@mathildederoumilly"
   ],
   "knowsAbout": [
     "Forensique mémoire vive LLM",
@@ -500,7 +500,7 @@ h1{animation:fadeUp .5s .1s ease both}
   <div class="wrap">
     <div class="eyebrow">Forensique RAM · Protocole Canary · Protocole Minerve</div>
     <h1 id="hero-title">Votre LLM dit qu'il a oublié.<br><em>Nous le prouvons.</em></h1>
-    <p class="hero-sub">Scanalis produit la preuve cryptographique que votre système d'IA a physiquement effacé les données personnelles après traitement. Rapport scellé SHA-256, opposable CNIL. RGPD Art.5(2) · AI Act Art.12 · DORA Art.25.</p>
+    <p class="hero-sub">Scanalis produit la preuve cryptographique que votre système d'IA a physiquement effacé les données personnelles après traitement. Rapport scellé SHA-256. RGPD Art.5(2) · AI Act Art.12 · DORA Art.25.</p>
     <div class="hero-btns">
       <a href="mailto:contact@scanalis.fr" class="btn btn-dark">Demander un audit →</a>
       <a href="#protocoles" class="btn btn-ghost">Voir les protocoles</a>
@@ -606,7 +606,7 @@ h1{animation:fadeUp .5s .1s ease both}
       <div class="step"><div class="step-n">02</div><div class="step-c"><div class="step-t">Réception du dump mémoire fourni par le client</div><div class="step-d">Le client génère le dump via gcore ou procdump sur son infrastructure. Scanalis n'accède jamais directement au système. Non intrusif par conception, zéro surface d'exposition supplémentaire.</div><span class="step-tag">gcore / procdump généré par le client</span></div></div>
       <div class="step"><div class="step-n">03</div><div class="step-c"><div class="step-t">Injection des canaris et déclenchement de la purge</div><div class="step-d">8 jetons cryptographiques injectés via l'API standard du LLM. Déclenchement de la purge déclarée. Capture du dump post-purge. Aucune connexion à l'infrastructure client.</div><span class="step-tag">API standard · Zéro SSH · Zéro agent</span></div></div>
       <div class="step"><div class="step-n">04</div><div class="step-c"><div class="step-t">Scan forensique : 4 zones mémoire</div><div class="step-d">Analyse octet par octet du heap applicatif, du page cache Linux, de la zone swap et des buffers kernel. Calcul de l'IPE (Indice de Probabilité d'Exposition). Extraction Minerve sur 35+ sondes si Tier 3.</div><span class="step-tag">Heap · Page cache · Swap · Buffers kernel</span></div></div>
-      <div class="step"><div class="step-n">05</div><div class="step-c"><div class="step-t">Rapport forensique scellé : remise et destruction</div><div class="step-d">Rapport PDF selon le tier. Scellé SHA-256. Signé RSA-PSS 2048 bits (Tier 3). Horodaté RFC3161 (Tier 3). Opposable CNIL et tribunal européen. Destruction données client certifiée sous 20 jours.</div><span class="step-tag">SHA-256 · RSA-PSS · RFC3161 · shred -vfz -n 3</span></div></div>
+      <div class="step"><div class="step-n">05</div><div class="step-c"><div class="step-t">Rapport forensique scellé : remise et destruction</div><div class="step-d">Rapport PDF selon le tier. Scellé SHA-256. Signé RSA-PSS 2048 bits (Tier 3). Horodaté RFC3161 (Tier 3). Destruction données client certifiée sous 20 jours.</div><span class="step-tag">SHA-256 · RSA-PSS · RFC3161 · shred -vfz -n 3</span></div></div>
     </div>
   </div>
 </section>
@@ -621,7 +621,7 @@ h1{animation:fadeUp .5s .1s ease both}
 
       <!-- OFFRE 1 -->
       <div class="off-c">
-        <span class="off-tier">Offre 01 · Protocole Canary</span>
+        <span class="off-tier">Offre 01 : Protocole Canary</span>
         <span class="off-pages">Rapport 13 pages</span>
         <h3>Canary Diagnostic</h3>
         <span class="tagline">AMNESIA_CONFIRMED / AMNESIA_FAILED</span>
@@ -633,7 +633,7 @@ h1{animation:fadeUp .5s .1s ease both}
           <li class="feat"><span class="fck">✓</span>Protocole Canary complet: 8 canaris, 4 zones RAM</li>
           <li class="feat"><span class="fck">✓</span>Évaluation architecturale GPU de base</li>
           <li class="feat"><span class="fck">✓</span>Rapport 13 pages : scellé SHA-256</li>
-          <li class="feat"><span class="fck">✓</span>Opposable CNIL · RGPD Art.5(2) · Art.32</li>
+          <li class="feat"><span class="fck">✓</span>RGPD Art.5(2) · Art.32</li>
           <li class="feat"><span class="fck">✓</span>Non intrusif : dump généré par le client</li>
         </ul>
 
@@ -651,11 +651,11 @@ h1{animation:fadeUp .5s .1s ease both}
       <!-- OFFRE 2 -->
       <div class="off-c off-c--feat">
         <div class="feat-badge">Recommandé : AI Act août 2026</div>
-        <span class="off-tier">Offre 02 · Canary + GPU + RFC3161 + Evidence Chain</span>
+        <span class="off-tier">Offre 02 : Canary + GPU + RFC3161 + Evidence Chain</span>
         <span class="off-pages">Rapport 25 pages</span>
         <h3>Canary Audit</h3>
         <span class="tagline" style="color:var(--accent)">AMNESIA_CONFIRMED / AMNESIA_FAILED</span>
-        <p class="desc">La preuve complète. Opposable aux régulateurs. Canary + modules v3.4 : évaluation GPU architecturale, chaîne de preuve RFC 3227, horodatage RFC3161, WipeCertificate Verifier.</p>
+        <p class="desc">La preuve complète. Pour les régulateurs. Canary + modules v3.4 : évaluation GPU architecturale, chaîne de preuve RFC 3227, horodatage RFC3161, WipeCertificate Verifier.</p>
         <div style="font-family:var(--mono);font-size:22px;font-weight:600;color:var(--accent);margin:18px 0 20px">6 000€</div>
 
         <div class="off-section-title">Livrables</div>
@@ -683,7 +683,7 @@ h1{animation:fadeUp .5s .1s ease both}
 
       <!-- OFFRE 3 -->
       <div class="off-c">
-        <span class="off-tier">Offre 03 · Protocole Minerve seul</span>
+        <span class="off-tier">Offre 03 : Protocole Minerve seul</span>
         <span class="off-pages">Rapport 15 pages</span>
         <h3>Minerve Import</h3>
         <span class="tagline">MINERVE_NOT_DETECTED / MINERVE_EXPOSED</span>
@@ -712,19 +712,19 @@ h1{animation:fadeUp .5s .1s ease both}
 
       <!-- OFFRE 4 -->
       <div class="off-c">
-        <span class="off-tier">Offre 04 · Canary + Minerve + 4 phases</span>
+        <span class="off-tier">Offre 04 : Canary + Minerve + 4 phases</span>
         <span class="off-pages">Rapport 32 pages + Certification</span>
         <h3>Amnesia Complet</h3>
         <span class="tagline">AMNESIA_CONFIRMED · RSA-PSS · RFC3161</span>
-        <p class="desc">De l'angle mort à la certification. On ne lâche pas tant que ce n'est pas AMNESIA_CONFIRMED. 4 phases : Diagnostic → Remédiation → Documentation → Certification de clôture.</p>
+        <p class="desc">De l'angle mort à la garantie d'une IA étanche. On ne lâche pas tant que ce n'est pas AMNESIA_CONFIRMED. 4 phases : Diagnostic → Remédiation → Documentation → Garantie de clôture.</p>
         <div style="font-family:var(--mono);font-size:22px;font-weight:600;color:var(--accent);margin:18px 0 20px">25 000€</div>
 
         <div class="off-section-title">Livrables phase par phase</div>
         <ul class="feats">
           <li class="feat"><span class="fck">✓</span><strong>Phase 1</strong> : Canary + Minerve + GPU + Gap réglementaire complet</li>
           <li class="feat"><span class="fck">✓</span><strong>Phase 2</strong> : Spécifications techniques de remédiation par stack</li>
-          <li class="feat"><span class="fck">✓</span><strong>Phase 3</strong> : Dossier réglementaire opposable CNIL + formation équipes</li>
-          <li class="feat"><span class="fck">✓</span><strong>Phase 4</strong> : Contre-audit + Certification AMNESIA (valable 6 mois)</li>
+          <li class="feat"><span class="fck">✓</span><strong>Phase 3</strong> : Dossier réglementaire complet + formation équipes</li>
+          <li class="feat"><span class="fck">✓</span><strong>Phase 4</strong> : Contre-audit + Garantie AMNESIA (valable 6 mois)</li>
           <li class="feat"><span class="fck">✓</span>Sceau RSA-PSS 2048 bits + RFC3161 + Evidence Chain RFC 3227</li>
           <li class="feat"><span class="fck">✓</span>Renouvellement annuel : 40% du prix initial</li>
         </ul>
@@ -737,7 +737,7 @@ h1{animation:fadeUp .5s .1s ease both}
 
     <div class="rule35">
       <div class="rule35-icon">📏</div>
-      <div><div class="rule35-t">La règle des 6 500 €</div><div class="rule35-d">Si les données que votre LLM traite en RAM représentent plus de 6 500 € de dommages en cas d'extraction : Scanalis est rentable. Un dossier médical, un IBAN, un contrat, un secret industriel. Combien ça vaut si ça sort ? Une amende CNIL sur données de santé commence à 800 000 €.</div></div>
+      <div><div class="rule35-t">La règle des 6 500 €</div><div class="rule35-d">Si les données que votre LLM traite en RAM représentent plus de 6 500 € de dommages en cas d'extraction : Scanalis est rentable. Un dossier médical, un IBAN, un contrat, un secret industriel. Combien ça vaut si ça sort ? Une amende CNIL sur données de santé peut atteindre des centaines de milliers d'euros.</div></div>
     </div>
   </div>
 </section>
@@ -747,7 +747,7 @@ h1{animation:fadeUp .5s .1s ease both}
   <div class="wrap">
     <span class="slabel">Sécurité du moteur</span>
     <h2>Scanalis audite les autres. Son moteur est soumis aux mêmes exigences.</h2>
-    <p class="intro">Red team réalisé. 18 vulnérabilités identifiées et corrigées. 65 checks de validation passés. AIPD réalisée. Le code qui vérifie l'amnésie des autres prouve sa propre rigueur.</p>
+    <p class="intro">Red team réalisée. 18 vulnérabilités identifiées et corrigées. 65 checks de validation passés. AIPD réalisée. Le code qui vérifie l'amnésie des autres prouve sa propre rigueur.</p>
     <div class="reg-g" style="margin-top:52px">
       <div class="reg-i">
         <div class="reg-n">Non intrusif par architecture</div>
@@ -777,7 +777,7 @@ h1{animation:fadeUp .5s .1s ease both}
       <div class="reg-i">
         <div class="reg-n">AIPD réalisée · RGPD Art.35</div>
         <div class="reg-a">DPA Art.28 · 5 documents juridiques</div>
-        <div class="reg-d">Analyse d'Impact sur la Protection des Données réalisée sur Scanalis lui-même. Destruction des dumps sous 15 jours (shred -vfz -n 3 · DoD 5220.22-M). RC Pro Cyber Hiscox. 5 documents contractuels indissociables.</div>
+        <div class="reg-d">Analyse d'Impact sur la Protection des Données réalisée sur Scanalis lui-même. Destruction des dumps sous 20 jours (shred -vfz -n 3 · DoD 5220.22-M). RC Pro Cyber Hiscox. 5 documents contractuels indissociables.</div>
       </div>
     </div>
   </div>
@@ -815,7 +815,7 @@ h1{animation:fadeUp .5s .1s ease both}
       <div class="mkt-c">
         <span class="mkt-icon">💬</span>
         <h3>Expert cybersécurité senior · LinkedIn</h3>
-        <p style="font-style:italic;color:var(--ink2);margin-bottom:12px">« Sur RFC3161 : la TSA qualifiée eIDAS résistera mieux à une contestation judiciaire. Curieux de voir ce que donne la v3.3 en conditions réelles. »</p>
+        <p style="font-style:italic;color:var(--ink2);margin-bottom:12px">« Sur RFC3161 : la TSA qualifiée eIDAS résistera mieux à une contestation judiciaire. Curieux de voir ce que donne la v3.4 en conditions réelles. »</p>
         <p class="mkt-hl">→ Commentaire public · Objection intégrée en v3.4</p>
       </div>
 
@@ -859,7 +859,7 @@ h1{animation:fadeUp .5s .1s ease both}
 <section class="faq-sec" id="faq" aria-labelledby="faq-title">
   <div class="wrap-sm">
     <span class="slabel">Questions fréquentes</span>
-    <h2 id="faq-title">Ce que DPOs, RSSSIs et DSIs demandent</h2>
+    <h2 id="faq-title">Ce que DPOs, RSSIs et DSIs demandent</h2>
     <div class="qa-list">
 
       <div class="qa-item">
@@ -1005,7 +1005,8 @@ h1{animation:fadeUp .5s .1s ease both}
           Mathilde De Roumilly  Scanalis<br>
           Fondatrice  Entreprise individuelle<br>
           Vannes (56000), Bretagne, France<br>
-          contact@scanalis.fr
+          contact@scanalis.fr<br>
+          SIRET: 999466660000015
         </div>
         <div style="font-size:12px;color:var(--ink3);line-height:1.7">
           <strong style="color:var(--ink2)">Hébergement</strong><br>
