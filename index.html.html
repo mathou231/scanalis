@@ -610,7 +610,7 @@ h1{animation:fadeUp .5s .1s ease both}
       <div class="step"><div class="step-n">02</div><div class="step-c"><div class="step-t">Réception du dump mémoire fourni par le client</div><div class="step-d">Le client génère le dump via gcore ou procdump sur son infrastructure. Scanalis n'accède jamais directement au système. Non intrusif par conception, zéro surface d'exposition supplémentaire.</div><span class="step-tag">gcore / procdump généré par le client · Acte encadré par 5 documents contractuels</span></div></div>
       <div class="step"><div class="step-n">03</div><div class="step-c"><div class="step-t">Injection des canaris et déclenchement de la purge</div><div class="step-d">8 jetons cryptographiques injectés via l'API standard du LLM. Déclenchement de la purge déclarée. Capture du dump post-purge. Aucune connexion à l'infrastructure client.</div><span class="step-tag">API standard · Zéro SSH · Zéro agent</span></div></div>
       <div class="step"><div class="step-n">04</div><div class="step-c"><div class="step-t">Scan forensique : 4 zones mémoire</div><div class="step-d">Analyse octet par octet du heap applicatif, du page cache Linux, de la zone swap et des buffers kernel. Calcul de l'IPE (Indice de Probabilité d'Exposition). Extraction Minerve sur 35+ sondes si Tier 3.</div><span class="step-tag">Heap · Page cache · Swap · Buffers kernel</span></div></div>
-      <div class="step"><div class="step-n">05</div><div class="step-c"><div class="step-t">Rapport forensique scellé : remise et destruction</div><div class="step-d">Rapport PDF selon l'offre. Scellé SHA-256 (vérifiable offline avec openssl). Signé RSA-PSS 2048 bits. Horodaté RFC3161 par TSA tierce. Destruction des données client certifiée sous 20 jours (NIST SP 800-88 Rev.1).</div><span class="step-tag">SHA-256 · RSA-PSS · RFC3161 · NIST SP 800-88 Rev.1</span></div></div>
+      <div class="step"><div class="step-n">05</div><div class="step-c"><div class="step-t">Rapport forensique scellé : remise et destruction</div><div class="step-d">Rapport PDF selon l'offre. Scellé SHA-256 (vérifiable offline avec openssl). Signé RSA-PSS 2048 bits. Horodaté RFC3161 par TSA tierce. Destruction des données client certifiée sous 15 jours (NIST SP 800-88 Rev.1).</div><span class="step-tag">SHA-256 · RSA-PSS · RFC3161 · NIST SP 800-88 Rev.1</span></div></div>
     </div>
   </div>
 </section>
@@ -759,7 +759,7 @@ h1{animation:fadeUp .5s .1s ease both}
       <div class="reg-i">
         <div class="reg-n">Non intrusif par architecture</div>
         <div class="reg-a">Garantie contractuelle · Document 3</div>
-        <div class="reg-d">Zéro agent. Zéro SSH. Zéro accès code source. Le client génère son propre dump (gcore / procdump). Scanalis analyse sur machine déconnectée. C'est structurel, non intrusif sur votre infrastructure. Le dump mémoire est l'acte le plus sensible de la mission, encadré par 5 documents contractuels et détruit sous 20 jours (NIST SP 800-88 Rev.1).</div>
+        <div class="reg-d">Zéro agent. Zéro SSH. Zéro accès code source. Le client génère son propre dump (gcore / procdump). Scanalis analyse sur machine déconnectée. C'est structurel, non intrusif sur votre infrastructure. Le dump mémoire est l'acte le plus sensible de la mission, encadré par 5 documents contractuels et détruit sous 15 jours (NIST SP 800-88 Rev.1).</div>
       </div>
       <div class="reg-i">
         <div class="reg-n">Red team interne · 18 corrections</div>
@@ -784,7 +784,7 @@ h1{animation:fadeUp .5s .1s ease both}
       <div class="reg-i">
         <div class="reg-n">AIPD réalisée · RGPD Art.35</div>
         <div class="reg-a">DPA Art.28 · 5 documents juridiques</div>
-        <div class="reg-d">Analyse d'Impact sur la Protection des Données réalisée sur Scanalis lui-même. Destruction des dumps sous 20 jours (shred -vfz -n 3 · NIST SP 800-88 Rev.1). RC Pro Cyber Hiscox. 5 documents contractuels indissociables.</div>
+        <div class="reg-d">Analyse d'Impact sur la Protection des Données réalisée sur Scanalis lui-même. Destruction des dumps sous 15 jours (shred -vfz -n 3 · NIST SP 800-88 Rev.1). RC Pro Cyber Hiscox. 5 documents contractuels indissociables.</div>
       </div>
     </div>
   </div>
@@ -937,7 +937,7 @@ h1{animation:fadeUp .5s .1s ease both}
           <span class="qa-q">Que devient notre rapport ? Et nos données ?</span>
           <span class="qa-tog">+</span>
         </button>
-        <div class="qa-ans"><p>Votre rapport vous appartient, scellé SHA-256, toute modification invalide le hash, vérifiable par tout tiers avec openssl en 30 secondes. Vos données client (dump mémoire, questionnaire) sont <strong>détruites sous 20 jours calendaires</strong> via shred -vfz -n 3 · NIST SP 800-88 Rev.1, avec attestation de destruction signée remise avec le rapport. Scanalis est assurée RC Pro Cyber par Hiscox SA.</p></div>
+        <div class="qa-ans"><p>Votre rapport vous appartient, scellé SHA-256, toute modification invalide le hash, vérifiable par tout tiers avec openssl en 30 secondes. Vos données client (dump mémoire, questionnaire) sont <strong>détruites sous 15 jours calendaires</strong> via shred -vfz -n 3 · NIST SP 800-88 Rev.1, avec attestation de destruction signée remise avec le rapport. Scanalis est assurée RC Pro Cyber par Hiscox SA.</p></div>
       </div>
 
       <div class="qa-item">
