@@ -3,24 +3,31 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Scanalis LLM RAM Forensic Audit | France</title>
-<meta name="description" content="Scanalis produces cryptographic proof that your LLM has physically erased the personal data after processing. Canary & Minerve protocol. SHA-256 report enforceable by the CNIL. GDPR Art.5(2) · AI Act Art.12 · DORA Art.25.">
-<meta name="keywords" content="LLM RAM forensics, AI amnesia proof, LLM memory audit, Canary Protocol, AMNESIA_CONFIRMED, AMNESIA_FAILED, LLM RAM purge, AI Act Art 12, GDPR accountability, AI forensics France, LLM audit GDPR, MINERVE_EXPOSED, volatile memory AI">
+<title>Scanalis  RAM Forensics for Enterprise AI | France</title>
+<meta name="description" content="Scanalis forensically documents the physical erasure of personal data by your LLM. Canary Protocol & Minerva Protocol. SHA-256 sealed report, offline-verifiable. GDPR Art.5(2) · AI Act Art.12 · DORA Art.25.">
+<meta name="keywords" content="RAM forensics LLM, AI amnesia proof, volatile memory audit LLM, Canary Protocol, AMNESIA_CONFIRMED, AMNESIA_FAILED, RAM purge LLM, AI Act Art 12, GDPR accountability, AI forensics France, LLM audit GDPR, MINERVE_EXPOSED, volatile memory AI">
 <meta name="author" content="Mathilde De Roumilly — Scanalis">
 <meta name="robots" content="index, follow">
-<link rel="canonical" href="https://scanalis.fr/en/">
+<link rel="canonical" href="https://scanalis.fr/index-en.html">
 
 <!-- Open Graph -->
-<meta property="og:title" content="Scanalis — Forensic Proof of LLM Amnesia">
-<meta property="og:description" content="Your LLM says it forgot your data. Scanalis is proving this forensically. SHA-256 report, enforceable by the CNIL. Canary & Minerve protocol.">
-<meta property="og:url" content="https://scanalis.fr/">
+<meta property="og:title" content="Scanalis  Forensic proof that your LLM actually forgets">
+<meta property="og:description" content="Your LLM says it deleted the data. Scanalis verifies the bytes. SHA-256 sealed report, offline-verifiable. Canary Protocol & Minerva Protocol.">
+<meta property="og:url" content="https://scanalis.fr/index-en.html">
 <meta property="og:type" content="website">
-<meta property="og:locale" content="en_GB">
+<meta property="og:locale" content="en_US">
+<meta property="og:image" content="https://scanalis.fr/og-image.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="Scanalis — Forensic proof that your LLM actually forgets">
+<meta property="og:site_name" content="Scanalis">
 
 <!-- Twitter Card -->
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="Scanalis — LLM RAM Forensic Proof">
-<meta name="twitter:description" content="AMNESIA_CONFIRMED or AMNESIA_FAILED. Binary verdict. SHA-256 sealed report. Enforceable by regulators.">
+<meta name="twitter:title" content="Scanalis  RAM Forensics for Enterprise AI">
+<meta name="twitter:description" content="AMNESIA_CONFIRMED or AMNESIA_FAILED. Binary verdict. SHA-256 sealed report. Offline-verifiable by any third party.">
+<meta name="twitter:image" content="https://scanalis.fr/og-image.png">
+<meta name="twitter:site" content="@scanalis">
 
 <!-- Schema.org Organization -->
 <script type="application/ld+json">
@@ -28,34 +35,25 @@
   "@context": "https://schema.org",
   "@type": "Organization",
   "name": "Scanalis",
-  "description": "France's first forensic proof infrastructure for AI system amnesia. Canary Protocol and Minerve Protocol.",
+  "description": "First French infrastructure for forensic RAM auditing of AI systems. Canary Protocol and Minerva Protocol.",
   "url": "https://scanalis.fr",
   "email": "contact@scanalis.fr",
   "foundingDate": "2025",
   "founder": {
     "@type": "Person",
     "name": "Mathilde De Roumilly",
-    "jobTitle": "Founder",,
+    "jobTitle": "Founder",
     "sameAs": "https://www.linkedin.com/in/mathilde-de-roumilly/"
   },
   "address": {
     "@type": "PostalAddress",
     "addressLocality": "Vannes",
-    "addressRegion": "Bretagne",
+    "addressRegion": "Brittany",
     "addressCountry": "FR"
   },
   "sameAs": [
     "https://www.linkedin.com/in/mathilde-de-roumilly/",
     "https://www.youtube.com/@mathildederoumilly"
-  ],
-  "knowsAbout": [
-    "LLM RAM forensics",
-    "AI memory audit",
-    "GDPR accountability",
-    "AI Act compliance",
-    "LLM personal data purge",
-    "Canary Protocol",
-    "Minerve Protocol"
   ]
 }
 </script>
@@ -68,77 +66,30 @@
   "mainEntity": [
     {
       "@type": "Question",
-      "name": "How do I prove that an LLM physically erased my personal data from RAM?",
+      "name": "How do you prove that an LLM has actually forgotten personal data?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Scanalis Canary Protocol injects 8 cryptographic tokens into the LLM via its standard API, triggers the declared purge, then scans RAM byte by byte across 4 zones (application heap, Linux page cache, swap zone, kernel buffers). The verdict is binary: AMNESIA_CONFIRMED if the purge is physically effective, AMNESIA_FAILED if personal data residues are detected with their exact memory address."
+        "text": "Scanalis's Canary Protocol injects 8 cryptographic canary tokens into an LLM via its standard API, triggers the system's declared purge, then scans volatile memory byte by byte across 4 zones (application heap, Linux page cache, swap space, kernel buffers). The verdict is binary: AMNESIA_CONFIRMED if physical erasure is effective, AMNESIA_FAILED if personal data residues are detected with their exact memory address."
       }
     },
     {
       "@type": "Question",
-      "name": "Is the Scanalis audit intrusive?",
+      "name": "What is RAM forensics for an LLM?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "No. Scanalis is non-intrusive by design. Zero agent installed on your servers. Zero SSH access. Zero access to source code or model weights. The memory dump is generated by your teams (gcore or procdump) and transmitted securely. Scanalis interacts only via your LLM's standard API."
+        "text": "RAM forensics for an LLM consists of analyzing volatile memory of an AI system after its declared purge to detect personal data residues. When an LLM processes data, it is decrypted and placed in plaintext in RAM during processing. Even after session close, residues may persist in the application heap, Linux page cache, swap space, or kernel buffers. Scanalis is the first French infrastructure specialized in this forensic audit."
       }
     },
     {
       "@type": "Question",
-      "name": "What is the difference between an LLM DLP and Scanalis?",
+      "name": "What does AI Act Art. 12 require for LLMs?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "A DLP blocks what enters the LLM before processing. Scanalis verifies what remains in RAM after processing. Two complementary layers. A system can have the best DLP on the market and still have personal data residues in RAM post-purge."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "What is the Minerve Protocol?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "The Minerve Protocol is Scanalis's forensic extraction method to detect whether an LLM memorised personal data during training or fine-tuning. It runs 35+ probes across 7 categories via the model's standard API, based on Carlini et al. (USENIX Security 2021, arXiv:2012.07805). Binary verdict: MINERVE_EXPOSED or MINERVE_NOT_DETECTED."
+        "text": "AI Act Art. 12 requires automatic logging of events for high-risk AI systems. This logging must cover the actual execution of purge processes, not merely the declared policy. The Canary Report documents this actual execution with an offline-verifiable SHA-256 hash. This is the most robust form of documentation currently available."
       }
     }
   ]
-</script>
-
-<!-- Schema.org Service -->
-<script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "Service",
-  "name": "LLM RAM Forensic Audit — Canary Protocol",
-"description": "Forensic scan of LLM RAM post-purge. Binary verdict AMNESIA_CONFIRMED / AMNESIA_FAILED. SHA-256 sealed report, RSA-PSS 2048-bit signed, RFC3161 timestamped. Enforceable by regulators and European courts.",
-"serviceType": "AI Forensics",,
-  "provider": {
-    "@type": "Organization",
-    "name": "Scanalis"
-  },
-  "areaServed": "FR",
-  "hasOfferCatalog": {
-    "@type": "OfferCatalog",
-    "name": "Offres Scanalis",
-    "itemListElement": [
-      {
-        "@type": "Offer",
-        "name": "Canary Diagnostic",
-        "description": "Full Canary Protocol. Post-purge RAM scan. Binary verdict. Hex dumps. 13-page SHA-256 sealed report. 2,500 EUR."
-      },
-      {
-        "@type": "Offer",
-        "name": "Canary Audit",
-        "description": "Canary + GPU eval + RFC3161 + Evidence Chain. 25-page report. SHA-256 + RSA-PSS. 6,000-8,000 EUR."
-      },
-      {
-        "@type": "Offer",
-        "name": "Minerve Import",
-        "description": "Minerve Protocol only. 35+ forensic probes. 7 PII categories. GO/NO-GO verdict. 15-page report. 3,500 EUR."
-      },
-      {
-        "@type": "Offer",
-        "name": "Amnesia Complete",
-        "description": "Canary + Minerve + 4 phases + Closure Certification. RSA-PSS signed. RFC3161 timestamped. 25,000-80,000 EUR."
-      }
-    ]
+}
 </script>
 
 <!-- Favicon -->
@@ -146,88 +97,13 @@
 <link rel="apple-touch-icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 180 180'><rect width='180' height='180' rx='40' fill='%230B1220'/><text x='50%25' y='54%25' dominant-baseline='middle' text-anchor='middle' font-family='Georgia' font-size='110' font-weight='bold' fill='%2300C4A7'>S</text></svg>">
 <meta name="theme-color" content="#0B1220">
 
-<!-- Open Graph image -->
-<meta property="og:image" content="https://scanalis.fr/og-image.png">
-<meta property="og:image:width" content="1200">
-<meta property="og:image:height" content="630">
-<meta property="og:image:alt" content="Scanalis — Preuve forensique de l'amnésie des LLMs">
-<meta property="og:site_name" content="Scanalis">
-
-<!-- Twitter image -->
-<meta name="twitter:image" content="https://scanalis.fr/og-image.png">
-<meta name="twitter:site" content="@scanalis">
-
 <!-- Performance -->
 <link rel="dns-prefetch" href="https://fonts.googleapis.com">
 <link rel="dns-prefetch" href="https://fonts.gstatic.com">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Sans:opsz,wght@9..40,300;9..40,400;9..40,500;9..40,600&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet">
-
-<!-- Sitemap -->
 <link rel="sitemap" type="application/xml" href="/sitemap.xml">
-
-<!-- Schema.org Action — OpenAI ACP / Agents -->
-<script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "ContactPage",
-  "name": "Demander un audit Scanalis",
-  "description": "Contactez Scanalis pour demander un audit forensique RAM de votre LLM. Réponse sous 48h.",
-  "url": "https://scanalis.fr/#contact",
-  "mainEntity": {
-    "@type": "ContactPoint",
-    "contactType": "customer support",
-    "email": "contact@scanalis.fr",
-    "availableLanguage": ["French"],
-    "areaServed": "FR"
-  },
-  "potentialAction": [
-    {
-      "@type": "CommunicateAction",
-      "name": "Demander un audit Tier 1",
-      "target": "mailto:contact@scanalis.fr?subject=Diagnostic%20Tier%201%20%E2%80%94%20Demande%20d%27audit"
-    },
-    {
-      "@type": "CommunicateAction",
-      "name": "Demander un audit Tier 2",
-      "target": "mailto:contact@scanalis.fr?subject=Audit%20Forensique%20Tier%202%20%E2%80%94%20Demande"
-    },
-    {
-      "@type": "CommunicateAction",
-      "name": "Demander une certification Tier 3",
-      "target": "mailto:contact@scanalis.fr?subject=Certification%20Tier%203%20%E2%80%94%20Demande"
-    }
-  ]
-}
-</script>
-
-<!-- Schema.org WebPage avec mentions légales -->
-<script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "WebPage",
-  "name": "Scanalis — Audit forensique RAM des LLMs",
-  "url": "https://scanalis.fr",
-  "publisher": {
-    "@type": "Organization",
-    "name": "Scanalis",
-    "legalName": "Scanalis — Mathilde De Roumilly",
-    "email": "contact@scanalis.fr",
-    "address": {
-      "@type": "PostalAddress",
-      "addressLocality": "Vannes",
-      "addressRegion": "Bretagne",
-      "addressCountry": "FR"
-    }
-  },
-  "about": {
-    "@type": "Thing",
-    "name": "Forensique RAM LLM",
-    "description": "Audit de la mémoire vive des systèmes LLM après purge déclarée"
-  }
-}
-</script>
 
 <style>
 :root{--ink:#0E0F11;--ink2:#2C2E33;--ink3:#6B7280;--paper:#FAFAF8;--paper2:#F3F3F0;--accent:#00C4A7;--accentd:#009E87;--red:#D94040;--border:#E4E4E0;--serif:'DM Serif Display',Georgia,serif;--sans:'DM Sans',system-ui,sans-serif;--mono:'DM Mono','Courier New',monospace}
@@ -236,8 +112,6 @@ html{scroll-behavior:smooth}
 body{font-family:var(--sans);background:var(--paper);color:var(--ink);font-size:17px;line-height:1.65;-webkit-font-smoothing:antialiased}
 .wrap{max-width:1100px;margin:0 auto;padding:0 28px}
 .wrap-sm{max-width:780px;margin:0 auto;padding:0 28px}
-
-/* NAV */
 nav{position:fixed;top:0;left:0;right:0;z-index:100;background:rgba(250,250,248,.93);backdrop-filter:blur(14px);border-bottom:1px solid var(--border)}
 .nav-i{max-width:1100px;margin:0 auto;padding:0 28px;display:flex;align-items:center;justify-content:space-between;height:64px}
 .logo{font-family:var(--serif);font-size:22px;color:var(--ink);text-decoration:none}
@@ -247,8 +121,6 @@ nav{position:fixed;top:0;left:0;right:0;z-index:100;background:rgba(250,250,248,
 .nav-links a:hover{color:var(--accent)}
 .nav-cta{background:var(--ink)!important;color:#fff!important;padding:9px 20px!important;border-radius:6px!important}
 .nav-cta:hover{background:var(--accentd)!important}
-
-/* HERO */
 .hero{padding:148px 0 96px;border-bottom:1px solid var(--border)}
 .eyebrow{display:inline-flex;align-items:center;gap:8px;font-family:var(--mono);font-size:12px;font-weight:500;color:var(--accent);letter-spacing:1.2px;text-transform:uppercase;margin-bottom:28px}
 .eyebrow::before{content:'';display:block;width:6px;height:6px;border-radius:50%;background:var(--accent)}
@@ -268,22 +140,16 @@ h1 em{font-style:italic;color:var(--accent)}
 .vdot{width:6px;height:6px;border-radius:50%;flex-shrink:0}
 .vtag-ok .vdot{background:var(--accent)}
 .vtag-fail .vdot{background:var(--red)}
-
-/* STATS */
 .stats{padding:44px 0;border-bottom:1px solid var(--border);background:var(--paper2)}
 .stats-g{display:grid;grid-template-columns:repeat(4,1fr);gap:0}
 .stat{padding:8px 32px 8px 0;border-right:1px solid var(--border)}
 .stat:last-child{border-right:none}
 .stat-n{font-family:var(--serif);font-size:36px;line-height:1;color:var(--ink);margin-bottom:6px}
 .stat-l{font-size:13px;color:var(--ink3);line-height:1.4}
-
-/* SECTIONS */
 section{padding:96px 0}
 .slabel{font-family:var(--mono);font-size:11px;font-weight:500;color:var(--accent);letter-spacing:1.5px;text-transform:uppercase;margin-bottom:16px;display:block}
 h2{font-family:var(--serif);font-size:clamp(30px,4vw,48px);line-height:1.1;letter-spacing:-0.8px;color:var(--ink);margin-bottom:20px}
 .intro{font-size:18px;font-weight:300;color:var(--ink2);max-width:600px;line-height:1.7}
-
-/* MARCHÉ */
 .mkt-g{display:grid;grid-template-columns:1fr 1fr;gap:1px;background:var(--border);border:1px solid var(--border);border-radius:12px;overflow:hidden;margin-top:52px}
 .mkt-c{background:var(--paper);padding:38px}
 .mkt-c--dark{background:var(--ink)}
@@ -293,8 +159,6 @@ h2{font-family:var(--serif);font-size:clamp(30px,4vw,48px);line-height:1.1;lette
 .mkt-c p{font-size:14px;color:var(--ink2);line-height:1.7}
 .mkt-c--dark p{color:#94A3B8}
 .mkt-hl{margin-top:18px;font-family:var(--mono);font-size:12px;color:var(--accent)}
-
-/* TABLE POSITIONNEMENT */
 .tbl{margin-top:32px;border:1px solid var(--border);border-radius:12px;overflow:hidden}
 .tbl-head{display:grid;grid-template-columns:1fr 1fr 1fr;background:var(--ink);padding:14px 32px;font-family:var(--mono);font-size:11px;color:#94A3B8;letter-spacing:1px;text-transform:uppercase;gap:8px}
 .tbl-row{display:grid;grid-template-columns:1fr 1fr 1fr;border-bottom:1px solid var(--border);padding:18px 32px;gap:8px;align-items:center}
@@ -305,8 +169,6 @@ h2{font-family:var(--serif);font-size:clamp(30px,4vw,48px);line-height:1.1;lette
 .tbl-yes{font-family:var(--mono);font-size:12px;color:var(--accent)}
 .tbl-scanalis{display:grid;grid-template-columns:1fr 1fr 1fr;background:#F0FBF9;border-top:2px solid var(--accent);padding:20px 32px;gap:8px;align-items:center}
 .tbl-scanalis-n{font-family:var(--serif);font-size:18px;color:var(--ink)}
-
-/* PROTOCOLES */
 .proto-sec{background:var(--ink);padding:96px 0}
 .proto-sec h2{color:#fff}
 .proto-sec .intro{color:#94A3B8}
@@ -323,8 +185,6 @@ h2{font-family:var(--serif);font-size:clamp(30px,4vw,48px);line-height:1.1;lette
 .vp{font-family:var(--mono);font-size:11px;padding:5px 11px;border-radius:4px}
 .vp-ok{background:rgba(0,196,167,.12);color:var(--accent);border:1px solid rgba(0,196,167,.3)}
 .vp-fail{background:rgba(217,64,64,.1);color:#FF6B6B;border:1px solid rgba(217,64,64,.25)}
-
-/* MÉTHODE */
 .steps{margin-top:52px;display:flex;flex-direction:column;border:1px solid var(--border);border-radius:12px;overflow:hidden}
 .step{display:grid;grid-template-columns:70px 1fr;border-bottom:1px solid var(--border)}
 .step:last-child{border-bottom:none}
@@ -333,62 +193,12 @@ h2{font-family:var(--serif);font-size:clamp(30px,4vw,48px);line-height:1.1;lette
 .step-t{font-weight:600;font-size:15px;color:var(--ink);margin-bottom:7px}
 .step-d{font-size:14px;color:var(--ink2);line-height:1.6}
 .step-tag{display:inline-block;margin-top:10px;font-family:var(--mono);font-size:11px;color:var(--ink3);background:var(--paper2);padding:3px 9px;border-radius:3px}
-
-/* OFFRES — VERSION DÉTAILLÉE */
 .off-sec{background:var(--paper2)}
-.off-g{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;margin-top:52px}
-.off-c{background:var(--paper);padding:42px 34px;border-radius:12px;border:1px solid var(--border);position:relative;display:flex;flex-direction:column}
-.off-c--feat{background:var(--ink);border-color:var(--ink)}
-.off-tier{font-family:var(--mono);font-size:10px;letter-spacing:1.5px;text-transform:uppercase;color:var(--ink3);margin-bottom:18px;display:block}
-.off-c--feat .off-tier{color:var(--accent)}
-.off-pages{font-family:var(--mono);font-size:11px;color:var(--ink3);margin-bottom:8px;display:block}
-.off-c--feat .off-pages{color:#4B5563}
-.off-c h3{font-family:var(--serif);font-size:22px;color:var(--ink);margin-bottom:10px;line-height:1.2}
-.off-c--feat h3{color:#fff}
-.off-c .tagline{font-family:var(--mono);font-size:11px;color:var(--accent);margin-bottom:16px;display:block}
-.off-c .desc{font-size:14px;color:var(--ink2);line-height:1.7;margin-bottom:24px}
-.off-c--feat .desc{color:#94A3B8}
-
-/* Sections dans les offres */
-.off-section-title{font-size:11px;font-weight:600;letter-spacing:1px;text-transform:uppercase;color:var(--ink3);margin:20px 0 10px;padding-top:20px;border-top:1px solid var(--border)}
-.off-c--feat .off-section-title{color:#4B5563;border-top-color:#2A2D36}
-.feats{list-style:none;display:flex;flex-direction:column;gap:8px;margin-bottom:0}
-.feat{display:flex;gap:9px;font-size:13px;color:var(--ink2);line-height:1.5}
-.off-c--feat .feat{color:#94A3B8}
-.fck{color:var(--accent);flex-shrink:0;margin-top:1px;font-size:13px}
-
-/* Données demandées */
-.data-list{list-style:none;display:flex;flex-direction:column;gap:7px}
-.data-item{display:flex;gap:9px;font-size:13px;color:var(--ink2);line-height:1.5}
-.off-c--feat .data-item{color:#94A3B8}
-.data-arrow{color:var(--ink3);flex-shrink:0;font-family:var(--mono);font-size:11px;margin-top:2px}
-.off-c--feat .data-arrow{color:#4B5563}
-
-.obtn{display:block;text-align:center;padding:13px 18px;border-radius:6px;font-size:14px;font-weight:500;text-decoration:none;transition:all .2s;margin-top:auto}
-.obtn-light{border:1.5px solid var(--border);color:var(--ink)}
-.obtn-light:hover{border-color:var(--accent);color:var(--accent)}
-.obtn-acc{background:var(--accent);color:#fff}
-.obtn-acc:hover{background:var(--accentd)}
-
-/* Spacer dans les cards */
-.off-spacer{flex:1;min-height:16px}
-
-/* Badge featured */
-.feat-badge{position:absolute;top:-1px;left:50%;transform:translateX(-50%);background:var(--accent);color:#fff;font-family:var(--mono);font-size:10px;font-weight:500;padding:5px 14px;border-radius:0 0 6px 6px;letter-spacing:.5px;white-space:nowrap}
-
-.rule35{margin-top:32px;padding:26px 32px;background:var(--paper);border:1px solid var(--border);border-radius:8px;display:flex;gap:18px;align-items:flex-start}
-.rule35-icon{font-size:22px;flex-shrink:0}
-.rule35-t{font-weight:600;font-size:14px;color:var(--ink);margin-bottom:5px}
-.rule35-d{font-size:13px;color:var(--ink2);line-height:1.6}
-
-/* REG */
 .reg-g{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:52px}
 .reg-i{padding:22px;border:1px solid var(--border);border-radius:8px}
 .reg-n{font-family:var(--mono);font-size:13px;font-weight:500;color:var(--ink);margin-bottom:5px}
 .reg-a{font-size:12px;color:var(--accent);margin-bottom:7px;font-weight:500}
 .reg-d{font-size:13px;color:var(--ink3);line-height:1.5}
-
-/* FAQ */
 .faq-sec{background:var(--paper2)}
 .qa-list{margin-top:52px;border-top:1px solid var(--border)}
 .qa-item{border-bottom:1px solid var(--border)}
@@ -400,8 +210,6 @@ h2{font-family:var(--serif);font-size:clamp(30px,4vw,48px);line-height:1.1;lette
 .qa-item.open .qa-ans{display:block}
 .qa-ans p{font-size:15px;color:var(--ink2);line-height:1.8;max-width:680px}
 .qa-ans strong{color:var(--ink)}
-
-/* CTA */
 .cta-sec{background:var(--ink);padding:96px 0;text-align:center}
 .cta-sec h2{color:#fff;max-width:580px;margin:0 auto 18px}
 .cta-sec .intro{color:#94A3B8;margin:0 auto 40px;text-align:center}
@@ -409,8 +217,6 @@ h2{font-family:var(--serif);font-size:clamp(30px,4vw,48px);line-height:1.1;lette
 .btn-outline{display:inline-flex;align-items:center;gap:8px;padding:14px 26px;border-radius:8px;font-size:15px;font-weight:500;text-decoration:none;border:1.5px solid #374151;color:#D1D5DB;transition:all .2s}
 .btn-outline:hover{border-color:var(--accent);color:var(--accent)}
 .cta-note{margin-top:24px;font-family:var(--mono);font-size:12px;color:#4B5563;letter-spacing:.5px}
-
-/* SOCIAL PROOF */
 .social-strip{margin-top:52px;display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
 .social-card{padding:24px;border:1px solid #2A2D36;border-radius:10px;text-align:center}
 .social-icon{font-size:28px;margin-bottom:12px;display:block}
@@ -418,8 +224,10 @@ h2{font-family:var(--serif);font-size:clamp(30px,4vw,48px);line-height:1.1;lette
 .social-desc{font-size:12px;color:#6B7280;line-height:1.5}
 .social-link{display:inline-block;margin-top:12px;font-family:var(--mono);font-size:11px;color:var(--accent);text-decoration:none}
 .social-link:hover{text-decoration:underline}
-
-/* FOOTER */
+.rule35{margin-top:32px;padding:26px 32px;background:var(--paper);border:1px solid var(--border);border-radius:8px;display:flex;gap:18px;align-items:flex-start}
+.rule35-icon{font-size:22px;flex-shrink:0}
+.rule35-t{font-weight:600;font-size:14px;color:var(--ink);margin-bottom:5px}
+.rule35-d{font-size:13px;color:var(--ink2);line-height:1.6}
 footer{padding:44px 0;border-top:1px solid var(--border)}
 .foot-i{display:flex;align-items:flex-start;justify-content:space-between;flex-wrap:wrap;gap:28px}
 .foot-logo{font-family:var(--serif);font-size:18px;margin-bottom:6px;color:var(--ink)}
@@ -429,12 +237,6 @@ footer{padding:44px 0;border-top:1px solid var(--border)}
 .foot-link:hover{color:var(--accent)}
 .foot-link-icon{font-size:16px}
 .foot-r{font-family:var(--serif);font-style:italic;font-size:15px;color:var(--ink2)}
-
-/* RESPONSIVE */
-@media(max-width:900px){
-  .off-g{grid-template-columns:1fr}
-  .off-c--feat{order:-1}
-}
 @media(max-width:768px){
   .mkt-g,.proto-g,.reg-g,.social-strip{grid-template-columns:1fr}
   .stats-g{grid-template-columns:1fr 1fr}
@@ -443,8 +245,6 @@ footer{padding:44px 0;border-top:1px solid var(--border)}
   .hero{padding:110px 0 72px}
   div[style*="grid-template-columns:repeat(2,1fr)"]{grid-template-columns:1fr !important}
 }
-
-/* ANIMATIONS */
 @keyframes fadeUp{from{opacity:0;transform:translateY(14px)}to{opacity:1;transform:translateY(0)}}
 .eyebrow{animation:fadeUp .5s ease both}
 h1{animation:fadeUp .5s .1s ease both}
@@ -461,10 +261,12 @@ h1{animation:fadeUp .5s .1s ease both}
   <div class="nav-i">
     <a href="#" class="logo" aria-label="Scanalis — Home">Scan<span>alis</span></a>
     <ul class="nav-links" role="list">
-      <li><a href="#contexte">Context</a></li>
-      <li><a href="#protocoles">Protocols</a></li>
-      <li><a href="#offres">Pricing</a></li>
-      <li><a href="#securite">Security</a></li>
+      <li><a href="#context">Context</a></li>
+      <li><a href="#methodology">How it works</a></li>
+      <li><a href="#protocols" style="color:var(--accent)">3 Protocols</a></li>
+      <li><a href="#protocols">Protocols</a></li>
+      <li><a href="#offering">Offering</a></li>
+      <li><a href="#security">Security</a></li>
       <li><a href="#references">References</a></li>
       <li><a href="#faq">FAQ</a></li>
       <li><a href="mailto:contact@scanalis.fr" class="nav-cta">Contact</a></li>
@@ -477,16 +279,18 @@ h1{animation:fadeUp .5s .1s ease both}
 <main id="main">
 <section class="hero" aria-labelledby="hero-title">
   <div class="wrap">
-    <div class="eyebrow">RAM Forensics · Canary Protocol · Minerve Protocol</div>
-    <h1 id="hero-title">Your LLM says it forgot.<br><em>We prove it.</em></h1>
-    <p class="hero-sub">Scanalis provides cryptographic proof that your AI system physically erased personal data after processing. SHA-256 sealed report, enforceable by regulators. GDPR Art.5(2) · AI Act Art.12 · DORA Art.25.</p>
+    <div class="eyebrow">RAM Forensics · Canary Protocol · Minerva Protocol</div>
+    <h1 id="hero-title">Your AI says it forgot.<br><em>We check the bytes.</em></h1>
+    <p class="hero-sub">Your AI processed sensitive data. It claims to have purged it. Scanalis verifies this physically : byte by byte. RAM · Memorization · Anonymization. GDPR Art.5(2) · AI Act Art.12 · DORA Art.25.</p>
     <div class="hero-btns">
-      <a href="mailto:contact@scanalis.fr" class="btn btn-dark">Request an audit →</a>
-      <a href="#protocoles" class="btn btn-ghost">See the protocols</a>
+      <a href="mailto:contact@scanalis.fr" class="btn btn-dark">Describe your system →</a>
+      <a href="#protocols" class="btn btn-ghost">View protocols</a>
     </div>
     <div class="verdicts">
-      <div class="vtag vtag-ok"><span class="vdot"></span>AMNESIA_CONFIRMED : Physical purge proven</div>
-      <div class="vtag vtag-fail"><span class="vdot"></span>AMNESIA_FAILED : Residues detected in RAM</div>
+      <div class="vtag vtag-ok"><span class="vdot"></span>AMNESIA_CONFIRMED: Physical erasure verified</div>
+      <div class="vtag vtag-fail"><span class="vdot"></span>AMNESIA_FAILED: Memory residues detected</div>
+      <div class="vtag vtag-fail" style="background:#FDF4FF;border-color:#C4B5FD;color:#7C3AED"><span class="vdot" style="background:#7C3AED"></span>MINERVE_EXPOSED: Memorization detected</div>
+      <div class="vtag" style="background:#FFF7ED;border-color:#FCD34D;color:#92400E"><span class="vdot" style="background:#F59E0B"></span>ANON_LEAK: Pseudonymization compromised</div>
     </div>
   </div>
 </section>
@@ -497,356 +301,489 @@ h1{animation:fadeUp .5s .1s ease both}
     <div class="stats-g">
       <div class="stat"><div class="stat-n">8</div><div class="stat-l">cryptographic canary tokens injected per session</div></div>
       <div class="stat"><div class="stat-n">4</div><div class="stat-l">RAM zones scanned byte by byte</div></div>
-      <div class="stat"><div class="stat-n">SHA-256</div><div class="stat-l">sealed report : enforceable by regulators and European courts</div></div>
-      <div class="stat"><div class="stat-n">0</div><div class="stat-l">agent installed · Zero SSH · Zero source code access</div></div>
+      <div class="stat"><div class="stat-n">SHA-256</div><div class="stat-l">sealed report, offline-verifiable by any third party</div></div>
+      <div class="stat"><div class="stat-n">3</div><div class="stat-l">independent protocols: Canary · Minerva · Anonymization</div></div>
     </div>
   </div>
 </div>
 
-<!-- CONTEXTE -->
-<section id="contexte" aria-labelledby="contexte-title">
+<!-- CONTEXT -->
+<section id="context" aria-labelledby="context-title">
   <div class="wrap">
     <span class="slabel">Market context</span>
-    <h2 id="contexte-title">The blind spot nobody audits yet</h2>
-    <p class="intro">When an LLM processes personal data, it is decrypted and stored in plaintext in RAM during processing. The system then declares it purged. Nobody verifies.</p>
-    <div class="mkt-g">
-      <div class="mkt-c"><span class="mkt-icon">⚖️</span><h3>AI Act Art. 12 : August 2026</h3><p>Full enforcement requires logging of events for high-risk AI systems. Documentation describes processes. It does not prove actual execution.</p><p class="mkt-hl">→ Scanalis produces this execution proof.</p></div>
-      <div class="mkt-c"><span class="mkt-icon">🔒</span><h3>GDPR Art. 5(2) : Accountability</h3><p>The burden of proof lies with the data controller. Your DPA contractually guarantees the purge. It does not prove it. The distinction is legally critical.</p><p class="mkt-hl">→ The Scanalis report is that proof.</p></div>
-      <div class="mkt-c mkt-c--dark"><span class="mkt-icon">🏦</span><h3>DORA Art. 25 : ICT Resilience</h3><p>Financial institutions must verify the ICT resilience of third-party providers. LLMs are now ICT providers. Their volatile memory has never been audited.</p><p class="mkt-hl">→ First LLM RAM forensic audit in finance.</p></div>
-      <div class="mkt-c"><span class="mkt-icon">💡</span><h3>90% of AI funding applications rejected</h3><p>AI project holders struggle to secure funding due to lack of technical compliance execution proof. The Canary report is the missing supporting document.</p><p class="mkt-hl">→ Documented ROI up to 1:143.</p></div>
+    <h2 id="context-title">The blind spot nobody audits yet</h2>
+    <p class="intro">When an LLM processes personal data, it is decrypted and placed in plaintext in volatile memory. The system then declares it has purged. Nobody verifies.</p>
+
+    <!-- DATA LIFECYCLE DIAGRAM -->
+    <div style="margin:40px 0;background:var(--paper2);border:1px solid var(--border);border-radius:12px;padding:28px">
+      <div style="font-family:var(--mono);font-size:11px;color:var(--ink3);letter-spacing:1px;text-transform:uppercase;margin-bottom:20px;text-align:center">Data lifecycle inside an LLM</div>
+      <div style="display:grid;grid-template-columns:repeat(5,1fr);gap:0;align-items:center">
+        <div style="text-align:center;padding:12px">
+          <div style="background:var(--paper);border:1px solid var(--border);border-radius:6px;padding:12px 8px;margin-bottom:6px">
+            <div style="font-size:18px">🔐</div>
+            <div style="font-size:11px;font-weight:600;color:var(--ink);margin-top:4px">Transit</div>
+            <div style="font-family:var(--mono);font-size:9px;color:var(--accent);margin-top:2px">TLS 1.3</div>
+          </div>
+          <div style="font-size:10px;color:var(--ink3)">✓ Encrypted</div>
+        </div>
+        <div style="text-align:center;color:var(--ink3);font-size:14px">→</div>
+        <div style="text-align:center;padding:12px">
+          <div style="background:#1A0505;border:2px solid var(--red);border-radius:6px;padding:12px 8px;margin-bottom:6px">
+            <div style="font-size:18px">⚡</div>
+            <div style="font-size:11px;font-weight:600;color:#fff;margin-top:4px">RAM</div>
+            <div style="font-family:var(--mono);font-size:9px;color:#FF6B6B;margin-top:2px">PLAINTEXT</div>
+          </div>
+          <div style="font-size:10px;color:var(--red);font-weight:600">⚠ Exposed</div>
+        </div>
+        <div style="text-align:center;color:var(--ink3);font-size:14px">→</div>
+        <div style="text-align:center;padding:12px">
+          <div style="background:var(--paper);border:1px solid var(--border);border-radius:6px;padding:12px 8px;margin-bottom:6px">
+            <div style="font-size:18px">🗑️</div>
+            <div style="font-size:11px;font-weight:600;color:var(--ink);margin-top:4px">del()</div>
+            <div style="font-family:var(--mono);font-size:9px;color:var(--ink3);margin-top:2px">declared</div>
+          </div>
+          <div style="font-size:10px;color:var(--red)">? Unverified</div>
+        </div>
+      </div>
+      <div style="margin-top:16px;padding:12px 16px;background:#0D150F;border-radius:6px;text-align:center">
+        <span style="font-family:var(--mono);font-size:12px;color:var(--accent)">Scanalis intervenes here, after del() to verify what physically remains</span>
+      </div>
     </div>
 
-    <!-- Positionnement -->
+    <div class="mkt-g">
+      <div class="mkt-c"><span class="mkt-icon">⚖️</span><h3>AI Act Art. 12: August 2026</h3><p>Full enforcement requires event logging for high-risk AI systems. Documentation describes processes. It does not document actual physical execution. The gap is operationally critical.</p><p class="mkt-hl">→ Scanalis documents this actual execution.</p></div>
+      <div class="mkt-c"><span class="mkt-icon">🔒</span><h3>GDPR Art. 5(2): Accountability</h3><p>The burden of proof lies with the data controller. Your DPA contractually guarantees purge. It does not document actual execution. The distinction is operationally critical.</p><p class="mkt-hl">→ The Scanalis report documents this actual execution.</p></div>
+      <div class="mkt-c mkt-c--dark"><span class="mkt-icon">🏦</span><h3>DORA Art. 25: ICT Resilience</h3><p>Financial institutions must verify the ICT resilience of their third-party providers. LLMs are now ICT providers. Their volatile memory has never been audited.</p><p class="mkt-hl">→ First forensic RAM audit for LLMs in finance.</p></div>
+      <div class="mkt-c"><span class="mkt-icon">💡</span><h3>90% of AI funding applications rejected</h3><p>AI project holders struggle to secure funding without technical proof of compliance execution. The Canary Report is the missing justification document.</p><p class="mkt-hl">→ Documented ROI up to x143.</p></div>
+    </div>
+
+    <!-- POSITIONING -->
     <div style="margin-top:72px">
       <span class="slabel">Positioning</span>
-      <h3 style="font-family:var(--serif);font-size:28px;margin-bottom:8px;letter-spacing:-0.5px">Complementary to all existing tools</h3>
-      <p style="font-size:15px;color:var(--ink2);margin-bottom:32px">No tool covers what Scanalis audits. Zero direct competitor on LLM RAM forensic proof in France.</p>
+      <h3 style="font-family:var(--serif);font-size:28px;margin-bottom:8px;letter-spacing:-0.5px">Complementary to every existing tool</h3>
+      <p style="font-size:15px;color:var(--ink2);margin-bottom:32px">No tool covers what Scanalis audits. Zero direct competitor on forensic RAM proof for LLMs in France.</p>
       <div class="tbl">
         <div class="tbl-head"><span>Tool</span><span>What it covers</span><span>Post-purge LLM RAM</span></div>
-        <div class="tbl-row"><div class="tbl-tool">LLM DLP</div><div class="tbl-covers">Blocks input before processing</div><div class="tbl-no">Not covered ✗</div></div>
+        <div class="tbl-row"><div class="tbl-tool">DLP for LLM</div><div class="tbl-covers">Blocks what enters before processing</div><div class="tbl-no">Not covered ✗</div></div>
         <div class="tbl-row"><div class="tbl-tool">Big Four / Audit</div><div class="tbl-covers">Verify declarations and policies</div><div class="tbl-no">Not covered ✗</div></div>
-        <div class="tbl-row"><div class="tbl-tool">Pentesting</div><div class="tbl-covers">Finds entry points</div><div class="tbl-no">Not covered ✗</div></div>
-        <div class="tbl-row"><div class="tbl-tool">ISO 27001 / HDS</div><div class="tbl-covers">Certify security governance</div><div class="tbl-no">Not covered ✗</div></div>
-        <div class="tbl-scanalis"><div class="tbl-scanalis-n">Scanalis</div><div style="font-size:13px;color:var(--ink2)">Proves physical RAM purge post-LLM session</div><div class="tbl-yes">Only tool ✓</div></div>
+        <div class="tbl-row"><div class="tbl-tool">Penetration Testing</div><div class="tbl-covers">Finds entry points</div><div class="tbl-no">Not covered ✗</div></div>
+        <div class="tbl-row"><div class="tbl-tool">ISO 27001 / HDS</div><div class="tbl-covers">Certifies security governance</div><div class="tbl-no">Not covered ✗</div></div>
+        <div class="tbl-row"><div class="tbl-tool">AI Proxy / LLM DLP</div><div class="tbl-covers">Governs real-time data flows in and out</div><div class="tbl-no">Post-session ✗</div></div>
+        <div class="tbl-scanalis"><div class="tbl-scanalis-n">Scanalis</div><div style="font-size:13px;color:var(--ink2)">Proves physical purge of RAM post-session LLM</div><div class="tbl-yes">Only tool ✓</div></div>
+      </div>
+
+      <!-- EXACT SCOPE -->
+      <div style="margin-top:72px">
+        <span class="slabel">Exact scope</span>
+        <h3 style="font-family:var(--serif);font-size:28px;margin-bottom:8px;letter-spacing:-0.5px">What Scanalis can verify, and what it cannot</h3>
+        <p style="font-size:15px;color:var(--ink2);margin-bottom:32px">Transparency about limits is the foundation of trust.</p>
+        <div class="mkt-g" style="margin-top:0">
+          <div class="mkt-c">
+            <span class="mkt-icon">✅</span>
+            <h3>Direct scope</h3>
+            <p>Self-hosted LLM (Ollama, vLLM, llama.cpp), dedicated VPC, private cloud, on-premise. Anywhere your technical team can generate a memory dump of the process.</p>
+            <p class="mkt-hl">→ Full Canary Protocol: direct forensic verdict.</p>
+          </div>
+          <div class="mkt-c">
+            <span class="mkt-icon">◎</span>
+            <h3>Partial scope</h3>
+            <p>Third-party SaaS cloud (OpenAI, Anthropic, Mistral API). Scan covers the client-side orchestration layer: middleware, RAG, application cache, vector store.</p>
+            <p class="mkt-hl">→ Minerva Protocol via API + architectural assessment.</p>
+          </div>
+          <div class="mkt-c mkt-c--dark">
+            <span class="mkt-icon">⛔</span>
+            <h3>Out of scope</h3>
+            <p>The SaaS provider's server memory, the vendor's GPU buffers, their internal logs and retention mechanisms. This perimeter is explicitly documented in every report.</p>
+            <p style="color:var(--accent);font-size:13px">→ Every report documents its limits. That's a guarantee, not a gap.</p>
+          </div>
+        </div>
       </div>
     </div>
   </div>
 </section>
 
-<!-- PROTOCOLES -->
-<section class="proto-sec" id="protocoles" aria-labelledby="protocoles-title">
+<!-- PROTOCOLS -->
+<section class="proto-sec" id="protocols" aria-labelledby="protocols-title">
   <div class="wrap">
     <span class="slabel">Method</span>
-    <h2 id="protocoles-title">Two protocols. One binary verdict.</h2>
-    <p class="intro">Non-intrusive by design : standard API only. Zero agent installed. Zero SSH. Zero access to source code or model weights.</p>
+    <h2 id="protocols-title">3 protocols. 3 verdicts. 0 declarations.</h2>
+    <p class="intro">Each protocol answers a precise question. Every verdict is binary, cryptographically sealed, offline-verifiable.</p>
+
+    <!-- PROTOCOL FUNNEL DIAGRAM -->
+    <div style="margin:40px 0;display:grid;grid-template-columns:1fr auto 1fr auto 1fr;gap:0;align-items:center">
+
+      <!-- Minerva -->
+      <div style="background:#1A0B2E;border:1px solid #7C3AED;border-radius:10px;padding:28px 20px;text-align:center">
+        <div style="font-family:var(--mono);font-size:10px;color:#A78BFA;letter-spacing:1px;text-transform:uppercase;margin-bottom:10px">MINERVA PROTOCOL</div>
+        <div style="font-size:26px;margin-bottom:8px">🧠</div>
+        <div style="font-weight:700;font-size:14px;color:#fff;margin-bottom:6px">Memorization</div>
+        <div style="font-size:12px;color:#94A3B8;line-height:1.5">Has the model retained training data it shouldn't know?</div>
+        <div style="margin-top:14px;font-family:var(--mono);font-size:11px;padding:4px 8px;background:rgba(124,58,237,.2);border-radius:3px;color:#A78BFA;display:inline-block">35 probes · 7 categories</div>
+      </div>
+
+      <div style="text-align:center;padding:0 8px">
+        <div style="color:#374151;font-size:18px">→</div>
+        <div style="font-family:var(--mono);font-size:9px;color:#4B5563;margin-top:4px">then</div>
+      </div>
+
+      <!-- Anonymization -->
+      <div style="background:#1A1200;border:1px solid #F59E0B;border-radius:10px;padding:28px 20px;text-align:center">
+        <div style="font-family:var(--mono);font-size:10px;color:#FCD34D;letter-spacing:1px;text-transform:uppercase;margin-bottom:10px">ANONYMIZATION MODULE</div>
+        <div style="font-size:26px;margin-bottom:8px">🔍</div>
+        <div style="font-weight:700;font-size:14px;color:#fff;margin-bottom:6px">Pseudonymization</div>
+        <div style="font-size:12px;color:#94A3B8;line-height:1.5">Is your anonymization leaking into volatile memory?</div>
+        <div style="margin-top:14px;font-family:var(--mono);font-size:11px;padding:4px 8px;background:rgba(245,158,11,.15);border-radius:3px;color:#FCD34D;display:inline-block">Pseudo ↔ original pairs</div>
+      </div>
+
+      <div style="text-align:center;padding:0 8px">
+        <div style="color:#374151;font-size:18px">→</div>
+        <div style="font-family:var(--mono);font-size:9px;color:#4B5563;margin-top:4px">then</div>
+      </div>
+
+      <!-- Canary -->
+      <div style="background:#0D150F;border:2px solid var(--accent);border-radius:10px;padding:28px 20px;text-align:center">
+        <div style="font-family:var(--mono);font-size:10px;color:var(--accent);letter-spacing:1px;text-transform:uppercase;margin-bottom:10px">CANARY PROTOCOL</div>
+        <div style="font-size:26px;margin-bottom:8px">🔬</div>
+        <div style="font-weight:700;font-size:14px;color:#fff;margin-bottom:6px">RAM Persistence</div>
+        <div style="font-size:12px;color:#94A3B8;line-height:1.5">Was data physically erased from memory?</div>
+        <div style="margin-top:14px;font-family:var(--mono);font-size:11px;padding:4px 8px;background:rgba(0,196,167,.12);border-radius:3px;color:var(--accent);display:inline-block">8 tokens · 4 RAM zones</div>
+      </div>
+    </div>
+
+    <!-- 3 DETAILED CARDS -->
     <div class="proto-g">
+
+      <!-- CANARY -->
       <div class="proto-c">
-        <span class="proto-name">Protocole Canary</span>
-        <h3>Is the physical RAM purge effective?</h3>
-        <p>Injection of 8 cryptographic tracer tokens into the LLM via its standard API. Purge triggered. Forensic scan of RAM byte by byte across 4 zones.</p>
+        <span class="proto-name">Canary Protocol — RAM Persistence</span>
+        <h3>Has data physically disappeared from memory?</h3>
+        <p>Injection of 8 cryptographic tokens via standard API. Purge triggered. RAM scanned byte by byte, application heap, Linux page cache, swap space, kernel buffers. <strong style="color:#fff">No agent installed. No SSH access.</strong> You generate the dump. Scanalis scans.</p>
         <ul class="phases">
-          <li class="phase"><span class="ph-l">A</span>Baseline memory fingerprint captured before injection</li>
-          <li class="phase"><span class="ph-l">B</span>Injection of 8 canaries via API : email, IBAN, health data, ID numbers, biometrics...</li>
-          <li class="phase"><span class="ph-l">C</span>Declared purge triggered by the system</li>
-          <li class="phase"><span class="ph-l">D</span>Scan: application heap · Linux page cache · swap · kernel buffers</li>
+          <li class="phase"><span class="ph-l">A</span>Baseline fingerprint before injection : cryptographic reference</li>
+          <li class="phase"><span class="ph-l">B</span>8 canary tokens injected via API : email, IBAN, health PII, company ID, biometrics...</li>
+          <li class="phase"><span class="ph-l">C</span>Client purge triggered : Scanalis observes without intervening</li>
+          <li class="phase"><span class="ph-l">D</span>4-zone scan · Aho-Corasick engine · under 90 seconds</li>
         </ul>
         <div class="vr">
           <span class="vp vp-ok">AMNESIA_CONFIRMED</span>
           <span class="vp vp-fail">AMNESIA_FAILED</span>
         </div>
+        <div style="margin-top:16px;padding:10px 14px;background:rgba(0,196,167,.06);border-radius:4px;font-size:12px;color:#94A3B8"><strong style="color:var(--accent)">For the CISO:</strong> GDPR Art.32 · AI Act Art.12 · offline-verifiable: <code style="font-size:11px">openssl dgst -sha256</code></div>
       </div>
+
+      <!-- MINERVA + ANONYMIZATION -->
       <div class="proto-c">
-        <span class="proto-name">Protocole Minerve</span>
-        <h3>Did the model memorise data during training?</h3>
-        <p>Before importing a model into a sensitive zone — know what it carries. 35+ probes across 7 PII categories. Based on Carlini et al. USENIX 2021 (arXiv:2012.07805). <strong>Not for retraining, for deciding, documenting and negotiating.</strong></p>
+        <span class="proto-name">Minerva Protocol : Memorization</span>
+        <h3>Does the model carry data it should not know?</h3>
+        <p>35 behavioral forensic probes via standard API. Behavioral profile by GDPR category. Variance score 0–100 (biased training detection). <strong style="color:#fff">Not to retrain, to decide, document, negotiate.</strong></p>
         <ul class="phases">
-          <li class="phase"><span class="ph-l">1</span>Import decision : GO / NO-GO documented before entry into isolated zone</li>
-          <li class="phase"><span class="ph-l">2</span>Documented residual risk : GDPR Art.5(2) accountability without retraining</li>
-          <li class="phase"><span class="ph-l">3</span>Vendor contractual argument : proof for negotiation or supplier change</li>
-          <li class="phase"><span class="ph-l">35+</span>Forensic probes across 7 categories: identity, health, financial, professional, technical, behavioural, HR</li>
+          <li class="phase"><span class="ph-l">1</span>Documented GO/NO-GO before import into sensitive zone</li>
+          <li class="phase"><span class="ph-l">2</span>Behavioral profile : 7 detailed GDPR categories</li>
+          <li class="phase"><span class="ph-l">3</span>Behavioral integrity score : variance 0-100</li>
         </ul>
         <div class="vr">
           <span class="vp vp-fail">MINERVE_EXPOSED</span>
           <span class="vp vp-ok">MINERVE_NOT_DETECTED</span>
+        </div>
+
+        <div style="margin-top:24px;padding-top:20px;border-top:1px solid #2A2D36">
+          <span style="font-family:var(--mono);font-size:10px;color:#FCD34D;letter-spacing:1px;text-transform:uppercase;display:block;margin-bottom:10px">Anonymization Module : New</span>
+          <p style="font-size:13px;color:#94A3B8;line-height:1.6;margin-bottom:12px">Your pipeline pseudonymizes "John Smith" to "J*** S*****" before the LLM call. Scanalis verifies that "John Smith" does not appear anywhere in RAM after processing.</p>
+          <div class="vr">
+            <span class="vp" style="background:rgba(0,196,167,.12);color:var(--accent);border:1px solid rgba(0,196,167,.3)">ANON_VERIFIED</span>
+            <span class="vp vp-fail" style="color:#FB923C;border-color:rgba(251,146,60,.3);background:rgba(251,146,60,.08)">ANON_LEAK</span>
+            <span class="vp" style="background:rgba(245,158,11,.1);color:#FCD34D;border:1px solid rgba(245,158,11,.3)">ANON_PARTIAL</span>
+          </div>
+          <div style="margin-top:12px;padding:10px 14px;background:rgba(245,158,11,.06);border-radius:4px;font-size:12px;color:#94A3B8"><strong style="color:#FCD34D">For the DPO:</strong> GDPR Art.5(1)(c) data minimization · Art.25 Privacy by Design · proof that pseudonymization holds at the physical level</div>
         </div>
       </div>
     </div>
   </div>
 </section>
 
-<!-- MÉTHODE -->
-<section id="methodologie">
+<!-- METHODOLOGY -->
+<section id="methodology">
   <div class="wrap">
-    <span class="slabel">Process</span>
-    <h2>A mission in 5 steps</h2>
-    <p class="intro">From contracting to the submission of the sealed report, everything is documented, traceable, and certified.</p>
+    <span class="slabel">How it works</span>
+    <h2>The 5-step workflow</h2>
+    <p class="intro">From contract to report delivery, every step is documented, traceable, and offline-verifiable.</p>
+
+    <!-- CLIENT NEED SELECTOR -->
+    <div style="margin:36px 0;padding:28px;background:var(--paper2);border:1px solid var(--border);border-radius:12px">
+      <div style="font-family:var(--mono);font-size:11px;color:var(--accent);letter-spacing:1px;text-transform:uppercase;margin-bottom:20px">Choose what you want to verify</div>
+      <div style="display:grid;grid-template-columns:repeat(4,1fr);gap:12px">
+        <div style="background:var(--paper);border:1.5px solid var(--border);border-radius:8px;padding:16px">
+          <div style="font-size:20px;margin-bottom:8px">🔬</div>
+          <div style="font-weight:600;font-size:13px;color:var(--ink);margin-bottom:4px">RAM Persistence</div>
+          <div style="font-size:11px;color:var(--ink3)">Does my LLM actually purge?</div>
+          <div style="margin-top:8px;font-family:var(--mono);font-size:10px;color:var(--accent)">→ Canary Protocol</div>
+        </div>
+        <div style="background:var(--paper);border:1.5px solid var(--border);border-radius:8px;padding:16px">
+          <div style="font-size:20px;margin-bottom:8px">🧠</div>
+          <div style="font-weight:600;font-size:13px;color:var(--ink);margin-bottom:4px">Memorization</div>
+          <div style="font-size:11px;color:var(--ink3)">Has my model retained training data?</div>
+          <div style="margin-top:8px;font-family:var(--mono);font-size:10px;color:#7C3AED">→ Minerva Protocol</div>
+        </div>
+        <div style="background:var(--paper);border:1.5px solid var(--border);border-radius:8px;padding:16px">
+          <div style="font-size:20px;margin-bottom:8px">🔏</div>
+          <div style="font-weight:600;font-size:13px;color:var(--ink);margin-bottom:4px">Anonymization</div>
+          <div style="font-size:11px;color:var(--ink3)">Is my pseudonymization leaking in RAM?</div>
+          <div style="margin-top:8px;font-family:var(--mono);font-size:10px;color:#F59E0B">→ Anon Module</div>
+        </div>
+        <div style="background:var(--ink);border:2px solid var(--accent);border-radius:8px;padding:16px">
+          <div style="font-size:20px;margin-bottom:8px">⚡</div>
+          <div style="font-weight:600;font-size:13px;color:#fff;margin-bottom:4px">Full Audit</div>
+          <div style="font-size:11px;color:#94A3B8">Memorization → Anon → Persistence</div>
+          <div style="margin-top:8px;font-family:var(--mono);font-size:10px;color:var(--accent)">→ Recommended</div>
+        </div>
+      </div>
+      <div style="margin-top:16px;font-size:12px;color:var(--ink3);text-align:center">You choose your need. The proof level and pricing follow. You never choose a tier number.</div>
+    </div>
+
     <div class="steps">
-      <div class="step"><div class="step-n">01</div><div class="step-c"><div class="step-t">Contracting: comprehensive legal kit</div><div class="step-d">5 documents signed before any exchange: service contract, DPA RGPD Art. 28, authorization for technical access (criminal shield Art. 323-1), bilateral NDA 5 years, certified destruction procedure.</div><span class="step-tag">5 comprehensive legal kit</span></div></div>
-      <div class="step"><div class="step-n">02</div><div class="step-c"><div class="step-t">Memory dump provided by the client</div><div class="step-d">The client generates the dump via gcore or procdump on its infrastructure. Scanalis never accesses the system directly. Non-intrusive by design, zero additional display surfaces.</div><span class="step-tag">gcore / procdump  generated by the client</span></div></div>
-      <div class="step"><div class="step-n">03</div><div class="step-c"><div class="step-t">Canary injection and purge trigger</div><div class="step-d">8 cryptographic tokens injected via the LLM standard API. Declared purge triggered. Post-purge dump captured. No connection to client infrastructure.</div><span class="step-tag">Standard API · Zero SSH · Zero agent</span></div></div>
-      <div class="step"><div class="step-n">04</div><div class="step-c"><div class="step-t">Forensic scan: 4 memory areas</div><div class="step-d">Byte-by-byte analysis of application heap, Linux page cache, swap zone and kernel buffers. EPE (Exposure Probability Index) calculation. Minerve extraction across 35+ probes if Offer 4.</div><span class="step-tag">Heap · Page cache · Swap · Kernel buffers</span></div></div>
-      <div class="step"><div class="step-n">05</div><div class="step-c"><div class="step-t">Sealed forensic report: handover and destruction</div><div class="step-d">PDF report per offer. SHA-256 sealed. RSA-PSS 2048-bit signed (Offer 4). RFC3161 timestamped (Offer 4). Enforceable by regulators and European courts. Client data certified destroyed within 20 days.</div><span class="step-tag">SHA-256 · RSA-PSS · RFC3161 · shred -vfz -n 3</span></div></div>
+      <div class="step"><div class="step-n">01</div><div class="step-c"><div class="step-t">Contracting: complete legal kit</div><div class="step-d">5 documents signed before any data exchange: service contract, GDPR Art. 28 DPA, technical access authorization (criminal shield Art. 323-1), bilateral 5-year NDA, certified destruction procedure.</div><span class="step-tag">Legal kit 5 documents</span></div></div>
+      <div class="step"><div class="step-n">02</div><div class="step-c"><div class="step-t">Receipt of memory dump generated by the client</div><div class="step-d">The client generates the dump via gcore or procdump on their infrastructure. Scanalis never accesses the system directly. Non-intrusive by design, zero additional attack surface.</div><span class="step-tag">gcore / procdump, client-generated</span></div></div>
+      <div class="step"><div class="step-n">03</div><div class="step-c"><div class="step-t">Canary token injection and purge trigger</div><div class="step-d">8 cryptographic tokens injected via the LLM's standard API. Declared purge triggered. Post-purge dump captured. No connection to client infrastructure.</div><span class="step-tag">Standard API · No SSH · Agentless</span></div></div>
+      <div class="step"><div class="step-n">04</div><div class="step-c"><div class="step-t">Forensic scan: 4 memory zones</div><div class="step-d">Byte-by-byte analysis of application heap, Linux page cache, swap space, and kernel buffers. IPE (Exposure Probability Index) computation. Minerva extraction on 35+ probes for full audit.</div><span class="step-tag">Heap · Page cache · Swap · Kernel buffers</span></div></div>
+      <div class="step"><div class="step-n">05</div><div class="step-c"><div class="step-t">Sealed forensic report: delivery and destruction</div><div class="step-d">PDF report per agreed scope. SHA-256 sealed (offline-verifiable with openssl). RSA-PSS 2048-bit signed. RFC3161 timestamped by independent TSA. Client data destruction certified within 15 days.</div><span class="step-tag">SHA-256 · RSA-PSS · RFC3161 · shred -vfz -n 3</span></div></div>
     </div>
   </div>
 </section>
 
-<!-- OFFRES DÉTAILLÉES -->
-<section class="off-sec" id="offres">
+<!-- OFFERING -->
+<section class="off-sec" id="offering">
   <div class="wrap">
-    <span class="slabel">Pricing</span>
-    <h2 id="offres-title">4 offers. 1 engine. 0 label without proof.</h2>
-    <p class="intro">People don't pay for more information. They pay for less confusion. Each offer produces a verifiable binary answer.</p>
-    <div class="off-g" style="grid-template-columns:repeat(2,1fr)">
+    <span class="slabel">Engagement</span>
+    <h2>One mission. Your perimeter. Tailored.</h2>
+    <p class="intro">Every AI system is different. Every Scanalis mission is built with you, scope, stack, criticality level, applicable regulations.</p>
 
-      <!-- OFFRE 1 -->
-      <div class="off-c">
-        <span class="off-tier">Offer 01 · Canary Protocol</span>
-        <span class="off-pages">Report 13 page</span>
-        <h3>Canary Diagnostic</h3>
-        <span class="tagline">AMNESIA_CONFIRMED / AMNESIA_FAILED</span>
-        <p class="desc">The first question. The binary answer. Full Canary Protocol on your LLM system. The missing piece in 90% of rejected AI funding applications.</p>
-        <div style="font-family:var(--mono);font-size:22px;font-weight:600;color:var(--accent);margin:18px 0 20px">2 500 €</div>
+    <div style="margin-top:52px;display:grid;grid-template-columns:1fr 1fr;gap:24px">
 
-        <div class="off-section-title">Livrables</div>
-        <ul class="feats">
-          <li class="feat"><span class="fck">✓</span>Complete Canary protocol : 8 canaris, 4 RAM zones</li>
-          <li class="feat"><span class="fck">✓</span>Basic GPU architectural assessment</li>
-          <li class="feat"><span class="fck">✓</span>13 page report: sealed SHA-256</li>
-          <li class="feat"><span class="fck">✓</span>enforceable CNIL · GDPR Art.5(2) · Art.32</li>
-          <li class="feat"><span class="fck">✓</span>Non-intrusive: customer-generated dump</li>
-        </ul>
+      <!-- LEFT — The mission -->
+      <div style="background:var(--ink);padding:48px 40px;border-radius:12px;border:1px solid #2A2D36">
+        <span style="font-family:var(--mono);font-size:11px;color:var(--accent);letter-spacing:1.5px;text-transform:uppercase;display:block;margin-bottom:20px">FORENSIC RAM AUDIT : LLM</span>
+        <h3 style="font-family:var(--serif);font-size:32px;color:#fff;margin-bottom:16px;line-height:1.2">Does your LLM actually forget?</h3>
+        <p style="font-size:15px;color:#94A3B8;line-height:1.7;margin-bottom:28px">Scanalis produces the forensic documentation that your AI system has physically erased data after processing. SHA-256 sealed report, offline-verifiable.</p>
 
-        <div class="off-section-title">What you provide</div>
-        <ul class="data-list">
-          <li class="data-item"><span class="data-arrow">→</span>Post-purge memory dump (gcore / procdump)</li>
-          <li class="data-item"><span class="data-arrow">→</span>API endpoint + temporary token</li>
-          <li class="data-item"><span class="data-arrow">→</span>Designated technical contact</li>
-        </ul>
+        <div style="border-top:1px solid #2A2D36;padding-top:24px;margin-bottom:24px">
+          <div style="font-size:12px;color:#4B5563;font-weight:600;letter-spacing:1px;text-transform:uppercase;margin-bottom:14px">The engagement includes</div>
+          <ul style="list-style:none;display:flex;flex-direction:column;gap:10px">
+            <li style="display:flex;gap:10px;font-size:14px;color:#94A3B8"><span style="color:var(--accent);flex-shrink:0">✓</span>Canary Protocol: post-session RAM scan, 4 zones, binary verdict</li>
+            <li style="display:flex;gap:10px;font-size:14px;color:#94A3B8"><span style="color:var(--accent);flex-shrink:0">✓</span>Forensic transparency score: your model's auditability / 5</li>
+            <li style="display:flex;gap:10px;font-size:14px;color:#94A3B8"><span style="color:var(--accent);flex-shrink:0">✓</span>GPU/VRAM architectural assessment: documented risks</li>
+            <li style="display:flex;gap:10px;font-size:14px;color:#94A3B8"><span style="color:var(--accent);flex-shrink:0">✓</span>RFC 3227 evidence chain: every step timestamped</li>
+            <li style="display:flex;gap:10px;font-size:14px;color:#94A3B8"><span style="color:var(--accent);flex-shrink:0">✓</span>Sealed report: SHA-256 + RSA-PSS + RFC3161</li>
+            <li style="display:flex;gap:10px;font-size:14px;color:#94A3B8"><span style="color:var(--accent);flex-shrink:0">✓</span>"Explicit verdict limits" section: page 1 of every report</li>
+            <li style="display:flex;gap:10px;font-size:14px;color:#94A3B8"><span style="color:var(--accent);flex-shrink:0">✓</span>Legal kit : 5 documents: NDA, DPA Art.28, Technical Authorization</li>
+          </ul>
+        </div>
 
-        <div class="off-spacer"></div>
-        <a href="mailto:contact@scanalis.fr?subject=Canary Diagnostic — Demande" class="obtn obtn-light" style="margin-top:28px">contact@scanalis.fr →</a>
+        <div style="border-top:1px solid #2A2D36;padding-top:24px">
+          <div style="font-size:12px;color:#4B5563;font-weight:600;letter-spacing:1px;text-transform:uppercase;margin-bottom:14px">You provide</div>
+          <ul style="list-style:none;display:flex;flex-direction:column;gap:8px">
+            <li style="display:flex;gap:10px;font-size:13px;color:#94A3B8"><span style="color:#4B5563;flex-shrink:0">→</span>Post-purge memory dump (gcore / procdump), generated by your team</li>
+            <li style="display:flex;gap:10px;font-size:13px;color:#94A3B8"><span style="color:#4B5563;flex-shrink:0">→</span>API endpoint + temporary token</li>
+            <li style="display:flex;gap:10px;font-size:13px;color:#94A3B8"><span style="color:#4B5563;flex-shrink:0">→</span>Designated technical contact</li>
+          </ul>
+        </div>
+
+        <a href="mailto:contact@scanalis.fr?subject=Scanalis Audit Request" style="display:block;text-align:center;padding:16px;background:var(--accent);color:var(--ink);border-radius:8px;font-size:15px;font-weight:600;text-decoration:none;margin-top:32px;transition:opacity .2s" onmouseover="this.style.opacity='.85'" onmouseout="this.style.opacity='1'">Describe my system →</a>
       </div>
 
-      <!-- OFFRE 2 -->
-      <div class="off-c off-c--feat">
-        <div class="feat-badge">Recommended : AI Act August 2026</div>
-        <span class="off-tier">Offer 02 · Canary + GPU + RFC3161 + Evidence Chain</span>
-        <span class="off-pages">Report 25 page</span>
-        <h3>Canary Audit</h3>
-        <span class="tagline" style="color:var(--accent)">AMNESIA_CONFIRMED / AMNESIA_FAILED</span>
-        <p class="desc">Complete proof. Enforceable by regulators. Canary + v3.4 modules: GPU architectural assessment, RFC 3227 evidence chain, RFC3161 timestamp, WipeCertificate Verifier.</p>
-        <div style="font-family:var(--mono);font-size:22px;font-weight:600;color:var(--accent);margin:18px 0 20px">6 000€</div>
+      <!-- RIGHT — Options -->
+      <div style="display:flex;flex-direction:column;gap:20px">
 
-        <div class="off-section-title">Deliverables</div>
-        <ul class="feats">
-          <li class="feat"><span class="fck">✓</span>Canary protocol complete</li>
-          <li class="feat"><span class="fck">✓</span>GPU/VRAM assessment : rated risks + ANSSI recommendations</li>
-          <li class="feat"><span class="fck">✓</span>RFC 3227 forensic evidence chain : 10 steps</li>
-          <li class="feat"><span class="fck">✓</span>RFC3161 timestamp : independent third-party TSA</li>
-          <li class="feat"><span class="fck">✓</span>WipeCertificate Verifier : dual proof on application side</li>
-          <li class="feat"><span class="fck">✓</span>25-page report · SHA-256 + RSA-PSS 2048 bits</li>
-          <li class="feat"><span class="fck">✓</span>Gap analysis GDPR · AI Act · NIS2 · DORA by sector</li>
-        </ul>
+        <div style="background:var(--paper);padding:28px;border-radius:10px;border:1px solid var(--border)">
+          <div style="font-family:var(--mono);font-size:11px;color:var(--accent);letter-spacing:1px;text-transform:uppercase;margin-bottom:10px">Option · Memorization</div>
+          <h4 style="font-family:var(--serif);font-size:20px;color:var(--ink);margin-bottom:8px">Minerva Protocol</h4>
+          <p style="font-size:13px;color:var(--ink2);line-height:1.6">Before importing a model into a sensitive zone, know what it carries. 35 forensic probes, 7 GDPR categories, behavioral profile, variance score. Documented GO / NO-GO.</p>
+          <p style="font-family:var(--mono);font-size:12px;color:var(--accent);margin-top:10px">Verdict → MINERVE_EXPOSED / NOT_DETECTED</p>
+        </div>
 
-        <div class="off-section-title">What you provide</div>
-        <ul class="data-list">
-          <li class="data-item"><span class="data-arrow" style="color:#4B5563">→</span>Post-purge memory dump (gcore / procdump)</li>
-          <li class="data-item"><span class="data-arrow" style="color:#4B5563">→</span>API endpoint + temporary token + informations GPU</li>
-          <li class="data-item"><span class="data-arrow" style="color:#4B5563">→</span>WipeCertificates JSONL if available (optional)</li>
-          <li class="data-item"><span class="data-arrow" style="color:#4B5563">→</span>PII categories processed (to target the canaries)</li>
-        </ul>
+        <div style="background:var(--paper);padding:28px;border-radius:10px;border:1px solid var(--border)">
+          <div style="font-family:var(--mono);font-size:11px;color:var(--accent);letter-spacing:1px;text-transform:uppercase;margin-bottom:10px">Option · Anonymization</div>
+          <h4 style="font-family:var(--serif);font-size:20px;color:var(--ink);margin-bottom:8px">Anonymized dataset certification</h4>
+          <p style="font-size:13px;color:var(--ink2);line-height:1.6">Before training or fine-tuning an LLM on sensitive data, forensically certify that the anonymized dataset is clean and the model has not re-memorized identifying patterns.</p>
+          <p style="font-family:var(--mono);font-size:12px;color:var(--accent);margin-top:10px">5 phases · Phases A→E · Forensic attestation</p>
+        </div>
 
-        <div class="off-spacer"></div>
-        <a href="mailto:contact@scanalis.fr?subject=Canary Audit — Demande" class="obtn obtn-acc" style="margin-top:28px">Request an audit →</a>
+        <div style="background:var(--paper);padding:28px;border-radius:10px;border:1px solid var(--border)">
+          <div style="font-family:var(--mono);font-size:11px;color:var(--accent);letter-spacing:1px;text-transform:uppercase;margin-bottom:10px">Option · Monitoring</div>
+          <h4 style="font-family:var(--serif);font-size:20px;color:var(--ink);margin-bottom:8px">Annual surveillance contract</h4>
+          <p style="font-size:13px;color:var(--ink2);line-height:1.6">Every model update or new deployment triggers a new audit. Forensic attestation renewal. Monthly regulatory monitoring. 48h technical hotline.</p>
+          <p style="font-family:var(--mono);font-size:12px;color:var(--accent);margin-top:10px">Quarterly · Structural recurrence</p>
+        </div>
+
+        <div style="background:var(--paper2);padding:22px 28px;border-radius:8px;border:1px solid var(--border)">
+          <div style="font-size:13px;font-weight:600;color:var(--ink);margin-bottom:6px">Pricing</div>
+          <p style="font-size:13px;color:var(--ink2);line-height:1.6">Each mission is quoted based on perimeter, number of LLMs, data criticality, and activated options. Describe your system in a few lines, I'll respond within 48h with a tailored proposal.</p>
+        </div>
       </div>
-
-      <!-- OFFRE 3 -->
-      <div class="off-c">
-        <span class="off-tier">Offer 03 · Minerve Protocol only</span>
-        <span class="off-pages">Report 15 page</span>
-        <h3>Minerve Import</h3>
-        <span class="tagline">MINERVE_NOT_DETECTED / MINERVE_EXPOSED</span>
-        <p class="desc">Before importing a model into a sensitive zone, know what it carries. <strong>Not for retraining, for deciding, documenting and negotiating.</strong> Documented GO or NO-GO.</p>
-        <div style="font-family:var(--mono);font-size:22px;font-weight:600;color:var(--accent);margin:18px 0 20px">3 500 €</div>
-
-        <div class="off-section-title">Livrables</div>
-        <ul class="feats">
-          <li class="feat"><span class="fck">✓</span>Minerva protocol: 35 forensic probes</li>
-          <li class="feat"><span class="fck">✓</span>7 PII categories analysed (identity, health, financial…)</li>
-          <li class="feat"><span class="fck">✓</span>Documented GO / NO-GO verdict for import</li>
-          <li class="feat"><span class="fck">✓</span>Report 15 page · SHA-256</li>
-          <li class="feat"><span class="fck">✓</span>Vendor contractual argument if MINERVE_EXPOSED</li>
-        </ul>
-
-        <div class="off-section-title">What you provide</div>
-        <ul class="data-list">
-          <li class="data-item"><span class="data-arrow">→</span>API endpoint of the model to audit</li>
-          <li class="data-item"><span class="data-arrow">→</span>Model name and version (model card if available)</li>
-          <li class="data-item"><span class="data-arrow">→</span>Target import environment (defence / health / finance)</li>
-        </ul>
-
-        <div class="off-spacer"></div>
-        <a href="mailto:contact@scanalis.fr?subject=Minerve Import — Demande" class="obtn obtn-light" style="margin-top:28px">contact@scanalis.fr →</a>
-      </div>
-
-      <!-- OFFRE 4 -->
-      <div class="off-c">
-        <span class="off-tier">Offer 04 · Canary + Minerve + 4 phases</span>
-        <span class="off-pages">Report 32 page + Certification</span>
-        <h3>Amnesia Complet</h3>
-        <span class="tagline">AMNESIA_CONFIRMED · RSA-PSS · RFC3161</span>
-        <p class="desc">From blind spot to certification. We don't stop until AMNESIA_CONFIRMED. 4 phases: Diagnosis → Remediation → Documentation → Closure Certification.</p>
-        <div style="font-family:var(--mono);font-size:22px;font-weight:600;color:var(--accent);margin:18px 0 20px">25 000€</div>
-
-        <div class="off-section-title">Deliverables phase by phase</div>
-        <ul class="feats">
-          <li class="feat"><span class="fck">✓</span><strong>Phase 1</strong> : Canary + Minerve + GPU + Full regulatory gap analysis</li>
-          <li class="feat"><span class="fck">✓</span><strong>Phase 2</strong> : Technical remediation specifications by stack</li>
-          <li class="feat"><span class="fck">✓</span><strong>Phase 3</strong> : Regulatory file enforceable by regulators + team training</li>
-          <li class="feat"><span class="fck">✓</span><strong>Phase 4</strong> : Counter-audit + AMNESIA Certification (valid 6 months)</li>
-          <li class="feat"><span class="fck">✓</span>Sceau RSA-PSS 2048 bits + RFC3161 + Evidence Chain RFC 3227</li>
-          <li class="feat"><span class="fck">✓</span>Annual renewal: 40% of initial price</li>
-        </ul>
-
-        <div class="off-spacer"></div>
-        <a href="mailto:contact@scanalis.fr?subject=Amnesia Complet — Demande" class="obtn obtn-light" style="margin-top:28px">contact@scanalis.fr →</a>
-      </div>
-
     </div>
 
-    <div class="rule35">
+    <!-- PROOF LEVEL DIAGRAM -->
+    <div style="margin:32px 0;display:grid;grid-template-columns:1fr 1fr;gap:16px">
+      <div style="background:var(--paper);border:1px solid var(--border);border-radius:10px;padding:24px">
+        <div style="font-family:var(--mono);font-size:10px;color:var(--ink3);letter-spacing:1px;text-transform:uppercase;margin-bottom:12px">Technical report</div>
+        <div style="font-size:13px;color:var(--ink2);line-height:1.7;margin-bottom:16px">SHA-256 sealed PDF · Binary verdict · Hex dumps · Transparency score</div>
+        <div style="display:flex;flex-direction:column;gap:6px">
+          <div style="font-size:12px;color:var(--ink3)">✓ DPO: internal accountability file</div>
+          <div style="font-size:12px;color:var(--ink3)">✓ CTO/IT: technical team validation</div>
+          <div style="font-size:12px;color:var(--ink3)">✓ Grant applications: missing justification</div>
+        </div>
+      </div>
+      <div style="background:var(--ink);border:1px solid var(--accent);border-radius:10px;padding:24px">
+        <div style="font-family:var(--mono);font-size:10px;color:var(--accent);letter-spacing:1px;text-transform:uppercase;margin-bottom:12px">Legal-grade compliance proof</div>
+        <div style="font-size:13px;color:#94A3B8;line-height:1.7;margin-bottom:16px">SHA-256 + RSA-PSS 2048-bit + RFC3161 TSA · Offline-verifiable</div>
+        <div style="display:flex;flex-direction:column;gap:6px">
+          <div style="font-size:12px;color:#94A3B8">✓ CISO / RSSI: proof for regulators</div>
+          <div style="font-size:12px;color:#94A3B8">✓ Investors: AI due diligence</div>
+          <div style="font-size:12px;color:#94A3B8">✓ Litigation: certified forensic evidence</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="rule35" style="margin-top:32px">
       <div class="rule35-icon">📏</div>
-      <div><div class="rule35-t">The €6,500 rule</div><div class="rule35-d">If the data your LLM processes in RAM represents more than €6,500 in damages in case of extraction, Scanalis pays for itself. A medical record, an IBAN, a contract, a trade secret. How much is it worth if it leaks? A GDPR fine on health data starts at €800,000.</div></div>
+      <div>
+        <div class="rule35-t">The 10-second ROI test</div>
+        <div class="rule35-d">If the data your LLM processes represents more than a few thousand dollars in damages if extracted, the audit pays for itself. One medical record. One bank account number. One contract. A GDPR fine on health data can reach hundreds of thousands of euros. Under the AI Act, the personal liability of executives is directly engaged.</div>
+      </div>
     </div>
   </div>
 </section>
 
-<!-- SÉCURITÉ DU MOTEUR -->
-<section id="securite" style="background:var(--paper2)">
+<!-- ENGINE SECURITY -->
+<section id="security" style="background:var(--paper2)">
   <div class="wrap">
     <span class="slabel">Engine security</span>
     <h2>Scanalis audits others. Its engine is held to the same standard.</h2>
-    <p class="intro">Red team completed. 18 vulnerabilities identified and fixed. 65 validation checks passed. DPIA completed. The code that verifies others' amnesia proves its own rigour.</p>
+    <p class="intro">Red team completed. 18 vulnerabilities identified and corrected. 65 validation checks passed. DPIA completed. The code that verifies others' amnesia proves its own rigor.</p>
     <div class="reg-g" style="margin-top:52px">
       <div class="reg-i">
         <div class="reg-n">Non-intrusive by architecture</div>
         <div class="reg-a">Contractual guarantee · Document 3</div>
-        <div class="reg-d">Zero agents. Zero SSH. Zero source code access. The client generates its own dump (gcore / procdump). Scanalis analyzes on disconnected machine. It’s structural, not a promise.</div>
+        <div class="reg-d">No agent. No SSH. No source code access. The client generates their own dump (gcore / procdump). Scanalis analyzes on a disconnected machine. This is structural, not a promise.</div>
       </div>
       <div class="reg-i">
         <div class="reg-n">Internal red team · 18 fixes</div>
-        <div class="reg-a">Engine v3.4 · 65/65 checks</div>
-        <div class="reg-d">Full offensive audit before production. SSRF, path traversal, mandatory RSA passphrase, token via environment variable, demo mode blocked in production. Result: 65 checks passed.</div>
+        <div class="reg-a">Engine v3.5-RT · 65/65 checks</div>
+        <div class="reg-d">Full offensive audit before production: SSRF, path traversal, RSA passphrase, token via environment variable. Aho-Corasick engine (parallel multi-pattern scanning). SecureBuffer with ctypes.memset() Scanalis wipes its own memory footprint after every audit.</div>
       </div>
       <div class="reg-i">
-        <div class="reg-n">SHA-256 + RSA-PSS 2048 bits</div>
+        <div class="reg-n">SHA-256 + RSA-PSS 2048-bit</div>
         <div class="reg-a">Nominal signature · Encrypted key at rest</div>
-        <div class="reg-d">Every report is sealed and nominally signed by Mathilde De Roumilly. The RSA private key is encrypted (mandatory passphrase). The SHA-256 hash is verifiable offline by any third party with openssl in one command.</div>
+        <div class="reg-d">Every report is sealed and signed personally by Mathilde De Roumilly. The RSA private key is encrypted (mandatory passphrase). The SHA-256 hash is offline-verifiable by any third party with openssl in a single command.</div>
       </div>
       <div class="reg-i">
-        <div class="reg-n">RFC3161 · TSA tierce</div>
-        <div class="reg-a">Independent timestamp · Verifiable offline</div>
-        <div class="reg-d">An independent third party certifies that the report existed in this exact state at this date. Cannot be backdated. Vérifiable : <code style="font-family:var(--mono);font-size:12px;background:var(--paper);padding:1px 5px">openssl ts -verify</code>. Plus robuste qu'un simple SHA-256.</div>
+        <div class="reg-n">RFC3161 · Independent TSA</div>
+        <div class="reg-a">Independent timestamping · Offline-verifiable</div>
+        <div class="reg-d">An independent third party certifies that the report existed in this exact state at this date. Cannot be backdated. Verifiable: <code style="font-family:var(--mono);font-size:12px;background:var(--paper);padding:1px 5px">openssl ts -verify</code>. More robust than SHA-256 alone.</div>
       </div>
       <div class="reg-i">
         <div class="reg-n">Evidence Chain · RFC 3227</div>
-        <div class="reg-a">Evidence chain · Chain of custody</div>
-        <div class="reg-d">Each step (dump received → hash verified → canaries injected → scan executed → verdict produced → seal generated) is timestamped and cryptographically linked to the previous. Modifying one step invalidates the entire chain.</div>
+        <div class="reg-a">Chain of custody</div>
+        <div class="reg-d">Every step (dump received → hash verified → canaries injected → scan executed → verdict produced → seal generated) is timestamped and cryptographically linked to the previous one. Altering one step invalidates the entire chain.</div>
       </div>
       <div class="reg-i">
         <div class="reg-n">DPIA completed · GDPR Art.35</div>
         <div class="reg-a">DPA Art.28 · 5 legal documents</div>
-        <div class="reg-d">Data Protection Impact Assessment completed on Scanalis itself. Dumps destroyed within 15 days (shred -vfz -n 3 · DoD 5220.22-M). Hiscox Cyber Professional Liability. 5 inseparable contractual documents.</div>
+        <div class="reg-d">Data Protection Impact Assessment completed on Scanalis itself. Dump destruction within 20 days (shred -vfz -n 3 · NIST SP 800-88 Rev.1). Cyber professional liability insurance Hiscox. 5 indissociable contract documents.</div>
       </div>
     </div>
   </div>
 </section>
 
-<!-- TÉMOIGNAGES -->
+<!-- REFERENCES -->
 <section id="references">
   <div class="wrap">
     <span class="slabel">Field references</span>
-    <h2>What those who dug deep say.</h2>
-    <p class="intro">Not paid publishers. Not contractual partners. Independent experts who asked the hard questions and received honest answers.</p>
+    <h2>What those who dug deep have to say.</h2>
+    <p class="intro">Not paid editors. Not contractual partners. Independent experts who asked the hard questions and received honest answers.</p>
     <div class="mkt-g" style="margin-top:52px">
 
       <div class="mkt-c">
         <span class="mkt-icon">🔬</span>
         <h3>Cybersecurity expert · MedTech network</h3>
-        <p style="font-style:italic;color:var(--ink2);margin-bottom:12px">« The choice to document limits in the report rather than erasing them from the commercial perimeter is exactly what differentiates a forensic tool from a marketing compliance tool. »</p>
-        <p class="mkt-hl">→ Chief AI Security Architect · Mai 2026</p>
+        <p style="font-style:italic;color:var(--ink2);margin-bottom:12px">"What sets Scanalis apart: the verdict's limits are documented on page 1 of every report. A CISO or ANSSI auditor recognizes that posture immediately."</p>
+        <p class="mkt-hl">→ Chief AI Security Architect · May 2026</p>
       </div>
 
       <div class="mkt-c">
         <span class="mkt-icon">⚕️</span>
-        <h3>DPO · Digital Health Sector</h3>
-        <p style="font-style:italic;color:var(--ink2);margin-bottom:12px">"Have you done an AIPD? A technical audit of the solution? That’s exactly what our prospects will ask for. The fact that you have the answers changes everything.”</p>
+        <h3>DPO · Digital health sector</h3>
+        <p style="font-style:italic;color:var(--ink2);margin-bottom:12px">"Have you done a DPIA? A technical audit of the solution? That's exactly what our prospects will ask. The fact that you have the answers changes everything."</p>
         <p class="mkt-hl">→ GDPR Compliance Officer · May 2026</p>
       </div>
 
       <div class="mkt-c mkt-c--dark">
         <span class="mkt-icon">🛡️</span>
-        <h3>CEO Deeptech security AI </h3>
-        <p style="font-style:italic;color:#94A3B8;margin-bottom:12px">"The company protects the models against extraction. Scanalis checks what the model retains after processing. These are two orthogonal surfaces, the complementarity is obvious.”</p>
+        <h3>CEO AI security deeptech</h3>
+        <p style="font-style:italic;color:#94A3B8;margin-bottom:12px">"Our company protects models against extraction. Scanalis verifies what the model retains after processing. These are two orthogonal surfaces, the complementarity is obvious."</p>
         <p style="color:var(--accent);font-size:13px">→ Partnership in progress · May 2026</p>
       </div>
 
       <div class="mkt-c">
         <span class="mkt-icon">💬</span>
-        <h3>Senior Cybersecurity Expert · LinkedIn</h3>
-        <p style="font-style:italic;color:var(--ink2);margin-bottom:12px">«On RFC3161: the TSA qualified as eIDAS will better withstand a legal challenge. Curious to see what v3.3 gives in real conditions.»</p>
-        <p class="mkt-hl">→ Public comment · Objection integrated in v3.4</p>
+        <h3>Senior cybersecurity expert · LinkedIn</h3>
+        <p style="font-style:italic;color:var(--ink2);margin-bottom:12px">"On RFC3161: a qualified eIDAS TSA will hold up better under legal challenge. Curious to see what v3.5 delivers in real conditions."</p>
+        <p class="mkt-hl">→ Public comment · Feedback integrated in v3.5</p>
       </div>
 
       <div class="mkt-c">
         <span class="mkt-icon">🏛️</span>
         <h3>Head of Sales · Tech agency · Cyber network</h3>
-        <p style="font-style:italic;color:var(--ink2);margin-bottom:12px">"The RAM purge in sovereign LLMs it is a real requirement for some defense actors, to be 100% sure that data will not get mixed up in a subsequent session."</p>
-        <p class="mkt-hl">→ Linkedin · 2026</p>
+        <p style="font-style:italic;color:var(--ink2);margin-bottom:12px">"RAM purge in sovereign LLMs is a real requirement for certain Defense actors, to be 100% certain that data won't bleed across sessions."</p>
+        <p class="mkt-hl">→ LinkedIn · 2026</p>
       </div>
 
       <div class="mkt-c mkt-c--dark">
         <span class="mkt-icon">🌐</span>
-        <h3>Cybersecurity institution · Brittany</h3>
-        <p style="font-style:italic;color:#94A3B8;margin-bottom:12px">"In our network, no one today covers the post-purge forensic layer of LLMs. It’s not a competitor of what exists, it’s the missing link.”</p>
+        <h3>Institutional cybersecurity · Brittany</h3>
+        <p style="font-style:italic;color:#94A3B8;margin-bottom:12px">"In our network, nobody covers the forensic post-purge layer for LLMs today. This isn't a competitor to what exists, it's the missing link."</p>
         <p style="color:var(--accent);font-size:13px">→ Strategic meeting · May 2026</p>
       </div>
 
+      <div class="mkt-c">
+        <span class="mkt-icon">📊</span>
+        <h3>B2B SaaS product strategy expert</h3>
+        <p style="font-style:italic;color:var(--ink2);margin-bottom:12px">"I find the topic serious and differentiated. The key challenge is pedagogy and clarifying the exact scope of the solution."</p>
+        <p class="mkt-hl">→ UX/positioning audit integrated in this version · May 2026</p>
+      </div>
     </div>
   </div>
 </section>
 
-
-<!-- RÉGULATION -->
+<!-- REGULATION -->
 <section id="regulation">
   <div class="wrap">
     <span class="slabel">Regulation</span>
-    <h2>Each report addresses specific obligations</h2>
-    <p class="intro">Not recommendations. Legal articles. Obligations. Deadlines.</p>
+    <h2>What CISOs, DPOs, and CTOs must prove</h2>
+    <p class="intro">Not recommendations. Laws with your name on them. Deadlines that are coming.</p>
     <div class="reg-g">
-      <div class="reg-i"><div class="reg-n">GDPR</div><div class="reg-a">Art. 5(1)(e) + Art. 5(2) + Art. 32</div><div class="reg-d">Storage limitation + accountability + state-of-the-art security measures</div></div>
-      <div class="reg-i"><div class="reg-n">AI Act</div><div class="reg-a">Art. 10 + Art. 12 — Août 2026</div><div class="reg-d">Data governance + actual execution logging, full enforcement imminent</div></div>
-      <div class="reg-i"><div class="reg-n">DORA</div><div class="reg-a">Art. 25 + Art. 28</div><div class="reg-d">ICT resilience of third-party providers, LLMs involved since 2024</div></div>
-      <div class="reg-i"><div class="reg-n">NIS2</div><div class="reg-a">Art. 21</div><div class="reg-d">State-of-the-art 2026 security measures</div></div>
-      <div class="reg-i"><div class="reg-n">HDS 2024</div><div class="reg-a">Hosting données de santé</div><div class="reg-d">HDS certifies the host. Not LLM amnesia. Scanalis fills this regulatory gap.</div></div>
-      <div class="reg-i"><div class="reg-n">ANSSI</div><div class="reg-a">35 AI recommendations 2024</div><div class="reg-d">Rec. n°23: AI security audit before deployment and after major updates</div></div>
+      <div class="reg-i"><div class="reg-n">GDPR</div><div class="reg-a">Art. 5(1)(e) + Art. 5(2) + Art. 32</div><div class="reg-d">Storage limitation + accountability + security measures appropriate to the state of the art</div></div>
+      <div class="reg-i"><div class="reg-n">AI Act</div><div class="reg-a">Art. 10 + Art. 12: August 2026</div><div class="reg-d">Data governance + actual execution logging = full enforcement imminent</div></div>
+      <div class="reg-i"><div class="reg-n">DORA</div><div class="reg-a">Art. 25 + Art. 28</div><div class="reg-d">ICT resilience of third-party providers: LLMs in scope since 2024</div></div>
+      <div class="reg-i"><div class="reg-n">NIS2</div><div class="reg-a">Art. 21</div><div class="reg-d">Appropriate security measures at the 2026 state of the art</div></div>
+      <div class="reg-i"><div class="reg-n">HDS 2024</div><div class="reg-a">Health data hosting</div><div class="reg-d">HDS certifies the host. Not the LLM's amnesia. Scanalis fills this regulatory gap.</div></div>
+      <div class="reg-i"><div class="reg-n">ANSSI</div><div class="reg-a">35 AI recommendations 2024</div><div class="reg-d">Rec. n°23: AI security audit before deployment and after major update</div></div>
     </div>
   </div>
 </section>
 
-<!-- FAQ — GEO optimisé -->
+<!-- FAQ -->
 <section class="faq-sec" id="faq" aria-labelledby="faq-title">
   <div class="wrap-sm">
     <span class="slabel">Frequently asked questions</span>
-    <h2 id="faq-title">What DPOs, CISOs and CIOs ask</h2>
+    <h2 id="faq-title">What DPOs, CISOs, and CTOs ask</h2>
     <div class="qa-list">
 
       <div class="qa-item">
         <button class="qa-btn" onclick="toggle(this)" aria-expanded="false">
-          <span class="qa-q">How do I prove that an LLM has physically erased my personal data from RAM?</span>
+          <span class="qa-q">How do you prove that an LLM has physically erased personal data from RAM?</span>
           <span class="qa-tog">+</span>
         </button>
-        <div class="qa-ans"><p>The <strong>Canary Protocol</strong> Scanalis injects 8 cryptographic tokens into the LLM via its standard API, triggers the declared purge, and then scans the random access memory (RAM) byte by byte in 4 areas (application heap, Linux cache page, swap area, kernel buffers). The verdict is binary: <strong>AMNESIA_CONFIRMED</strong> if the purge is physically effective, <strong>AMNESIA_FAILED</strong> if any residues of personal data are detected with their exact memory address and their hex dump.</p></div>
+        <div class="qa-ans"><p>Scanalis's <strong>Canary Protocol</strong> injects 8 cryptographic canary tokens into the LLM via its standard API, triggers the declared purge, then scans volatile memory byte by byte across 4 zones (application heap, Linux page cache, swap space, kernel buffers). The verdict is binary: <strong>AMNESIA_CONFIRMED</strong> if physical erasure is effective, <strong>AMNESIA_FAILED</strong> if personal data residues are detected with their exact memory address and hex dump.</p></div>
       </div>
 
       <div class="qa-item">
@@ -854,15 +791,15 @@ h1{animation:fadeUp .5s .1s ease both}
           <span class="qa-q">What persists in RAM after an LLM has processed personal data?</span>
           <span class="qa-tog">+</span>
         </button>
-        <div class="qa-ans"><p>Four memory zones can retain residues after declared purging: the <strong>application heap</strong> (Python/Node dynamic allocations), the <strong>Linux cache page</strong> (data maintained by the kernel to optimize I/Os) , the <strong>swap area</strong> (RAM expansion on disk during peak load), and the <strong>kernel buffers</strong> (system areas not accessible to the application but readable by the computer). These residues can persist for several tens of minutes after the session is closed.</p></div>
+        <div class="qa-ans"><p>Four memory zones can retain residues after declared purge: the <strong>application heap</strong> (Python/Node dynamic allocations), the <strong>Linux page cache</strong> (data maintained by the kernel for I/O optimization), the <strong>swap space</strong> (RAM extension on disk during load peaks), and <strong>kernel buffers</strong> (system zones not accessible to the application but forensically readable). These residues can persist for tens of minutes after session close.</p></div>
       </div>
 
       <div class="qa-item">
         <button class="qa-btn" onclick="toggle(this)" aria-expanded="false">
-          <span class="qa-q">Is this a certification or a label?</span>
+          <span class="qa-q">Is it a certification or a label?</span>
           <span class="qa-tog">+</span>
         </button>
-        <div class="qa-ans"><p>Neither. Scanalis is a <strong>technical trusted third party</strong> which produces forensic evidence. Like a medical analysis laboratory: we produce the result, the result is the evidence. You interpret it with your DPO or your lawyer to establish GDPR compliance, Art. 5(2).</p></div>
+        <div class="qa-ans"><p>Neither. Scanalis is a <strong>technical trusted third party</strong> that produces verifiable forensic documentation. Like a testing laboratory: we produce the technical result, you interpret it with your DPO or legal counsel. The report documents the actual execution of the purge, it does not certify regulatory compliance.</p></div>
       </div>
 
       <div class="qa-item">
@@ -870,23 +807,23 @@ h1{animation:fadeUp .5s .1s ease both}
           <span class="qa-q">Is it intrusive? Do you access our infrastructure?</span>
           <span class="qa-tog">+</span>
         </button>
-        <div class="qa-ans"><p>No. Scanalis is <strong>non-intrusive by design</strong>. Zero agents installed on your servers. Zero SSH access. Zero access to the source code or model weights. The memory dump is generated by your teams (gcore or procdump) and transmitted securely. Scanalis interacts only via your LLM’s standard API interface, just like your own application.</p></div>
+        <div class="qa-ans"><p>No. Scanalis is <strong>non-intrusive by design</strong>. No agent installed on your servers. No SSH access. No access to source code or model weights. The memory dump is generated by your teams (gcore or procdump) and transmitted securely. Scanalis interacts only via your LLM's standard API, exactly like your own application.</p></div>
       </div>
 
       <div class="qa-item">
         <button class="qa-btn" onclick="toggle(this)" aria-expanded="false">
-          <span class="qa-q">We're HDS and ISO 27001 certified. Aren't we already covered?</span>
+          <span class="qa-q">We're certified HDS and ISO 27001. Aren't we already covered?</span>
           <span class="qa-tog">+</span>
         </button>
-        <div class="qa-ans"><p>No. <strong>HDS certifies the host of health data. ISO 27001 certifies governance.</strong> None of these certifications specifies the forensic audit of post-session LLMs volatile memory; this concept did not exist when they were written. The AI Act Article 12 (August 2026) will create this obligation of proof of actual execution that neither HDS nor ISO 27001 cover.</p></div>
+        <div class="qa-ans"><p>No. <strong>HDS certifies the health data host. ISO 27001 certifies governance.</strong> Neither specifies forensic audit of the volatile memory of LLMs post-session, this concept did not exist when they were written. AI Act Art. 12 (August 2026) will create this obligation for actual execution proof that neither HDS nor ISO 27001 covers.</p></div>
       </div>
 
       <div class="qa-item">
         <button class="qa-btn" onclick="toggle(this)" aria-expanded="false">
-          <span class="qa-q">Our LLM is hosted in France. Are we sovereign?</span>
+          <span class="qa-q">Our LLM is hosted in France. Aren't we sovereign?</span>
           <span class="qa-tog">+</span>
         </button>
-        <div class="qa-ans"><p>Sovereign hosting covers the physical storage location, not what the software does with the data once inside. If your model is of American origin (GPT-4, Claude, Llama...), <strong>the Cloud Act applies regardless of the server location</strong>. And whatever the model, post-purge memory persistence is independent of geography: it’s physics, not law.</p></div>
+        <div class="qa-ans"><p>Sovereign hosting covers the physical storage location, not what the software does with data once inside. If your model is of American origin (GPT-4, Claude, Llama...), <strong>the CLOUD Act applies regardless of server location</strong>. And regardless of the model, RAM persistence post-purge is independent of geography: it's physics, not law.</p></div>
       </div>
 
       <div class="qa-item">
@@ -894,7 +831,7 @@ h1{animation:fadeUp .5s .1s ease both}
           <span class="qa-q">Don't LLM DLPs do the same thing?</span>
           <span class="qa-tog">+</span>
         </button>
-        <div class="qa-ans"><p>No. The DLPs block what <strong>come</strong> in the LLM before treatment. Scanalis checks what <strong>remains</strong> in RAM after processing. Two complementary layers. A system can have the best DLP on the market and keep personal data residues in post-purge RAM; these are two distinct problems on the processing chain.</p></div>
+        <div class="qa-ans"><p>No. DLPs block what <strong>enters</strong> the LLM before processing. Scanalis verifies what <strong>remains</strong> in RAM after processing. Two complementary layers. A system can have the best DLP on the market and still retain personal data residues in volatile memory post-purge, these are two distinct problems on the processing chain.</p></div>
       </div>
 
       <div class="qa-item">
@@ -902,57 +839,79 @@ h1{animation:fadeUp .5s .1s ease both}
           <span class="qa-q">What happens to our report? And our data?</span>
           <span class="qa-tog">+</span>
         </button>
-        <div class="qa-ans"><p>Your report belongs to you, sealed SHA-256, any modification invalidates the hash, it is verifiable by any offline third party. Your customer data (memory dump, questionnaire) are <strong>destroyed within 20 calendar days</strong> via the shred -vfz -n 3 procedure (3 passes DoD 5220.22-M), with signed destruction certificate delivered with the report. Scanalis is insured RC Pro Cyber by Hiscox.</p></div>
+        <div class="qa-ans"><p>Your report belongs to you, SHA-256 sealed, any modification invalidates the hash, verifiable by any third party with openssl in 30 seconds. Your client data (memory dump, questionnaire) is <strong>destroyed within 20 calendar days</strong> via shred -vfz -n 3 (3-pass NIST SP 800-88 Rev.1), with a signed destruction attestation delivered with the report. Scanalis holds Cyber Professional Liability insurance from Hiscox SA.</p></div>
       </div>
 
       <div class="qa-item">
         <button class="qa-btn" onclick="toggle(this)" aria-expanded="false">
-          <span class="qa-q">Why had nobody done this before?</span>
+          <span class="qa-q">Does Scanalis work on ChatGPT, Claude, or Mistral via API?</span>
           <span class="qa-tog">+</span>
         </button>
-        <div class="qa-ans"><p>Three reasons. The LLMs in production are recent: 2022-2023. The regulation that creates the obligation has just entered into force: AI Act 2024, full application August 2026. And the RAM forensic skills combined with the operational mastery of LLMs in the same location are extremely rare. <strong>It’s not an oversight. It’s a window that just opened.</strong></p></div>
+        <div class="qa-ans"><p>Partially. For SaaS LLMs hosted by the vendor (OpenAI, Anthropic, Mistral cloud), Scanalis cannot scan the vendor's server RAM, nobody can. However, the <strong>Minerva Protocol</strong> applies via the public API to detect what the model memorized during training. And the Canary scan applies to the <strong>client-side orchestration layer</strong> middleware, local RAG, application cache, vector store. Every report explicitly documents this scope and its limits. That's a guarantee, not a gap.</p></div>
+      </div>
+
+      <div class="qa-item">
+        <button class="qa-btn" onclick="toggle(this)" aria-expanded="false">
+          <span class="qa-q">What's the difference between Scanalis and ISO 27001 or HDS?</span>
+          <span class="qa-tog">+</span>
+        </button>
+        <div class="qa-ans"><p><strong>ISO 27001 certifies governance. HDS certifies the host. Scanalis verifies physical execution.</strong> These certifications describe what you planned to do. Scanalis documents what actually happened in volatile memory after processing, a layer that neither ISO 27001 nor HDS specifies, because this concept didn't exist when they were written.</p></div>
+      </div>
+
+      <div class="qa-item">
+        <button class="qa-btn" onclick="toggle(this)" aria-expanded="false">
+          <span class="qa-q">The Anonymization Module : what exactly does Scanalis test?</span>
+          <span class="qa-tog">+</span>
+        </button>
+        <div class="qa-ans"><p>Scanalis doesn't do anonymization, it verifies that <strong>yours works at the physical level</strong>. Your pipeline transforms "John Smith" to "J*** S*****" before the LLM call. Scanalis verifies that "John Smith" doesn't appear in plaintext in volatile memory after processing, even if only the pseudonymized version was sent to the model. Three possible verdicts: <strong>ANON_VERIFIED</strong> (no leak), <strong>ANON_LEAK</strong> (original data in RAM), <strong>ANON_PARTIAL</strong> (leak in the pseudonymization pipeline itself, before the LLM).</p></div>
+      </div>
+
+      <div class="qa-item">
+        <button class="qa-btn" onclick="toggle(this)" aria-expanded="false">
+          <span class="qa-q">Why did nobody do this before?</span>
+          <span class="qa-tog">+</span>
+        </button>
+        <div class="qa-ans"><p>Three reasons. Production LLMs are recent: 2022–2023. The regulation creating the obligation just came into force: AI Act 2024, full enforcement August 2026. And combining forensic RAM expertise with operational LLM mastery in the same place is exceptionally rare. <strong>This isn't an oversight. It's a window that just opened.</strong></p></div>
       </div>
 
     </div>
   </div>
 </section>
 
-<!-- CTA FINAL -->
+<!-- FINAL CTA -->
 <section class="cta-sec">
   <div class="wrap">
-    <h2>Does your LLM really forget?</h2>
-    <p class="intro">Describe your system in a few lines. Scanalis assesses your exposure and guides you to the right audit level. No commitment.</p>
+    <h2>The proof your DLP cannot produce.</h2>
+    <p class="intro">Three questions. Which LLM? What data? What proof level do you need internal DPO / regulator / investor? I'll respond within 48h with a tailored proposal.</p>
     <div class="cta-btns">
-      <a href="mailto:contact@scanalis.fr?subject=Demande d'audit Scanalis" class="btn btn-dark" style="font-size:16px;padding:16px 32px">Écrire à contact@scanalis.fr →</a>
+      <a href="mailto:contact@scanalis.fr?subject=Scanalis Audit Request" class="btn btn-dark" style="font-size:16px;padding:16px 32px">Write to contact@scanalis.fr →</a>
       <a href="https://www.linkedin.com/in/mathilde-de-roumilly/" target="_blank" rel="noopener" class="btn-outline">LinkedIn  Mathilde De Roumilly</a>
     </div>
 
-    <!-- Présence en ligne -->
     <div class="social-strip">
       <div class="social-card">
         <span class="social-icon">▶</span>
         <div class="social-title">YouTube  RAM EXPOSED</div>
-        <div class="social-desc">Live RAM forensic demos. LLM memory scan, real incident analysis, regulatory breakdown.</div>
+        <div class="social-desc">Live RAM forensic demos. Volatile memory scanning on LLMs, real incident analysis, regulatory breakdown.</div>
         <a href="https://www.youtube.com/@mathildederoumilly" target="_blank" rel="noopener" class="social-link">@scanalis →</a>
       </div>
       <div class="social-card">
         <span class="social-icon">in</span>
         <div class="social-title">LinkedIn  Mathilde De Roumilly</div>
-        <div class="social-desc">AI forensics, real incidents, regulation. Daily posts on the LLM RAM blind spot.</div>
+        <div class="social-desc">AI forensics, real incidents, regulation. Daily posts on the RAM blind spot in LLMs.</div>
         <a href="https://www.linkedin.com/in/mathilde-de-roumilly/" target="_blank" rel="noopener" class="social-link">Follow on LinkedIn →</a>
       </div>
       <div class="social-card">
         <span class="social-icon">📍</span>
-        <div class="social-title">Google Business  Scanalis</div>
-        <div class="social-desc">Vannes, Brittany. LLM RAM forensic audit. Hiscox Cyber Pro Liability. Technical trusted third party.</div>
+        <div class="social-title">Scanalis</div>
+        <div class="social-desc">Vannes, Brittany, France. Forensic RAM audit for LLMs. Cyber liability insurance Hiscox. Technical trusted third party.</div>
         <a href="mailto:contact@scanalis.fr" class="social-link">contact@scanalis.fr →</a>
       </div>
     </div>
 
-    <p class="cta-note">3 slots per month · Mathilde scans · Mathilde signs</p>
+    <p class="cta-note">3 audit slots per month · Mathilde runs every scan · Mathilde signs every report</p>
   </div>
 </section>
-
 </main>
 
 <!-- FOOTER -->
@@ -962,9 +921,10 @@ h1{animation:fadeUp .5s .1s ease both}
       <div>
         <div class="foot-logo">Scanalis</div>
         <div class="foot-l">
-          France’s first forensic evidence infrastructure<br>
-          for the amnesia of artificial intelligence systems.<br>
-          Vannes, Brittany · RC Pro Cyber Hiscox
+          First French infrastructure for forensic proof<br>
+          of amnesia in artificial intelligence systems.<br>
+          Vannes, Brittany, France · Cyber liability insurance  Hiscox<br>
+          SIRET 99946660000015
         </div>
       </div>
       <div class="foot-links">
@@ -972,17 +932,17 @@ h1{animation:fadeUp .5s .1s ease both}
         <a href="https://www.linkedin.com/in/mathilde-de-roumilly/" target="_blank" rel="noopener" class="foot-link"><span class="foot-link-icon">in</span>LinkedIn  Mathilde De Roumilly</a>
         <a href="https://www.youtube.com/@mathildederoumilly" target="_blank" rel="noopener" class="foot-link"><span class="foot-link-icon">▶</span>YouTube  @scanalis</a>
       </div>
-      <div class="foot-r">« Le hash ne ment pas. »</div>
+      <div class="foot-r">"The hash doesn't lie."</div>
     </div>
 
-    <!-- MENTIONS LÉGALES -->
-    <div id="mentions-legales" style="margin-top:40px;padding-top:28px;border-top:1px solid var(--border)">
-      <p style="font-size:12px;font-weight:600;color:var(--ink2);margin-bottom:12px;font-family:var(--mono);letter-spacing:.5px;text-transform:uppercase">Legal notices</p>
+    <!-- LEGAL NOTICE -->
+    <div id="legal-notice" style="margin-top:40px;padding-top:28px;border-top:1px solid var(--border)">
+      <p style="font-size:12px;font-weight:600;color:var(--ink2);margin-bottom:12px;font-family:var(--mono);letter-spacing:.5px;text-transform:uppercase">Legal notice</p>
       <div style="display:grid;grid-template-columns:1fr 1fr;gap:16px 40px">
         <div style="font-size:12px;color:var(--ink3);line-height:1.7">
-          <strong style="color:var(--ink2)">Website publisher</strong><br>
-          Mathilde De Roumilly  Scanalis<br>
-          Fondatrice  Entreprise individuelle<br>
+          <strong style="color:var(--ink2)">Publisher</strong><br>
+          Mathilde De Roumilly Scanalis<br>
+          Founder  Sole Proprietorship<br>
           Vannes (56000), Brittany, France<br>
           contact@scanalis.fr
         </div>
@@ -990,17 +950,17 @@ h1{animation:fadeUp .5s .1s ease both}
           <strong style="color:var(--ink2)">Hosting</strong><br>
           GitHub Pages  GitHub Inc.<br>
           88 Colin P. Kelly Jr. St., San Francisco, CA 94107, USA<br>
-          <a href="https://docs.github.com/fr/pages" style="color:var(--accent);text-decoration:none" target="_blank" rel="noopener">docs.github.com/fr/pages</a>
+          <a href="https://docs.github.com/en/pages" style="color:var(--accent);text-decoration:none" target="_blank" rel="noopener">docs.github.com/en/pages</a>
         </div>
         <div style="font-size:12px;color:var(--ink3);line-height:1.7">
           <strong style="color:var(--ink2)">Professional insurance</strong><br>
-          RC Pro Cyber  Hiscox SA<br>
+          Cyber Professional Liability Hiscox SA<br>
           Coverage: cybersecurity audit, data processing<br>
           Territory: France and European Union
         </div>
         <div style="font-size:12px;color:var(--ink3);line-height:1.7">
           <strong style="color:var(--ink2)">Personal data</strong><br>
-          Scanalis only collects data voluntarily transmitted by email. No third-party cookies. No telemetry. Right of access and deletion: contact@scanalis.fr
+          Scanalis collects only data voluntarily submitted by email. No third-party cookies. No telemetry. Right of access and deletion: contact@scanalis.fr
         </div>
       </div>
     </div>
