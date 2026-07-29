@@ -5,6 +5,8 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Scanalis — Preuve forensique de sécurité pour serveurs IA | France</title>
 <meta name="description" content="Scanalis prouve que vos serveurs IA oublient vraiment les données sensibles. Verdict binaire. Rapport scellé SHA-256. Non intrusif. RGPD · AI Act · DORA.">
+<link rel="icon" type="image/svg+xml" href="favicon.svg">
+<link rel="icon" type="image/x-icon" href="favicon.ico">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Sans:opsz,wght@9..40,300;9..40,400;9..40,500;9..40,600&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet">
 <style>
@@ -177,6 +179,115 @@ footer{padding:40px 0;border-top:1px solid var(--border)}
       </div>
     </div>
     <p style="margin-top:36px;font-family:var(--mono);font-size:13px;color:var(--ink3)">AI Act Art.12 · Août 2026 · L'exécution réelle doit être prouvée — pas déclarée.</p>
+  </div>
+</section>
+
+<section id="use-cases" style="padding:88px 0;background:var(--paper2);border-top:1px solid var(--border)">
+  <div class="wrap">
+    <span class="slabel">Deux façons d'utiliser Scanalis</span>
+    <h2>Avant l'incident.<br>Ou après.</h2>
+    <p class="intro">Le même moteur forensique. Le même rapport scellé. Deux moments différents — les deux critiques.</p>
+    <div style="margin:52px 0;background:var(--ink);border-radius:16px;padding:48px 40px;overflow:hidden;position:relative">
+      <style>
+        @keyframes sc-flow{0%{opacity:0;transform:translateX(-20px)}100%{opacity:1;transform:translateX(0)}}
+        @keyframes sc-pulse{0%,100%{box-shadow:0 0 0 0 rgba(0,196,167,0)}50%{box-shadow:0 0 0 14px rgba(0,196,167,.1)}}
+        @keyframes sc-scan{0%{top:6px;opacity:1}85%{top:calc(100% - 6px);opacity:.8}100%{top:calc(100% - 6px);opacity:0}}
+        @keyframes sc-pop{0%{opacity:0;transform:scale(.8)}100%{opacity:1;transform:scale(1)}}
+        @keyframes sc-blink{0%,100%{opacity:.15}50%{opacity:1}}
+        @keyframes sc-canary{0%{opacity:0;transform:translateY(10px)}25%{opacity:1;transform:translateY(0)}75%{opacity:1;transform:translateY(0)}100%{opacity:0;transform:translateY(-10px)}}
+        .sc-step{animation:sc-flow .6s ease both}
+        .sc-server{animation:sc-pulse 3s ease-in-out infinite}
+        .sc-bar{animation:sc-scan 2.8s ease-in-out infinite}
+        .sc-badge{animation:sc-pop .5s cubic-bezier(.34,1.56,.64,1) 1.2s both}
+        .sc-d1{animation:sc-blink 1.4s .0s infinite}
+        .sc-d2{animation:sc-blink 1.4s .2s infinite}
+        .sc-d3{animation:sc-blink 1.4s .4s infinite}
+        .sc-c1{animation:sc-canary 2.5s .0s ease-in-out infinite}
+        .sc-c2{animation:sc-canary 2.5s .5s ease-in-out infinite}
+        .sc-c3{animation:sc-canary 2.5s 1s ease-in-out infinite}
+      </style>
+      <div style="display:grid;grid-template-columns:1fr 44px 1fr 44px 1fr;align-items:center;max-width:820px;margin:0 auto">
+        <div class="sc-step" style="animation-delay:.1s;text-align:center">
+          <div style="background:#161820;border:1px solid #2A3548;border-radius:12px;padding:22px 14px;margin-bottom:12px">
+            <div style="font-family:var(--mono);font-size:10px;color:#00C4A7;letter-spacing:1.2px;margin-bottom:12px">DONNEES ENTRANTES</div>
+            <div style="display:flex;flex-direction:column;gap:5px">
+              <div style="background:#1A2335;border-radius:4px;padding:5px 8px;font-family:var(--mono);font-size:9px;color:#94A3B8">Dossiers medicaux</div>
+              <div style="background:#1A2335;border-radius:4px;padding:5px 8px;font-family:var(--mono);font-size:9px;color:#94A3B8">Contrats confidentiels</div>
+              <div style="background:#1A2335;border-radius:4px;padding:5px 8px;font-family:var(--mono);font-size:9px;color:#94A3B8">Donnees financieres</div>
+            </div>
+          </div>
+          <div style="font-size:11px;color:#4B5563;line-height:1.5">Donnees sensibles<br>traitees par le LLM</div>
+        </div>
+        <div style="display:flex;align-items:center;justify-content:center">
+          <svg width="36" height="10"><line x1="0" y1="5" x2="28" y2="5" stroke="#00C4A7" stroke-width="1.5"/><polygon points="28,1 36,5 28,9" fill="#00C4A7"/></svg>
+        </div>
+        <div class="sc-step sc-server" style="animation-delay:.3s;text-align:center">
+          <div style="background:#0A1020;border:1.5px solid #00C4A7;border-radius:12px;padding:22px 14px;margin-bottom:12px;position:relative;overflow:hidden">
+            <div class="sc-bar" style="position:absolute;left:0;right:0;height:2px;background:linear-gradient(90deg,transparent,#00C4A7,transparent)"></div>
+            <div style="font-family:var(--mono);font-size:10px;color:#00C4A7;letter-spacing:1.2px;margin-bottom:12px">SERVEUR GPU</div>
+            <div style="display:flex;justify-content:center;gap:5px;margin-bottom:10px">
+              <span class="sc-c1" style="font-family:var(--mono);font-size:9px;background:rgba(0,196,167,.1);border:1px solid rgba(0,196,167,.3);color:#00C4A7;padding:3px 7px;border-radius:3px">C1</span>
+              <span class="sc-c2" style="font-family:var(--mono);font-size:9px;background:rgba(0,196,167,.1);border:1px solid rgba(0,196,167,.3);color:#00C4A7;padding:3px 7px;border-radius:3px">C2</span>
+              <span class="sc-c3" style="font-family:var(--mono);font-size:9px;background:rgba(0,196,167,.1);border:1px solid rgba(0,196,167,.3);color:#00C4A7;padding:3px 7px;border-radius:3px">C3</span>
+            </div>
+            <div style="font-family:var(--mono);font-size:9px;color:#4B5563;text-align:center">VRAM · KV Cache · mmap<br><span>analyse</span><span class="sc-d1" style="color:#00C4A7">.</span><span class="sc-d2" style="color:#00C4A7">.</span><span class="sc-d3" style="color:#00C4A7">.</span></div>
+          </div>
+          <div style="font-size:11px;color:#4B5563;line-height:1.5">Protocole Canary<br>scan octet par octet</div>
+        </div>
+        <div style="display:flex;align-items:center;justify-content:center">
+          <svg width="36" height="10"><line x1="0" y1="5" x2="28" y2="5" stroke="#00C4A7" stroke-width="1.5"/><polygon points="28,1 36,5 28,9" fill="#00C4A7"/></svg>
+        </div>
+        <div class="sc-step" style="animation-delay:.5s;text-align:center">
+          <div style="background:#161820;border:1px solid #2A3548;border-radius:12px;padding:22px 14px;margin-bottom:12px">
+            <div style="font-family:var(--mono);font-size:10px;color:#00C4A7;letter-spacing:1.2px;margin-bottom:12px">RAPPORT SCELLE</div>
+            <div class="sc-badge" style="background:rgba(0,196,167,.08);border:1.5px solid #00C4A7;border-radius:6px;padding:7px 8px;margin-bottom:8px">
+              <div style="font-family:var(--mono);font-size:9px;color:#00C4A7">AMNESIA_CONFIRMED</div>
+            </div>
+            <div style="display:flex;gap:3px;justify-content:center;flex-wrap:wrap">
+              <span style="font-family:var(--mono);font-size:8px;color:#4B5563;background:#0D1420;padding:2px 5px;border-radius:3px">SHA-256</span>
+              <span style="font-family:var(--mono);font-size:8px;color:#4B5563;background:#0D1420;padding:2px 5px;border-radius:3px">RSA-PSS</span>
+              <span style="font-family:var(--mono);font-size:8px;color:#4B5563;background:#0D1420;padding:2px 5px;border-radius:3px">RFC3161</span>
+            </div>
+          </div>
+          <div style="font-size:11px;color:#4B5563;line-height:1.5">Rapport forensique<br>livre en 48h</div>
+        </div>
+      </div>
+      <div style="text-align:center;margin-top:32px;font-family:var(--mono);font-size:10px;color:#1E2A40;letter-spacing:1px">
+        AUCUN AGENT · AUCUN SSH · AUCUN ACCES CLUSTER · DUMP GENERE PAR LE CLIENT
+      </div>
+    </div>
+    <div style="display:grid;grid-template-columns:1fr 1fr;gap:24px;margin-top:48px">
+      <div style="border:1px solid var(--border);border-radius:12px;padding:36px;background:var(--paper)">
+        <div style="display:flex;align-items:center;gap:12px;margin-bottom:20px">
+          <div style="width:40px;height:40px;border-radius:8px;background:#F0FBF9;display:flex;align-items:center;justify-content:center;font-size:20px">&#128737;</div>
+          <div>
+            <div style="font-family:var(--mono);font-size:10px;color:var(--accent);letter-spacing:1.5px;text-transform:uppercase">Proactif</div>
+            <div style="font-family:var(--serif);font-size:19px;color:var(--ink)">Audit de Securite IA</div>
+          </div>
+        </div>
+        <p style="font-size:14px;color:var(--ink2);line-height:1.75;margin-bottom:20px">Evaluez l'etancheite de votre cluster GPU <strong>avant deploiement</strong> ou avant un audit reglementaire. Prouvez que votre infrastructure oublie — avant qu'on vous le demande.</p>
+        <div style="display:flex;flex-direction:column;gap:8px">
+          <div style="font-size:13px;color:var(--ink3);font-family:var(--mono)">&#8594; Avant la mise en production</div>
+          <div style="font-size:13px;color:var(--ink3);font-family:var(--mono)">&#8594; Avant un audit ISO / AI Act</div>
+          <div style="font-size:13px;color:var(--ink3);font-family:var(--mono)">&#8594; Avant la signature d'un grand contrat</div>
+        </div>
+      </div>
+      <div style="border:1px solid var(--border);border-radius:12px;padding:36px;background:var(--paper)">
+        <div style="display:flex;align-items:center;gap:12px;margin-bottom:20px">
+          <div style="width:40px;height:40px;border-radius:8px;background:#FEF2F2;display:flex;align-items:center;justify-content:center;font-size:20px">&#128300;</div>
+          <div>
+            <div style="font-family:var(--mono);font-size:10px;color:#D94040;letter-spacing:1.5px;text-transform:uppercase">Reactif</div>
+            <div style="font-family:var(--serif);font-size:19px;color:var(--ink)">Forensique Memoire GPU</div>
+          </div>
+        </div>
+        <p style="font-size:14px;color:var(--ink2);line-height:1.75;margin-bottom:20px">Prouvez ce qui s'est passe dans la memoire de votre serveur <strong>apres un incident</strong> ou l'execution d'un modele sensible. Preuve forensique pour regulateurs, assureurs et equipes juridiques.</p>
+        <div style="display:flex;flex-direction:column;gap:8px">
+          <div style="font-size:13px;color:var(--ink3);font-family:var(--mono)">&#8594; Apres une suspicion de fuite</div>
+          <div style="font-size:13px;color:var(--ink3);font-family:var(--mono)">&#8594; Reponse a incident CNIL / regulateur</div>
+          <div style="font-size:13px;color:var(--ink3);font-family:var(--mono)">&#8594; Dossier assurance cyber</div>
+        </div>
+      </div>
+    </div>
   </div>
 </section>
 
