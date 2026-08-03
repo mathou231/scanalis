@@ -3,14 +3,12 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Scanalis — Preuve forensique de sécurité pour serveurs IA | France</title>
-<meta name="description" content="Scanalis prouve que vos serveurs IA oublient vraiment les données sensibles. Verdict binaire. Rapport scellé SHA-256. Non intrusif. RGPD · AI Act · DORA.">
-<link rel="icon" type="image/svg+xml" href="favicon.svg">
-<link rel="icon" type="image/x-icon" href="favicon.ico">
+<title>Scanalis — Sécurité & Conformité des Infrastructures IA | France</title>
+<meta name="description" content="Scanalis audite ce que vos outils de sécurité ne voient pas. Preuve forensique GPU non-intrusive, conformité EU AI Act, accompagnement Fractional AI Security Officer. SHA-256 scellé. 48h.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Sans:opsz,wght@9..40,300;9..40,400;9..40,500;9..40,600&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet">
 <style>
-:root{--ink:#0E0F11;--ink2:#2C2E33;--ink3:#6B7280;--paper:#FAFAF8;--paper2:#F3F3F0;--accent:#00C4A7;--accentd:#009E87;--red:#D94040;--border:#E4E4E0;--serif:'DM Serif Display',Georgia,serif;--sans:'DM Sans',system-ui,sans-serif;--mono:'DM Mono','Courier New',monospace}
+:root{--ink:#0E0F11;--ink2:#2C2E33;--ink3:#6B7280;--paper:#FAFAF8;--paper2:#F3F3F0;--accent:#00C4A7;--accentd:#009E87;--red:#D94040;--border:#E4E4E0;--serif:"DM Serif Display",Georgia,serif;--sans:"DM Sans",system-ui,sans-serif;--mono:"DM Mono","Courier New",monospace}
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
 html{scroll-behavior:smooth}
 body{font-family:var(--sans);background:var(--paper);color:var(--ink);font-size:17px;line-height:1.65;-webkit-font-smoothing:antialiased}
@@ -23,19 +21,20 @@ nav{position:fixed;top:0;left:0;right:0;z-index:100;background:rgba(250,250,248,
 .nav-links{display:flex;align-items:center;gap:24px;list-style:none}
 .nav-links a{font-size:14px;font-weight:500;color:var(--ink2);text-decoration:none;transition:color .2s}
 .nav-links a:hover{color:var(--accent)}
-.nav-cta{background:var(--ink);color:#fff;padding:9px 20px;border-radius:6px;font-size:14px;font-weight:500;text-decoration:none}
+.nav-cta{background:var(--ink);color:#fff;padding:9px 20px;border-radius:6px;font-size:14px;font-weight:500;text-decoration:none;transition:background .2s}
+.nav-cta:hover{background:var(--accentd)}
 .hero{padding:148px 0 100px;border-bottom:1px solid var(--border)}
-.eyebrow{display:inline-flex;align-items:center;gap:8px;font-family:var(--mono);font-size:12px;color:var(--accent);letter-spacing:1.2px;text-transform:uppercase;margin-bottom:28px}
-.eyebrow::before{content:'';display:block;width:6px;height:6px;border-radius:50%;background:var(--accent)}
+.eyebrow{display:inline-flex;align-items:center;gap:8px;font-family:var(--mono);font-size:12px;font-weight:500;color:var(--accent);letter-spacing:1.2px;text-transform:uppercase;margin-bottom:28px}
+.eyebrow::before{content:"";display:block;width:6px;height:6px;border-radius:50%;background:var(--accent)}
 h1{font-family:var(--serif);font-size:clamp(40px,5.5vw,70px);line-height:1.07;letter-spacing:-1.5px;color:var(--ink);max-width:860px;margin-bottom:24px}
 h1 em{font-style:italic;color:var(--accent)}
-.hero-sub{font-size:19px;font-weight:300;color:var(--ink2);max-width:520px;line-height:1.7;margin-bottom:40px}
+.hero-sub{font-size:19px;font-weight:300;color:var(--ink2);max-width:540px;line-height:1.7;margin-bottom:40px}
 .hero-btns{display:flex;align-items:center;gap:20px;flex-wrap:wrap}
 .btn{display:inline-flex;align-items:center;padding:14px 26px;border-radius:8px;font-size:15px;font-weight:500;text-decoration:none;transition:all .2s}
 .btn-dark{background:var(--ink);color:#fff}
 .btn-dark:hover{background:var(--accentd)}
 .btn-ghost{color:var(--ink2);border-bottom:1.5px solid var(--border);padding:0 0 2px;font-size:15px;font-weight:500;text-decoration:none}
-.btn-ghost:hover{color:var(--accent)}
+.btn-ghost:hover{color:var(--accent);border-color:var(--accent)}
 .verdicts{margin-top:52px;display:flex;gap:14px;flex-wrap:wrap}
 .vtag{display:inline-flex;align-items:center;gap:9px;padding:9px 16px;border-radius:6px;font-family:var(--mono);font-size:12px;font-weight:500}
 .vtag-ok{background:#F0FBF9;border:1.5px solid #A8E6DC;color:#00796B}
@@ -65,7 +64,7 @@ h2{font-family:var(--serif);font-size:clamp(28px,3.8vw,46px);line-height:1.1;let
 .briques-sec .intro{color:#94A3B8}
 .briques-g{display:grid;grid-template-columns:1fr 1fr;gap:2px;margin-top:52px;background:#2A2D36;border-radius:12px;overflow:hidden}
 .brique{background:#161820;padding:40px;position:relative}
-.brique::before{content:'';position:absolute;top:0;left:0;right:0;height:2px;background:var(--accent)}
+.brique::before{content:"";position:absolute;top:0;left:0;right:0;height:2px;background:var(--accent)}
 .brique-num{font-family:var(--mono);font-size:11px;color:var(--accent);letter-spacing:1.5px;margin-bottom:20px;display:block}
 .brique h3{font-family:var(--serif);font-size:22px;color:#fff;margin-bottom:10px}
 .brique p{font-size:14px;color:#94A3B8;line-height:1.65;margin-bottom:22px}
@@ -91,9 +90,17 @@ h2{font-family:var(--serif);font-size:clamp(28px,3.8vw,46px);line-height:1.1;let
 .founder{padding:72px 0;border-top:1px solid var(--border)}
 .founder-g{display:grid;grid-template-columns:200px 1fr;gap:52px;align-items:center;max-width:780px}
 .founder-photo{width:180px;height:180px;border-radius:50%;object-fit:cover;object-position:center;border:3px solid var(--border);display:block;margin:0 auto 16px;image-orientation:from-image}
+.roadmap-g{display:grid;grid-template-columns:repeat(4,1fr);gap:0;margin-top:52px;position:relative}
+.roadmap-g::before{content:"";position:absolute;top:28px;left:12.5%;right:12.5%;height:1px;background:var(--border)}
+.roadmap-step{padding:0 16px;position:relative}
+.roadmap-num{width:56px;height:56px;border-radius:50%;background:var(--ink);color:#fff;font-family:var(--mono);font-size:13px;display:flex;align-items:center;justify-content:center;margin:0 auto 20px;position:relative;z-index:1}
+.roadmap-step.active .roadmap-num{background:var(--accent);color:var(--ink)}
+.roadmap-title{font-family:var(--serif);font-size:17px;color:var(--ink);margin-bottom:8px;text-align:center}
+.roadmap-desc{font-size:13px;color:var(--ink3);line-height:1.6;text-align:center}
+.roadmap-delay{font-family:var(--mono);font-size:10px;color:var(--accent);text-align:center;margin-top:8px;letter-spacing:1px}
 .cta-sec{background:var(--ink);padding:96px 0;text-align:center}
-.cta-sec h2{color:#fff;max-width:560px;margin:0 auto 16px;font-size:clamp(28px,4vw,48px)}
-.cta-sub{font-size:17px;font-weight:300;color:#94A3B8;margin:0 auto 40px;max-width:460px}
+.cta-sec h2{color:#fff;max-width:600px;margin:0 auto 16px;font-size:clamp(28px,4vw,48px)}
+.cta-sub{font-size:17px;font-weight:300;color:#94A3B8;margin:0 auto 40px;max-width:500px}
 .cta-note{margin-top:24px;font-family:var(--mono);font-size:12px;color:#4B5563}
 .btn-white{background:#fff;color:var(--ink);padding:16px 32px;border-radius:8px;font-size:16px;font-weight:600;text-decoration:none;display:inline-block;transition:all .2s}
 .btn-white:hover{background:var(--accent);color:#fff}
@@ -104,7 +111,8 @@ footer{padding:40px 0;border-top:1px solid var(--border)}
 .foot-l{font-size:13px;color:var(--ink3)}
 .foot-r{font-family:var(--serif);font-style:italic;font-size:15px;color:var(--ink2)}
 @media(max-width:768px){
-  .briques-g,.proof-g,.gap-visual,.founder-g{grid-template-columns:1fr}
+  .briques-g,.proof-g,.gap-visual,.founder-g,.roadmap-g{grid-template-columns:1fr}
+  .roadmap-g::before{display:none}
   .stats-g{grid-template-columns:1fr 1fr}
   .tbl-head,.tbl-row,.tbl-scanalis{grid-template-columns:1fr}
   .nav-links{display:none}
@@ -113,334 +121,265 @@ footer{padding:40px 0;border-top:1px solid var(--border)}
 </style>
 </head>
 <body>
+
 <nav>
   <div class="nav-i">
     <a href="#" class="logo">Scan<span>alis</span></a>
     <div class="nav-right">
       <ul class="nav-links">
-        <li><a href="#probleme">Le problème</a></li>
-        <li><a href="#briques">L'audit</a></li>
-        <li><a href="#preuves">Références</a></li>
+        <li><a href="#detection">Ce qu'on detecte</a></li>
+        <li><a href="#methode">Comment ca marche</a></li>
+        <li><a href="#preuves">Ils en parlent</a></li>
         <li><a href="index-en.html" style="font-family:var(--mono);font-size:12px;color:var(--accent);border:1px solid var(--accent);padding:4px 10px;border-radius:3px">EN</a></li>
       </ul>
-      <a href="mailto:contact@scanalis.fr" class="nav-cta">Prendre contact</a>
+      <a href="https://cal.com/mathilde-de-roumilly-3zskha/30min" target="_blank" class="nav-cta">Diagnostic gratuit</a>
     </div>
   </div>
 </nav>
 
 <main>
+
+<!-- HERO -->
 <section class="hero">
   <div class="wrap">
-    <div class="eyebrow">IaaS · Forensique RAM · Protocole Canary · Protocole Minerve</div>
-    <h1>Votre serveur IA traite des données confidentielles.<br><em>La mémoire, elle, ne les oublie pas.</em></h1>
-    <p class="hero-sub">Scanalis produit la preuve cryptographique que vos systèmes ont physiquement effacé les données après traitement — sans jamais toucher à votre infrastructure.</p>
+    <div class="eyebrow">Securite IA &middot; Conformite EU AI Act &middot; Forensique GPU &middot; On-Premise & Cloud</div>
+    <h1>Votre infrastructure IA tourne.<br><em>Mais personne ne sait ce qu'elle retient.</em></h1>
+    <p class="hero-sub">Scanalis analyse ce que vos outils de securite ne voient pas et produit la preuve technique que vos donnees ont disparu apres traitement. Sans toucher a votre production.</p>
     <div class="hero-btns">
-      <a href="https://cal.com/mathilde-de-roumilly-3zskha/30min" target="_blank" class="btn btn-dark">Décrire mon infrastructure →</a>
-      <a href="#briques" class="btn-ghost">Voir les 4 briques d'audit</a>
+      <a href="https://cal.com/mathilde-de-roumilly-3zskha/30min" target="_blank" class="btn btn-dark">Obtenir mon diagnostic &rarr;</a>
+      <a href="#methode" class="btn-ghost">Voir comment ca fonctionne</a>
     </div>
     <div class="verdicts">
-      <span class="vtag vtag-ok"><span class="vdot"></span>AMNESIA_CONFIRMED : effacement physique vérifié</span>
-      <span class="vtag vtag-fail"><span class="vdot"></span>AMNESIA_FAILED : résidus mémoire détectés</span>
+      <span class="vtag vtag-ok"><span class="vdot"></span>AMNESIA_CONFIRMED : effacement physique verifie</span>
+      <span class="vtag vtag-fail"><span class="vdot"></span>AMNESIA_FAILED : residus memoire detectes</span>
     </div>
   </div>
 </section>
 
+<!-- STATS -->
 <div class="stats">
   <div class="wrap">
     <div class="stats-g">
-      <div class="stat"><div class="stat-n">8</div><div class="stat-l">jetons canaris cryptographiques par session</div></div>
-      <div class="stat"><div class="stat-n">4</div><div class="stat-l">zones RAM scannées octet par octet</div></div>
-      <div class="stat"><div class="stat-n">SHA-256</div><div class="stat-l">rapport scellé, vérifiable hors ligne</div></div>
-      <div class="stat"><div class="stat-n">NIST SP 800-88</div><div class="stat-l">standard de purge certifiée 3 passes</div></div>
+      <div class="stat"><div class="stat-n">48h</div><div class="stat-l">delai de livraison du rapport complet</div></div>
+      <div class="stat"><div class="stat-n">4</div><div class="stat-l">couches d'infrastructure auditees : RAM, GPU, Reseau, Modele</div></div>
+      <div class="stat"><div class="stat-n">SHA-256</div><div class="stat-l">rapport scelle, opposable a vos auditeurs et regulateurs</div></div>
+      <div class="stat"><div class="stat-n">0</div><div class="stat-l">interruption de production &mdash; 100% non intrusif</div></div>
     </div>
   </div>
 </div>
 
-<section id="probleme">
+<!-- PROBLEME -->
+<section id="detection">
   <div class="wrap">
-    <span class="slabel">L'angle mort</span>
-    <h2>Votre IA dit qu'elle oublie.<br>Personne ne vérifie les octets.</h2>
-    <p class="intro">Quand votre serveur LLM traite une donnée sensible, elle est déchiffrée et placée en clair en mémoire volatile. La session se ferme. Le système déclare la purge. Les octets, eux, restent.</p>
+    <span class="slabel">Le risque que personne ne mesure encore</span>
+    <h2>Votre IA traite des donnees critiques.<br>Pouvez-vous prouver qu'elle les a oubliees ?</h2>
+    <p class="intro">Quand un LLM traite un contrat confidentiel, un dossier medical ou des donnees financieres, ces informations sont dechiffrees et chargees en memoire physique. La session se ferme. Le systeme declare la purge. Mais la memoire du serveur GPU ne se vide pas automatiquement.</p>
     <div class="gap-visual">
       <div class="gap-col">
-        <span class="gap-status gap-ok">✓ CHIFFRÉ</span>
+        <span class="gap-status gap-ok">&#10003; SECURISE</span>
         <div class="gap-title">En transit</div>
-        <div class="gap-desc">TLS 1.3. Votre donnée est protégée sur le réseau.</div>
+        <div class="gap-desc">TLS 1.3. Votre reseau est protege. Tout le monde sait faire ca.</div>
       </div>
       <div class="gap-col" style="background:#FFFBF0">
-        <span class="gap-status gap-warn">⚠ EN CLAIR</span>
+        <span class="gap-status gap-warn">&#9888; EXPOSE</span>
         <div class="gap-title">En traitement</div>
-        <div class="gap-desc">Pendant l'inférence, les données sont déchiffrées en mémoire GPU. Aucun outil de monitoring ne surveille cette couche.</div>
+        <div class="gap-desc">Donnees en clair dans la memoire GPU pendant l'inference. Votre SIEM est aveugle sur cette couche.</div>
       </div>
       <div class="gap-col" style="background:#FFF8F8">
-        <span class="gap-status gap-unk">? NON VÉRIFIÉ</span>
-        <div class="gap-title">Après session</div>
-        <div class="gap-desc">Le système déclare avoir purgé. Personne ne vérifie physiquement. Votre DLP ne voit pas ça. Votre SIEM non plus.</div>
+        <span class="gap-status gap-unk">? NON PROUVE</span>
+        <div class="gap-title">Apres session</div>
+        <div class="gap-desc">Le systeme dit "purge". Personne ne verifie physiquement. Votre DLP ne voit pas ca. Votre SIEM non plus.</div>
       </div>
     </div>
-    <p style="margin-top:36px;font-family:var(--mono);font-size:13px;color:var(--ink3)">AI Act Art.12 · Août 2026 · L'exécution réelle doit être prouvée — pas déclarée.</p>
+    <p style="margin-top:36px;font-family:var(--mono);font-size:13px;color:var(--ink3)">EU AI Act Art.12 &middot; Aout 2026 &middot; L'execution reelle doit etre prouvee &mdash; pas declaree.</p>
   </div>
 </section>
 
-<section id="use-cases" style="padding:88px 0;background:var(--paper2);border-top:1px solid var(--border)">
+<!-- USE CASES -->
+<section style="padding:88px 0;background:var(--paper2);border-top:1px solid var(--border)">
   <div class="wrap">
-    <span class="slabel">Deux façons d'utiliser Scanalis</span>
-    <h2>Avant l'incident.<br>Ou après.</h2>
-    <p class="intro">Le même moteur forensique. Le même rapport scellé. Deux moments différents — les deux critiques.</p>
-    <div style="margin:52px 0;background:var(--ink);border-radius:16px;padding:48px 40px;overflow:hidden;position:relative">
-      <style>
-        @keyframes sc-flow{0%{opacity:0;transform:translateX(-20px)}100%{opacity:1;transform:translateX(0)}}
-        @keyframes sc-pulse{0%,100%{box-shadow:0 0 0 0 rgba(0,196,167,0)}50%{box-shadow:0 0 0 14px rgba(0,196,167,.1)}}
-        @keyframes sc-scan{0%{top:6px;opacity:1}85%{top:calc(100% - 6px);opacity:.8}100%{top:calc(100% - 6px);opacity:0}}
-        @keyframes sc-pop{0%{opacity:0;transform:scale(.8)}100%{opacity:1;transform:scale(1)}}
-        @keyframes sc-blink{0%,100%{opacity:.15}50%{opacity:1}}
-        @keyframes sc-canary{0%{opacity:0;transform:translateY(10px)}25%{opacity:1;transform:translateY(0)}75%{opacity:1;transform:translateY(0)}100%{opacity:0;transform:translateY(-10px)}}
-        .sc-step{animation:sc-flow .6s ease both}
-        .sc-server{animation:sc-pulse 3s ease-in-out infinite}
-        .sc-bar{animation:sc-scan 2.8s ease-in-out infinite}
-        .sc-badge{animation:sc-pop .5s cubic-bezier(.34,1.56,.64,1) 1.2s both}
-        .sc-d1{animation:sc-blink 1.4s .0s infinite}
-        .sc-d2{animation:sc-blink 1.4s .2s infinite}
-        .sc-d3{animation:sc-blink 1.4s .4s infinite}
-        .sc-c1{animation:sc-canary 2.5s .0s ease-in-out infinite}
-        .sc-c2{animation:sc-canary 2.5s .5s ease-in-out infinite}
-        .sc-c3{animation:sc-canary 2.5s 1s ease-in-out infinite}
-      </style>
-      <div style="display:grid;grid-template-columns:1fr 44px 1fr 44px 1fr;align-items:center;max-width:820px;margin:0 auto">
-        <div class="sc-step" style="animation-delay:.1s;text-align:center">
-          <div style="background:#161820;border:1px solid #2A3548;border-radius:12px;padding:22px 14px;margin-bottom:12px">
-            <div style="font-family:var(--mono);font-size:10px;color:#00C4A7;letter-spacing:1.2px;margin-bottom:12px">DONNEES ENTRANTES</div>
-            <div style="display:flex;flex-direction:column;gap:5px">
-              <div style="background:#1A2335;border-radius:4px;padding:5px 8px;font-family:var(--mono);font-size:9px;color:#94A3B8">Dossiers medicaux</div>
-              <div style="background:#1A2335;border-radius:4px;padding:5px 8px;font-family:var(--mono);font-size:9px;color:#94A3B8">Contrats confidentiels</div>
-              <div style="background:#1A2335;border-radius:4px;padding:5px 8px;font-family:var(--mono);font-size:9px;color:#94A3B8">Donnees financieres</div>
-            </div>
-          </div>
-          <div style="font-size:11px;color:#4B5563;line-height:1.5">Donnees sensibles<br>traitees par le LLM</div>
-        </div>
-        <div style="display:flex;align-items:center;justify-content:center">
-          <svg width="36" height="10"><line x1="0" y1="5" x2="28" y2="5" stroke="#00C4A7" stroke-width="1.5"/><polygon points="28,1 36,5 28,9" fill="#00C4A7"/></svg>
-        </div>
-        <div class="sc-step sc-server" style="animation-delay:.3s;text-align:center">
-          <div style="background:#0A1020;border:1.5px solid #00C4A7;border-radius:12px;padding:22px 14px;margin-bottom:12px;position:relative;overflow:hidden">
-            <div class="sc-bar" style="position:absolute;left:0;right:0;height:2px;background:linear-gradient(90deg,transparent,#00C4A7,transparent)"></div>
-            <div style="font-family:var(--mono);font-size:10px;color:#00C4A7;letter-spacing:1.2px;margin-bottom:12px">SERVEUR GPU</div>
-            <div style="display:flex;justify-content:center;gap:5px;margin-bottom:10px">
-              <span class="sc-c1" style="font-family:var(--mono);font-size:9px;background:rgba(0,196,167,.1);border:1px solid rgba(0,196,167,.3);color:#00C4A7;padding:3px 7px;border-radius:3px">C1</span>
-              <span class="sc-c2" style="font-family:var(--mono);font-size:9px;background:rgba(0,196,167,.1);border:1px solid rgba(0,196,167,.3);color:#00C4A7;padding:3px 7px;border-radius:3px">C2</span>
-              <span class="sc-c3" style="font-family:var(--mono);font-size:9px;background:rgba(0,196,167,.1);border:1px solid rgba(0,196,167,.3);color:#00C4A7;padding:3px 7px;border-radius:3px">C3</span>
-            </div>
-            <div style="font-family:var(--mono);font-size:9px;color:#4B5563;text-align:center">VRAM · KV Cache · mmap<br><span>analyse</span><span class="sc-d1" style="color:#00C4A7">.</span><span class="sc-d2" style="color:#00C4A7">.</span><span class="sc-d3" style="color:#00C4A7">.</span></div>
-          </div>
-          <div style="font-size:11px;color:#4B5563;line-height:1.5">Protocole Canary<br>scan octet par octet</div>
-        </div>
-        <div style="display:flex;align-items:center;justify-content:center">
-          <svg width="36" height="10"><line x1="0" y1="5" x2="28" y2="5" stroke="#00C4A7" stroke-width="1.5"/><polygon points="28,1 36,5 28,9" fill="#00C4A7"/></svg>
-        </div>
-        <div class="sc-step" style="animation-delay:.5s;text-align:center">
-          <div style="background:#161820;border:1px solid #2A3548;border-radius:12px;padding:22px 14px;margin-bottom:12px">
-            <div style="font-family:var(--mono);font-size:10px;color:#00C4A7;letter-spacing:1.2px;margin-bottom:12px">RAPPORT SCELLE</div>
-            <div class="sc-badge" style="background:rgba(0,196,167,.08);border:1.5px solid #00C4A7;border-radius:6px;padding:7px 8px;margin-bottom:8px">
-              <div style="font-family:var(--mono);font-size:9px;color:#00C4A7">AMNESIA_CONFIRMED</div>
-            </div>
-            <div style="display:flex;gap:3px;justify-content:center;flex-wrap:wrap">
-              <span style="font-family:var(--mono);font-size:8px;color:#4B5563;background:#0D1420;padding:2px 5px;border-radius:3px">SHA-256</span>
-              <span style="font-family:var(--mono);font-size:8px;color:#4B5563;background:#0D1420;padding:2px 5px;border-radius:3px">RSA-PSS</span>
-              <span style="font-family:var(--mono);font-size:8px;color:#4B5563;background:#0D1420;padding:2px 5px;border-radius:3px">RFC3161</span>
-            </div>
-          </div>
-          <div style="font-size:11px;color:#4B5563;line-height:1.5">Rapport forensique<br>livre en 48h</div>
+    <span class="slabel">Quand faire appel a Scanalis</span>
+    <h2>Avant que ca coute cher.<br>Ou apres &mdash; pour comprendre ce qui s'est passe.</h2>
+    <p class="intro">Les entreprises qui nous contactent ont deux profils. Celles qui anticipent. Celles qui reagissent. Dans les deux cas : une preuve technique que leur infrastructure dit la verite.</p>
+    <div style="display:grid;grid-template-columns:1fr 1fr;gap:24px;margin-top:52px">
+      <div style="border:1px solid var(--border);border-radius:12px;padding:36px;background:var(--paper)">
+        <div style="font-family:var(--mono);font-size:10px;color:var(--accent);letter-spacing:1.5px;text-transform:uppercase;margin-bottom:16px">Proactif</div>
+        <div style="font-family:var(--serif);font-size:22px;color:var(--ink);margin-bottom:16px">Audit de Securite IA</div>
+        <p style="font-size:14px;color:var(--ink2);line-height:1.75;margin-bottom:24px">Vous deployez un LLM sur des donnees sensibles. Un audit reglementaire arrive. Un contrat grand compte exige une preuve. Vous voulez savoir ce que votre infrastructure expose vraiment.</p>
+        <div style="display:flex;flex-direction:column;gap:8px">
+          <div style="font-size:13px;color:var(--ink3);font-family:var(--mono)">&rarr; Avant la mise en production</div>
+          <div style="font-size:13px;color:var(--ink3);font-family:var(--mono)">&rarr; Avant un audit ISO / AI Act</div>
+          <div style="font-size:13px;color:var(--ink3);font-family:var(--mono)">&rarr; Avant la signature d'un contrat strategique</div>
         </div>
       </div>
-      <div style="text-align:center;margin-top:32px;font-family:var(--mono);font-size:10px;color:#1E2A40;letter-spacing:1px">
-        AUCUN AGENT · AUCUN SSH · AUCUN ACCES CLUSTER · DUMP GENERE PAR LE CLIENT
+      <div style="border:1px solid var(--border);border-radius:12px;padding:36px;background:var(--paper)">
+        <div style="font-family:var(--mono);font-size:10px;color:#D94040;letter-spacing:1.5px;text-transform:uppercase;margin-bottom:16px">Reactif</div>
+        <div style="font-family:var(--serif);font-size:22px;color:var(--ink);margin-bottom:16px">Forensique Post-Incident</div>
+        <p style="font-size:14px;color:var(--ink2);line-height:1.75;margin-bottom:24px">Une anomalie a ete detectee. Un regulateur demande une preuve. Un incident implique votre infrastructure IA. Vous avez besoin d'une expertise independante et d'un rapport opposable en urgence.</p>
+        <div style="display:flex;flex-direction:column;gap:8px">
+          <div style="font-size:13px;color:var(--ink3);font-family:var(--mono)">&rarr; Apres une suspicion de fuite</div>
+          <div style="font-size:13px;color:var(--ink3);font-family:var(--mono)">&rarr; Reponse a incident CNIL / regulateur</div>
+          <div style="font-size:13px;color:var(--ink3);font-family:var(--mono)">&rarr; Dossier assurance cyber</div>
+        </div>
       </div>
     </div>
-    <div style="display:grid;grid-template-columns:1fr 1fr;gap:24px;margin-top:48px">
-      <div style="border:1px solid var(--border);border-radius:12px;padding:36px;background:var(--paper)">
-        <div style="display:flex;align-items:center;gap:12px;margin-bottom:20px">
-          <div style="width:40px;height:40px;border-radius:8px;background:#F0FBF9;display:flex;align-items:center;justify-content:center;font-size:20px">&#128737;</div>
-          <div>
-            <div style="font-family:var(--mono);font-size:10px;color:var(--accent);letter-spacing:1.5px;text-transform:uppercase">Proactif</div>
-            <div style="font-family:var(--serif);font-size:19px;color:var(--ink)">Audit de Securite IA</div>
-          </div>
-        </div>
-        <p style="font-size:14px;color:var(--ink2);line-height:1.75;margin-bottom:20px">Evaluez l'etancheite de votre cluster GPU <strong>avant deploiement</strong> ou avant un audit reglementaire. Prouvez que votre infrastructure oublie — avant qu'on vous le demande.</p>
-        <div style="display:flex;flex-direction:column;gap:8px">
-          <div style="font-size:13px;color:var(--ink3);font-family:var(--mono)">&#8594; Avant la mise en production</div>
-          <div style="font-size:13px;color:var(--ink3);font-family:var(--mono)">&#8594; Avant un audit ISO / AI Act</div>
-          <div style="font-size:13px;color:var(--ink3);font-family:var(--mono)">&#8594; Avant la signature d'un grand contrat</div>
-        </div>
+    <div style="margin-top:32px;padding:28px 32px;background:var(--ink);border-radius:12px;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:20px">
+      <div>
+        <div style="font-family:var(--serif);font-size:18px;color:#fff;margin-bottom:6px">Dans les deux cas &mdash; un rapport SHA-256 scelle en 48h.</div>
+        <div style="font-size:13px;color:#94A3B8;font-family:var(--mono)">Opposable a vos auditeurs, votre COMEX, votre regulateur.</div>
       </div>
-      <div style="border:1px solid var(--border);border-radius:12px;padding:36px;background:var(--paper)">
-        <div style="display:flex;align-items:center;gap:12px;margin-bottom:20px">
-          <div style="width:40px;height:40px;border-radius:8px;background:#FEF2F2;display:flex;align-items:center;justify-content:center;font-size:20px">&#128300;</div>
-          <div>
-            <div style="font-family:var(--mono);font-size:10px;color:#D94040;letter-spacing:1.5px;text-transform:uppercase">Reactif</div>
-            <div style="font-family:var(--serif);font-size:19px;color:var(--ink)">Forensique Memoire GPU</div>
-          </div>
-        </div>
-        <p style="font-size:14px;color:var(--ink2);line-height:1.75;margin-bottom:20px">Prouvez ce qui s'est passe dans la memoire de votre serveur <strong>apres un incident</strong> ou l'execution d'un modele sensible. Preuve forensique pour regulateurs, assureurs et equipes juridiques.</p>
-        <div style="display:flex;flex-direction:column;gap:8px">
-          <div style="font-size:13px;color:var(--ink3);font-family:var(--mono)">&#8594; Apres une suspicion de fuite</div>
-          <div style="font-size:13px;color:var(--ink3);font-family:var(--mono)">&#8594; Reponse a incident CNIL / regulateur</div>
-          <div style="font-size:13px;color:var(--ink3);font-family:var(--mono)">&#8594; Dossier assurance cyber</div>
-        </div>
-      </div>
+      <a href="https://cal.com/mathilde-de-roumilly-3zskha/30min" target="_blank" style="background:var(--accent);color:#0B1220;padding:14px 24px;border-radius:8px;font-size:14px;font-weight:600;text-decoration:none;white-space:nowrap">Obtenir mon diagnostic &rarr;</a>
     </div>
   </div>
 </section>
 
-<section id="briques" class="briques-sec">
+<!-- 4 BRIQUES -->
+<section id="audit" class="briques-sec">
   <div class="wrap">
-    <span class="slabel" style="color:var(--accent)">Audit d'entrée</span>
-    <h2>Cartographie forensique complète<br>de votre surface d'exposition IA.</h2>
-    <p class="intro">4 briques. 4 verdicts binaires. 1 rapport scellé SHA-256 opposable à vos auditeurs. 100% non intrusif.</p>
+    <span class="slabel" style="color:var(--accent)">Ce qu'on analyse dans votre infrastructure</span>
+    <h2>Quatre couches. Quatre verdicts.<br>Une vision complete de votre exposition reelle.</h2>
+    <p class="intro">Votre infrastructure IA a des angles morts que vos outils actuels ne couvrent pas. On les cartographie tous. Sans acces a votre production. Sans interruption de service.</p>
     <div class="briques-g">
       <div class="brique">
-        <span class="brique-num">01 · RAM Forensics</span>
+        <span class="brique-num">01 &middot; Memoire RAM post-session</span>
         <h3>Protocole Canary</h3>
-        <p>8 jetons cryptographiques via votre API standard. Scan sur 4 zones : heap, page cache, swap, buffers kernel.</p>
+        <p>8 marqueurs cryptographiques injectes via votre API standard. Scan sur 4 zones memoire apres purge declaree : heap, page cache Linux, swap, buffers kernel. Si vos donnees persistent &mdash; vous le savez.</p>
         <div class="brique-verdicts"><span class="bv bv-ok">AMNESIA_CONFIRMED</span><span class="bv bv-ko">AMNESIA_FAILED</span></div>
       </div>
       <div class="brique">
-        <span class="brique-num">02 · Hardware</span>
-        <h3>Infrastructure Scorecard</h3>
-        <p>IOMMU, GPU dédié, blobs CUDA SHA-256, SR-IOV, KV Cache multi-tenant. Contre ANSSI-PA-102 R16/R20.</p>
+        <span class="brique-num">02 &middot; Infrastructure Hardware GPU</span>
+        <h3>Scorecard ANSSI-PA-102</h3>
+        <p>IOMMU, dedicace GPU, integrite des drivers CUDA SHA-256, configuration SR-IOV, KV Cache multi-tenant. Evaluation de votre hardware contre les standards ANSSI R16/R20.</p>
         <div class="brique-verdicts"><span class="bv bv-ok">COMPLIANT</span><span class="bv bv-ko">NON_COMPLIANT</span></div>
       </div>
       <div class="brique">
-        <span class="brique-num">03 · Réseau GPU</span>
-        <h3>RDMA & Fabric Assessment</h3>
-        <p>InfiniBand, RoCEv2, NVLink Memory Regions, UFM. Évaluation documentaire — aucun accès cluster requis.</p>
+        <span class="brique-num">03 &middot; Reseau GPU & Fabric</span>
+        <h3>Evaluation RDMA / NVLink</h3>
+        <p>Les transferts InfiniBand et NVLink bypassent votre SIEM. Votre EDR ne les voit pas. On evalue votre isolation fabric et la politique de deregistration des Memory Regions sans toucher au cluster.</p>
         <div class="brique-verdicts"><span class="bv bv-ok">RDMA_ISOLATED</span><span class="bv bv-ko">RDMA_EXPOSED</span></div>
       </div>
       <div class="brique">
-        <span class="brique-num">04 · Comportement modèle</span>
+        <span class="brique-num">04 &middot; Comportement du modele</span>
         <h3>Protocole Minerve</h3>
-        <p>35 sondes forensiques, 7 catégories RGPD. Mémorisation dans les modèles base, LoRA ou distillés.</p>
+        <p>35 sondes forensiques sur 7 categories RGPD. On detecte si votre modele a memorise des donnees sensibles issues du fine-tuning ou du RAG qu'il peut restituer sur requete.</p>
         <div class="brique-verdicts"><span class="bv bv-ok">MINERVE_NOT_DETECTED</span><span class="bv bv-ko">MINERVE_EXPOSED</span></div>
       </div>
     </div>
   </div>
 </section>
 
-<section>
+<!-- ROADMAP -->
+<section id="methode">
   <div class="wrap">
-    <span class="slabel">Positionnement</span>
-    <h2>Ce que vos outils actuels<br>ne regardent pas.</h2>
-    <p class="intro">Scanalis couvre la couche qu'aucun outil existant n'a été conçu pour couvrir.</p>
-    <div class="tbl">
-      <div class="tbl-head"><span>Outil</span><span>Ce qu'il couvre</span><span>RAM post-purge</span></div>
-      <div class="tbl-row"><span class="tbl-tool">DLP pour LLM</span><span class="tbl-covers">Bloque ce qui entre avant le traitement</span><span class="tbl-no">Non couvert ✗</span></div>
-      <div class="tbl-row"><span class="tbl-tool">Big Four / Audit</span><span class="tbl-covers">Vérifie les déclarations et politiques</span><span class="tbl-no">Non couvert ✗</span></div>
-      <div class="tbl-row"><span class="tbl-tool">Pentest</span><span class="tbl-covers">Trouve les portes d'entrée</span><span class="tbl-no">Non couvert ✗</span></div>
-      <div class="tbl-row"><span class="tbl-tool">ISO 27001 / HDS</span><span class="tbl-covers">Certifie la gouvernance</span><span class="tbl-no">Non couvert ✗</span></div>
-      <div class="tbl-scanalis"><span class="tbl-scanalis-n">Scanalis</span><span style="font-size:13px;color:var(--ink2)">Purge physique + preuve forensique post-purge</span><span class="tbl-yes">Seul outil ✓</span></div>
+    <span class="slabel">Comment on travaille ensemble</span>
+    <h2>De la premiere conversation<br>a la preuve opposable.</h2>
+    <p class="intro">Un processus en quatre etapes. Clair, documente, sans surprise. Vous savez exactement ce qui se passe et ce qui arrive ensuite.</p>
+    <div class="roadmap-g" style="margin-top:52px">
+      <div class="roadmap-step active">
+        <div class="roadmap-num">01</div>
+        <div class="roadmap-title">Diagnostic</div>
+        <div class="roadmap-desc">30 minutes. On cartographie votre infrastructure, vos donnees, votre contexte reglementaire. On sait ce qu'on audite et pourquoi.</div>
+        <div class="roadmap-delay">Semaine 1</div>
+      </div>
+      <div class="roadmap-step">
+        <div class="roadmap-num">02</div>
+        <div class="roadmap-title">Audit</div>
+        <div class="roadmap-desc">Votre equipe genere un dump memoire standard. On analyse hors ligne sur machine deconnectee. 4 verdicts binaires. Rapport scelle SHA-256.</div>
+        <div class="roadmap-delay">Semaines 1-2</div>
+      </div>
+      <div class="roadmap-step">
+        <div class="roadmap-num">03</div>
+        <div class="roadmap-title">Roadmap</div>
+        <div class="roadmap-desc">Un plan d'action priorise sur 12 mois. Pas 40 pages. Une feuille A4 avec ce qui change, dans quel ordre, et pourquoi.</div>
+        <div class="roadmap-delay">Semaine 3</div>
+      </div>
+      <div class="roadmap-step">
+        <div class="roadmap-num">04</div>
+        <div class="roadmap-title">Suivi continu</div>
+        <div class="roadmap-desc">Monitoring mensuel, alertes sur les derives, rapport scelle chaque mois. Votre dossier de conformite se construit mois apres mois.</div>
+        <div class="roadmap-delay">Mois 2-12</div>
+      </div>
     </div>
   </div>
 </section>
 
-<section id="preuves" style="background:var(--paper2)">
+<!-- COMPARATIF -->
+<section style="background:var(--paper2);padding:88px 0;border-top:1px solid var(--border)">
   <div class="wrap">
-    <span class="slabel">Références terrain</span>
-    <h2>Ce que disent ceux qui ont posé<br>les vraies questions.</h2>
+    <span class="slabel">Ce que vos outils actuels ne couvrent pas</span>
+    <h2>Votre stack de securite a ete concue<br>avant que les LLMs existent en production.</h2>
+    <p class="intro">Ce n'est pas un defaut de vos equipes. C'est un decalage temporel entre la vitesse de l'ingenierie et la vitesse des outils. Scanalis couvre la couche que personne n'a ete concu pour couvrir.</p>
+    <div class="tbl">
+      <div class="tbl-head"><span>Outil</span><span>Ce qu'il couvre</span><span>RAM post-purge</span></div>
+      <div class="tbl-row"><span class="tbl-tool">DLP pour LLM</span><span class="tbl-covers">Bloque ce qui entre avant le traitement</span><span class="tbl-no">Non couvert &#10005;</span></div>
+      <div class="tbl-row"><span class="tbl-tool">Big Four / Audit</span><span class="tbl-covers">Verifie les declarations et les politiques</span><span class="tbl-no">Non couvert &#10005;</span></div>
+      <div class="tbl-row"><span class="tbl-tool">Pentest</span><span class="tbl-covers">Trouve les portes d'entree</span><span class="tbl-no">Non couvert &#10005;</span></div>
+      <div class="tbl-row"><span class="tbl-tool">ISO 27001 / HDS</span><span class="tbl-covers">Certifie la gouvernance</span><span class="tbl-no">Non couvert &#10005;</span></div>
+      <div class="tbl-scanalis"><span class="tbl-scanalis-n">Scanalis</span><span style="font-size:13px;color:var(--ink2)">Purge physique + preuve forensique + suivi continu</span><span class="tbl-yes">Seul outil &#10003;</span></div>
+    </div>
+    <div style="margin-top:28px;padding:22px 28px;background:var(--paper);border:1px solid var(--border);border-radius:8px">
+      <p style="font-size:14px;color:var(--ink2)"><strong>Perimetre couvert :</strong> On-premise, VPC dedie, cloud prive. API SaaS tiers : couche orchestration client uniquement. Documente explicitement page 1 de chaque rapport.</p>
+    </div>
+  </div>
+</section>
+
+<!-- REFERENCES -->
+<section id="preuves">
+  <div class="wrap">
+    <span class="slabel">Ils en parlent</span>
+    <h2>Ce que disent ceux qui ont pose<br>les vraies questions.</h2>
     <div class="proof-g">
       <div class="proof-card">
-        <p class="proof-quote">« Ce que vous décrivez, je le savais intuitivement. Mais je n'avais jamais vu quelqu'un le documenter et le rendre évaluable sans accéder au cluster. »</p>
-        <span class="proof-who">Chief AI Security Architect · Mai 2026</span>
+        <p class="proof-quote">&laquo; Ce que vous decrivez, je le savais intuitivement. Mais je n'avais jamais vu quelqu'un le documenter et le rendre evaluable sans acceder au cluster. &raquo;</p>
+        <span class="proof-who">Chief AI Security Architect &middot; Mai 2026</span>
       </div>
       <div class="proof-card">
-        <p class="proof-quote">« Dans notre réseau, personne ne couvre la couche forensique post-purge pour les LLM aujourd'hui. Ce n'est pas un concurrent de ce qui existe — c'est le chaînon manquant. »</p>
-        <span class="proof-who">Expert cybersécurité institutionnel · Bretagne · Mai 2026</span>
+        <p class="proof-quote">&laquo; Dans notre reseau, personne ne couvre la couche forensique post-purge pour les LLM aujourd'hui. Ce n'est pas un concurrent de ce qui existe &mdash; c'est le chainon manquant. &raquo;</p>
+        <span class="proof-who">Expert cybersecurite institutionnel &middot; Bretagne &middot; Mai 2026</span>
       </div>
     </div>
     <div class="badges">
-      <span class="badge">RC Pro Cyber — Hiscox SA</span>
-      <span class="badge">AIPD réalisée</span>
-      <span class="badge">246 tests automatisés</span>
-      <span class="badge">0 CVE non corrigé</span>
+      <span class="badge">RC Pro Cyber &mdash; Hiscox SA</span>
+      <span class="badge">AIPD realisee</span>
+      <span class="badge">246 tests automatises</span>
+      <span class="badge">0 CVE non corrige</span>
       <span class="badge">RFC 3161 TSA</span>
       <span class="badge">NIST SP 800-88</span>
-      <span class="badge">Vannes · Bretagne · France</span>
+      <span class="badge">ANSSI-PA-102</span>
+      <span class="badge">Vannes &middot; Bretagne &middot; France</span>
     </div>
   </div>
 </section>
 
-
-<section style="padding:88px 0;border-top:1px solid var(--border)">
-  <div class="wrap">
-    <span class="slabel">Comment je travaille</span>
-    <h2>Un interlocuteur unique.<br>Une roadmap qui vous appartient.</h2>
-    <p class="intro">Pas de package pré-conçu. Je cartographie votre situation réelle, je construis une feuille de route sur-mesure, et je l'exécute avec vous — mois après mois ou en mission ponctuelle.</p>
-
-    <div style="display:grid;grid-template-columns:1fr 1fr;gap:24px;margin-top:52px">
-
-      <div style="border:1px solid var(--border);border-radius:12px;padding:36px;background:var(--paper)">
-        <div style="font-family:var(--mono);font-size:10px;color:var(--accent);letter-spacing:1.5px;text-transform:uppercase;margin-bottom:16px">Accompagnement annuel</div>
-        <div style="font-family:var(--serif);font-size:22px;color:var(--ink);margin-bottom:16px">Fractional AI Security Officer</div>
-        <p style="font-size:14px;color:var(--ink2);line-height:1.75;margin-bottom:24px">Je deviens votre responsable sécurité IA externalisé. Je connais votre infrastructure, vos contraintes, vos interlocuteurs. Vous n'expliquez votre contexte à personne d'autre — je gère la coordination complète.</p>
-        <div style="display:flex;flex-direction:column;gap:10px;margin-bottom:24px">
-          <div style="font-size:13px;color:var(--ink3);font-family:var(--mono)">→ Roadmap personnalisée sur 12 mois</div>
-          <div style="font-size:13px;color:var(--ink3);font-family:var(--mono)">→ Audit forensique · conformité · monitoring</div>
-          <div style="font-size:13px;color:var(--ink3);font-family:var(--mono)">→ Mobilisation réseau : DPO, juristes, experts</div>
-          <div style="font-size:13px;color:var(--ink3);font-family:var(--mono)">→ Réactivité sous 4h sur les urgences</div>
-        </div>
-        <div style="font-family:var(--mono);font-size:12px;color:var(--accent)">3 500 € – 12 000 € / mois</div>
-      </div>
-
-      <div style="border:1px solid var(--border);border-radius:12px;padding:36px;background:var(--paper)">
-        <div style="font-family:var(--mono);font-size:10px;color:#D94040;letter-spacing:1.5px;text-transform:uppercase;margin-bottom:16px">Mission ponctuelle</div>
-        <div style="font-family:var(--serif);font-size:22px;color:var(--ink);margin-bottom:16px">One-Shot Certification</div>
-        <p style="font-size:14px;color:var(--ink2);line-height:1.75;margin-bottom:24px">Un audit complet de votre infrastructure IA livré en 48h. Rapport forensique scellé, cartographie réglementaire, recommandations priorisées. Sans engagement de durée.</p>
-        <div style="display:flex;flex-direction:column;gap:10px;margin-bottom:24px">
-          <div style="font-size:13px;color:var(--ink3);font-family:var(--mono)">→ Audit 4 briques · verdict binaire</div>
-          <div style="font-size:13px;color:var(--ink3);font-family:var(--mono)">→ Rapport SHA-256 scellé · RSA-PSS signé</div>
-          <div style="font-size:13px;color:var(--ink3);font-family:var(--mono)">→ Gap Analysis EU AI Act incluse</div>
-          <div style="font-size:13px;color:var(--ink3);font-family:var(--mono)">→ 3 mois de monitoring offerts</div>
-        </div>
-        <div style="font-family:var(--mono);font-size:12px;color:#D94040">9 500 € – 50 000 € selon périmètre</div>
-      </div>
-
-    </div>
-
-    <div style="margin-top:32px;padding:28px 32px;background:var(--ink);border-radius:12px;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:20px">
-      <div>
-        <div style="font-family:var(--serif);font-size:18px;color:#fff;margin-bottom:6px">Dans les deux cas — vous avez un seul interlocuteur.</div>
-        <div style="font-size:13px;color:#94A3B8;font-family:var(--mono)">Pas 24 prestataires à coordonner. Pas de répétition de contexte. Je gère la complexité.</div>
-      </div>
-      <a href="https://cal.com/mathilde-de-roumilly-3zskha/30min" target="_blank" style="background:var(--accent);color:#0B1220;padding:14px 24px;border-radius:8px;font-size:14px;font-weight:600;text-decoration:none;white-space:nowrap">Décrire ma situation →</a>
-    </div>
-
-  </div>
-</section>
-
+<!-- FOUNDER -->
 <section class="founder">
   <div class="wrap">
     <div class="founder-g">
       <div style="text-align:center">
-        <img src="mathilde.jpg" alt="Mathilde De Roumilly — Fondatrice Scanalis" class="founder-photo">
+        <img src="mathilde.jpg" alt="Mathilde De Roumilly" class="founder-photo">
         <div style="font-family:var(--serif);font-size:17px;color:var(--ink)">Mathilde De Roumilly</div>
         <div style="font-family:var(--mono);font-size:11px;color:var(--accent);letter-spacing:1px;margin-top:4px">FOUNDER & CEO</div>
       </div>
       <div>
-        <span class="slabel">Qui orchestre votre sécurité IA</span>
-        <p style="font-family:var(--serif);font-size:22px;color:var(--ink);line-height:1.4;margin-bottom:16px">Fondatrice Scanalis · Fractional AI Security Officer.<br><em>Je sécurise. Je certifie. Je coordonne tout.</em></p>
-        <p style="font-size:15px;color:var(--ink2);line-height:1.75;margin-bottom:20px">Experte en sécurité forensique GPU/LLM et conformité EU AI Act. Je combine une technologie d'audit non-intrusive unique et un accompagnement stratégique sur-mesure — pour que vous n'ayez qu'un seul interlocuteur sur toute votre sécurité IA.</p>
-        <p style="font-family:var(--mono);font-size:13px;color:var(--ink3)">Je scanne. Je signe. J'orchestre. contact@scanalis.fr</p>
+        <span class="slabel">Avec qui vous travaillez</span>
+        <p style="font-family:var(--serif);font-size:22px;color:var(--ink);line-height:1.4;margin-bottom:16px">Une experte. Pas une equipe anonyme.<br><em>Pas un cabinet. Une personne qui signe.</em></p>
+        <p style="font-size:15px;color:var(--ink2);line-height:1.75;margin-bottom:20px">Je suis Mathilde De Roumilly, fondatrice de Scanalis. J'ai construit la seule methodologie forensique non-intrusive pour infrastructures GPU/LLM en Europe. Quand vous travaillez avec Scanalis, vous travaillez avec moi. Je comprends votre stack, votre contexte reglementaire, vos contraintes operationnelles. Je coordonne vos juristes, votre DPO, vos experts ANSSI. Vous n'avez pas a repeter votre contexte a 10 interlocuteurs.</p>
+        <p style="font-family:var(--mono);font-size:13px;color:var(--ink3)">Je scanne. Je signe. Je reponds sous 4h sur les urgences. contact@scanalis.fr</p>
       </div>
     </div>
   </div>
 </section>
 
+<!-- CTA FINAL -->
 <section class="cta-sec">
   <div class="wrap">
-    <h2>Un seul interlocuteur.<br>Toute votre sécurité IA.</h2>
-    <p class="cta-sub">Audit forensique, conformité EU AI Act, monitoring continu, coordination de vos experts. Une roadmap sur-mesure — ou une certification ponctuelle. Vous choisissez.</p>
-    <a href="https://cal.com/mathilde-de-roumilly-3zskha/30min" target="_blank" class="btn-white">Décrire ma situation →</a>
-    <p class="cta-note">Mathilde De Roumilly · Fractional AI Security Officer · contact@scanalis.fr</p>
+    <h2>Votre infrastructure IA tourne en ce moment.<br>Savez-vous ce qu'elle expose ?</h2>
+    <p class="cta-sub">Un diagnostic de 30 minutes suffit a identifier vos 3 risques prioritaires et le plan pour les adresser. Sans engagement. Sans interruption de production.</p>
+    <a href="https://cal.com/mathilde-de-roumilly-3zskha/30min" target="_blank" class="btn-white">Obtenir mon diagnostic &rarr;</a>
+    <p class="cta-note">Mathilde De Roumilly &middot; Fractional AI Security Officer &middot; contact@scanalis.fr</p>
   </div>
 </section>
+
 </main>
 
 <footer>
@@ -448,11 +387,12 @@ footer{padding:40px 0;border-top:1px solid var(--border)}
     <div class="foot-i">
       <div>
         <div class="foot-logo">Scan<span>alis</span></div>
-        <p class="foot-l">IaaS Forensique IA · Vannes, Bretagne, France<br>SIRET 99946660000015 · RC Pro Cyber Hiscox SA</p>
+        <p class="foot-l">Securite & Conformite des Infrastructures IA &middot; Vannes, Bretagne, France<br>SIRET 99946660000015 &middot; RC Pro Cyber Hiscox SA</p>
       </div>
-      <div class="foot-r">« Le hash ne ment pas. »</div>
+      <div class="foot-r">&laquo; Le hash ne ment pas. &raquo;</div>
     </div>
   </div>
 </footer>
+
 </body>
 </html>
